@@ -1,3 +1,10 @@
 {
-    "title": "我的书"
+    "theme": "classic",
+    "title": "我的书",
+    "plugins": [
+        "highlight",
+        "lunrjs",
+        "copy-code",
+        "components"
+    ]
 }
