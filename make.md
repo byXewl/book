@@ -1,0 +1,3 @@
+make命令执行编译
+Makefile文件定义编译规则
+Makefile文件中必须用tab键缩进

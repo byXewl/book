@@ -1,0 +1,18 @@
+
+## **浏览器F12操作**
+常见操作：<https://mp.weixin.qq.com/s/Aen7T159KciSCveC7yiBKA>
+
+
+## **常见js加密算法**
+RSA 常使用jsencrypt库
+AES 常使用crypto-js库
+DES
+
+
+## **python中调用js**
+python中调用js文件中方法：使用execjs库等。
+如果你的JavaScript代码依赖于外部加密库（如`crypto-js`），你需要确保这些库在执行环境中可用。对于Node.js环境，你可能需要使用`npm`安装这些库。
+
+
+
+## **jsRPC**

@@ -1,0 +1,1 @@
+可以上传html\pdf\svg执行xss

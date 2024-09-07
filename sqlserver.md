@@ -1,0 +1,1 @@
+navicat连接sqlserver提示没有odbc驱动，右键安装目录，找到.msi文件运行安装即可。

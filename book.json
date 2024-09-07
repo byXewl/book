@@ -1,10 +1,8 @@
 {
-    "theme": "classic",
-    "title": "我的书",
+    "title": "Xe的库",
     "plugins": [
         "highlight",
-        "lunrjs",
-        "copy-code",
-        "components"
+        "image-zoom",
+        "copy-code"
     ]
 }

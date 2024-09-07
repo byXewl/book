@@ -1,0 +1,11 @@
+已知url上有文件包含
+log日志记录ua，参考web日志路径
+修改ua为phpshell,包含日志log文件
+^
+ssh登录日志文件
+把登录名改php的shell
+包含ssh登录日志
+^
+php的session保存在一个目录下
+session内容可控时
+文件包含session文件

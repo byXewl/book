@@ -1,0 +1,2 @@
+go语言学习正式转移到：
+<https://942178v2gb.k.topthink.com/@xo2e7mmdrj/>

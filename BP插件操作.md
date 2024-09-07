@@ -1,0 +1,29 @@
+可以下载一些漏洞识别插件，脚本插件.jar或.py。
+jython环境安装教程：<https://blog.csdn.net/weixin_40412037/article/details/103648034>
+插件路径不要有中文。
+
+
+
+
+## **多功能BurpSuite漏洞探测插件—TsojanScan**
+综合性漏扫插件
+<https://mp.weixin.qq.com/s/2uTxakCAfApDNMQyx0y8dg>
+
+更多：
+OneScan框架指纹识别，TsojanScan框架识别、HaE框架识别(关键字)
+
+^
+## **前端加解密插件**
+1、<https://github.com/whwlsfb/BurpCrypto/blob/master/README-zh_CN.md>
+2、Galaxy
+
+
+^
+## **测未授权接口**
+<https://mp.weixin.qq.com/s/h8YaDNI8drRqa_rWnOPlyA>
+
+
+^
+## **lazyCSRF**
+CSRF POC
+lazyCSRF<https://www.freebuf.com/articles/web/305569.html>

