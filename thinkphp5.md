@@ -8,3 +8,4 @@ composer create-project topthink/think tp
 php think run
 ```
 
+thinkphp官方安全手册：<https://support.topthink.com/@thinkphp/code-safety.html>
