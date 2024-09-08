@@ -46,3 +46,6 @@ arpspoof -i eth0 -t 被攻击者IP地址 被攻击者网关IP地址
 * 使用动态 ARP 检查（DAI）：这是一种在 IPv4 网络中防止 ARP 欺骗的技术，它由支持 IPSec 的设备实现。
 * 使用 VLAN（虚拟局域网）：通过将网络划分为多个虚拟局域网，可以限制 ARP 欺骗的影响范围。
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMjU5MTk1MzUyXX0=
+-->
