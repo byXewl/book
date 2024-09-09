@@ -38,6 +38,8 @@ java解析js的RCE，java17如果默认不支持解析js。
 /admin-api/infra/data-source-config/list
 /admin-api/infra/data-source-config/create
 
+初始配置
+/admin-api/infra/config/page
 
 
 日志
