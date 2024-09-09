@@ -33,4 +33,5 @@ where like 'admin' union select 1,2,3,database()
 2、where like "xx"
 where like " admin" union select 1,2,3,database()-- "
 
+admin'+union+select+sleep(15)--+
 ```
