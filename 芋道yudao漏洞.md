@@ -27,6 +27,8 @@ java解析js的RCE，java17如果默认不支持解析js。
 
 数据源
 /admin-api/infra/data-source-config/list
+/admin-api/infra/data-source-config/create
+
 ```
 
 ^
