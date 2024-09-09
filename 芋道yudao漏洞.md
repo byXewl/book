@@ -29,10 +29,12 @@ java解析js的RCE，java17如果默认不支持解析js。
 /admin-api/infra/data-source-config/list
 /admin-api/infra/data-source-config/create
 
+
+工作流
+/manager/model/list
+/manager/model/edit
 ```
 
-^
-RCE
 
 
 ^
