@@ -49,8 +49,12 @@ java解析js的RCE，java17如果默认不支持解析js。
 /admin-api/infra/api-access-log/page
 /admin-api/infra/api-error-log/page
 操作日志，无用
-/admin-api/system/dict/data/list-all-simple
+/admin-api/web-api/system/dict/data/list-all-simple
 
+
+用户列表
+/admin-api/web-api/web-api/selfcom/user/list
+/web-api/web-api/selfcom/user/list
 
 
 
