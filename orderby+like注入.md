@@ -1,3 +1,4 @@
+## **orderby**
 orderby可能出现三种场景：
 ```
 order by 1，通过第几个字段来排序。变量是数值，可预编译，变量可以是字符。
@@ -19,10 +20,13 @@ orderby利用：因为排序差异可使用布尔盲注，或者时间盲注，�
 //?order=if(表达式,id,loginName)
 //表达式为true时,根据id排序
 //表达式为false时,根据loginName排序
+
+order by sleep(5)
 ```
 
 
 ^
+## **like**
 like可以使用联合注入。
 like一般也在where语句之后。
 ```
