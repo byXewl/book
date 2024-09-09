@@ -84,6 +84,7 @@ XXL-JOB适用于各种需要定时任务调度的场景，如数据同步、批�
 ## **Eureka_xstream_RCE**
 springcloud/springboot站点开启了Actuator，且使用了 eureka-client。
 >eureka-client 是 Spring Cloud 中的一个组件，用于实现微服务架构中的服务注册与发现。它是 Netflix Eureka 服务注册中心的 Java 客户端，与 Eureka 服务端一起构成了服务注册与发现的体系。
+>一般不是nacos就是eureka
 
 可以 POST 请求目标网站的/actuator/env接口设置属性
 可以 POST 请求目标网站的/actuator/refresh 接口刷新配置(存在 spring-boot-starter-actuator 依赖)
