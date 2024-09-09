@@ -40,6 +40,9 @@ java解析js的RCE，java17如果默认不支持解析js。
 
 初始配置
 /admin-api/infra/config/page
+字典
+/admin-api/system/dict-type/page
+
 
 
 日志
