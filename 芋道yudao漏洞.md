@@ -42,6 +42,8 @@ java解析js的RCE，java17如果默认不支持解析js。
 
 日志
 /admin-api/infra/api-access-log/page
+/admin-api/infra/api-error-log/page
+
 
 
 删用户，最好delete方法
