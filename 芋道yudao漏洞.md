@@ -52,7 +52,7 @@ java解析js的RCE，java17如果默认不支持解析js。
 /admin-api/web-api/system/dict/data/list-all-simple
 
 
-用户列表
+用户列表(部分)
 /admin-api/web-api/selfcom/user/list
 /web-api/selfcom/user/list
 
