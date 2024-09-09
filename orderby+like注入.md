@@ -21,7 +21,8 @@ orderby利用：因为排序差异可使用布尔盲注，或者时间盲注，�
 //表达式为true时,根据id排序
 //表达式为false时,根据loginName排序
 
-order by sleep(5)
+order by sleep(5) 不可。
+select * from users order by if (concat(0 x 7 e,user(), 0 x 7 e), 1,sleep(3));
 ```
 报错回显
 ```
