@@ -28,6 +28,7 @@ like一般也在where语句之后。
 ```
 1、where like xx
 where like 'admin' union select 1,2,3,database()
+'admin'+union+select+sleep(15)
 
 2、where like "xx"
 where like " admin" union select 1,2,3,database()-- "
