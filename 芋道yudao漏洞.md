@@ -31,7 +31,7 @@ java解析js的RCE，java17如果默认不支持解析js。
 可能前后端分离
 
 
-存储桶，
+存储桶，存储位置
 /admin-api/infra/file-config/page
 
 数据源,无敏感信息
