@@ -5,6 +5,9 @@ hrmgr hr123
 
 
 ```
+test123
+bv1BUHrzxj5rXjwSBhwqrfoa8RgrUBK8bldbPKY62k6hkKN0zeOcz0Sztlto66M1G/c2Tz7qWWOHBtMQTdHBPQ==
+
 $2a$10$mRMIYLDtRHlf6.9ipiqH1.Z.bh/R9dO9d5iHiGYPigi6r5KOoR2Wm
 默认密钥密码admin123
 
