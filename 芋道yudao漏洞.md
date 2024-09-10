@@ -43,6 +43,13 @@ java解析js的RCE，java17如果默认不支持解析js。
 /infra/data-source-config
 可能前后端分离
 
+
+redis信息
+有redis配置文件位置
+/prod-api/admin-api/infra/redis/get-monitor-info
+
+
+
 初始配置
 /admin-api/infra/config/page
 字典
