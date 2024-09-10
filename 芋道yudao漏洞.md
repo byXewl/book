@@ -49,6 +49,10 @@ redis信息
 /prod-api/admin-api/infra/redis/get-monitor-info
 
 
+java
+/admin-api/infra/config/get-value-by-key?key=url.spring-boot-admi
+
+
 
 初始配置
 /admin-api/infra/config/page
