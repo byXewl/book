@@ -52,7 +52,9 @@ redis信息
 java
 /admin-api/infra/config/get-value-by-key?key=url.spring-boot-admi
 
-
+文档
+/v3/api-docs/swagger-config
+/v3/api-docs/all
 
 初始配置
 /admin-api/infra/config/page
