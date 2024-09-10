@@ -56,6 +56,13 @@ java
 /v3/api-docs/swagger-config
 /v3/api-docs/all
 
+
+
+outh2可能有密码
+/admin-api/system/oauth2-client/page
+
+
+
 初始配置
 /admin-api/infra/config/page
 字典
