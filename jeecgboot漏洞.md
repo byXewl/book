@@ -12,10 +12,10 @@ jeecg-boot是一个基于SpringBoot的低代码开发平台CMS，号称最具影
 演示站细看：<http://boot3.jeecg.com/login>
 
 JEECG的默认登录账号密码如下：
-1. [账号：admin，密码：123456](http://idoc.jeecg.com/1275933)[1](http://idoc.jeecg.com/1275933)[2](https://www.cnblogs.com/CHENJIAO120/p/7079300.html)
-2. [账号1：jeecg，密码1：jeecg#123456；账号2：qinfeng，密码2：jeecg#123456](http://jeecg.com/doc/demo)[3](http://jeecg.com/doc/demo)
-3. [在jeecg-cloud-nacos中，nacos鉴权的默认用户名密码为nacosnacos](https://segmentfault.com/a/1190000045065819)[4](https://segmentfault.com/a/1190000045065819)
-4. [在在线接口文档swagger中，登录名为jeecg，密码为jeecg1314](http://doc.jeecg.com/2043926)[5](http://doc.jeecg.com/2043926)
+1. [账号：admin，密码：123456](http://idoc.jeecg.com/1275933)[](http://idoc.jeecg.com/1275933)[](https://www.cnblogs.com/CHENJIAO120/p/7079300.html)
+2. [账号1：jeecg，密码1：jeecg#123456；账号2：qinfeng，密码2：jeecg#123456](http://jeecg.com/doc/demo)[](http://jeecg.com/doc/demo)
+3. [在jeecg-cloud-nacos中，nacos鉴权的默认用户名密码为nacosnacos](https://segmentfault.com/a/1190000045065819)[](https://segmentfault.com/a/1190000045065819)
+4. [在在线接口文档swagger中，登录名为jeecg，密码为jeecg1314](http://doc.jeecg.com/2043926)[](http://doc.jeecg.com/2043926)
 
 ^
 ## **存在多个历史漏洞**
