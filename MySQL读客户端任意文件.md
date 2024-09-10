@@ -50,7 +50,7 @@ mysql-connector-java >= 8.0.20, >= 5.1.49 中不可用。
 <https://github.com/mysql/mysql-connector-j/commit/13f06c38fb68757607c460789196e3f798d506f2>
 
 
-## **修复**
+## **修复读文件**
 原生的场景下可以使用预先定义的Properties将URL中的属性覆盖掉，就可以关闭本地文件读取以及URL读取了。
 
 ```
