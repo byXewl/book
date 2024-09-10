@@ -40,9 +40,9 @@ Authorization: Basic c2FiZXI6c2FiZXJfc2VjcmV0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0
 Content-Type: application/json;charset=UTF-8
 Accept: application/json, text/plain, */*
-Referer: http://39.164.229.240:8886/
+Referer: http://39.10:8886/
 Blade-Auth: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJpc3N1c2VyIiwiYXVkIjoiYXVkaWVuY2UiLCJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJyb2xlX25hbWUiOiJhZG1pbmlzdHJhdG9yIiwicG9zdF9pZCI6IjExMjM1OTg4MTc3Mzg2NzUyMDEiLCJ1c2VyX2lkIjoiMTEyMzU5ODgyMTczODY3NTIwMSIsInJvbGVfaWQiOiIxMTIzNTk4ODE2NzM4Njc1MjAxIiwidXNlcl9uYW1lIjoiYWRtaW4iLCJuaWNrX25hbWUiOiLnrqHnkIblkZgiLCJkZXRhaWwiOnsidHlwZSI6IndlYiJ9LCJ0b2tlbl90eXBlIjoiYWNjZXNzX3Rva2VuIiwiZGVwdF9pZCI6IjExMjM1OTg4MTM3Mzg2NzUyMDEiLCJhY2NvdW50IjoiYWRtaW4iLCJjbGllbnRfaWQiOiJzYWJlciIsImV4cCI6MTcyNTY0NTAyNywibmJmIjoxNzI1NjQxNDI3fQ.k_UihX-KDlfh0QNgbNW17Qx4zucz_n1xLr-AiCC_juMuiu0G0Ss5_rhDpyQbIqS3vANVrYasiFqM0YkS-cwKVQ
-Origin: http://39.164.229.240:8886
+Origin: http://39.40:8886
 Accept-Encoding: gzip, deflate
 Cookie: saber-access-token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJpc3N1c2VyIiwiYXVkIjoiYXVkaWVuY2UiLCJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJyb2xlX25hbWUiOiJhZG1pbmlzdHJhdG9yIiwicG9zdF9pZCI6IjExMjM1OTg4MTc3Mzg2NzUyMDEiLCJ1c2VyX2lkIjoiMTEyMzU5ODgyMTczODY3NTIwMSIsInJvbGVfaWQiOiIxMTIzNTk4ODE2NzM4Njc1MjAxIiwidXNlcl9uYW1lIjoiYWRtaW4iLCJuaWNrX25hbWUiOiLnrqHnkIblkZgiLCJkZXRhaWwiOnsidHlwZSI6IndlYiJ9LCJ0b2tlbl90eXBlIjoiYWNjZXNzX3Rva2VuIiwiZGVwdF9pZCI6IjExMjM1OTg4MTM3Mzg2NzUyMDEiLCJhY2NvdW50IjoiYWRtaW4iLCJjbGllbnRfaWQiOiJzYWJlciIsImV4cCI6MTcyNTY0NTAyNywibmJmIjoxNzI1NjQxNDI3fQ.k_UihX-KDlfh0QNgbNW17Qx4zucz_n1xLr-AiCC_juMuiu0G0Ss5_rhDpyQbIqS3vANVrYasiFqM0YkS-cwKVQ; saber-refresh-token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJpc3N1c2VyIiwiYXVkIjoiYXVkaWVuY2UiLCJ1c2VyX2lkIjoiMTEyMzU5ODgyMTczODY3NTIwMSIsInJvbGVfaWQiOiIxMTIzNTk4ODE2NzM4Njc1MjAxIiwidG9rZW5fdHlwZSI6InJlZnJlc2hfdG9rZW4iLCJkZXB0X2lkIjoiMTEyMzU5ODgxMzczODY3NTIwMSIsImNsaWVudF9pZCI6InNhYmVyIiwiZXhwIjoxNzI2MjQ2MjI3LCJuYmYiOjE3MjU2NDE0Mjd9.O4H_6n2W1biMDB5pdMOaz1Smk-iPbhYQzEt4wW-e5QrSic55fBx0-12US2zQ2ifNVK8EQhuWbSyFOQyBS9UJVg
 Content-Length: 215
@@ -52,12 +52,12 @@ Content-Length: 215
 获取数据源
 ```
 GET /api/blade-develop/datasource/list?current=1&size=10 HTTP/1.1
-Host: 47.95.28.7:83
+Host: 7.5.28.7:83
 Accept: application/json, text/plain, */*
 Authorization: Basic c2FiZXI6c2FiZXJfc2VjcmV0
 Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0
-Referer: http://39.164.229.240:8886/
+Referer: http://39.16240:8886/
 Accept-Encoding: gzip, deflate
 Blade-Auth: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJpc3N1c2VyIiwiYXVkIjoiYXVkaWVuY2UiLCJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJyb2xlX25hbWUiOiJhZG1pbmlzdHJhdG9yIiwicG9zdF9pZCI6IjExMjM1OTg4MTc3Mzg2NzUyMDEiLCJ1c2VyX2lkIjoiMTEyMzU5ODgyMTczODY3NTIwMSIsInJvbGVfaWQiOiIxMTIzNTk4ODE2NzM4Njc1MjAxIiwidXNlcl9uYW1lIjoiYWRtaW4iLCJuaWNrX25hbWUiOiLnrqHnkIblkZgiLCJkZXRhaWwiOnsidHlwZSI6IndlYiJ9LCJ0b2tlbl90eXBlIjoiYWNjZXNzX3Rva2VuIiwiZGVwdF9pZCI6IjExMjM1OTg4MTM3Mzg2NzUyMDEiLCJhY2NvdW50IjoiYWRtaW4iLCJjbGllbnRfaWQiOiJzYWJlciIsImV4cCI6MTcyNTY0NTAyNywibmJmIjoxNzI1NjQxNDI3fQ.k_UihX-KDlfh0QNgbNW17Qx4zucz_n1xLr-AiCC_juMuiu0G0Ss5_rhDpyQbIqS3vANVrYasiFqM0YkS-cwKVQ
 
@@ -65,11 +65,11 @@ Blade-Auth: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJpc3N1c2VyIiwi
 删除某个数据源
 ```
 POST /api/blade-develop/datasource/remove?ids=4 HTTP/1.1
-Host: 47.95.28.7:83
+Host: 7.95.28.7:83
 Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
 Accept: application/json, text/plain, */*
-Origin: http://39.164.229.240:8886
-Referer: http://39.164.229.240:8886/
+Origin: http://39.16440:8886
+Referer: http://39.1640:8886/
 Blade-Auth: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJpc3N1c2VyIiwiYXVkIjoiYXVkaWVuY2UiLCJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJyb2xlX25hbWUiOiJhZG1pbmlzdHJhdG9yIiwicG9zdF9pZCI6IjExMjM1OTg4MTc3Mzg2NzUyMDEiLCJ1c2VyX2lkIjoiMTEyMzU5ODgyMTczODY3NTIwMSIsInJvbGVfaWQiOiIxMTIzNTk4ODE2NzM4Njc1MjAxIiwidXNlcl9uYW1lIjoiYWRtaW4iLCJuaWNrX25hbWUiOiLnrqHnkIblkZgiLCJkZXRhaWwiOnsidHlwZSI6IndlYiJ9LCJ0b2tlbl90eXBlIjoiYWNjZXNzX3Rva2VuIiwiZGVwdF9pZCI6IjExMjM1OTg4MTM3Mzg2NzUyMDEiLCJhY2NvdW50IjoiYWRtaW4iLCJjbGllbnRfaWQiOiJzYWJlciIsImV4cCI6MTcyNTY0NTAyNywibmJmIjoxNzI1NjQxNDI3fQ.k_UihX-KDlfh0QNgbNW17Qx4zucz_n1xLr-AiCC_juMuiu0G0Ss5_rhDpyQbIqS3vANVrYasiFqM0YkS-cwKVQ
 Authorization: Basic c2FiZXI6c2FiZXJfc2VjcmV0
 Accept-Encoding: gzip, deflate
@@ -82,7 +82,7 @@ Content-Length: 0
 根据数据源加代码
 ```
 POST /api/blade-develop/code/submit HTTP/1.1
-Host: 39.164.229.40:8886
+Host: 39.164..40:8886
 Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0
 Content-Type: application/json;charset=UTF-8
@@ -97,13 +97,13 @@ Content-Length: 258
 看代码
 ```
 GET /api/blade-develop/code/list?size=10 HTTP/1.1
-Host: 39.164.229.40:8886
+Host: 39.16.229.40:888
 Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
-Referer: http://admin.scfsi.cn/
+Referer: http://admin.si.cn/
 Blade-Auth: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJpc3N1c2VyIiwiYXVkIjoiYXVkaWVuY2UiLCJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJyb2xlX25hbWUiOiJhZG1pbmlzdHJhdG9yLHN0b3JlIiwicG9zdF9pZCI6IjExMjM1OTg4MTc3Mzg2NzUyMDEiLCJ1c2VyX2lkIjoiMTEyMzU5ODgyMTczODY3NTIwMSIsInJvbGVfaWQiOiIxMTIzNTk4ODE2NzM4Njc1MjAxLDE2NjUyMjUxODkwOTYwNzExNjkiLCJ1c2VyX25hbWUiOiJhZG1pbiIsIm5pY2tfbmFtZSI6IueuoeeQhuWRmCIsImRldGFpbCI6eyJ0eXBlIjoid2ViIn0sInRva2VuX3R5cGUiOiJhY2Nlc3NfdG9rZW4iLCJkZXB0X2lkIjoiMTEyMzU5ODgxMzczODY3NTIwMSIsImFjY291bnQiOiJhZG1pbiIsImNsaWVudF9pZCI6InNhYmVyIiwiZXhwIjoxNzI1NjQ2MDU4LCJuYmYiOjE3MjU2NDI0NTh9.AFvD4E1QHaMUM5qfAa67OuCnqhLOjzX6PuySku8iyE0XMcPUTJVfVwoYHlMp1dUPOqD4XLpNTDKXUuLsYqWhmA
 Accept: application/json, text/plain, */*
 Accept-Encoding: gzip, deflate
-Origin: http://admin.scfsi.cn
+Origin: http://admin.si.cn
 Authorization: Basic c2FiZXI6c2FiZXJfc2VjcmV0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0
 
@@ -113,8 +113,8 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 ```
 POST /api/blade-develop/code/gen-code?ids=1832105203277537281&system=saber HTTP/1.1
 Host: 39.164.29.20:8886
-Origin: http://admin.scfsi.cn
-Referer: http://admin.scfsi.cn/
+Origin: http://admin.si.cn
+Referer: http://admin.si.cn/
 Accept-Encoding: gzip, deflate
 Blade-Auth: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJpc3N1c2VyIiwiYXVkIjoiYXVkaWVuY2UiLCJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJyb2xlX25hbWUiOiJhZG1pbmlzdHJhdG9yLHN0b3JlIiwicG9zdF9pZCI6IjExMjM1OTg4MTc3Mzg2NzUyMDEiLCJ1c2VyX2lkIjoiMTEyMzU5ODgyMTczODY3NTIwMSIsInJvbGVfaWQiOiIxMTIzNTk4ODE2NzM4Njc1MjAxLDE2NjUyMjUxODkwOTYwNzExNjkiLCJ1c2VyX25hbWUiOiJhZG1pbiIsIm5pY2tfbmFtZSI6IueuoeeQhuWRmCIsImRldGFpbCI6eyJ0eXBlIjoid2ViIn0sInRva2VuX3R5cGUiOiJhY2Nlc3NfdG9rZW4iLCJkZXB0X2lkIjoiMTEyMzU5ODgxMzczODY3NTIwMSIsImFjY291bnQiOiJhZG1pbiIsImNsaWVudF9pZCI6InNhYmVyIiwiZXhwIjoxNzI1NjQ2MDU4LCJuYmYiOjE3MjU2NDI0NTh9.AFvD4E1QHaMUM5qfAa67OuCnqhLOjzX6PuySku8iyE0XMcPUTJVfVwoYHlMp1dUPOqD4XLpNTDKXUuLsYqWhmA
 Authorization: Basic c2FiZXI6c2FiZXJfc2VjcmV0
@@ -134,8 +134,8 @@ Accept: application/json, text/plain, */*
 Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
 Blade-Auth: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJpc3N1c2VyIiwiYXVkIjoiYXVkaWVuY2UiLCJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJyb2xlX25hbWUiOiJhZG1pbmlzdHJhdG9yLHN0b3JlIiwicG9zdF9pZCI6IjExMjM1OTg4MTc3Mzg2NzUyMDEiLCJ1c2VyX2lkIjoiMTEyMzU5ODgyMTczODY3NTIwMSIsInJvbGVfaWQiOiIxMTIzNTk4ODE2NzM4Njc1MjAxLDE2NjUyMjUxODkwOTYwNzExNjkiLCJ1c2VyX25hbWUiOiJhZG1pbiIsIm5pY2tfbmFtZSI6IueuoeeQhuWRmCIsImRldGFpbCI6eyJ0eXBlIjoid2ViIn0sInRva2VuX3R5cGUiOiJhY2Nlc3NfdG9rZW4iLCJkZXB0X2lkIjoiMTEyMzU5ODgxMzczODY3NTIwMSIsImFjY291bnQiOiJhZG1pbiIsImNsaWVudF9pZCI6InNhYmVyIiwiZXhwIjoxNzI1NjQ2MDU4LCJuYmYiOjE3MjU2NDI0NTh9.AFvD4E1QHaMUM5qfAa67OuCnqhLOjzX6PuySku8iyE0XMcPUTJVfVwoYHlMp1dUPOqD4XLpNTDKXUuLsYqWhmA
 Authorization: Basic c2FiZXI6c2FiZXJfc2VjcmV0
-Referer: http://admin.scfsi.cn/
-Origin: http://admin.scfsi.cn
+Referer: http://admin.si.cn/
+Origin: http://admin.si.cn
 Accept-Encoding: gzip, deflate
 Content-Length: 0
 
@@ -151,7 +151,7 @@ Blade-Auth: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJpc3N1c2VyIiwi
 Referer: http://admin.scfsi.cn/
 Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0
-Origin: http://admin.scfsi.cn
+Origin: http://admin.sci.cn
 Accept-Encoding: gzip, deflate
 Content-Length: 0
 
