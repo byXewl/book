@@ -57,7 +57,7 @@ E.g.
 ^
 ## **MySQL JDBC RCE 姿势**
 
-mysql-connector-java >= 8.0.20, >= 5.1.49 中不可用。
+mysql-connector-java >= 8.0.20, >= 5.1.49 中不可用。连接回显的时候可以看版本。
 利用的jdbc反序列化RCE。
 <https://github.com/mysql/mysql-connector-j/commit/de7e1af306ffbb8118125a865998f64ee5b35b1b>\
 <https://github.com/mysql/mysql-connector-j/commit/13f06c38fb68757607c460789196e3f798d506f2>
