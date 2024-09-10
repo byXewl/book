@@ -1,7 +1,7 @@
 加用户
 ```
 POST /api/blade-user/submit HTTP/1.1
-Host: 110.185.174.7:10009
+Host: 110..174.7:10009
 Connection: keep-alive
 sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
 sec-ch-ua-platform: "Windows"
