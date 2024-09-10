@@ -27,6 +27,8 @@ java解析js的RCE，java17如果默认不支持解析js。
 
 
 
+可能未授权查看
+/admin/applications
 
 
 
