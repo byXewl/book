@@ -55,3 +55,16 @@ jdbc
 
 ^
 工具：<https://mp.weixin.qq.com/s/loTo06eNhyUIxUIPGJQuzg>
+
+
+^
+敏感接口
+```
+
+数据源：
+/jeecgboot/sys/dataSource/list?
+
+
+
+
+```
