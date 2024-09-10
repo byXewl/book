@@ -34,7 +34,8 @@ java解析js的RCE，java17如果默认不支持解析js。
 
 存储桶，存储位置，aksk
 /admin-api/infra/file-config/page
-
+文件列表
+/admin-api/infra/file/page?pageNo=1&pageSize=100
 
 数据源,无敏感信息
 /admin-api/infra/data-source-config/list
