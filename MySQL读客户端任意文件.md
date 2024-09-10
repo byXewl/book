@@ -43,7 +43,20 @@ ysoserial_command:
 /var/log/mysqld.log 可能有mysql密码
 ```
 
-## MySQL JDBC RCE 姿势
+^
+## **列目录和SSRF**
+另外如果需要读文件, mysql-connector-java 支持使用 `file://` 列目录 (当然其他协议, 例如 http 来 SSRF 也是可以的), 但是需要在 `allowLoadLocalInfile` 为 true 之外, 额外指定 `allowUrlInLocalInfile` 为 true, 详情见[这里](https://github.com/mysql/mysql-connector-j/blob/dd61577595edad45c398af508cf91ad26fc4144f/src/main/protocol-impl/java/com/mysql/cj/protocol/a/NativeProtocol.java#L1877)\
+E.g.
+
+* 列 `/` 目录, `jdbc:mysql://127.0.0.1:3306/file%3A%2F%2F%2F?allowLoadLocalInfile=true&allowUrlInLocalInfile=true`
+* SSRF `http://127.0.0.1:25565`, `jdbc:mysql://127.0.0.1:3306/http%3A%2F%2F127.0.0.1:25565?allowLoadLocalInfile=true&allowUrlInLocalInfile=true`
+
+
+
+
+^
+## **MySQL JDBC RCE 姿势**
+
 mysql-connector-java >= 8.0.20, >= 5.1.49 中不可用。
 利用的jdbc反序列化RCE。
 <https://github.com/mysql/mysql-connector-j/commit/de7e1af306ffbb8118125a865998f64ee5b35b1b>\
