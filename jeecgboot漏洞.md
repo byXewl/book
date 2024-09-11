@@ -15,6 +15,7 @@ jeecg-boot是一个基于SpringBoot的低代码开发平台CMS，号称最具影
 /jeecg-boot/sys/common/upload
 
 演示站细看：<http://boot3.jeecg.com/login>
+开发文档：<https://help.jeecg.com/java/java/qa.html>
 
 JEECG的默认登录账号密码如下：
 1. [账号：admin，密码：123456](http://idoc.jeecg.com/1275933)[](http://idoc.jeecg.com/1275933)[](https://www.cnblogs.com/CHENJIAO120/p/7079300.html)
