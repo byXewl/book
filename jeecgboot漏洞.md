@@ -77,6 +77,8 @@ jdbc
 
 用户列表
 /jeecgboot/sys/user/listAll
+/jeecgboot/sys/user/list
+
 
 
 
