@@ -65,8 +65,8 @@ jdbc
 ^
 敏感接口
 ```
-
 数据源：
+/monitor/datasource
 /jeecgboot/sys/dataSource/list?
 
 
