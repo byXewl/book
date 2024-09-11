@@ -75,6 +75,12 @@ RCE：
 OSS存储数据列表：
 /jeecgboot/sys/oss/file/list
 
+
+附件数据列表：
+/jeecgboot/system/sysFile/list
+/api/system/sysFile/list
+
+
 第三方配置：
 /jeecgboot/sys/thirdApp/getThirdConfigByTenantId
 
