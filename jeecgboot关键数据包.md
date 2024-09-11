@@ -108,3 +108,8 @@ Content-Length: 97
 
 {"username":"1111","password":"123456","confirmpassword":"123456","orgId":"LIS20170328006643931"}
 ```
+
+删除用户delete
+```
+/cdxt-boot/sys/user/delete?id=1833706241834209281&orgId=LIS20170328006643931
+```
