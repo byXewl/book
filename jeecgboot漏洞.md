@@ -112,7 +112,7 @@ OSS存储数据列表：
 
 请求追踪，最近的请求
 /jeecgboot/actuator/httptrace-new/all
-/jeecgboot/actuator/httptrace-new/succes
+/jeecgboot/actuator/httptrace-new/success
 
 在线用户
 /jeecgboot/sys/online/list
