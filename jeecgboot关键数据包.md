@@ -89,3 +89,22 @@ Content-Length: 291
 
 {"activitiSync":"1","isRemoteSpecialist":"0","username":"1111","password":"Byxe3312@","confirmpassword":"Byxe3312@","realname":"111111111","workNo":"1111111","birthday":"","avatar":null,"selectedroles":"","selecteddeparts":"","userIdentity":"1","departIds":"","orgId":"LIS20170328006643931"}
 ```
+
+改密码，可以若密码
+```
+PUT /cdxt-boot/sys/user/changePassword HTTP/1.1
+Host: jia
+Accept-Language: zh-CN,zh;q=0.9
+Origin: http://jia
+Accept-Encoding: gzip, deflate
+Pragma: no-cache
+Cache-Control: no-cache
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MjYxMDQ4NTgsIm9yZ0lkIjoiTElTMjAxNzAzMjgwMDY2NDM5MzEiLCJ1c2VybmFtZSI6ImFkbWluIn0.M25DS1TOXo9FBkOEPSNaHSwWuU_ZYS-TJunwVVQfEcA
+Referer: http://ji
+Content-Type: application/json;charset=UTF-8
+Content-Length: 97
+
+{"username":"1111","password":"123456","confirmpassword":"123456","orgId":"LIS20170328006643931"}
+```
