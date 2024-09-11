@@ -68,6 +68,12 @@ jdbc
 数据源：
 /monitor/datasource
 /jeecgboot/sys/dataSource/list?
+
+OSS存储数据列表：
+/jeecgboot/sys/oss/file/list
+
+
+
 看指定数据库的账号密码
 /jeecgboot/sys/dataSource/queryById?id=1209779538310004737
 
