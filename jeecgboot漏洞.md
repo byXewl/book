@@ -75,6 +75,10 @@ jdbc
 /jeecgboot/sys/dict/list?column=createTime&order=desc
 
 
+用户列表
+/jeecgboot/sys/user/listAll
+
+
 
 
 
