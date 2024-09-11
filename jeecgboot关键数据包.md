@@ -71,3 +71,21 @@ Content-Length: 294
 
 {"code":"11","name":"111","dbType":"4","dbDriver":"com.mysql.cj.jdbc.Driver","dbUrl":"jdbc:mysql://127.0.0.1:3306/jeecg-boot?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai","dbUsername":"11","dbPassword":"111"}
 ```
+
+加用户
+```
+POST /cdxt-boot/sys/user/add HTTP/1.1
+Host: 
+Pragma: no-cache
+Origin: 
+Accept-Encoding: gzip, deflate
+Accept: application/json, text/plain, */*
+Content-Type: application/json;charset=UTF-8
+X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MjYxMDQ4NTgsIm9yZ0lkIjoiTElTMjAxNzAzMjgwMDY2NDM5MzEiLCJ1c2VybmFtZSI6ImFkbWluIn0.M25DS1TOXo9FBkOEPSNaHSwWuU_ZYS-TJunwVVQfEcA
+Accept-Language: zh-CN,zh;q=0.9
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+Content-Length: 291
+
+{"activitiSync":"1","isRemoteSpecialist":"0","username":"1111","password":"Byxe3312@","confirmpassword":"Byxe3312@","realname":"111111111","workNo":"1111111","birthday":"","avatar":null,"selectedroles":"","selecteddeparts":"","userIdentity":"1","departIds":"","orgId":"LIS20170328006643931"}
+```
