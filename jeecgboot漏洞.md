@@ -72,9 +72,12 @@ jdbc
 OSS存储数据列表：
 /jeecgboot/sys/oss/file/list
 
+第三方配置：
+/jeecgboot/sys/thirdApp/getThirdConfigByTenantId
 
 
-看指定数据库的账号密码
+
+看指定数据库的账号密码:
 /jeecgboot/sys/dataSource/queryById?id=1209779538310004737
 
 字典
