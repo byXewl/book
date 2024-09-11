@@ -81,6 +81,10 @@ jdbc
 
 
 
+流程监听
+/jeecgboot/act/process/extActListener/list
+
+
 
 
 
