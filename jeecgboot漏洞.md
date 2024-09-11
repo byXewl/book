@@ -141,8 +141,10 @@ oss_file
 mysql.user
 要有查看权限对于语句 select *, ' as "label",x.js as "value" from ' from mysql.user
 
-
+```
 未授权泄露最近的请求路径
+```
+/sys/user/querySysUser?username=admin
 /jeecg-boot/actuator/httptrace/
 
 
