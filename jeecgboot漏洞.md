@@ -108,4 +108,13 @@ OSS存储数据列表：
 异常日志
 /jeecgboot/sys/log/list?logType=4
 
+
+请求追踪，最近的请求
+
+
+/jeecgboot/actuator/httptrace-new/all
+/jeecgboot/actuator/httptrace-new/succes
+
+
+
 ```
