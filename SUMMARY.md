@@ -768,6 +768,7 @@
         * [若依框架](若依框架.md)
         * [Nacos漏洞](Nacos漏洞.md)
         * [MySQL读客户端任意文件](MySQL读客户端任意文件.md)
+        * [gyjerp(华夏erp)漏洞](gyjerp华夏erp漏洞.md)
     * [javaSSTI](javaSSTI.md)
 * [中间件等漏洞](中间件等漏洞.md)
     * [Tomcat漏洞](Tomcat漏洞.md)
