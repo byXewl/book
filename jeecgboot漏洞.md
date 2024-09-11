@@ -53,7 +53,8 @@ RCE：
 如：/jeecg-boot/jmreport/loadTableData命令执行：
 <https://blog.csdn.net/qq_36334672/article/details/136025263>
 设置token(可选)和请求体，响应包里有命令执行结果。
-
+如：testConnection
+<https://mp.weixin.qq.com/s/DW_tUQt9qjNb6woZy42xeA>
 
 ^
 后台jdbc
