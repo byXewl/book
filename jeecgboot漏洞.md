@@ -94,6 +94,8 @@ OSS存储数据列表：
 /jeecgboot/act/process/extActListener/list
 
 
+网关路由
+/jeecgboot/sys/gatewayRoute/list
 
 
 
