@@ -1,3 +1,8 @@
+JEECG(J2EE Code Generation)是开源的代码生成平台，目前官方已停止维护。
+**注：Jeecg 与 Jeecg-boot 非相同应用。** Jeccg官方地址为：https://gitee.com/jeecg/jeecg
+^
+
+
 jeecg-boot是一个基于SpringBoot的低代码开发平台CMS，号称最具影响力。
 
 
