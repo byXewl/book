@@ -63,3 +63,7 @@ bp插件<https://github.com/API-Security/APIKit/releases/tag/v1.5.4>、
 获取敏感信息接口。
 
 接口测试可能需要session，session可以从小程序登录等地方获取。
+
+
+可能未授权获取AK SK
+搜索key、conf、config、upload
