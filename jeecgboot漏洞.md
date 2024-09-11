@@ -124,6 +124,15 @@ OSS存储数据列表：
 sql注入账号密码查询。若报错可报项目路径
 /jeecg-boot/sys/ng-alain/getDictItemsByTable/'%20from%20sys_user/*,%20'/x.js
 
+sys_third_app_config
+sys_data_source
+oss_file
+mysql.user
+
+
+
 未授权泄露最近的请求路径
 /jeecg-boot/actuator/httptrace/
+
+
 ```
