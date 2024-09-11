@@ -101,6 +101,11 @@ OSS存储数据列表：
 
 数据日志
 /jeecgboot/sys/dataLog/list
-
+登录日志
+/jeecgboot/sys/log/list?logType=1
+操作日志
+/jeecgboot/sys/log/list?logType=2
+异常日志
+/jeecgboot/sys/log/list?logType=4
 
 ```
