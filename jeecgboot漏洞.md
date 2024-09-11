@@ -68,6 +68,7 @@ RCE：
 数据源：
 /monitor/datasource
 /isystem/dataSource
+/xxx/dataSource
 /jeecgboot/sys/dataSource/list
 
 看指定数据库的账号密码:
@@ -136,7 +137,7 @@ sys_third_app_config
 sys_data_source
 oss_file
 mysql.user
-
+要有查看权限对于语句 select *, ' as "label",x.js as "value" from ' from mysql.user
 
 
 未授权泄露最近的请求路径
