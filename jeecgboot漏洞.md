@@ -60,7 +60,7 @@ RCE：
 
 ^
 工具：<https://mp.weixin.qq.com/s/loTo06eNhyUIxUIPGJQuzg>
-
+用工具加上前缀/jeecg-boot/、/jeecgboot/、/xxx-boot/、/api/
 
 ^
 敏感接口
