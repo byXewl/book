@@ -22,8 +22,9 @@ Content-Length: 269
 
 {"dbType":"4","dbDriver":"com.mysql.cj.jdbc.Driver","dbUrl":"jdbc:mysql://127.0.0.1:3306/jeecg-boot?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai","dbUsername":"11","dbPassword":"111"}
 ```
+dbType为4或1
 
-
+^
 jdbc删除
 ```
 DELETE /jeecgboot/sys/dataSource/delete?id=1833684696450519041 HTTP/1.1
