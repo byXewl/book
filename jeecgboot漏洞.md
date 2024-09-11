@@ -126,8 +126,16 @@ OSS存储数据列表：
 /jeecgboot/sys/online/list
 
 
+
+
+##### 版本号：
+3.7.0
+##### 问题描述：
+当主表的数据关联不上子表的任何数据时，查看详情会弹出tips 子表获取数据失败:xxx，直接暴漏了子表的名称
 ```
-漏洞
+
+^
+## **漏洞**
 getDictItemsByTable注入分析：<https://xz.aliyun.com/t/13186?time__1311=GqmhkD8iGNDKKYK0%3DeG%3Dt0QqitoQymmD>
 ```
 sql注入账号密码查询。若报错可报项目路径
