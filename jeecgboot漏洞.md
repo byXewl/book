@@ -67,6 +67,9 @@ RCE：
 ^
 敏感接口
 ```
+/user/register
+注册
+
 数据源：
 /monitor/datasource
 /isystem/dataSource
