@@ -9,8 +9,8 @@ jython环境安装教程：<https://blog.csdn.net/weixin_40412037/article/detail
 综合性漏扫插件
 <https://mp.weixin.qq.com/s/2uTxakCAfApDNMQyx0y8dg>
 
-更多：
-OneScan框架指纹识别，TsojanScan框架识别、HaE框架识别(关键字)
+## **更多**
+OneScan框架指纹识别，TsojanScan框架识别、HaE框架识别(关键字正则颜色匹配)
 
 ^
 ## **前端加解密插件**
