@@ -144,6 +144,7 @@ Content-Type: application/json
 
 用户注册
 ```
+/api/jeecg-system/sms
 POST /jeecg-boot/sys/user/register HTTP/1.1
 Host: www.scom
 accept: */*
