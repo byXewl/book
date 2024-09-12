@@ -1,4 +1,10 @@
-
+百度是ak，其他key。
+```
+例如：
+http://api.map.baidu.com/?qt=cen&b=11578138.695116999%2C3555240.501790221%3B11598914.128271637%2C3569691.6486757277&l=13.0668
+&ie=utf-8&oue=1&fromproduct=jsapi&callback=BMapGL._rd._cbk43079&ak=ZDUtQgXb7AMPHYGphPtYydM
+中的ak=ZDUtQgXb7AMPHYGphPtYydM
+```
 
 ```
  高德webapi：
