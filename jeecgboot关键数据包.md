@@ -213,3 +213,7 @@ X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MjYxNTI4NzMsInV
 
 {"roleId":"f6817f48af4fb3af11b9e8bf182f618b","userIdList":["1833892347184689154"]}
 ```
+查看有权限菜单
+```
+/api/sys/permission/getUserPermissionByToken?&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MjYxNTI4NzMsInVzZXJuYW1lIjoieGUzMzEyIn0.tQsB390dLPXc0gujMJMilYkNmi0iZk1b4REJNFephL
+```
