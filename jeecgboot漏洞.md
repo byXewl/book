@@ -159,3 +159,6 @@ mysql.user
 
 
 ```
+
+普通账户权限提升：
+<https://github.com/jeecgboot/JeecgBoot/issues/5270>
