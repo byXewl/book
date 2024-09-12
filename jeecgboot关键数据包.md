@@ -140,3 +140,24 @@ Content-Type: application/json
   "userName": "2ZTvHsq4au3uOQ2mK9OuJb86rdO"
 }
 ```
+
+用户注册
+```
+POST /jeecg-boot/sys/user/register HTTP/1.1
+Host: www.scom
+accept: */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+Origin: chrome-extension://liacakmdhalagfjlfdofigfoiocghoej
+Content-Length: 77
+
+{
+  "companyName": "1354320251801604098",
+  "password": "cb362cfeefbf3d8d",
+  "phone": "17738814259",
+  "username": "test3312",
+  "smscode":"11111"
+}
+```
