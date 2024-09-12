@@ -181,3 +181,7 @@ Content-Length: 38
 
 {"mobile":"1861323651","smsmode":"1"}
 ```
+
+```
+/jeecg-system/sys/getForgetSmsByPhone?phone=17738814292
+```
