@@ -163,3 +163,20 @@ Content-Length: 77
 }
 6位数验证码
 ```
+短信验证码获取
+```
+POST /jeecg-boot/sys/sms HTTP/1.1
+Host: 221.237.108.143:8088
+Content-Type: application/json;charset=UTF-8
+Referer: http:/com.cn:5096/user/register
+Accept-Language: zh-CN,zh;q=0.9
+Pragma: no-cache
+Accept-Encoding: gzip, deflate
+Cache-Control: no-cache
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+Origin: http://wwwcom.cn:5096
+Content-Length: 38
+
+{"mobile":"1861323651","smsmode":"1"}
+```
