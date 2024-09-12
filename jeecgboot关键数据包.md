@@ -200,3 +200,16 @@ f6817f48af4fb3af11b9e8bf182f618b
 /api/sys/user/list?roleId=f6817f48af4fb3af11b9e8bf182f618b
 /api/sys/user/userRoleList?roleId=f6817f48af4fb3af11b9e8bf182f618b
 ```
+加入自己的用户id到管理员组
+```
+POST /api/sys/user/addSysUserRole HTTP/1.1
+Host: demo.te
+Connection: keep-alive
+Content-Length: 82
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+tenant_id: 0
+X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MjYxNTI4NzMsInVzZXJuYW1lIjoieGUzMzEyIn0.tQsB390dLPXc0gujMJMilYkNmi0iZk1b4REJNFephLU
+
+{"roleId":"f6817f48af4fb3af11b9e8bf182f618b","userIdList":["1833892347184689154"]}
+```
