@@ -761,6 +761,7 @@
         * [SwaggerAPI未授权访问](SwaggerAPI未授权访问.md)
         * [jeecgboot漏洞](jeecgboot漏洞.md)
             * [jeecgboot关键数据包](jeecgboot关键数据包.md)
+            * [jeecgboot的认证分析](jeecgboot的认证分析.md)
         * [bladex漏洞](bladex漏洞.md)
             * [baldex关键数据包](baldex关键数据包.md)
         * [芋道yudao漏洞](芋道yudao漏洞.md)
