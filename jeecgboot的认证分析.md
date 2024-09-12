@@ -5,7 +5,7 @@ import org.jeecg.common.util.PasswordUtil;
 
 
 jwt的密钥是每一个用户的数据库中password，但是貌似有redis白名单，即使伪造了jwt也不能直接携带请求。
-
+<https://blog.csdn.net/qq_27361945/article/details/133769607>
 ^
 有一个AES加密import org.jeecg.common.util.encryption.AesEncryptUtil;
 加密密钥和IV一般为默认值硬编码的。
