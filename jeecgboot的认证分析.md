@@ -9,3 +9,14 @@ jwt的密钥是每一个用户的数据库中password，但是貌似有redis白�
 ^
 有一个AES加密import org.jeecg.common.util.encryption.AesEncryptUtil;
 加密密钥和IV一般为默认值硬编码的。
+```
+/**
+ * 长度为16个字符
+ */
+public static  String key = "1234567890adbcde";
+
+/**
+ * 长度为16个字符
+ */
+public static  String iv  = "1234567890hjlkew";
+```
