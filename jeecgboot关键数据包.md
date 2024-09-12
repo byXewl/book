@@ -159,6 +159,7 @@ Content-Length: 77
   "password": "cb362cfeefbf3d8d",
   "phone": "17738814259",
   "username": "test3312",
-  "smscode":"11111"
+  "smscode":"111111"
 }
+6位数验证码
 ```
