@@ -188,8 +188,14 @@ Content-Length: 38
 ```
 /jeecg-system/sys/getForgetSmsByPhone?phone=17738814292
 ```
+
 查询管理员组的ID
 ```
 /api/sys/role/list
-
+如：
+f6817f48af4fb3af11b9e8bf182f618b
+```
+查询在管理员组的用户ID
+```
+/api/sys/user/list?roleId=f6817f48af4fb3af11b9e8bf182f618b
 ```
