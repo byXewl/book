@@ -768,6 +768,7 @@
         * [芋道yudao漏洞](芋道yudao漏洞.md)
             * [yudao关键数据包](yudao关键数据包.md)
         * [若依框架](若依框架.md)
+            * [若依关键数据包](若依关键数据包.md)
         * [Nacos漏洞](Nacos漏洞.md)
         * [MySQL读客户端任意文件](MySQL读客户端任意文件.md)
         * [gyjerp(华夏erp)漏洞](gyjerp华夏erp漏洞.md)
