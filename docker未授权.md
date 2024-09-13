@@ -11,3 +11,8 @@ docker Harbor容器仓库，默认密码
        <docker.username>admin</docker.username>
         <docker.password>Harbor12345</docker.password>
 ```
+Harbor未授权漏洞：
+登录页面搜索字母，可以搜索到项目，可以绕过下载。
+<https://www.freebuf.com/vuls/400998.html>
+<https://www.cnblogs.com/byyanxia/p/17056745.html>
+
