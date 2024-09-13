@@ -164,6 +164,7 @@ mysql.user
 ```
 /sys/user/querySysUser?username=admin 查询某个用手机号
 /jeecg-boot/actuator/httptrace/  可能获取到管理员jwt
+/api/actuator/httptrace
 
 /sys/getEncryptedString  获取AES加密IV
 ```
