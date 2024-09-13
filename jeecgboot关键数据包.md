@@ -235,6 +235,7 @@ X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MjYxNTI4NzMsInV
 
 ^
 ## **积木报表**
+jdbc
 ```
 POST /jmreport/testConnection HTTP/1.1
 Host: 173.159.173:8095
