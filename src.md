@@ -2,7 +2,10 @@ src：应急响应中心
 信息收集：<https://lovebear.top/info/cn/index.html>
 
 cve查询：<https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=TpMeCMS>
-cve：小白申请cve <https://www.freebuf.com/articles/web/342909.html>
+cve：小白申请cve
+<https://www.freebuf.com/articles/web/342909.html>
+<https://cloud.tencent.com/developer/article/2233051>
+
 cnnvd：
 
 ## **漏洞报送 和 漏洞上报**
