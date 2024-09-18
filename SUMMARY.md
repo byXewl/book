@@ -91,6 +91,7 @@
         * [编码解码](编码解码.md)
         * [密码特殊编码解题](密码特殊编码解题.md)
         * [JS逆向](JS逆向.md)
+            * [JS调试](JS调试.md)
 * [云原生](云原生.md)
     * [docker](docker.md)
         * [docker基础](docker基础.md)
