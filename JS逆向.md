@@ -11,7 +11,7 @@ RSA 常使用jsencrypt库
 AES 常使用crypto-js库
 DES
 
-sign : 往往是对请求体进行hash,防止被篡改
+sign : sign一般都是对提交的data和一个时间戳timestamp进行加密，对于这种我们只要找到关键的加密函数
 ```
 var str="password=123456&timestamp=1691141967479&username=admin&secret=123456"
 console.log(SHA1_Encrypt(str)) //sign
