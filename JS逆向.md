@@ -11,7 +11,15 @@ RSA 常使用jsencrypt库
 AES 常使用crypto-js库
 DES
 
+sign : 往往是对请求体进行hash,防止被篡改
+```
+var str="password=123456&timestamp=1691141967479&username=admin&secret=123456"
+console.log(SHA1_Encrypt(str)) //sign
+```
 
+
+
+^
 ## **python中调用js**
 python中调用js文件中方法：使用execjs库等。
 如果你的JavaScript代码依赖于外部加密库（如`crypto-js`），你需要确保这些库在执行环境中可用。对于Node.js环境，你可能需要使用`npm`安装这些库。
