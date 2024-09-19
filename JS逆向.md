@@ -27,4 +27,23 @@ python中调用js文件中方法：使用execjs库等。
 
 扣出js代码，让python调用：
 <https://mp.weixin.qq.com/s/Sg8ADUF919vNkhaCP6iGow>
+```
+js导出方法：
+module.exports = { getBv,    getSalt,    getSign,    getTs}
 
+
+python调用方法获取返回值：
+def getKey(msg):
+    key = {}
+    with open('./某某.js', encoding='utf-8') as f:
+        jsDoc = execjs.compile(f.read())
+        sign = jsDoc.call('getSign', msg)
+        bv = jsDoc.call('getBv')
+        ts = jsDoc.call('getTs')
+        salt = jsDoc.call('getSalt')
+        key['sign'] = sign
+        key['bv'] = bv
+        key['ts'] = ts
+        key['salt'] = salt
+    return key
+```
