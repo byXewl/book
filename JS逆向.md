@@ -22,7 +22,9 @@ console.log(SHA1_Encrypt(str)) //sign
 ^
 ## **python中调用js**
 python中调用js文件中方法：使用execjs库等。
-如果你的JavaScript代码依赖于外部加密库（如`crypto-js`），你需要确保这些库在执行环境中可用。对于Node.js环境，你可能需要使用`npm`安装这些库。
 
+>如果你的JavaScript代码依赖于外部加密库（如`crypto-js`），你需要确保这些库在执行环境中可用。对于Node.js环境，你可能需要使用`npm`安装这些库。
 
+扣出js代码，让python调用：
+<https://mp.weixin.qq.com/s/Sg8ADUF919vNkhaCP6iGow>
 
