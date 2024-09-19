@@ -1,10 +1,10 @@
 
 ## **浏览器F12操作**
-常见操作：<https://mp.weixin.qq.com/s/Aen7T159KciSCveC7yiBKA>
-
+常见操作：
+<https://mp.weixin.qq.com/s/Aen7T159KciSCveC7yiBKA>
 <https://mp.weixin.qq.com/s/OhgSdEMOLaIkrq6POiwDRA>
 
-
+系列教程：<https://mp.weixin.qq.com/s/9ZghHAZ3ICJKhFQuLCdUZg>
 
 ## **常见js加密算法**
 RSA 常使用jsencrypt库
@@ -26,4 +26,3 @@ python中调用js文件中方法：使用execjs库等。
 
 
 
-## **jsRPC**
