@@ -1,8 +1,8 @@
 
 ## **浏览器F12操作**
 常见操作：
-<https://mp.weixin.qq.com/s/Aen7T159KciSCveC7yiBKA>
-<https://mp.weixin.qq.com/s/OhgSdEMOLaIkrq6POiwDRA>
+绕过：<https://mp.weixin.qq.com/s/Aen7T159KciSCveC7yiBKA>
+基础：<https://mp.weixin.qq.com/s/OhgSdEMOLaIkrq6POiwDRA>
 
 系列教程：<https://mp.weixin.qq.com/s/9ZghHAZ3ICJKhFQuLCdUZg>
 
