@@ -374,7 +374,7 @@
         * [OAuth](OAuth.md)
         * [微服务](微服务.md)
     * [POC](POC.md)
-* [中间件](中间件.md)
+* [中间件基础](中间件基础.md)
     * [apache](apache.md)
         * [apache配置文件](apache配置文件.md)
         * [apache部署](apache部署.md)
