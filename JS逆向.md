@@ -17,7 +17,11 @@ var str="password=123456&timestamp=1691141967479&username=admin&secret=123456"
 console.log(SHA1_Encrypt(str)) //sign
 ```
 
-
+## **运行js**
+1、可以将代码保存到.js文件中在本地nodejs的集成环境中运行。
+2、可以在浏览器的控制台中运行。
+3、对于一些依赖Windows对象环境的值，如果值固定的可以抠下本地运行，否则可以在[源代码/来源]的[代码段]Snippets面板中运行。
+4、html中等等。
 
 ^
 ## **python中调用js**
