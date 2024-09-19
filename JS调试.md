@@ -39,8 +39,10 @@ Watch : 学过vue的⼩伙伴，应该很容易理解，就是⼀个监听器，
 元素标签中右键选择Break on->subtree modification
 
 ^
-3、XHR打断点：
+3、XHR下断点：
 复制请求链接?前的部分路径，如/v2transapi，到Source下的XHR断点处新增包含就下断，再触发xhr请求即可。
+即可断到对应的方法。
+![](.topwrite/assets/image_1726710532046.png)
 
 
 
