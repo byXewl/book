@@ -21,6 +21,12 @@ Watch : 学过vue的⼩伙伴，应该很容易理解，就是⼀个监听器，
 
 ^
 ## **下断点方式**
-1
-也可以在指定的地⽅ debugger关键词 断点调试
+1、源码中序号左边打断点：
+也可以在指定的地⽅debugger关键词 断点调试
 ![](.topwrite/assets/image_1726650914098.png)
+
+^
+2、下元素断点：
+元素标签中右键选择Break on->subtree modification
+
+
