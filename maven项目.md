@@ -1,3 +1,6 @@
+
+
+
 ### **原生javaweb项目：**
 src/下：分层放类
 web/WEB-INF/下：放lib/和web.xml
@@ -37,3 +40,10 @@ src/mian/resources/下：放静态文件，纯前端，mybatis的sql-xml，多�
 src/test/：单元测试类
 target/:编译文件和打包文件
 pom.xml
+
+
+^
+## **maven项目变springboot项目：**
+pom.xml中加springboot依赖
+src/mian/resources/下加个application.yml
+src/mian/java/下加一个启动类，即可
