@@ -333,6 +333,7 @@
         * [微服务](微服务.md)
             * [maven多模块打包](maven多模块打包.md)
             * [nacos](nacos.md)
+        * [javafx开发](javafx开发.md)
     * [python](python.md)
         * [py基础](py基础.md)
         * [py常用模块](py常用模块.md)
