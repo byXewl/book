@@ -449,6 +449,7 @@
     * [oracle](oracle.md)
     * [sqlserver](sqlserver.md)
     * [Derby和sqlite](Derby和sqlite.md)
+    * [消息队列中间件](消息队列中间件.md)
 * [移动端安全](移动端安全.md)
     * [小程序安全](小程序安全.md)
         * [小程序解包反编译工具](小程序解包反编译工具.md)
