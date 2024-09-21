@@ -777,7 +777,7 @@
     * [php框架漏洞](php框架漏洞.md)
     * [CMS](CMS.md)
     * [API接口漏洞](API接口漏洞.md)
-* [java漏洞](java漏洞.md)
+* [java安全](java安全.md)
     * [java命令执行](java命令执行.md)
         * [javaSSTI](javaSSTI.md)
     * [java反序列化](java反序列化.md)
