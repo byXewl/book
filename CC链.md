@@ -9,5 +9,5 @@ java老版本下载：<https://blog.lupf.cn/articles/2022/02/19/1645283454543.ht
 
 
 
-CC1链：java<=JDK8u71、CommonsCollections<=3.2.1
+CC1链：java<=JDK8u71(1.8.0_71)、CommonsCollections<=3.2.1
 
