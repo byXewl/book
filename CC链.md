@@ -12,3 +12,9 @@ java老版本下载：<https://blog.lupf.cn/articles/2022/02/19/1645283454543.ht
 
 CC1链：java<=JDK8u71(1.8.0_71)、CommonsCollections<=3.2.1
 常见jdk<=8u65
+
+
+复现环境配置：
+<https://www.freebuf.com/articles/web/383152.html>
+安装jdk<=8u65，解压里面的src.zip。
+安装jdk8源码，复制里面sun(jdk-af660750b2f4\src\share\native\sun)目录到刚刚解压的src目录下，这样可以跟踪jdk源码。

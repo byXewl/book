@@ -1,1 +1,2 @@
 CC1链：java<=JDK8u71、CommonsCollections<=3.2.1
+Java原生的反序列化要利用一定要满足两个条件，入口类实现了序列化接口并且重写了readObject函数。实现序列化接口的类才能被Java序列化和反序列化，重写readObject方法才有可能执行到危险方法。否则无法调起和执行其他代码，更无从谈起利用。
