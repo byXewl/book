@@ -839,6 +839,7 @@
             * [URLDNS链](URLDNS链.md)
             * [CC链](CC链.md)
                 * [CC1链](CC1链.md)
+        * [利用方式](利用方式.md)
     * [java代码审计](java代码审计.md)
         * [java审计工具](java审计工具.md)
         * [java审计点](java审计点.md)
