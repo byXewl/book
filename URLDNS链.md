@@ -2,7 +2,7 @@ URLDNS链由于没有版本和依赖限制，。一般用于反序列化漏洞�
 ```
 已知：
 1、HashMap类实现了Serializable是可以序列化和反序列化的。并重写了ReadObject方法。
-2、HashMap的容器存入URL类型的对象时，调用hash函数会触发对象的hashCode函数来计算hashcode。
+2、HashMap的容器存入URL类型的对象时的Put方法，调用hash函数会触发对象的hashCode函数来计算hashcode。
 3、HashMap重写了ReadObject方法，在反序列化时也会调用hash函数计算hashCode。
 ```
 
