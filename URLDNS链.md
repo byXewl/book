@@ -44,7 +44,7 @@ System.out.println(o);
 objectInputStream.close();
 fileInputStream.close();
 ```
-原理：
+原理
 `java.util.HashMap`实现了`Serializable`接口，重写了`readObject`, 在反序列化时会调用`hash`函数计算`key`的`hashCode`，而`java.net.URL`的`hashCode`在计算时会调用`getHostAddress`来解析域名, 从而发出`DNS`请求。
 ```
 
