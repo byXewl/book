@@ -17,3 +17,9 @@
 5. 靶机服务器执行了恶意代码，被攻击者成功利用。
 ```
 ![](https://img-bc.icode.best/26de9fc36b2940c6882491c5453db571.png)
+
+
+
+在 Fastjson1.2.25 中使用了 checkAutoType 来修复1.2.22-1.2.24中的漏洞，其中有个 autoTypeSupport 默认为 False。当 autoTypeSupport 为 False 时，先黑名单过滤，再白名单过滤，若白名单匹配上则直接加载该类，否则报错。当 autoTypeSupport 为 True 时，先白名单过滤，匹配成功即可加载该类，否则再黑名单过滤。对于开启或者不开启，都有相应的绕过方法。​
+
+
