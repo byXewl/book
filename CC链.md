@@ -4,17 +4,28 @@ CommonsCollections包为Java标准的CollectionsAPi提供了相当好的补充�
 然而3和4相关版本存在反序列化利用链（Gadget）当出现反序列化入口时候，就存在反序列化漏洞。
 Web和网络安全中"Gadget"一词通常指的是可以被利用来进行攻击的对象或代码片段。
 
-## **版本**
+## **环境**
 CommonsCollections版本为3.2.1时漏洞最多。
+```
+<dependencies>
+    <dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+        <version>3.2.1</version>
+    </dependency>
+</dependencies>
+```
 java老版本下载：<https://blog.lupf.cn/articles/2022/02/19/1645283454543.html> 密码8899
+复现环境配置：<https://www.freebuf.com/articles/web/383152.html>
 
-
-
-CC1链：java<=JDK8u71(1.8.0_71)、CommonsCollections<=3.2.1
-常见jdk<=8u65
-
-
-复现环境配置：
-<https://www.freebuf.com/articles/web/383152.html>
 安装jdk<=8u65，解压里面的src.zip。
 安装jdk8源码，复制里面sun(jdk-af660750b2f4\src\share\native\sun)目录到刚刚解压的src目录下，这样可以跟踪jdk源码。
+
+
+## **要求**
+CC1链：java<=JDK8u71(1.8.0_71)、CommonsCollections<=3.2.1
+常见jdk=8u65进行复现。
+
+CC6链：CC1+URLDNS
+这条链是基于CC1，只是入口类改了，入口类为hashMap。
+
