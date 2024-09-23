@@ -835,7 +835,7 @@
             * [动态代理](动态代理.md)
         * [java反序列化点](java反序列化点.md)
         * [Ysoserial](Ysoserial.md)
-        * [java反序列化利用链](java反序列化利用链.md)
+        * [java反序列化利用](java反序列化利用.md)
             * [URLDNS链](URLDNS链.md)
             * [CC链](CC链.md)
                 * [CC1链](CC1链.md)

