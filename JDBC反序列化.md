@@ -109,4 +109,4 @@ def run():​
 
 思路：在服务器上触发某个方法，引起我们可控的jdbc连接，使其连上我们py脚本开启的fake_mysql_server,在这个服务端准备反序列化的数据​。
 然后再反弹shell。
-
+![](.topwrite/assets/image_1727056406811.png)
