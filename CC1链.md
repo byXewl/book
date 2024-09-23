@@ -5,6 +5,9 @@ Java原生的反序列化要利用一定要满足两个条件，入口类实现�
 要找到这么一个类，他可以反序列化并且重新了readObject方法，readObject方法中可以利用，则我就反序列化这个类。
 CommonsCollections库中就有这么一个类AnnotationInvocationHandler。
 并且通过中间的Transformer类，可以任意执行代码，成功通过反射Runtime.class执行命令。
+## **执行流程**
+![](.topwrite/assets/image_1727054486304.png)
+![](.topwrite/assets/image_1727054525365.png)
 
 
 
