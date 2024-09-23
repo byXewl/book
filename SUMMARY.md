@@ -852,6 +852,7 @@
                 * [XStream反序列化](XStream反序列化.md)
         * [利用方式](利用方式.md)
             * [RMI](RMI.md)
+            * [JNDI](JNDI.md)
     * [java代码审计](java代码审计.md)
         * [java审计工具](java审计工具.md)
         * [java审计点](java审计点.md)
