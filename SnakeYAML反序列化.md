@@ -42,7 +42,8 @@ public class Snakeyaml {
 ```
 网上工具
 <https://www.cnblogs.com/nice0e3/p/14514882.html>
-
+Nacos反序列化漏洞
+<https://mp.weixin.qq.com/s/SfAFMiraMKafcISo5IDEAg>
 ^
 ## **修复**
 其实该漏洞涉及到了全版本，只要反序列化内容可控,那么就可以去进行反序列化攻击​
