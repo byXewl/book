@@ -3,12 +3,12 @@ RMI（Remote Method Invocation）为远程方法调用，是允许运行在一�
 
 RMI服务端
 ```
-Registry registry = LocateRegistry.createRegistry(10999);
+Registry registry = LocateRegistry.createRegistry(1099);
 registry.bind("hello", new HelloServiceImpl());
 ```
 RMI客户端
 ```
-Registry registry = LocateRegistry.getRegistry("127.0.0.1",10999);
+Registry registry = LocateRegistry.getRegistry("127.0.0.1",1099);
 HelloService helloService = (HelloService) registry.lookup("hello");
 System.out.println(helloService.sayHello());
 ```
@@ -21,3 +21,9 @@ RMI客户端 调用 RMI服务端 的接口实现方法时，服务端同时也�
 
 
 ## **RMI客户端 反序列化打 RMI服务端**
+RMI的底层协议为JRMP，JRMP本质是序列化数据，远程调用传递后必须反序列化。
+直接打反序列化，无需关注服务端的方法和接收参数。
+借助ysoserial工具包。
+## **RMI服务端 反序列化打 RMI客户端**
+前提客户端本地连接服务端的地址可控。
+借助ysoserial工具包启动一个恶意RMI服务端，客户端连接即可。
