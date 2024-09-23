@@ -2,7 +2,7 @@
 请求包的请求体JSON字符会带有一个@type来标记其字符的原始类型，在反序列化的时候会读取这个@type，来把JSON内容反序列化成@type指定的对象，并且会调用这个对象的setter或者getter方法。
 此时@type的类有可能被恶意构造，只需要合理构造一个JSON，使用@type指定一个想要的攻击类库就可以实现攻击。
 
-常见的有sun官方提供的一个类com.sun.rowset.JdbcRowSetImpl，其中有个dataSourceName方法支持传入一个rmi的源或ldap源，只要解析其中的url就会支持远程调用，
+常见的有sun官方提供的一个类com.sun.rowset.JdbcRowSetImpl，其中有个dataSourceName方法，在执行时会触发JNDI注入支持，传入一个rmi的源或ldap源，只要解析其中的url就会支持远程调用，
 因此整个漏洞复现的原理过程就是：
 ```
 1. 攻击者（我们）访问存在fastjson漏洞的目标靶机网站，通过burpsuite抓包改包，
