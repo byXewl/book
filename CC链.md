@@ -24,8 +24,12 @@ java老版本下载：<https://blog.lupf.cn/articles/2022/02/19/1645283454543.ht
 
 ## **要求**
 CC1链：java<=JDK8u71(1.8.0_71)、CommonsCollections<=3.2.1
-常见jdk=8u65进行复现。
+>常见jdk=8u65进行复现。
 
-CC6链：CC1+URLDNS
-这条链是基于CC1，只是入口类改了，入口类为hashMap。
+CC6链：java<=JDK8u71(1.8.0_71)、CommonsCollections<=3.2.1
+>这条链是基于CC1，只是入口类改了，入口类为hashMap。CC6=CC1+URLDNS。
 
+
+CC3链：java<=JDK8u71(1.8.0_71)、CommonsCollections<=3.2.1
+>CC1 链与 CC6 链是通过 Runtime.exec() 进行命令执行的。而很多时候服务器的代码当中的黑名单会选择禁用 Runtime。​
+CC3 链则是通过动态加载类加载机制来实现自动执行恶意类代码的。
