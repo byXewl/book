@@ -1,4 +1,0 @@
-ApacheCommonsCollections:处理集合的工具包
-ApacheCommonsCollections漏洞:
-利用反射操作函数。
-实现利用链，称为CC链子。

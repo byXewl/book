@@ -802,7 +802,6 @@
         * [FastJson](FastJson.md)
             * [FastJson不出网利用](FastJson不出网利用.md)
         * [Jackson](Jackson.md)
-        * [CommonsCollections漏洞](CommonsCollections漏洞.md)
         * [ApereoCA反序列化](ApereoCA反序列化.md)
     * [java框架组件漏洞](java框架.md)
         * [Shrio682权限绕过](Shrio682权限绕过.md)
