@@ -17,6 +17,7 @@ ObjectInputStream.readUnshared
 XMLDecoder.readObject
 Yaml.load
 XStream.fromXML
+fromXML
 ObjectMapper.readValue
 readValue
 
