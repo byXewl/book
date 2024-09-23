@@ -33,3 +33,10 @@ CC6链：java<=JDK8u71(1.8.0_71)、CommonsCollections<=3.2.1
 CC3链：java<=JDK8u71(1.8.0_71)、CommonsCollections<=3.2.1
 >CC1 链与 CC6 链是通过 Runtime.exec() 进行命令执行的。而很多时候服务器的代码当中的黑名单会选择禁用 Runtime。​
 CC3 链则是通过动态加载类加载机制来实现自动执行恶意类代码的。
+
+CC4链：java<=JDK8u71(1.8.0_71)、CommonsCollections=4
+>因为 CommonsCollections4 除 4.0 的其他版本去掉了 InvokerTransformer 的 Serializable 继承，导致无法序列化​。
+CC4链找到InvokerTransformer的替换。
+
+CC2链：java<=JDK8u71(1.8.0_71)、CommonsCollections=4
+>CC2链是在CC4链的基础上修改。
