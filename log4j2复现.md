@@ -24,6 +24,9 @@ public class MyApp {
         // 使用日志记录器记录日志
         logger.info("这是一条信息级别的日志");
         logger.error("这是一条错误级别的日志");
+
+        Logger logger1 = LogManager.getLogger();
+        logger1.error("${jndi:rmi://127.0.0.1:123}");
     }
 }
 ```
