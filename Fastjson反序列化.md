@@ -34,3 +34,5 @@
 
 <https://github.com/lemono0/FastJsonParty/blob/main/Fastjson%E5%85%A8%E7%89%88%E6%9C%AC%E6%A3%80%E6%B5%8B%E5%8F%8A%E5%88%A9%E7%94%A8-Poc.md>
 
+<https://github.com/safe6Sec/Fastjson>
+
