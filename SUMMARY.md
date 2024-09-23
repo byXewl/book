@@ -799,6 +799,7 @@
             * [log4j2流量](log4j2流量.md)
             * [log4j2利用](log4j2利用.md)
             * [log4j2绕过bypass](log4j2绕过bypass.md)
+            * [log4j2复现](log4j2复现.md)
         * [FastJson](FastJson.md)
             * [FastJson不出网利用](FastJson不出网利用.md)
         * [Jackson](Jackson.md)
