@@ -40,3 +40,6 @@ CC4链找到InvokerTransformer的替换。
 
 CC2链：java<=JDK8u71(1.8.0_71)、CommonsCollections=4
 >CC2链是在CC4链的基础上修改。
+
+CC7链：java<=JDK8u71(1.8.0_71)、commons-collections:<=3.2.1
+CC5链：java<=JDK8u71(1.8.0_71)、commons-collections:<=3.2.1
