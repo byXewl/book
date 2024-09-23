@@ -1,6 +1,7 @@
 Apache Shiro是一款开源安全框架，提供身份认证、授权、密码学和会话管理。
 Apache Shiro 1.2.4 反序列化漏洞Shiro550（ CVE-2016-4437）
-
+Shiro550<Apache Shiro 1.2.4
+Shiro721<Apache Shiro 1.4.2
 ^
 ## **Shiro550漏洞原理**
 Apache Shiro1.2.4以及以前部版本中，加密的用户信息序列会存储在名为RememberMe的Cookie中，

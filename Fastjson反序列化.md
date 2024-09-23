@@ -29,4 +29,8 @@
 
 在 Fastjson1.2.25 中使用了 checkAutoType 来修复1.2.22-1.2.24中的漏洞，其中有个 autoTypeSupport 默认为 False。当 autoTypeSupport 为 False 时，先黑名单过滤，再白名单过滤，若白名单匹配上则直接加载该类，否则报错。当 autoTypeSupport 为 True 时，先白名单过滤，匹配成功即可加载该类，否则再黑名单过滤。对于开启或者不开启，都有相应的绕过方法。​
 
+^
+## **其他绕过和利用链**
+
+<https://github.com/lemono0/FastJsonParty/blob/main/Fastjson%E5%85%A8%E7%89%88%E6%9C%AC%E6%A3%80%E6%B5%8B%E5%8F%8A%E5%88%A9%E7%94%A8-Poc.md>
 
