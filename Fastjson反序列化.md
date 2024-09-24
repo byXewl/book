@@ -38,3 +38,8 @@
 
 <https://github.com/safe6Sec/Fastjson>
 
+主流版本利用：https\://www\.freebuf.com/vuls/361576.html\
+
+
+
+
