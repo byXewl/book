@@ -22,3 +22,11 @@ tumo.shiro.success_url=/system
 tumo.shiro.logout_url=/logout
 tumo.shiro.cipher_key=tycoding
 ```
+
+
+^
+## **加密key硬编码**
+key泄露后可以被反序列化漏洞利用。
+```
+cookieRememberMeManager.setCipherKey(Base64.decode("4AvVhmFLUseKTA3Kprsdag=="));
+```
