@@ -24,5 +24,7 @@ http://api.map.baidu.com/?qt=cen&b=11578138.695116999%2C3555240.501790221%3B1159
  
  腾讯webapi：
  https://apis.map.qq.com/ws/place/v1/search?keyword=酒店&boundary=nearby(39.908491,116.374328,1000)&key=这里写key
+如：
+pid2=wx65681f086c6&key2=E6FBZ-OLSCQ-UIU5C-GWLJ7-ABUPT-V7FJX&suid=3BD6DB83-2D09-4D6C-88B7-1A9FF6381B1C&os=17.5.1&psv=8.0.50&key=FKEBZ-ICCHR-T6HWZ-WNDVS-DGOOV-WFBO5&ver=5.6.0&pf=ios_sdk
 ```
 
