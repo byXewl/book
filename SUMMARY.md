@@ -856,6 +856,8 @@
     * [java代码审计](java代码审计.md)
         * [java审计工具](java审计工具.md)
         * [java审计点](java审计点.md)
+            * [java审计SQL注入](java审计SQL注入.md)
+            * [java审计文件上传](java审计文件上传.md)
         * [分层架构](分层架构.md)
 * [代码审计](代码审计.md)
     * [通用审计思路](通用审计思路.md)
