@@ -1,3 +1,4 @@
+![](.topwrite/assets/image_1727319060611.png)
 ## **JNDI+RMI利用方式**
 直接JNDI运行远程方法。
 在JNDI服务中，RMI服务端除了直接绑定远程对象之外，还可以通过References类来绑定一个外部的远程对象(当前名称目录系统之外的对象)。绑定了Reference之后，服务端会先通过Referenceable.getReference()获取绑定对象的引l用，并且在目录中保存。
