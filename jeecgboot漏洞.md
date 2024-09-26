@@ -176,7 +176,7 @@ GET /sys/dict/queryTableData?pageSize=100&table=information_schema.tables&text=t
 | 查看用户手机 | /sys/dict/queryTableData?table=sys_user&pageSize=22&pageNo=1&text=username&code=phone |
 | 查看用户邮箱 | /sys/dict/queryTableData?table=sys_user&pageSize=220&pageNo=1&text=username&code=email |
 | 查看用户密码 | /sys/dict/queryTableData?table=sys_user&pageSize=220&pageNo=1&text=username&code=password|
-| 查看数据库地址 | sys/dict/queryTableData?table=jimu_report_data_source&pageSize=22&pageNo=1&text=db_username&code=d
+| 查看数据库地址 | /sys/dict/queryTableData?table=jimu_report_data_source&pageSize=22&pageNo=1&text=db_username&code=d
 
 
 
