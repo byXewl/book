@@ -110,7 +110,7 @@ setInterval(a,5000)
 
 5. **手动过掉Debugger**
 
-   1. 如果是关键字型的debugger 可以左边右键，选择永远不在此暂停
+   1. 如果是关键字型的debugger 可以左边右键，选择永远不在此暂停。部分网站不行可能会卡死。
 ![](.topwrite/assets/image_1727405673567.png)
 
 ## 3. 总结
