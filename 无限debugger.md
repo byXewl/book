@@ -127,11 +127,15 @@ setInterval(a,5000)
 2. 如果是关键字型的debugger 可以右键 never，设置为条件断点-设置false
 3. 如果是eval型的构造器，可以重构 eval函数
 4. 如果是定时器，并且 2失效了，可以重构定时器
-5. 在以上方式都失效时，向上找堆栈，在进入无限debugger之前打上断点将触发无限debugger的函数置空(最麻烦，但是适用性最广)
+5. 在以上方式都失效时，向上找堆栈，在进入无限debugger之前打上断点将触发无限debugger的函数置空(适用性最广)
 案例：<https://artmeta.cn/>
+F12后直接一直停在调试
 ![](.topwrite/assets/image_1727406322649.png)
+发现是定时器类型的debugger
 ![](.topwrite/assets/image_1727406344117.png)
+找到此函数的开头，或者while{}开头也行，打断点，刷新
 ![](.topwrite/assets/image_1727406353556.png)
+函数重替换
 ![](.topwrite/assets/image_1727406362847.png)
 ![](.topwrite/assets/image_1727406377190.png)
 
