@@ -2,7 +2,7 @@
 
 注意： 本文探究的所有情况都是无限debugger在加密逻辑之前。因为无限debugger在加密逻辑之后不用管
 
-## 1. 简单介绍
+## **1. debugger简单介绍**
 无限debugger，还有一个非常靓丽的名字。叫debugger地狱
 
 **最关键的一点: 无限debugger不可能无限，否则浏览器会卡死**
@@ -49,7 +49,7 @@ function a(){debugger;}
 setInterval(a,5000)
 ```
 
-## 2. 如何解决无限Debugger
+## **2. 如何解决无限Debugger**
 
 1. **重写setInterval方法 (业务代码和 setInterval 有关时)**
 
@@ -105,12 +105,12 @@ setInterval(a,5000)
 
 4. **本地替换JS**
 
-   1. 用 fiddler Autoresponse 删掉 debugger
+   1. 用 fiddler Auto response 删掉 debugger
    2. 浏览器开发者工具替换修改js（Sources面板 --> Overrides）
 
 5. **手动过掉Debugger**
 
-   1. 如果是关键字型的debugger 可以右键 never
+   1. 如果是关键字型的debugger 可以左边右键，选择永远不在此断点
 
 ## 3. 总结
 
