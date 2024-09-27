@@ -49,6 +49,10 @@ function a(){debugger;}
 setInterval(a,5000)
 ```
 
+![](.topwrite/assets/image_1727405926028.png)
+![](.topwrite/assets/image_1727405960987.png)
+
+^
 ## **2. 如何解决无限Debugger**
 
 1. **重写setInterval方法 (业务代码和 setInterval 有关时)**
@@ -104,13 +108,14 @@ setInterval(a,5000)
    ```
 
 4. **本地替换JS**
-
+ 
    1. 用 fiddler Auto response 删掉 debugger
-   2. 浏览器开发者工具替换修改js（Sources面板 --> Overrides）
+   2. 浏览器开发者工具替换修改js（Sources面板 --> Overrides），删除代码中debugger
 
 5. **手动过掉Debugger**
 
    1. 如果是关键字型的debugger 可以左边右键，选择永远不在此暂停。部分网站不行可能会卡死。
+   2. 同理右键设置为条件断点-设置false
 ![](.topwrite/assets/image_1727405673567.png)
 
 ## 3. 总结
