@@ -101,6 +101,7 @@
                 * [mitmproxy](mitmproxy.md)
             * [补环境框架](补环境框架.md)
             * [js常见混淆](js常见混淆.md)
+                * [eval混淆](eval混淆.md)
 * [云原生](云原生.md)
     * [docker](docker.md)
         * [docker基础](docker基础.md)
