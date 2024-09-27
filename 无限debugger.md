@@ -125,6 +125,10 @@ setInterval(a,5000)
 3. 如果是eval型的构造器，可以重构 eval函数
 4. 如果是定时器，并且 2失效了，可以重构定时器
 5. 在以上方式都失效时，向上找堆栈，在进入无限debugger之前打上断点将触发无限debugger的函数置空(最麻烦，但是适用性最广)
-
-
+案例：<https://artmeta.cn/>
+![](.topwrite/assets/image_1727406322649.png)
+![](.topwrite/assets/image_1727406344117.png)
+![](.topwrite/assets/image_1727406353556.png)
+![](.topwrite/assets/image_1727406362847.png)
+![](.topwrite/assets/image_1727406377190.png)
 
