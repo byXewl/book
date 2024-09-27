@@ -118,10 +118,10 @@ setInterval(a,5000)
    2. 同理右键设置为条件断点-设置false
 ![](.topwrite/assets/image_1727405673567.png)
 
-## 3. 总结
+## **3. 总结**
 
 1. 如果是 Function 原理的 debugger，可以重写 函数构造器
-2. 如果是关键字型的debugger 可以右键 never
+2. 如果是关键字型的debugger 可以右键 never，设置为条件断点-设置false
 3. 如果是eval型的构造器，可以重构 eval函数
 4. 如果是定时器，并且 2失效了，可以重构定时器
 5. 在以上方式都失效时，向上找堆栈，在进入无限debugger之前打上断点将触发无限debugger的函数置空(最麻烦，但是适用性最广)
