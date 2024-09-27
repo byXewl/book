@@ -2,7 +2,7 @@
 
 注意： 本文探究的所有情况都是无限debugger在加密逻辑之前。因为无限debugger在加密逻辑之后不用管
 
-## **1. debugger简单介绍**
+## **Debugger介绍**
 无限debugger，还有一个非常靓丽的名字。叫debugger地狱
 
 **最关键的一点: 无限debugger不可能无限，否则浏览器会卡死**
@@ -39,13 +39,16 @@ eval('(function() {}["constructor"]("debugger")["call"]("action"));')
 
 三种方式可能有交又和融合，迄今为止没有遇到过第四种情况
 
-**无限Debugger 只是很频繁的执行Debugger 而不是真正意义的无限**
 
-**简单实现一个所谓的无限Debugger**
+^
+## **无限Debugger类型**
 
+无限Debugger 只是很频繁的执行Debugger 而不是真正意义的无限
+实现一个所谓的无限Debugger：
+1、定时器构建类型
+2、原型链构建类型
 ```jsx
 function a(){debugger;}
-
 setInterval(a,5000)
 ```
 
@@ -53,7 +56,7 @@ setInterval(a,5000)
 ![](.topwrite/assets/image_1727405960987.png)
 
 ^
-## **2. 如何解决无限Debugger**
+## **解决无限Debugger**
 
 1. **重写setInterval方法 (业务代码和 setInterval 有关时)**
 
@@ -118,7 +121,7 @@ setInterval(a,5000)
    2. 同理右键设置为条件断点-设置false
 ![](.topwrite/assets/image_1727405673567.png)
 
-## **3. 总结**
+## **总结**
 
 1. 如果是 Function 原理的 debugger，可以重写 函数构造器
 2. 如果是关键字型的debugger 可以右键 never，设置为条件断点-设置false
