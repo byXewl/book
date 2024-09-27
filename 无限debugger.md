@@ -110,7 +110,8 @@ setInterval(a,5000)
 
 5. **手动过掉Debugger**
 
-   1. 如果是关键字型的debugger 可以左边右键，选择永远不在此断点
+   1. 如果是关键字型的debugger 可以左边右键，选择永远不在此暂停
+![](.topwrite/assets/image_1727405673567.png)
 
 ## 3. 总结
 
