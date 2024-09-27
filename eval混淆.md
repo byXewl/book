@@ -5,6 +5,11 @@ eval("debugger")
 
 网站可能会对eval本身或内容字符串做混淆。
 如：windows["e"+"v"+"a"+"l"]("1+4")
+
+对于内容字符串混淆：
+不管做的多复杂-包裹的就是一个生成js代码字符串的混淆代码。
+我们把他里面的拿下来-用()包裹即可。
 ```
 https://tools.jb51.net/password/evalencode
+
 
