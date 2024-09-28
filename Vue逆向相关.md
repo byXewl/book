@@ -7,6 +7,11 @@ webpack：
 vue：
 <https://blog.csdn.net/Lidppp/article/details/119732245>
 
+```
+抓包请求包，某个参数被加密，搜索这个参数。
+搜索到后，断点确认参数。
+找到加密函数，可以控制台打印一些这个函数，进入函数分析加密方式。
+```
 ^
 <https://www.cnblogs.com/zichliang/p/17517073.html>
 操作
