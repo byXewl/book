@@ -8,7 +8,7 @@ vue：
 <https://blog.csdn.net/Lidppp/article/details/119732245>
 
 
-## **加解密扣下来分析**
+## **webpack加密扣下来分析**
 ```
 抓包请求包，某个参数被加密，搜索这个参数。
 搜索到后，断点确认参数。
