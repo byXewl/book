@@ -8,11 +8,17 @@ vue：
 <https://blog.csdn.net/Lidppp/article/details/119732245>
 
 ## **加载器**
+var o = n(130) 抛出一个变量 并且调用 n(数字)，你可以大概知道了这是webpack打包的js代码，n()是加载器，130是130号模块。
+
 有的会在!function前声明是webpack
 ![](.topwrite/assets/image_1727538987532.png)
 ![](.topwrite/assets/image_1727539053687.png)
 数组中可能有我们需要的加密函数和自定义、依赖函数，可能这个文件非常长，最好全部拷贝，也可以只拷贝关键函数，如305。
 ![](.topwrite/assets/image_1727539894448.png)
+
+
+
+
 
 ## **webpack扣下来运行加密**
 抓包请求包，某个参数被加密，搜索这个参数。
