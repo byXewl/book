@@ -5,6 +5,8 @@
 
 系列教程：<https://mp.weixin.qq.com/s/9ZghHAZ3ICJKhFQuLCdUZg>
 
+案例：JS逆向百例
+
 ## **常见js加密算法**
 RSA 常使用jsencrypt库
 AES 常使用crypto-js库
