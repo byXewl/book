@@ -101,6 +101,7 @@
             * [本地运行目标JS代码](本地运行目标JS代码.md)
                 * [JS补环境](JS补环境.md)
                 * [Vue逆向相关](Vue逆向相关.md)
+                * [Python中调用JS](Python中调用JS.md)
             * [jsRPC](jsRPC.md)
                 * [mitmproxy](mitmproxy.md)
             * [Burp的JS插件](Burp的JS插件.md)
