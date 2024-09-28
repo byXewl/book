@@ -1,3 +1,5 @@
+Vue类型的框架网站，通过Webpack等工具打包成html，一些自定义的函数和变量名往往做了混淆。
+
 webpack：
 <https://www.cnblogs.com/zichliang/p/17517073.html>
 <https://blog.csdn.net/Zuko_chen/article/details/131486608>
