@@ -1,4 +1,4 @@
-Vue类型的框架网站，通过Webpack等工具打包成html，一些自定义的函数和变量名往往做了混淆。
+Vue类型的框架网站，通过Webpack等工具打包成html，一些自定义的函数和变量名往往做了混淆，一些环境依赖通过加载实现引入。
 
 webpack：
 <https://www.cnblogs.com/zichliang/p/17517073.html>
