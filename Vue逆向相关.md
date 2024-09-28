@@ -8,8 +8,10 @@ vue：
 <https://blog.csdn.net/Lidppp/article/details/119732245>
 
 ## **加载器**
+有的会在!function前声明是webpack
 ![](.topwrite/assets/image_1727538987532.png)
 ![](.topwrite/assets/image_1727539053687.png)
+数组中可能有我们需要的加密函数和自定义函数，可能这个文件非常长，一直全部拷贝。
 
 ## **webpack扣下来运行加密**
 抓包请求包，某个参数被加密，搜索这个参数。
