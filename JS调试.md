@@ -61,6 +61,6 @@ Watch : 学过vue的⼩伙伴，应该很容易理解，就是⼀个监听器，
 当我们打断点后，可以在控制台输出实时的变量值和函数。
 
 
-如果加密函数的调用：my(1);
-代理加密函数到windows变全局：windows.en=my
-
+如果加密函数的调用：my1("123456");
+代理加密函数到windows变全局：windows.encode=my1
+代理解密函数到windows变全局：windows.decode=my2
