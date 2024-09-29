@@ -155,6 +155,7 @@ let transjson = function(formdata) {
 ```
 var demo = new Hlclient("ws://127.0.0.1:12080/ws?group=zzz");
 ```
+## **4、注册关键函数到RPC并调用**
 将代理的加解密函数注册到RPC服务里面。
 ```
 demo.regAction("encode", function (resolve,param) {
@@ -199,7 +200,7 @@ print(encode('{"username":"admin","password":"123456","code":"2","uuid":"xxxxx"}
 继续优化python通用模板totalRpc.py，使得可以通过mitmproxy自动调用。
 totalRpc.py中指定的ip均为127.0.0.1:12080
 
-### **4、整合mitmproxy和yakit**
+### **5、整合mitmproxy和yakit**
 yakit重发明文请求代理到mitmproxy的服务，mitmproxy通过指定的py通用模板对请求体全加密。并对响应体全解密。
 
 mitmproxy服务启动，可以使用web版也可以命令行版。
