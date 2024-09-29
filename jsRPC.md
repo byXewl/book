@@ -12,3 +12,9 @@ mitmdump.exe -p 6666 -s main.py --mode upstream:http://127.0.0.1:6662  --ssl-ins
 ```
 
 
+## **使用**
+分析JS中加密解密
+如果加密解密函数的调用：my1("123456"); my2("#fahkbf");
+代理加密函数到windows变全局：windows.encode=my1
+代理解密函数到windows变全局：windows.decode=my2
+
