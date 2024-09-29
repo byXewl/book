@@ -41,10 +41,12 @@ _0x101dae['data']['result']
 ```
 正常代码
 aaa();
+bbb();
 ccc(x);
 
+
 可能变成
-aaa(),(ccc)(x)
+aaa(),bbb,(ccc)(x);
 ```
 
 ## **eval混淆**
