@@ -14,11 +14,12 @@ mitmdump.exe -p 6666 -s main.py --mode upstream:http://127.0.0.1:6662  --ssl-ins
 
 
 ## **使用**
-分析JS中加密解密
+1、分析JS中加密解密
 如果加密解密函数的调用：my1("123456"); my2("#fahkbf");
 代理加密函数到windows变全局：windows.encode=my1
 代理解密函数到windows变全局：windows.decode=my2
 
-F12-源代码-片段：里面是RPC客户端的代码
+2、浏览器中创建RPC客户端，将函数注入其中
+F12-源代码-片段：里面是RPC客户端的代码，下面点击▲运行。
 控制台创建一个浏览器中的RPC客户端，连接本地启动的RPC服务端
 将代理的加解密函数注册到RPC服务里面。
