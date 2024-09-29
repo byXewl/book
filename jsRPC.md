@@ -25,7 +25,7 @@ mitmdump.exe -p 6666 -s main.py --mode upstream:http://127.0.0.1:6662  --ssl-ins
 F12-源代码-片段：里面是RPC客户端的代码，点击下面▲运行。
 <https://github.com/jxhczhl/JsRpc/blob/main/resouces/JsEnv_Dev.js>
 ```
-function Hlclient(wsURL) {
+let Hlclient =function(wsURL) {
     this.wsURL = wsURL;
     this.handlers = {
         _execjs: function (resolve, param) {
@@ -142,7 +142,7 @@ Hlclient.prototype.sendResult = function (action, e) {
     this.send(action + atob("aGxeX14") + e);
 }
 
-function transjson(formdata) {
+let transjson = function(formdata) {
     var regex = /"action":(?<actionName>.*?),/g
     var actionName = regex.exec(formdata).groups.actionName
     stringfystring = formdata.match(/{..data..:.*..\w+..:\s...*?..}/g).pop()
