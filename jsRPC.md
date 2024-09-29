@@ -18,7 +18,7 @@
 默认监听本地的12080端口。
 
 ## **3、浏览器中创建RPC客户端，将关键函数注入其中**
-F12-源代码-片段：里面是RPC客户端的代码，点击下面▲运行。
+F12-源代码-片段：里面是RPC客户端的代码。
 <https://github.com/jxhczhl/JsRpc/blob/main/resouces/JsEnv_Dev.js>
 ```
 let Hlclient =function(wsURL) {
@@ -150,7 +150,8 @@ let transjson = function(formdata) {
     return tjson
 }
 ```
-控制台创建一个浏览器中的RPC客户端，连接本地启动的RPC服务端
+关闭调试，点击下面▲运行RPC客户端。
+如此控制台创建一个浏览器中的RPC客户端，连接本地启动的RPC服务端
 ```
 var demo = new Hlclient("ws://127.0.0.1:12080/ws?group=zzz");
 ```
