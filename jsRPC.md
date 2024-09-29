@@ -7,12 +7,6 @@
 ![](.topwrite/assets/image_1727580420081.png)
 
 
-## **1、配置mitmproxy**
-```
-mitmdump.exe -p 6666 -s main.py --mode upstream:http://127.0.0.1:6662  --ssl-insecure
-```
-
-
 ## **使用**
 1、分析JS中加密解密
 如果加密解密函数的调用：my1("123456"); my2("#fahkbf");
@@ -205,3 +199,8 @@ print(encode('{"username":"admin","password":"123456","code":"2","uuid":"xxxxx"}
 yakit重发明文请求代理到mitmproxy的服务，mitmproxy通过指定的py通用模板对请求体全加密。并对响应体全解密。
 
 mitmproxy服务启动，可以使用web版也可以命令行版。
+
+```
+mitmdump.exe -p 6666 -s totalRpc.py --mode upstream:http://127.0.0.1:8083  --ssl-insecure
+若安装了mitmproxy证书，可不使用--ssl-insecure
+```
