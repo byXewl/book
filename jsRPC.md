@@ -10,8 +10,8 @@
 ## **使用**
 ## **1、分析JS中加密解密**
 如果加密解密函数的调用：my1("123456"); my2("#fahkbf");
-代理加密函数到windows变全局：windows.encode=my1
-代理解密函数到windows变全局：windows.decode=my2
+代理加密函数到window对象变全局：window.encode=my1
+代理解密函数到window对象变全局：window.decode=my2
 
 ## **2、启动本地RPC服务端**
  .\window_amd64.exe
