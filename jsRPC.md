@@ -8,14 +8,16 @@
 
 
 ## **使用**
-1、分析JS中加密解密
+## **1、分析JS中加密解密**
 如果加密解密函数的调用：my1("123456"); my2("#fahkbf");
 代理加密函数到windows变全局：windows.encode=my1
 代理解密函数到windows变全局：windows.decode=my2
 
-2、启动本地RPC服务端
+## **2、启动本地RPC服务端**
+ .\window_amd64.exe
+默认监听本地的12080端口。
 
-3、浏览器中创建RPC客户端，将关键函数注入其中
+## **3、浏览器中创建RPC客户端，将关键函数注入其中**
 F12-源代码-片段：里面是RPC客户端的代码，点击下面▲运行。
 <https://github.com/jxhczhl/JsRpc/blob/main/resouces/JsEnv_Dev.js>
 ```
@@ -193,10 +195,10 @@ def decode(param):
 
 print(encode('{"username":"admin","password":"123456","code":"2","uuid":"xxxxx"}'))
 ```
-继续优化python通用模板，使得可以通过mitmproxy自动调用。
+继续优化python通用模板totalRpc.py，使得可以通过mitmproxy自动调用。
 totalRpc.py中指定的ip均为127.0.0.1:12080
 
-4、整合mitmproxy和yakit
+### **4、整合mitmproxy和yakit**
 yakit重发明文请求代理到mitmproxy的服务，mitmproxy通过指定的py通用模板对请求体全加密。并对响应体全解密。
 
 mitmproxy服务启动，可以使用web版也可以命令行版。
