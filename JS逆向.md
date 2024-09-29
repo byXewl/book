@@ -52,3 +52,7 @@ def getKey(msg):
         key['salt'] = salt
     return key
 ```
+
+^
+## **常用工具**
+<https://blog.csdn.net/Not__Cry/article/details/139754358>
