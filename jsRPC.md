@@ -194,6 +194,7 @@ def decode(param):
 print(encode('{"username":"admin","password":"123456","code":"2","uuid":"xxxxx"}'))
 ```
 继续优化python通用模板，使得可以通过mitmproxy自动调用。
+totalRpc.py中指定的ip均为127.0.0.1:12080
 
 4、整合mitmproxy和yakit
 yakit重发明文请求代理到mitmproxy的服务，mitmproxy通过指定的py通用模板对请求体全加密。并对响应体全解密。
