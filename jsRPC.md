@@ -5,3 +5,9 @@ jsRPC免去抠代码。
 ![](.topwrite/assets/image_1727580420081.png)
 
 
+## **1、配置mitmproxy**
+```
+mitmdump.exe -p 6666 -s main.py --mode upstream:http://127.0.0.1:6662  --ssl-insecure
+```
+
+
