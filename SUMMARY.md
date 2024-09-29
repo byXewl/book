@@ -94,7 +94,7 @@
             * [JS调试](JS调试.md)
             * [hook](hook.md)
                 * [无限debugger](无限debugger.md)
-            * [js常见混淆](js常见混淆.md)
+            * [JS常见混淆](JS常见混淆.md)
                 * [eval混淆](eval混淆.md)
             * [VMP插桩](VMP插桩.md)
             * [本地运行JS代码](本地运行JS代码.md)
