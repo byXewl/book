@@ -6,6 +6,39 @@ webpack：
 
 vue：
 <https://blog.csdn.net/Lidppp/article/details/119732245>
+## ***加载器说明**
+
+
+在 Webpack 中，你可以配置任意数量的加载器来处理不同类型的文件。加载器的数量并没有硬性限制，但是加载器的数量和配置的复杂性可能会影响构建的性能。通常，你会根据项目的需求来配置加载器，例如：
+
+1. `babel-loader`：用于将 ES6+ 代码转换为向后兼容的 JavaScript 版本。
+2. `css-loader`：用于加载 CSS 文件，并支持模块化和压缩。
+3. `style-loader`：用于将 CSS 代码注入到 DOM 中。
+4. `file-loader` 或 `url-loader`：用于处理图片和其他类型的文件，并在必要时转换为 Base64 编码。
+
+在配置文件 `webpack.config.js` 中，你可以在 `module.rules` 数组中定义多个规则，每个规则可以包含一个或多个加载器。例如：
+
+```
+javascript
+module.exports = {
+  // ... 其他配置 ...
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      },
+      // ... 可以添加更多规则来处理其他类型的文件 ...
+    ]
+  }
+};
+```
+
 
 ## **加载器**
 var o = n(130) 抛出一个变量 并且调用 n(数字)，你可以大概知道了这是webpack打包的js代码，n()是加载器，130是130号模块。
