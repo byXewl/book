@@ -1,5 +1,7 @@
 mitmproxy可以在中间层用python代码处理http请求的数据包。
 简单教程：
+<https://cloud.tencent.com/developer/article/1823288>
+
 <https://blog.wolfogre.com/posts/usage-of-mitmproxy/#:~:text=%E6%9C%AC%E6%96%87%E6%98%AF%E4%B8%80%E4%B8%AA%E8%BE%83%E4%B8%BA%E5%AE%8C%E6%95%B4%E7%9A%84>
 
 案例：
