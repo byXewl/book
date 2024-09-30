@@ -1,4 +1,6 @@
 mitmproxy可以在中间层用python代码处理http请求的数据包。
+简单教程：
+<https://blog.wolfogre.com/posts/usage-of-mitmproxy/#:~:text=%E6%9C%AC%E6%96%87%E6%98%AF%E4%B8%80%E4%B8%AA%E8%BE%83%E4%B8%BA%E5%AE%8C%E6%95%B4%E7%9A%84>
 
 案例：
 yakit重发明文请求代理到mitmproxy的服务端口6666，mitmproxy通过指定的python通用模板对请求体全加密。并对响应体全解密。
