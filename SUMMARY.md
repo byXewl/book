@@ -2,6 +2,7 @@
 * [介绍](介绍.md)
 * [JS逆向](JS逆向.md)
     * [JS调试](JS调试.md)
+    * [JS文件替换](JS文件替换.md)
     * [hook](hook.md)
         * [无限debugger](无限debugger.md)
     * [JS常见混淆](JS常见混淆.md)

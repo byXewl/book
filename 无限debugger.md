@@ -113,7 +113,7 @@ setInterval(a,5000)
 4. **本地替换JS**
  
    1. 用 fiddler Auto response 删掉 debugger
-   2. 浏览器开发者工具替换修改js（Sources面板 --> Overrides），删除代码中debugger
+   2. 浏览器开发者工具替换修改js（Sources面板 --> Overrides），替换成本地的js，删除代码中debugger
 
 5. **手动过掉Debugger**
 
