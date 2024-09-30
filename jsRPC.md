@@ -3,15 +3,16 @@
 针对请求接口加密/响应需要解密的情况，在使用Burp测试时无法对数据进行操作，需要确认传输都为明文我们才可以进行常规测试。这块有点JS基础和Python基础基本都可以通杀。
 
 原理：往浏览器里弄个ws的客户端，然后接受服务器的指令，去调用已经加载好的js方法。
+往浏览器注册一个ws客户端可以通过运行定义的代码段，也可以通过某些油猴脚本。
 
-![](.topwrite/assets/image_1727580420081.png)
 
 
-## **使用**
+# **使用**
 ## **1、分析JS中加密解密**
 如果加密解密函数的调用：my1("123456"); my2("#fahkbf");
-代理加密函数到window对象变全局：window.encode=my1
-代理解密函数到window对象变全局：window.decode=my2
+控制台代理加密函数到window对象变全局：window.encode=my1
+控制台代理解密函数到window对象变全局：window.decode=my2
+也可以替换JS文件，在JS代码中代理。
 
 ## **2、启动本地RPC服务端**
 jsRPC服务端和使用案例：<https://github.com/jxhczhl/JsRpc?tab=readme-ov-file>
@@ -376,5 +377,5 @@ addons = [
 ]
 ```
 
-
+![](.topwrite/assets/image_1727580420081.png)
 
