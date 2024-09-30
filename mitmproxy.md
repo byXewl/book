@@ -14,7 +14,10 @@ mitmdump.exe -p 6666 -s test.py   --ssl-insecure
 若安装了mitmproxy证书，可不使用--ssl-insecure
 
 mitmdump.exe -p 6666 -s test.py --mode upstream:http://127.0.0.1:8083  --ssl-insecure
-设置一个上游服务器http://127.0.0.1:8083
+设置一个上游服务器http://127.0.0.1:8083，配置后：
+请求发起处->6666->请求包处理后->8083->目标服务器->响应->8083->6666->响应包处理后->发起处
+在8083看到的是处理后的请求包和未处理的响应包。
+在发起处看到的是自己的请求包和处理后的响应包。
 ```
 
 > 安装证书：在连接mitmproxy之后，手机或设备需要设置mitm代理端口，输入http://mitm.it/ 安装证书
