@@ -236,6 +236,8 @@ import mitmproxy
 from mitmproxy import http, ctx
 from mitmproxy import flowfilter
 
+# 默认去请求jsRPC的http服务，参数：http://127.0.0.1:12080/go、组名为zzz、方法名encode、decode、sign
+
 info = ctx.log.info
 
 
