@@ -153,7 +153,7 @@ let transjson = function(formdata) {
 }
 ```
 关闭调试，点击代码段下面▲运行RPC客户端。
-如此控制台创建一个浏览器中的RPC客户端，连接本地启动的RPC服务端
+此时控制台创建一个浏览器中的RPC客户端，连接本地启动的RPC服务端
 ```
 var demo = new Hlclient("ws://127.0.0.1:12080/ws?group=zzz");
 ```
