@@ -153,7 +153,7 @@ let transjson = function(formdata) {
 }
 ```
 关闭调试，点击代码段下面▲运行RPC客户端。
-此时控制台创建一个浏览器中的RPC客户端，连接本地启动的RPC服务端
+此时控制台创建一个浏览器中的RPC客户端demo，连接本地启动的RPC服务端
 ```
 var demo = new Hlclient("ws://127.0.0.1:12080/ws?group=zzz");
 ```
@@ -162,7 +162,7 @@ var demo = new Hlclient("ws://127.0.0.1:12080/ws?group=zzz");
 
 ^
 ## **4、注册关键函数到RPC并调用**
-将代理的加解密函数注册到RPC服务里面。
+将代理的加解密函数注册到RPC服务demo里面。
 ```
 demo.regAction("encode", function (resolve,param) {
     //这样添加了一个param参数，http接口带上它，这里就能获得
