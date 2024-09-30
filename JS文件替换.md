@@ -7,3 +7,6 @@
 ## **浏览器插件ReRes**
 <https://github.com/annnhan/ReRes>
 
+使用
+<https://www.cnblogs.com/du-jun/p/14610635.html#:~:text=%E6%8F%92%E4%BB%B6reres%E7%9A%84%E4%BD%BF%E7%94%A8>
+
