@@ -157,6 +157,8 @@ let transjson = function(formdata) {
 ```
 var demo = new Hlclient("ws://127.0.0.1:12080/ws?group=zzz");
 ```
+
+^
 ## **4、注册关键函数到RPC并调用**
 将代理的加解密函数注册到RPC服务里面。
 ```
@@ -172,7 +174,10 @@ curl 'http://127.0.0.1:12080/go?group=zzz&action=encode&param='
 
 curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36' -d 'action=encode&group=zzz&param=' 'http://127.0.0.1:12080/go'
 ```
->接口用?group分组 如 "ws://127.0.0.1:12080/ws?group={}
+```
+接口用?group分组 如 "ws://127.0.0.1:12080/ws?group={}
+127.0.0.1:12080/list
+```
 其他接口：
 * `/list` :查看当前连接的ws服务 (get)
 * `/ws` :浏览器注入ws连接的接口 (ws | wss)
@@ -210,8 +215,6 @@ def decode(param):
 print(encode('{"username":"admin","password":"123456","code":"2","uuid":"xxxxx"}'))
 ```
 继续优化python通用模板totalRpc.py，使得可以通过mitmproxy自动调用。
-totalRpc.py中指定的ip均为127.0.0.1:12080
-
 
 
 
