@@ -186,7 +186,8 @@ print(res.text)
 
 ^
 ## **4、注册关键函数到RPC并调用**
-将代理的加解密函数注册到RPC服务demo里面。
+可以参考官方：<https://github.com/jxhczhl/JsRpc?tab=readme-ov-file>
+将代理到window对象的加解密函数注册到RPC服务demo里面。
 ```
 demo.regAction("encode", function (resolve,param) {
     //这样添加了一个param参数，http接口带上它，这里就能获得
