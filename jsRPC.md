@@ -214,7 +214,8 @@ def decode(param):
 
 print(encode('{"username":"admin","password":"123456","code":"2","uuid":"xxxxx"}'))
 ```
-继续优化python通用模板totalRpc.py，使得可以通过mitmproxy自动调用。
+这里以及可以通过python实现批量脚本了。
+也可以继续优化成mitmproxy的python通用模板totalRpc.py，使得可以通过mitmproxy自动调用。
 
 
 
