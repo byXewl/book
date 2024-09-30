@@ -162,8 +162,27 @@ let transjson = function(formdata) {
 ```
 var demo = new Hlclient("ws://127.0.0.1:12080/ws?group=zzz");
 ```
-访问http://127.0.0.1:12080/list 可以看到注册成功的组名和id。
+访问http://127.0.0.1:12080/list 可以看到注册成功的组名zzz和id。
+还可以通过下面代码执行浏览器中JS：
+```
+import requests
 
+js_code = """
+(function(){
+    console.log("test")
+    alert("哈哈")
+    return "执行成功"
+})()
+"""
+
+url = "http://localhost:12080/execjs"
+data = {
+    "group": "zzz",
+    "code": js_code
+}
+res = requests.post(url, data=data)
+print(res.text)
+```
 
 ^
 ## **4、注册关键函数到RPC并调用**
