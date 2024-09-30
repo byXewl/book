@@ -172,6 +172,7 @@ curl 'http://127.0.0.1:12080/go?group=zzz&action=encode&param='
 
 curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36' -d 'action=encode&group=zzz&param=' 'http://127.0.0.1:12080/go'
 ```
+>接口用?group分组 如 "ws://127.0.0.1:12080/ws?group={}
 其他接口：
 * `/list` :查看当前连接的ws服务 (get)
 * `/ws` :浏览器注入ws连接的接口 (ws | wss)
