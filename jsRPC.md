@@ -14,6 +14,8 @@
 代理解密函数到window对象变全局：window.decode=my2
 
 ## **2、启动本地RPC服务端**
+jsRPC服务端和使用案例：<https://github.com/jxhczhl/JsRpc?tab=readme-ov-file>
+
  .\window_amd64.exe
 默认监听本地的12080端口。
 
