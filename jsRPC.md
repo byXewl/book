@@ -224,9 +224,11 @@ mitmproxy服务启动，可以使用web版也可以命令行版。
 
 ```
 mitmdump.exe -p 6666 -s totalRpc.py --mode upstream:http://127.0.0.1:8083  --ssl-insecure
+
+设置一个上游服务器，这里为yakit中间人8083
 若安装了mitmproxy证书，可不使用--ssl-insecure
 ```
->安装证书：在连接mitmproxy之后，手机或设备需要设置代理，输入http://mitm.it/安装证书
+>安装证书：在连接mitmproxy之后，手机或设备需要设置代理，输入http://mitm.it/ 安装证书
 
 totalRpc.py
 ```
