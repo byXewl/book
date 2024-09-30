@@ -157,6 +157,8 @@ let transjson = function(formdata) {
 ```
 var demo = new Hlclient("ws://127.0.0.1:12080/ws?group=zzz");
 ```
+访问http://127.0.0.1:12080/list 可以看到注册成功的组名和id。
+
 
 ^
 ## **4、注册关键函数到RPC并调用**
