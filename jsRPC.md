@@ -172,9 +172,18 @@ curl 'http://127.0.0.1:12080/go?group=zzz&action=encode&param='
 
 curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36' -d 'action=encode&group=zzz&param=' 'http://127.0.0.1:12080/go'
 ```
+其他接口：
+* `/list` :查看当前连接的ws服务 (get)
+* `/ws` :浏览器注入ws连接的接口 (ws | wss)
+* `/wst` :ws测试使用-发啥回啥 (ws | wss)
+* `/go` :获取数据的接口 (get | post)
+* `/execjs` :传递jscode给浏览器执行 (get | post)
+* `/page/cookie` :直接获取当前页面的cookie (get)
+* `/page/html` :获取当前页面的html (get)
+
+^
 这里使用curl测试，优化成python的调用
 ```
-
 import requests
 
 
@@ -201,6 +210,9 @@ print(encode('{"username":"admin","password":"123456","code":"2","uuid":"xxxxx"}
 ```
 继续优化python通用模板totalRpc.py，使得可以通过mitmproxy自动调用。
 totalRpc.py中指定的ip均为127.0.0.1:12080
+
+
+
 
 
 ^
