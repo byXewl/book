@@ -1,4 +1,4 @@
-mitmproxy可以在中间层用python代码处理http请求的数据包。
+mitmproxy可以在中间层用python代码处理http请求响应的数据包。
 简单教程：
 <https://cloud.tencent.com/developer/article/1823288>
 
