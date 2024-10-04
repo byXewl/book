@@ -5,11 +5,13 @@
 用php执行序列化，看序列化后什么样子
 ```
 class CDU{
-    public $Student_ID='114514';public $name='xiaoming';public $key=false;public function check\_key(){
-    return $this->key;}
+    public $Student_ID='114514';public $name='xiaoming';public $key=false;
+    public function check_key(){
+        return $this->key;}
+
     public function check($id,$name){
-    if ($this->Student_ID===$id&&$this->name===$name){
-    system('tac hint.php');return true;}else{
+        if ($this->Student_ID===$id&&$this->name===$name){
+        system('tac hint.php');return true;}else{
     return false;}
     }
 }
