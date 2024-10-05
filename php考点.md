@@ -42,6 +42,9 @@ php内的"\"在做代码执行的时候，会识别特殊字符串，绕过黑�
 ## **$_SERVER['PHP_SELF']场景漏洞**
 源代码：
 ```
+if (preg_match('/config\.php\/*$/i', $_SERVER['PHP_SELF'])) {
+  exit("I don't know what you are thinking, but I won't let you read it :)");
+}
 if (isset($_GET['source'])) {
     highlight_file(basename($_SERVER['PHP_SELF']));
 }
