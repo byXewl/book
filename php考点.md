@@ -55,7 +55,7 @@ if (isset($_GET['source'])) {
 /index.php
 /index.php/dosent_exist.php
 ```
-`basename`可以理解为对传入的参数路径截取最后一段作为返回值，但是该函数发现最后一段为不可见字符时会退取上一层的目录，即：
+`basename`可以理解为对传入的参数路径截取最后一段作为返回值，但是该函数发现最后一段为不可见字符时会退取上一层的目录，basename只能转换ASCII码内的字符。即：
 ```
 $var1="/config.php/test"
 basename($var1)	=> test
