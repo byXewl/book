@@ -42,7 +42,9 @@ php内的"\"在做代码执行的时候，会识别特殊字符串，绕过黑�
 ## **$_SERVER['PHP_SELF']场景漏洞**
 源代码：
 ```
-highlight_file(basename($_SERVER['PHP_SELF']));
+if (isset($_GET['source'])) {
+    highlight_file(basename($_SERVER['PHP_SELF']));
+}
 ```
 我们要包含高亮config.php
 `$_SERVER['PHP_SELF']`会获取我们当前的访问路径，并且PHP在根据URI解析到对应文件后会忽略掉URL中多余的部分，即若访问存在的index.php页面，如下两种UR均会访问到。
