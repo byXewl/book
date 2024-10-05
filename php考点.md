@@ -59,6 +59,8 @@ basename($var1)	=> test
 $var2="/config.php/%ff"
 basename($var2)	=>	config.php
 ```
+`$_SERVER['PHP_SELF']`提交index.php/config.php时，经过basename过滤后只剩下config.php，需要绕过的只有正则，basename只能转换ASCII码内的字符，通过超过ASCII码范围的字符进行绕过。
+
 接下来就显然了，通过构造URI让其包含`config.php`这个文件名再让`basename`函数截取出来，之后通过请求参数`source`就能显示`config.php`的源码，也就能见到`flag`了。
 ```
 /index.php/config.php/%ff?source
