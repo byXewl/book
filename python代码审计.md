@@ -100,6 +100,7 @@ ctf中大多数常见的pickle反序列化，利用方法大都是`__reduce__`�
 
 
 ```
+# -*- coding: utf-8 -*-
 # python2代码
 import pickle
 import urllib
