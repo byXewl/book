@@ -123,8 +123,10 @@ jwt没有主动失效，只有靠时间失效，容易被盗取。
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDIwMjQ3ODEsImxldmVsIjoidXNlciI
 sInVzZXIiOiJqYXNwZXIifQ.zzr9KoJFdElwSGjcs3zs6Zgv0Lp\_eA4Secn8sUEVgIA
 
-\#使用c-jwt-cracker-master 破解，获得key：hello
+\#使用c-jwt-cracker-master 破解，<https://www.cnblogs.com/easyday/p/18022431#:~:text=Manual%20Com>
+获得key：hello
 ```
+git clone https://github.com/brendan-rius/c-jwt-cracker
 apt-get install libssl-dev
 make
 
