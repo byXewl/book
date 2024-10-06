@@ -116,7 +116,7 @@ print(a)
 ```
 
 ```
-# Python 3的代码
+# Python 3代码
 import pickle
 import urllib.parse
 
