@@ -17,7 +17,7 @@
     * [Burp的JS插件](Burp的JS插件.md)
 * [CTF](CTF.md)
     * [CTF工具](CTF工具.md)
-    * [web安全](web安全.md)
+    * [Web安全](Web安全.md)
         * [php考点](php考点.md)
             * [php请求响应](php请求响应.md)
             * [php字符串解析特性](php字符串解析特性.md)
