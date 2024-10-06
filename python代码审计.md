@@ -68,5 +68,30 @@ gopher://
 
 
 
+^
+## **反序列化**
+
+
+python中反序列化的库主要有两个，`pickle`和`cPickle`，这俩除了运行效率上有区别外，其他没啥区别
+
+`pickle`的常用方法有
+
+```
+import pickle
+
+a_list = ['a','b','c']
+
+# pickle构造出的字符串，有很多个版本。在dumps或loads时，可以用Protocol参数指定协议版本，例如指定为0号版本
+# 目前这些协议有0,2,3,4号版本，默认为3号版本。这所有版本中，0号版本是人类最可读的；
+# 之后的版本加入了一大堆不可打印字符，不过这些新加的东西都只是为了优化，本质上没有太大的改动。
+# 一个好消息是，pickle协议是向前兼容的。0号版本的字符串可以直接交给pickle.loads()，不用担心引发什么意外。
+# pickle.dumps将对象序列化为字符串
+# pickle.dump将序列化后的字符串存储为文件
+print(pickle.dumps(a_list,protocol=0))
+
+pickle.loads() #对象反序列化
+pickle.load() #对象反序列化，从文件中读取数据
+```
+
 
 
