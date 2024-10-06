@@ -124,12 +124,13 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDIwMjQ3ODEsImxldmVsIjoidXNlciI
 sInVzZXIiOiJqYXNwZXIifQ.zzr9KoJFdElwSGjcs3zs6Zgv0Lp\_eA4Secn8sUEVgIA
 
 \#使用c-jwt-cracker-master 破解，获得key：hello
+```
 apt-get install libssl-dev
-
 make
+
 ./jwtcrack
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDIwMjQ3ODEsImxldmVsIjoidXNlciI
-sInVzZXIiOiJqYXNwZXIifQ.zzr9KoJzs6Zgv0Lp\_eA4Secn8sUEVgIA
-
+sInVzZXIiOiJqYXNwZXIifQ.zzr9KoJzs6Zgv0Lp_eA4Secn8sUEVgIA
+```
 \#使用https\://jwt.io/，进行加密
 
