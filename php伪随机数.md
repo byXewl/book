@@ -27,7 +27,7 @@ git clone https://github.com/openwall/php_mt_seed.git
 make
 ./php_mt_seed 50 50 0 61 2 2 0 61 53 53 0 61 8 8 0 61 55 55 0 61 58 58 0 61 56 56 0 61 45 45 0 61 17 17 0 61 49 49 0 61
 ```
-得到853609852，即上面的$_SESSION['seed']。
+得到648659070，php7，即上面的$_SESSION['seed']。
 ```
 <?php
 mt_srand(种子); //种子填你自己得到的
