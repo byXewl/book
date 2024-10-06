@@ -117,6 +117,8 @@ jwt没有主动失效，只有靠时间失效，容易被盗取。
 
 ^
 ## **破解jwt**
+如对HS256方式进行爆破密钥
+
 \#访问靶场，获取token
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDIwMjQ3ODEsImxldmVsIjoidXNlciI
 sInVzZXIiOiJqYXNwZXIifQ.zzr9KoJFdElwSGjcs3zs6Zgv0Lp\_eA4Secn8sUEVgIA
