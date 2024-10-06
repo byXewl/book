@@ -83,6 +83,7 @@ php伪协议编码读php源代码等文件:
 /proc/net/arp
 /etc/hosts
 /etc/network/interfaces 高权限读
+/proc/net/fib_trie
 ```
 
 ### 2.无回显XXE文件读取：
