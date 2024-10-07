@@ -18,6 +18,8 @@ F12查看网络请求情况。
 ^
 GET函数漏洞
 ```
+GET /
+查看根目录目录
 GET file:|readflag
 会执行readflag程序的命令，并返回程序执行结果。
 ```
