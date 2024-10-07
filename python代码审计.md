@@ -1,6 +1,6 @@
 程序目录可能：/app/appy.py
-环境变量：/porc/self/version 里面可能有工作目录PWD
-程序启动命令：/porc/self/cmdline
+环境变量：/proc/self/environ 里面可能有工作目录PWD
+程序启动命令：/proc/self/cmdline
 
 ## **python打开文件但是没有关闭**
 python打开文件但是没有关闭，任然可以读取文件内容。
