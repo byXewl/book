@@ -75,15 +75,20 @@ axios.get('https://example.com/api/some-resource', {
 jwt的数据载体可能会有表示这个用户是否为管理员，如"admin":"flase"。
 如果知道jwt的加密算法模式和密钥(爆破出，泄露出)，或者错误使用了空算法模式（无需密钥，"alg":"none"）。
 
+**空密钥：**
 无需密钥，如：
 ```
 eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoi5bCP5piOMyIsImlkIjoyLCJleHAiOjE3MDM2MDMwMTMsImlhdCI6MTcwMjk5ODIxMywiYXV0aG9yaXRpZXMiOlsxXX0.GcIsfpEB3dv62Yt88yjYBeHhzHKAgNcfVzR5Fso6kjw
 ```
 就可以修改"admin":"true"，再使用算法重新签名。
 实现越权。
-
 在线生成：<https://jwt.io/#debugger-io>
 参考：<http://cnblogs.com/vege/p/14468030.html>
+
+^
+**nodejs的空密钥：**
+nodejs的jwt缺陷，当jwt的secret为空，jwt会采用algorithm为none进行解密。
+于是：
 ```
 import base64
 
