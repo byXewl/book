@@ -1,3 +1,9 @@
+程序目录可能：/app/appy.py
+环境变量：/porc/self/version
+程序启动命令：/porc/self/cmdline
+
+
+
 ## **url中的unicode漏洞**
 ```
 ℆这个字符在经过
