@@ -15,3 +15,9 @@ F12查看网络请求情况。
 ^
 一般flag在/flag或/flag.txt中，也可能在env命令环境变量中，还可能在phpinfo()中。
 
+^
+GET函数漏洞
+```
+GET file:|readflag
+会执行readflag程序的命令，并返回程序执行结果。
+```
