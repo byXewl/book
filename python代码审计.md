@@ -2,8 +2,19 @@
 环境变量：/porc/self/version 里面可能有工作目录PWD
 程序启动命令：/porc/self/cmdline
 
+## **python打开文件但是没有关闭**
+python打开文件但是没有关闭，任然可以读取文件内容。
+```
+SECRET_FILE = "/tmp/secret.txt"
+f = open(SECRET_FILE)
+SECRET_KEY = f.read().strip()
+os.remove(SECRET_FILE)
+```
+可以通过/proc/self/fd/[num]访问对应文件（此处[num]代表一个未知的数值，需要从0开始遍历找出）
+如在/proc/self/fd/3找到。
 
 
+^
 ## **url中的unicode漏洞**
 ```
 ℆这个字符在经过
