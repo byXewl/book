@@ -19,8 +19,21 @@ F12查看网络请求情况。
 ## **爆破参数**
 一个网站没有任何传参提示，如python ssti，需要用工具爆破出参数。
 工具arjun
+
+
+**安装**
+```
+pip3 install arjun
+```
+或者下载github项目<https://github.com/s0md3v/Arjun>，使用python安装
+```
+python3 setup.py install
+```
+
+**使用**
 ```
 python3 arjun -u http://e3.buuoj.cn/ -c 100 -d 5
+arjun  -u http://e3.buuoj.cn/ -c 100 -d 5
 ```
 
 
