@@ -1,8 +1,10 @@
 pwndbg ： 
-gdb插件在gdb运行动态调试查看二进制代码时做一些增强的功能
+gdb插件，在gdb运行动态调试查看二进制代码时做一些增强的功能
+```
 git clone https://github.com/pwndbg/pwndbg
 cd pwndbg.
 /setup.sh
+```
 安装后输入gdb回车显示是pwndbg了。
 
 ## **作用命令**

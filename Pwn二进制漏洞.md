@@ -39,13 +39,13 @@ pip3 install pwntools -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 checksec ：查看程序相关的保护措施。
 ```
-一般安装pwntools后默认安好。在~/.local/bin 目录下
+一般安装pwntools库后默认安好。在~/.local/bin 目录下
 ~/.local/bin/checksec
 ```
 
 ROPgadget ： 查找代码中用来rop的代码片段。一般安装pwntools后默认安好。
 
-pwndbg ： gdb插件在gdb运行动态调试查看二进制代码时做一些增强的功能
+pwndbg ： gdb插件，在gdb运行动态调试查看二进制代码时做一些增强的功能
 ```
 git clone https://github.com/pwndbg/pwndbg
 cd pwndbg.
