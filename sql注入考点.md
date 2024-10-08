@@ -201,3 +201,7 @@ if __name__ == '__main__':
     get_column_info(strings, url, success, db_name, table_names)
     print('获取表数据信息结束-----------------------------------------')
 ```
+
+
+^
+## **二次注入**
