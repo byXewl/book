@@ -18,6 +18,7 @@ BOF + syscall：利用缓冲区溢出漏洞来执行系统调用。
 函数调用约定（Calling Convention）
 栈帧（Stack Frame）
 简单的栈溢出实操（ret2text）
+get()函数的栈溢出，修改某个变量值，调用某个函数
 ROP链
 ```
 <https://www.bilibili.com/video/BV1ub4y1F71R/?spm_id_from=333.337.search-card.all.click&vd_source=972491eeb83c0ed4c0015aef1be6c537>
