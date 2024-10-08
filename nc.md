@@ -13,6 +13,12 @@ nc接收请求，可以接收查看是什么请求包协议，tcp、udp、http�
 ```
 nc -lvvp 1234
 ```
+
+nc端口转发
+```
+nc -l -p 8080 | nc example.com 80
+```
+
 ^
 ## **nc下载安装**
 windows一个nc.exe即可。https://eternallybored.org/misc/netcat/ 注意!!! Windows系统会报病毒,如果有杀毒软件要全部关掉,自带的defender关掉。

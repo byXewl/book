@@ -93,6 +93,7 @@
         * [pwntools](pwntools.md)
         * [pwngdb](pwngdb.md)
         * [checksec](checksec.md)
+        * [nc](nc.md)
     * [Crypto密码学](Crypto密码学.md)
         * [古典密码](古典密码.md)
             * [凯撒密码](凯撒密码.md)
