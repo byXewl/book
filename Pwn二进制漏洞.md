@@ -30,8 +30,12 @@ CTF题:
 IDA Pro ：静态分析F5转换为C语言
 
 pwntools ： CTF框架+漏洞利用开发库 可快速编写exp
+```
 pip3 install pwntools -i https://pypi.tuna.tsinghua.edu.cn/simple
-
+测试
+>>> import pwn
+>>> pwn.asm("xor eax, eax")
+```
 checksec ：查看程序相关的保护措施。一般安装pwntools后默认安好。
 ROPgadget ： 查找代码中用来rop的代码片段。一般安装pwntools后默认安好。
 
