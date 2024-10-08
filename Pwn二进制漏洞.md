@@ -8,6 +8,7 @@ Pwn胖：PWN在黑客俚语中代表着攻破、取得权限，多为溢出类�
 BOF + syscall：利用缓冲区溢出漏洞来执行系统调用。
 虚拟机逃逸，docker逃逸，如何提root，挖掘系统漏洞，常见服务器和库的漏洞比如nginx redis openssl的未公布高危漏洞等等。
 
+## **入门**
 ```
 入门目录：
 二进制文件-ELF
@@ -20,13 +21,16 @@ BOF + syscall：利用缓冲区溢出漏洞来执行系统调用。
 ROP链
 ```
 <https://www.bilibili.com/video/BV1ub4y1F71R/?spm_id_from=333.337.search-card.all.click&vd_source=972491eeb83c0ed4c0015aef1be6c537>
-CTF题:
+## **CTF题**
 利用系统漏洞，编写脚本获取服务器shell，再获取flag。
 出题人给出服务器的ip和端口，端口上运行一个进程，
 进程运行的程序二进制文件也给你，找出二进制文件中的漏洞，利用这个漏洞获取服务器的最高权限。
 
+<https://www.cnblogs.com/bonelee/p/9985111.html#:~:text=%E5%BD%93%E7%84%B6%EF%BC%8CCTF%E4%B8%AD%E7%9A%84%E7%BB%9D%E5%A4%A7>
+
+
 ^
-工具：
+## **工具**
 IDA Pro ：静态分析F5转换为C语言
 
 pwntools ： CTF框架+漏洞利用开发库 可快速编写exp
