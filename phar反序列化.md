@@ -8,6 +8,8 @@ phar之所以能反序列化，是因为Phar文件会以序列化的形式存储
 
 利用条件
 ```
+ctf题中php.ini中的phar.readonly选项，需要为Off（默认是on）
+
 1、phar文件能够上传至服务器 
 //即要求存在file_get_contents()、fopen()这种函数
 
@@ -16,8 +18,6 @@ phar之所以能反序列化，是因为Phar文件会以序列化的形式存储
 
 3、文件操作函数的参数可控，且:、/、phar等特殊字符没有被过滤
 //一般利用姿势是上传Phar文件后通过伪协议Phar来实现反序列化，伪协议Phar格式是`Phar://`这种，如果这几个特殊字符被过滤就无法实现反序列化
-
-4、php.ini中的phar.readonly选项，需要为Off（默认是on）
 ```
 ![](.topwrite/assets/image_1728379138816.png)
 
