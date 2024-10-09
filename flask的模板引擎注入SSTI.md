@@ -181,3 +181,4 @@ _io.TextIOWrapper 可以文件读取，可能在122位。
 SSTI绕过注入:<https://xz.aliyun.com/t/3679#toc-11>
 ctf详解:<https://www.cnblogs.com/Article-kelp/p/14797393.html#questionOne>
 python解题模板:<https://blog.csdn.net/qq_51096893/article/details/122020518>
+全自动绕过getshell的jinjia2工具：<https://github.com/Marven11/Fenjing>
