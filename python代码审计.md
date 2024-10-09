@@ -12,7 +12,7 @@ os.remove(SECRET_FILE)
 ```
 可以通过/proc/self/fd/[num]访问对应文件（此处[num]代表一个未知的数值，需要从0开始遍历找出）
 如在/proc/self/fd/3找到。
-
+<https://blog.csdn.net/cjdgg/article/details/119860355?spm=1001.2014.3001.5502>
 
 ^
 ## **url中的unicode漏洞**
