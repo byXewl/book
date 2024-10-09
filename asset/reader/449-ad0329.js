@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk_topwrite_reader=self.webpackChunk_topwrite_reader||[]).push([[449],{97449:(r,e,a)=>{a.r(e),a.d(e,{default:()=>s});var o=a(35250),t=a(50387),n=a.n(t),p=a(61091);function s(){var r=(0,p.v9)("page").loading,e=(0,p.LU)().primaryColor;return(0,o.jsx)(n(),{show:r,color:e})}}}]);
+//# sourceMappingURL=449-ad0329.js.map

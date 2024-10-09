@@ -1,0 +1,9 @@
+{
+    "title": "Xe的库",
+    "plugins": [
+        "highlight",
+        "image-zoom",
+        "copy-code",
+        "lunrjs"
+    ]
+}
