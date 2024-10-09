@@ -131,7 +131,7 @@ your input object基类的子类
 ^
 ## **找利用类**
 
-若经过{{''.__class__.__base__.__subclasses__()}}，用工具或手工查询存在的利用类和位置后，可以借助的类反射调用方法：
+若经过```{{''.__class__.__base__.__subclasses__()}}```，用工具或手工查询存在的利用类和位置后，可以借助的类反射调用方法：
 
 下面是快速找位置脚本：
 ```
@@ -139,7 +139,7 @@ import json
 
 # 功能：快速找利用类的位置
 
-# {{class.bases[0].subclasses()}}的结果放a里
+# 将{{''.__class__.__base__.__subclasses__()}}的结果放a里
 a = """
 <class 'type'>, <class 'weakref'>, <class 'weakcallableproxy'>
 """
