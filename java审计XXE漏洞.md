@@ -1,6 +1,8 @@
 场景：
   1、服务端对xml数据进行解析，以及含有xml文件的文件上传进行解析。
   2、关键词：DocumentBuilder、XMLStreamReader、SAXBuilder、SAXParser、SAXReader、XMLReader、SAXSource、TransformerFactory、SAXTransformerFactory、SchemaFactory。
+WorkbookFactory(Apache POI库处理Excel文件xlsx时)
+
 危害：造成xml外部实体注入攻击、读取服务器文件等。
 防御：使用安全的xml解析器并开启禁用外部实体，过滤关键词“<!DOCTYPE <!ENTITY”和“SYSTEM”等。
 
@@ -185,6 +187,45 @@ public class XXEController {
         org.w3c.dom.Document doc = documentBuilder.parse(stream);
         doc.getDocumentElement().normalize();
         return "Hello World";
+    }
+}
+```
+
+
+
+^
+## **Apache POI库解析xlsx文件的XXE**
+Apache POI库和Java自带的XML解析API（如XMLReader和DocumentBuilder）服务于不同的目的，但它们在处理文件和数据格式方面可以有交集。
+```
+Apache POI库：
+专门用于处理Microsoft Office文档，如Excel（.xls, .xlsx）、Word（.doc, .docx）和PowerPoint（.ppt, .pptx）文件。
+支持文件的读取、创建、编辑和写入。
+对于Excel文件，提供了对单元格、行、工作表等元素的访问和操作。
+主要用于Java应用程序中的文档处理和报表生成。
+
+Java XML解析API：
+用于解析和生成XML文件。
+XMLReader是SAX（Simple API for XML）解析器的一部分，用于事件驱动的XML解析。
+DocumentBuilder是DOM（Document Object Model）解析器的一部分，用于将XML文档加载到内存中以便进行随机访问。
+可以用于任何需要处理XML数据的场景，如配置文件、数据交换等。
+```
+关系：
+文件格式：Excel文件（特别是.xlsx）本质上是压缩的XML文件集合。这意味着虽然你可以使用Apache POI来操作Excel文件，但在某些情况下，也可以使用XML解析API来直接处理Excel文件的XML内容。
+互操作性：如果你需要从Excel文件中提取XML数据或将XML数据写入Excel文件，你可能需要同时使用Apache POI和XML解析API。
+数据处理：在处理Office文档中的XML数据时，Apache POI提供了更高层次的抽象，而XML解析API提供了对XML数据的底层访问。
+在实际应用中，你通常会根据需求选择合适的工具。如果你的主要任务是处理Excel文件，那么Apache POI是更合适的选择。但如果你只需要处理Excel文件中的XML数据片段，或者你有XML解析的特定需求，那么可能会使用Java的XML解析API。
+
+案例：
+对一个xlsx文件解析，调用`Sheet`对象的`getFirstRowNum()`方法打印出第一行的行号。在Excel中，行号是从0开始计数的，所以`getFirstRowNum()`方法返回的是工作表中第一行的索引。
+```
+if (filename.startsWith("excel-") && "xlsx".equals(fileExtName)) {
+    try {
+        Workbook wb1 = WorkbookFactory.create(in);
+        Sheet sheet = wb1.getSheetAt(0);
+        System.out.println(sheet.getFirstRowNum());
+    } catch (InvalidFormatException var20) {
+        System.err.println("poi-ooxml-3.10 has something wrong");
+        var20.printStackTrace();
     }
 }
 ```
