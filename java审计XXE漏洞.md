@@ -197,7 +197,7 @@ public class XXEController {
 ## **Apache POI库解析xlsx文件的XXE**
 ApachePOI版本<=4.1.0，以及3.10版本中可能存在XXE漏洞
 
-Apache POI库和Java自带的XML解析API（如XMLReader和DocumentBuilder）服务于不同的目的，但它们在处理文件和数据格式方面可以有交集。
+Apache POI库和Java自带的XML解析API（如XMLReader和DocumentBuilder）服务于不同的目的，但它们在处理文件和数据格式方面可以有交集。Apache POI库在处理Excel文件时，会间接地使用到XML解析器，但开发者通常不需要直接与这些解析器交互。开发者可以使用POI提供的API来完成大部分的Excel文件操作任务。
 ```
 Apache POI库：
 专门用于处理Microsoft Office文档，如Excel（.xls, .xlsx）、Word（.doc, .docx）和PowerPoint（.ppt, .pptx）文件。
@@ -231,3 +231,4 @@ if (filename.startsWith("excel-") && "xlsx".equals(fileExtName)) {
     }
 }
 ```
+
