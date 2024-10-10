@@ -873,6 +873,7 @@
                 * [Jackson反序列化](Jackson反序列化.md)
                 * [Shrio反序列化](Shrio反序列化.md)
                 * [XStream反序列化](XStream反序列化.md)
+            * [ROME反序列化](ROME反序列化.md)
         * [利用方式](利用方式.md)
             * [Ysoserial](Ysoserial.md)
             * [RMI](RMI.md)
