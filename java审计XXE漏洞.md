@@ -195,6 +195,8 @@ public class XXEController {
 
 ^
 ## **Apache POI库解析xlsx文件的XXE**
+ApachePOI版本<=4.1.0，3.10版本中可能存在XXE漏洞
+
 Apache POI库和Java自带的XML解析API（如XMLReader和DocumentBuilder）服务于不同的目的，但它们在处理文件和数据格式方面可以有交集。
 ```
 Apache POI库：
