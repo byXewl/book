@@ -24,6 +24,8 @@ OneScan框架指纹识别，TsojanScan框架识别、HaE框架识别(关键字�
 
 ## **越权**
 xia越
+>使用的时候需要在插件右面替换一下低权限的token
+
 
 ## **SQL**
 xiaSQL
