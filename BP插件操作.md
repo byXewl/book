@@ -38,3 +38,8 @@ lazyCSRF<https://www.freebuf.com/articles/web/305569.html>
 ## **java反序列化利用链检测**
 java Deserialization Scanner插件扫描可利用链，或者代码审计依赖利用链。
 常规可以直接使用ysoserial.jar打。
+
+
+## **其他介绍**
+<https://www.cnblogs.com/mr-ryan/p/17774683.html>
+<https://mp.weixin.qq.com/s/OnIZZ-nMsqEbLxl2zLvDmQ>
