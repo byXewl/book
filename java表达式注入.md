@@ -9,12 +9,12 @@ ${"".getClass().forName("javax.script.ScriptEngineManager").newInstance().getEng
 
 ^
 # **Spring的SpEL表达式注入**
-<https://xie.infoq.cn/article/66d003327e05ab4528fca5a41>
 ```
 把字符串当做代码执行。
 数学表达式执行。
 配置文件解析：SpEL可以解析配置文件中的动态值，引用其他属性或方法的值，实现配置的动态性。
-SpEL通常用在Spring框架的某些特定场景中，比如在配置文件中通过`${...}`使用属性占位符，或者在注解中实现复杂的逻辑，例如`@Conditional`注解。
+SpEL通常用在Spring框架的某些特定场景中，比如
+在配置文件中通过`${...}`使用属性占位符，或者在注解中实现复杂的逻辑，例如`@Conditional`注解。
 ```
 
 当集成的spring-boot-starter-web依赖后，就可以自动使用。
