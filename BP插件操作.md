@@ -75,6 +75,7 @@ E:\myHVV\java\ysoserial.jar
 
 <https://blog.csdn.net/Kris__zhang/article/details/136525162?ops_request_misc=&request_id=&biz_id=102&utm_term=tsojanscan%E4%BD%BF%E7%94%A8&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-2-136525162.142^v100^pc_search_result_base2&spm=1018.2226.3001.4187>
 
+<https://x1lys.github.io/2024/07/24/Burp%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90%E9%9B%86%E5%90%88%E4%B8%80/>
 
 log4jscan：
 <https://github.com/whwlsfb/Log4j2Scan>
