@@ -67,7 +67,7 @@ E:\myHVV\java\ysoserial.jar
 ![](.topwrite/assets/image_1728616255488.png)
 
 
-## **其他介绍**
+## **其他介绍和使用教程**
 <https://www.cnblogs.com/mr-ryan/p/17774683.html>
-<https://mp.weixin.qq.com/s/OnIZZ-nMsqEbLxl2zLvDmQ>
+
 <https://blog.csdn.net/Kris__zhang/article/details/136525162?ops_request_misc=&request_id=&biz_id=102&utm_term=tsojanscan%E4%BD%BF%E7%94%A8&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-2-136525162.142^v100^pc_search_result_base2&spm=1018.2226.3001.4187>
