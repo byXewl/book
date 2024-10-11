@@ -8,5 +8,5 @@
 
 
 多认证综合越权测试
-Yakit测试越权的插件，开启MITM抓包后，左边可以搜索到使用。
+Yakit测试越权的插件，开启MITM抓包后，左边可以交互式插件搜索到使用。
 <https://github.com/yaklang/yakit/issues/1940>
