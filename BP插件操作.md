@@ -1,3 +1,4 @@
+## **基础使用**
 可以下载一些漏洞识别插件，脚本插件.jar或.py。
 jython环境安装教程：<https://blog.csdn.net/weixin_40412037/article/details/103648034>
 插件路径不要有中文。
@@ -6,7 +7,8 @@ BurpSuite的扩展存在一个问题，插件安装过多会导致卡顿、内�
 
 扩展输出的结果，漏洞结果一般可以在所有问题面板查看。
 ![](.topwrite/assets/image_1728653253302.png)
-
+扩展中底部也可能有实时输出。
+![](.topwrite/assets/image_1728653519014.png)
 
 ^
 ## **多功能BurpSuite漏洞探测插件—TsojanScan**
