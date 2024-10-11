@@ -2,6 +2,8 @@
 jython环境安装教程：<https://blog.csdn.net/weixin_40412037/article/details/103648034>
 插件路径不要有中文。
 
+**BurpSuite的扩展存在一个问题，插件安装过多会导致卡顿、内存溢出等，尽量关闭不必要功能**
+
 
 
 
@@ -21,6 +23,23 @@ OneScan框架指纹识别，TsojanScan框架识别、HaE框架识别(关键字�
 ^
 ## **测未授权接口**
 <https://mp.weixin.qq.com/s/h8YaDNI8drRqa_rWnOPlyA>
+
+autorize
+autorize是一个可以发现未授权漏洞的工具，
+下载方式：BurpSuite -> 扩展 -> BApp商店 -> Autorize -> 安装
+
+举个例子：
+有一个接口例如 https://get-shell.com/api/adduser ，这个接口的本意是留给管理员权限（高权限）使用，
+普通用户（低权限）无法使用，但是如果这个接口没有做鉴权处理，导致了低权限用户也可以使用，那么这就是一个未授权访问漏洞。
+而这个插件就可以发现这个问题，需要在插件页面的右面窗口放入低权限用户（未登录）状态下的cookie或者点击Fetch Cookies Filters自动填充获取最近获得的Cookie，
+然后点击Autorize is off开启检测，插件会有三种状态：
+```
+绕过（Bypassed）！- 红色（可能存在未授权）
+强制执行！- 绿色（不存在未授权）
+强制执行???（请配置强制检测器） – 黄色
+根据需要，重点查看绕过（Bypassed）！- 红色（可能存在未授权），如果这是一个高权限API或者一个高权限的页面，在去掉cookie后仍然可以访问，那么这就是一个未授权漏洞！
+```
+
 
 ## **越权**
 xia越
