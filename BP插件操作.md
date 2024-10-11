@@ -26,8 +26,6 @@ OneScan框架指纹识别，TsojanScan框架识别、HaE框架识别(关键字�
 
 ^
 ## **测未授权接口**
-<https://mp.weixin.qq.com/s/h8YaDNI8drRqa_rWnOPlyA>
-
 autorize
 autorize是一个可以发现未授权漏洞的工具，
 下载方式：BurpSuite -> 扩展 -> BApp商店 -> Autorize -> 安装
