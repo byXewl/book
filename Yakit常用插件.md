@@ -3,3 +3,10 @@
 正则规则颜色匹配
 启动中间人代理前可以加载默认的规则，类似bp的HAE插件。
 不要过滤js文件了，通过这个匹配可以发现chunk-e9c7a1ee.de97a6e2.js中aksk等敏感信息。
+
+
+
+
+多认证综合越权测试
+Yakit测试越权的插件
+<https://github.com/yaklang/yakit/issues/1940>
