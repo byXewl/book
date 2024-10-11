@@ -2,11 +2,13 @@
 jython环境安装教程：<https://blog.csdn.net/weixin_40412037/article/details/103648034>
 插件路径不要有中文。
 
-**BurpSuite的扩展存在一个问题，插件安装过多会导致卡顿、内存溢出等，尽量关闭不必要功能**
+BurpSuite的扩展存在一个问题，插件安装过多会导致卡顿、内存溢出等，尽量关闭不必要功能
+
+扩展输出的结果，漏洞结果一般可以在所有问题面板查看。
+![](.topwrite/assets/image_1728653253302.png)
 
 
-
-
+^
 ## **多功能BurpSuite漏洞探测插件—TsojanScan**
 综合性漏扫插件
 <https://mp.weixin.qq.com/s/2uTxakCAfApDNMQyx0y8dg>
