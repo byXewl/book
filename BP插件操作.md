@@ -16,7 +16,7 @@ BurpSuite的扩展存在一个问题，插件安装过多会导致卡顿、内�
 <https://mp.weixin.qq.com/s/2uTxakCAfApDNMQyx0y8dg>
 
 ## **更多**
-OneScan框架指纹识别，TsojanScan框架识别、HaE框架识别(关键字正则颜色匹配)
+OneScan框架指纹识别，TsojanScan框架识别、HaE框架识别(关键字正则颜色匹配，3.0后规则自带，更改规则要重新加载)
 
 ^
 ## **前端加解密插件**
