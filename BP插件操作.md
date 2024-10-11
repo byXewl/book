@@ -44,6 +44,8 @@ java Deserialization Scanner插件扫描可利用链，或者代码审计依赖�
 D:\java1\jdk8\bin\java.exe
 E:\myHVV\java\ysoserial.jar
 ```
+有一个坑，POST请求体没有内容的话要把所有换行去除，否则发包失败。
+![](.topwrite/assets/image_1728616255488.png)
 
 
 ## **其他介绍**
