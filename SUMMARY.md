@@ -708,6 +708,7 @@
         * [防范SQL注入](防范SQL注入.md)
         * [绕过WTS-WAF注入](绕过WTS-WAF注入.md)
         * [sql注入题](sql注入题.md)
+    * [目录穿越](目录穿越.md)
     * [文件包含](文件包含.md)
         * [php伪协议](php伪协议.md)
         * [文件包含getshell](文件包含getshell.md)
