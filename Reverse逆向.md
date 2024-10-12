@@ -2,6 +2,7 @@
 逆向exe，elf（linux）等可执行文件，反汇编变成汇编代理，反编译变成C语言代码。
 必要时需要py脚本。
 小迪逆向虚拟机 密码toor
+文档：<https://www.yuque.com/reverser/znv8mg/tn3avot4t5rlpio4>
 
 ## **题型**
 控制台游戏题
