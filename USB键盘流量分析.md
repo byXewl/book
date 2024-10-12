@@ -6,7 +6,7 @@ sudo apt-get install tshark
 tshark -r usb.pcap -T fields -e usb.capdata | sed '/^\s*$/d' > usbdata.txt
 ```
 
-2、
+2、linux上：
 python UsbKeyboardDataHacker.py key.pcap
 
 
