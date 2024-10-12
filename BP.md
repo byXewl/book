@@ -1,4 +1,6 @@
 BurpSuite
+中文文档：<https://geekdaxue.co/read/Burp_Suite_Doc_zh_cn/desktop-penetration-testing-index.md#%E4%BD%BF%E7%94%A8Burp%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86>
+^
 Proxy：代理拦截
 Intruder：入侵者，测试器
 Repeater：重放器，重发器
