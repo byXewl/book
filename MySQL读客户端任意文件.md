@@ -66,6 +66,11 @@ mysql-connector-java >= 8.0.20, >= 5.1.49 中不可用。连接回显的时候�
 ## **修复读文件**
 原生的场景下可以使用预先定义的Properties将URL中的属性覆盖掉，就可以关闭本地文件读取以及URL读取了。
 
+
+
+
+MySQL 8 及更高版本中，默认情况下出于安全考虑，`LOAD DATA LOCAL INFILE` 命令是被禁用的，即关闭allowloadlocalinfile参数。
+
 ```
 String driver = "com.mysql.jdbc.Driver";
 String DB_URL = "jdbc:mysql://127.0.0.1:3306/test?user=test&maxAllowedPacket=655360&allowLoadLocalInfile=true";
