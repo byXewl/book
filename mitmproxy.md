@@ -33,6 +33,7 @@ mitmdump.exe -p 6666 -s test.py --mode upstream:http://127.0.0.1:8083  --ssl-ins
 此时如果8083配置上游代理6667，另一个mitmproxy 6667。则可以完全自由加解密。
 请求发起处->6666->请求包处理后->8083->6667->请求包处理后->目标服务器->响应->6667->8083->6666->响应包处理后->发起处
 ```
+连续代理参考：<https://www.freebuf.com/articles/web/403793.html>
 
 > 安装证书：在连接mitmproxy之后，手机或设备需要设置mitm代理端口，输入http://mitm.it/ 安装证书
 
