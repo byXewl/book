@@ -11,7 +11,7 @@ pipx install mitmproxy
 pipx inject mitmproxy pycryptodome
 ```
 
-案例：
+## **案例**
 yakit重发明文请求代理到mitmproxy的服务端口6666，mitmproxy通过指定的python通用模板对请求体全加密。并对响应体全解密。
 
 mitmproxy服务启动，可以使用web版也可以命令行版。
@@ -35,9 +35,9 @@ mitmdump.exe -p 6666 -s test.py --mode upstream:http://127.0.0.1:8083  --ssl-ins
 连续代理参考：<https://www.freebuf.com/articles/web/403793.html>
 <https://mp.weixin.qq.com/s/LDPwjUXagvvJfLOkq51n0g>
 
-
 > 安装证书：在连接mitmproxy之后，手机或设备需要设置mitm代理端口，输入http://mitm.it/ 安装证书
 
+## **简单**
 test.py
 ```
 import json
