@@ -18,7 +18,7 @@ mitmproxy服务启动，可以使用web版也可以命令行版。
 
 ```
 mitmdump.exe -p 6666 -s test.py   --ssl-insecure
-若安装了mitmproxy证书，可不使用--ssl-insecure
+若安装了mitmproxy证书，可不使用--ssl-insecure，一般加上都可以抓
 
 mitmdump.exe -p 6666 -s test.py  --ssl-insecure
 请求发起处->6666->请求包处理后->目标服务器->响应->6666->响应包处理后->发起处
