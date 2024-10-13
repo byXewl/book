@@ -9,6 +9,10 @@ mitmproxy可以在中间层用python代码处理http请求响应的数据包。
 pipx install mitmproxy
 注入一些库，加密库
 pipx inject mitmproxy pycryptodome
+
+此时命令
+mitmdump
+mitmweb
 ```
 
 ## **案例**
