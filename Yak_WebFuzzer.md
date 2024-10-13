@@ -38,5 +38,5 @@ FuzzTag标签如{{int(0000-9999|4)}}，表示0000到9999四位数字叠加爆破
 
 ^
 ## **热加载**
-解决爆破要携带crsf_token和前端js加密参数。
+解决爆破要携带crsf_token和前端js加密参数fuzz和爆破。
 <https://yaklang.com/products/Web%20Fuzzer/fuzz-hotpatch-example2>
