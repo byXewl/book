@@ -17,3 +17,9 @@ F12里前端代码搜索AccessKey 探测。
 存储桶遍历：
 <https://zone.huoxian.cn/d/918-oss>
 <https://github.com/jdr2021/OSSFileBrowse>
+
+
+^
+防御：
+前端不直接和OSS通信。
+或者前端使用临时的sts和OSS通信：<https://blog.csdn.net/zzzzzhxxx/article/details/139377927>

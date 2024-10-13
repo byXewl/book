@@ -9,7 +9,7 @@
 
 ## **常见js加密算法**
 RSA 常使用jsencrypt库
-AES 常使用crypto-js库
+AES 常使用crypto-js库 CryptoJS
 DES
 
 sign : sign一般都是对提交的data和一个时间戳timestamp进行加密，对于这种我们只要找到关键的加密函数
