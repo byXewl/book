@@ -2,6 +2,8 @@ Galaxy插件使用：
 <https://github.com/outlaws-bai/Galaxy>
 <https://mp.weixin.qq.com/s/3HJTgYDBMdzNEpMPGdeXgg>
 
+1、实现抓包记录自动加解密
+2、重放加解密
 
 
 
