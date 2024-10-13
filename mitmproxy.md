@@ -13,6 +13,9 @@ mitmproxy服务启动，可以使用web版也可以命令行版。
 mitmdump.exe -p 6666 -s test.py   --ssl-insecure
 若安装了mitmproxy证书，可不使用--ssl-insecure
 
+mitmdump.exe -p 6666 -s test.py  --ssl-insecure
+请求发起处->6666->请求包处理后->目标服务器->响应->6666->响应包处理后->发起处
+
 mitmdump.exe -p 6666 -s test.py --mode upstream:http://127.0.0.1:8083  --ssl-insecure
 设置一个上游服务器http://127.0.0.1:8083，配置后：
 请求发起处->6666->请求包处理后->8083->目标服务器->响应->8083->6666->响应包处理后->发起处
