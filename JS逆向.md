@@ -18,6 +18,14 @@ var str="password=123456&timestamp=1691141967479&username=admin&secret=123456"
 console.log(SHA1_Encrypt(str)) //sign
 ```
 
+搜索关键词
+```
+encrypt(
+AES.encrypt(
+CryptoJS.pad.Pkcs7
+CryptoJS.mode.ECB
+```
+
 ## **运行js**
 1、可以将代码保存到.js文件中在本地nodejs的集成环境中运行。
 2、可以在浏览器的控制台中运行。
