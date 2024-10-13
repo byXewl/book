@@ -23,3 +23,7 @@ F12里前端代码搜索AccessKey 探测。
 防御：
 前端不直接和OSS通信。
 或者前端使用临时的sts和OSS通信：<https://blog.csdn.net/zzzzzhxxx/article/details/139377927>
+虽然STS模式下accessKeyId、accessKeySecret和stsToken都是会变化的，但在有效期内（约3\~5分钟）我们仍然可以接管对应的存储桶。
+<https://www.ctfiot.com/86868.html>
+
+
