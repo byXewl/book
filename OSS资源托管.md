@@ -13,10 +13,15 @@ F12里前端代码搜索AccessKey 探测。
 1.行云管家
 2.云存储对应的客户端ossbrower
 
+华为云存储叫OBS：
+<https://xz.aliyun.com/t/13126?time__1311=GqmhqUxo0KGNDQtiQL2Dmq7K%3D%2BhxfgObD>
+需要用OBS专门工具
+
 ^
 存储桶遍历：
 <https://zone.huoxian.cn/d/918-oss>
 <https://github.com/jdr2021/OSSFileBrowse>
+
 
 
 ^
