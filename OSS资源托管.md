@@ -14,8 +14,8 @@ F12里前端代码搜索AccessKey 探测。
 2.云存储对应的客户端ossbrower
 
 华为云存储叫OBS：
-<https://xz.aliyun.com/t/13126?time__1311=GqmhqUxo0KGNDQtiQL2Dmq7K%3D%2BhxfgObD>
-需要用OBS专门工具
+<https://zhuanlan.zhihu.com/p/481432691>
+需要用OBS专门工具 obs-browser-plus
 
 ^
 存储桶遍历：
