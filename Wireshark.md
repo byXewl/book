@@ -95,6 +95,9 @@ ftp流量包中有文件传输用kali中foremost分离出文件。
 ^
 导出http，移到linux，搜索grep -r 'CTF' ./
 
+^
+流量记录后面加中文注释：
+<https://www.yuque.com/hxfqg9/misc/tyvm6rtnlgqzsvqg>
 
 ^
 ## **分析web攻击**
