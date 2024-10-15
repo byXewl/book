@@ -110,7 +110,5 @@ class BurpExtender(IBurpExtender, IHttpListener):
 
    * 使用Burp Suite的帮助器对象构建新的HTTP响应消息，并将修改后的响应体设置回`messageInfo`对象。
 
-6. **输出插件信息**：
 
-   * 在插件加载时，打印插件信息。
 
