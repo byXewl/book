@@ -613,6 +613,7 @@
         * [BP插件操作](BP插件操作.md)
             * [并发漏洞](并发漏洞.md)
             * [BP插件开发](BP插件开发.md)
+            * [Burp的JS插件](Burp的JS插件.md)
     * [Goby](Goby.md)
         * [Goby资产扫描](Goby资产扫描.md)
         * [Goby漏洞利用](Goby漏洞利用.md)
