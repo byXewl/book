@@ -15,6 +15,7 @@
         * [Python中调用JS](Python中调用JS.md)
     * [jsRPC](jsRPC.md)
         * [mitmproxy](mitmproxy.md)
+        * [微信jsRPC](微信jsRPC.md)
     * [Burp的JS插件](Burp的JS插件.md)
 * [CTF](CTF.md)
     * [CTF工具](CTF工具.md)
