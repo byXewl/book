@@ -1,6 +1,7 @@
 从一个插件学习开发
 <https://github.com/no001ce/N-DecodeAllUnicode/blob/main/N-DecodeAllUnicode.py>
-该插件N-DecodeAllUnicode.py，加载到burp后可以将unicode字符转成明文中文
+该插件N-DecodeAllUnicode.py，加载到burp后可以将数据包中unicode字符转成明文中文
+## **源码**
 ```
 #!/usr/bin/env python
 # coding=utf8
@@ -70,3 +71,46 @@ class BurpExtender(IBurpExtender, IHttpListener):
                     messageInfo.setResponse(
                         self._helpers.buildHttpMessage(new_headers, new_body))
 ```
+## **整体架构**
+
+
+1. **导入必要的模块**：
+
+   * `burp`模块：这是Burp Suite提供的API，允许插件与Burp Suite进行交互。
+   * `re`模块：Python的正则表达式库，用于文本模式匹配。
+
+2. **插件信息**：
+
+   * 定义了一个多行字符串`info`，包含了插件的作者和修改者信息。
+
+3. **插件类定义**：
+
+   * `BurpExtender`类：
+        class BurpExtender(IBurpExtender, IHttpListener):
+        实现了`IBurpExtender`和`IHttpListener`接口，是插件的主要逻辑部分。
+
+4. **插件初始化**：
+
+   * `registerExtenderCallbacks`方法：在插件加载时被调用，用于初始化插件，设置回调对象、帮助器对象，并注册HTTP监听器。
+
+5. **处理HTTP消息**：
+
+   * `processHttpMessage`方法：作为HTTP监听器，处理通过Burp Suite的HTTP请求和响应消息。这个方法主要关注响应消息，对响应头和响应体进行处理。
+
+6. **处理响应头**：
+
+   * 遍历响应头，查找`Content-Type`头，如果其值包含`iso-8859-1`，则将其替换为`utf-8`。
+
+7. **处理响应体**：
+
+   * 提取响应体，并使用正则表达式查找所有的Unicode转义字符。
+   * 对找到的Unicode转义字符进行解码，替换为对应的UTF-8字符。
+
+8. **构建和设置新的响应消息**：
+
+   * 使用Burp Suite的帮助器对象构建新的HTTP响应消息，并将修改后的响应体设置回`messageInfo`对象。
+
+9. **输出插件信息**：
+
+   * 在插件加载时，打印插件信息。
+
