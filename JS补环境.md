@@ -8,7 +8,8 @@
 ^
 ## **补环境框架**
 使用补环境框架补环境
-v_jstools插件
+v_jstools插件：<https://github.com/cilame/v_jstools>
+使用：
 <https://blog.csdn.net/weixin_43411585/article/details/132440165>
 
 <https://blog.csdn.net/freeking101/article/details/121668637>
