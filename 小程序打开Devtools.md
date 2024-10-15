@@ -4,3 +4,10 @@
 
 项目：
 <https://github.com/JaveleyQAQ/WeChatOpenDevTools-Python>
+```
+pip3  install -r requirements.txt
+小程序控制台
+python main.py -x
+浏览器控制台
+python main.py -c
+```
