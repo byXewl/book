@@ -74,6 +74,20 @@ adb forward tcp:27043 tcp:27043
 
 ^
 ### **使用**
+基础
+```
+列出正在运行的进程
+frida-ps -U
+
+列出正在运行的应用程序
+frida-ps -Ua
+
+列出已安装的应用程序，带包名
+frida-ps -Uai
+
+对某个程序运行 frida hook 脚本
+frida -U -l [hook脚本] [应用包名]
+```
 开始r0capture抓包某一个APP。
 启动APP
 已知获取了APP的包名（/data/data/下有所有安装程序的包名。）
