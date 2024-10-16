@@ -76,13 +76,16 @@ http contains "data:image/"
 **统计-对话**
 这里查看IPV4流量的统计信息，可以看到在该流量包中主要是172.17.0.1和172.17.0.2之间的通信流量占绝大部分，可以初步怀疑这两个IP中的一方是攻击者IP，另一方是受害主机IP。
 ![](.topwrite/assets/image_1729042592994.png)
+IP转域名
+![](.topwrite/assets/image_1729044053724.png)
 
-
-#### **导出**
+#### **常用导出方式**
 右键可导出。
 ![](.topwrite/assets/image_1729043720157.png)
-
-
+![](.topwrite/assets/image_1729043757390.png)
+跟踪流后可保存导出
+![](.topwrite/assets/image_1729043883235.png)
+左上角导出
 
 ^
 流量包大，打开慢可以拆包
