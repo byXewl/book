@@ -28,6 +28,10 @@ CryptoJS.pad.Pkcs7
 CryptoJS.mode.ECB
 MD5(
 SignMD5
+
+encrypt
+hash
+crypto
 ```
 
 ## **运行js**
