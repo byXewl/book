@@ -3,14 +3,14 @@ r0capluie仅限安卓平台，一般需要root，测试安卓7、8、9、10、11
 可用无视所有证书校验或绑定，不用考虑任何证书的事情。
 通杀协议包括：Http、WebSocket、Ftp、Xmpp、Smtp、Protobuf等、及它们的SSL版本。
 r0capture下载：http://github.com/r0ysue/r0capture
-Frida下载：https://github.com/frida/frida/releases
+Frida：https://github.com/frida/frida/releases
 >Frida框架分为两部分：
 >1. 一部分是运行在系统上的交互工具frida CLI。
 >2. 另一部分是运行在目标安卓机器上的代码注入工具 frida-serve。注意：版本要与本地Frida一致
 >使用：<https://zhuanlan.zhihu.com/p/651445850>
 
 ^
-**教程：**
+### **安装**
 电脑本地安装frida本地版：frida 15.2.2
 电脑模拟器安装frida-server服务版x86版本（真机arm版本）
 本地版连接服务版
@@ -24,6 +24,11 @@ pip install frida-tools
 ```
 然后去https://github.com/frida/frida/releases
 下载对应型号且与电脑安装Frida版本一致的Frida-server版本frida 15.2.2。
+```
+例如我的机器为arm32为架构，就选择frida-server-12.8.14-android-arm.xz下载
+可以在adb使用命令 adb shell getprop ro.product.cpu.abi 查询手机架构
+或者去百度搜自己的手机型号处理器是什么架构
+```
 ^
 使用adb安装frida服务端
 模拟器如mumu模拟器的adb.exe程序加入环境变量或直接cmd使用。
@@ -66,6 +71,9 @@ adb forward tcp:27043 tcp:27043
 此时可以frida-ps -R
 模拟器中运行一个APP即可看到进程。
 ```
+
+^
+### **使用**
 开始r0capture抓包某一个APP。
 启动APP
 已知获取了APP的包名（/data/data/下有所有安装程序的包名。）
