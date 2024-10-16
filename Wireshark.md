@@ -39,7 +39,7 @@ http.request.full_uri contains "SELECT"
 http contains ".sql"
 http contains ".bak"
 ```
-分段攻击
+分段分界过滤
 ```
 frame.number >= 136872 && http.request.method == POST http.request.uri contains"202005081648075663.php" && http.request.method == POST
 ```
