@@ -80,9 +80,9 @@ IP转域名
 ![](.topwrite/assets/image_1729044053724.png)
 
 #### **2、常用导出方式**
-右键-复制
+分层页右键-复制
 ![](.topwrite/assets/image_1729043720157.png)
-右键-导出分组
+分层页右键-导出分组
 ![](.topwrite/assets/image_1729043757390.png)
 跟踪流后可-保存导出
 ![](.topwrite/assets/image_1729043883235.png)
