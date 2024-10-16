@@ -6,7 +6,7 @@ r0capture下载：http://github.com/r0ysue/r0capture
 Frida下载：https://github.com/frida/frida/releases
 >Frida框架分为两部分：
 >1. 一部分是运行在系统上的交互工具frida CLI。
->2. 另一部分是运行在目标机器上的代码注入工具 frida-serve。注意：版本要与本地Frida一致
+>2. 另一部分是运行在目标安卓机器上的代码注入工具 frida-serve。注意：版本要与本地Frida一致
 >使用：<https://zhuanlan.zhihu.com/p/651445850>
 
 ^
