@@ -69,7 +69,7 @@ http contains "data:image/"
 
 ^
 ## **常见操作**
-#### **统计操作**
+#### **1、统计操作**
 **统计-协议分级**
 在面对某些特定类型的恶意攻击（例如ARP攻击）时，需要从协议的角度进行分析。
 ![](.topwrite/assets/image_1729043664736.png)
@@ -79,7 +79,7 @@ http contains "data:image/"
 IP转域名
 ![](.topwrite/assets/image_1729044053724.png)
 
-#### **常用导出方式**
+#### **2、常用导出方式**
 右键可导出
 ![](.topwrite/assets/image_1729043720157.png)
 ![](.topwrite/assets/image_1729043757390.png)
@@ -89,7 +89,7 @@ IP转域名
 <https://blog.csdn.net/hou09tian/article/details/118875666>
 ![](.topwrite/assets/image_1729044316506.png)
 ^
-#### **其他操作**
+#### **3、其他操作**
 流量包大，打开慢可以拆包
 ```
 >"C:\Program Files\Wireshark\editcap.exe" -c 100000 C:\Users\Administrator\Desktop\流量分析\21-task\数据采集D_eth0_NS_20160809_170106.pcap 2.pcap
