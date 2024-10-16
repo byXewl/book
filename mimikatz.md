@@ -74,9 +74,7 @@ https://www.cmd5.com/
 跑字典：hashcat
 ^
 Linux获取hash和加密方式，可以破译明文。
-跑字典：hashcat
-
-
+1、跑字典：hashcat
 ```
 查看加密方式和密文，只有root用户才能读取它
 cat /etc/shadow
@@ -97,7 +95,14 @@ hashcat -m 500 linuxmd5.txt p.txt
 linux下bcrypt $2\*$, Blowfish加密方式：
 hashcat -m 3200 linuxmd5.txt p.txt
 ```
+2、用john
+```
+echo "$6$KHysqjWMnoaHJ4QW$p1cMTekiYb/6xA2u7j4jAD3m5shTPlPAtM6jyoex73MxxHXlms4X0874ml/gw6.LETsMs5oXLWyGeSAddx2N.." > 11.txt
 
+cat 11.txt
+
+john 11.txt
+```
 
 
 ^

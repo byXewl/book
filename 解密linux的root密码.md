@@ -1,4 +1,4 @@
-## **hashcat**
+## **使用hashcat**
 
 windows安装：<https://blog.csdn.net/Samuel677/article/details/118875875>
 使用：<https://www.sqlsec.com/2019/10/hashcat.html>
@@ -8,7 +8,7 @@ windows安装：<https://blog.csdn.net/Samuel677/article/details/118875875>
 用hashcat破译linux的root加密密码等
 用hashcat破译mysql的用户加密密码等
 
-## **参数说明**
+#### **1、参数说明**
 ```
 hashcat -a 0 -m 300 --force '8232A1298A49F710DBEE0B330C42EEC825D4190A' password.txt -O
 ```
@@ -51,7 +51,7 @@ hashcat -a 0 -m 300 --force '8232A1298A49F710DBEE0B330C42EEC825D4190A' password.
 `--optimized-kernel-enable` 启用优化的内核（限制密码长度）
 
 ^
-## **破解Linux**
+#### **2、破解Linux ssh**
 ```
 查看加密方式和密文，只有root用户才能读取它
 cat /etc/shadow
@@ -74,4 +74,25 @@ linux下bcrypt $2\*$, Blowfish加密方式：
 hashcat -m 3200 linuxmd5.txt p.txt
 ```
 
-## **john爆破**
+^
+## **使用john爆破**
+kali自带
+```
+echo "$6$KHysqjWMnoaHJ4QW$p1cMTekiYb/6xA2u7j4jAD3m5shTPlPAtM6jyoex73MxxHXlms4X0874ml/gw6.LETsMs5oXLWyGeSAddx2N.." > 11.txt
+
+cat 11.txt
+
+john 11.txt
+```
+
+![](.topwrite/assets/image_1729090881109.png)
+
+
+
+^
+## **使用cmd5在线**
+简单的能：<https://www.cmd5.com/>
+```
+$6$KHysqjWMnoaHJ4QW$p1cMTekiYb/6xA2u7j4jAD3m5shTPlPAtM6jyoex73MxxHXlms4X0874ml/gw6.LETsMs5oXLWyGeSAddx2N..
+```
+![](.topwrite/assets/image_1729091141844.png)
