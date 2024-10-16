@@ -68,7 +68,7 @@ http contains "data:image/"
 
 
 ^
-## **操作**
+## **常见操作**
 #### **统计操作**
 **统计-协议分级**
 在面对某些特定类型的恶意攻击（例如ARP攻击）时，需要从协议的角度进行分析。
@@ -150,3 +150,13 @@ ftp流量包中有文件传输用kali中foremost分离出文件。
 #### **分析特征流量**
 icmp
 ping分析，查看ping包的大小奇怪，是人为指定的，大小转成ascii即为flag
+![](.topwrite/assets/image_1729044694438.png)
+mysql
+![](.topwrite/assets/image_1729044515690.png)
+
+目录穿越
+![](.topwrite/assets/image_1729044580893.png)
+
+sql注入
+http.request.uri contains "select"
+![](.topwrite/assets/image_1729044627557.png)
