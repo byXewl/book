@@ -40,5 +40,35 @@ adb shell pm list packages：列出设备上安装的所有应用程序包名。
 adb shell dumpsys：显示设备的各种系统信息。
 ```
 
+```
+# 进入手机系统 shell 并将权限提升为root权限
+adb shell
+su
 
+# 检查 Android 架构(x86/x64)
+adb shell getprop ro.product.cpu.abi
+adb shell getprop | findstr abi
+# 更详细的架构信息
+adb shell cat /proc/cpuinfo
+
+# 获取手机里安装过的应用程序apk绝对路径，只想获取包名把后面的-f去掉即可
+adb shell pm list packages -f
+# 获取应用程序的绝对路径路径
+adb shell pm path com.app.test
+
+# 获取当前打开的 app 的包名
+adb shell dumpsys window | findstr mCurrentFocus
+
+# 实时监控【com.app.test】包的运行日志
+adb logcat | findstr com.app.test
+
+# 将test.apk安装到手机
+adb install ./test.apk
+
+# 把手机里的test.apk文件拉出来到本地电脑
+adb pull /data/app/test.apk
+
+# 把电脑里里的test.apk文件上传到手机系统的 /data/local/tmp 下
+adb push ./test.apk /data/local/tmp
+```
 
