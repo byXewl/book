@@ -9,6 +9,7 @@ sudo apt-get install tshark
 在线pcap包分析：<https://as.zorelworld.com/list-pcap.html>
 在线wireshark：https://www.cloudshark.org/captures
 
+^
 ## **筛选过滤表达式**
 1. 协议过滤：http (只查看http协议的记录)
 2. IP过滤：ip.src==192.168.1.102 (只显示源地址是192.168.1.102)
@@ -64,16 +65,28 @@ http contains "<?php @eval"
 http contains "login"
 http contains "data:image/"
 过滤，显示包中含有。
-^
 
+
+^
 ## **操作**
+#### **统计操作**
+**统计-协议分级**
+在面对某些特定类型的恶意攻击（例如ARP攻击）时，需要从协议的角度进行分析。
+
+**统计-对话**
+这里查看IPV4流量的统计信息，可以看到在该流量包中主要是172.17.0.1和172.17.0.2之间的通信流量占绝大部分，可以初步怀疑这两个IP中的一方是攻击者IP，另一方是受害主机IP。
+![](.topwrite/assets/image_1729042592994.png)
+
+^
 流量包大，打开慢可以拆包
 ```
 >"C:\Program Files\Wireshark\editcap.exe" -c 100000 C:\Users\Administrator\Desktop\流量分析\21-task\数据采集D_eth0_NS_20160809_170106.pcap 2.pcap
 ```
 
+
 ^
 pacp包损坏，使用 http://f00l.de/hacking/pcapfix.php 修复
+
 ^
 点击搜索按钮，搜索。如搜索网卡eth0
 ^
@@ -99,9 +112,18 @@ ftp流量包中有文件传输用kali中foremost分离出文件。
 流量记录后面加中文注释：
 <https://www.yuque.com/hxfqg9/misc/tyvm6rtnlgqzsvqg>
 
+
+
+
+
+
+
+
+
+
 ^
-## **分析web攻击**
-### **分析布尔sql注入流量包**
+## **分析web攻击场景**
+#### **分析布尔sql注入流量包**
 过滤http
 左上导出分组结果为1.csv文件
 看最后获取字段值的注入sql的请求url参数
@@ -110,9 +132,9 @@ ftp流量包中有文件传输用kali中foremost分离出文件。
 
 
 ^
-### **分析head协议的扫描器**
+#### **分析head协议的扫描器**
 目录爆破
 
-### **分析特征流量**
+#### **分析特征流量**
 icmp
 ping分析，查看ping包的大小奇怪，是人为指定的，大小转成ascii即为flag
