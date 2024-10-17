@@ -24,3 +24,12 @@ ksan --spy
 --scan 并端口扫描kscan_windows_386.exe --spy --scan
 all  所有内网段扫描
 ```
+
+
+## **移动终端设备扫描**
+kscan扫描发现移动终端设备端口，用adb直接连接上，可以
+```
+adb root
+adb shell
+```
+大概60台左右算物联网分数上限直接满。
