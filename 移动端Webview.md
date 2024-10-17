@@ -24,7 +24,7 @@
 
 lsposed上算法助手，强开webview调试，
 chrome浏览器打开`chrome://inspect`，edge://inspect/#devices
-软件里打开网页界面，然后回chrome调试，
+软件里打开网页界面，然后回chrome调试，然后出现页面后，点击inspect就可以了
 这里有个小技巧，每个页面第一个进入调试是抓不全的，chrome调试窗口里保留日志刷新一下即可。
 
 
