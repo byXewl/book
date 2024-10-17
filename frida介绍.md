@@ -30,7 +30,9 @@ Interceptor.attach(Module.findExportByName("libexample.so", "example_func"), {
 在这个例子中，`Interceptor.attach` 用于拦截函数调用，`onEnter` 和 `onLeave` 回调函数分别在函数调用之前和之后执行
 
 
-## **HOOK操作**
+## **Frida操作**
+快速入门操作：<https://www.freebuf.com/articles/system/190565.html>
+
 如：hook安卓常见请求库
 hook `okhttp3` `java.net.HttpURLConnection` `java.net.URL` 三个常见请求库，
 如：发现捕获到的所有请求均来自`java.net.URL`。
