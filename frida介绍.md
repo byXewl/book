@@ -32,6 +32,8 @@ Interceptor.attach(Module.findExportByName("libexample.so", "example_func"), {
 
 ## **Frida操作**
 快速入门操作：<https://www.freebuf.com/articles/system/190565.html>
+功能：打印定位，中间截取数据篡改等。
+实现：重写方法、重载方法，RPC。
 
 如：hook安卓常见请求库
 hook `okhttp3` `java.net.HttpURLConnection` `java.net.URL` 三个常见请求库，
