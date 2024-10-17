@@ -35,7 +35,8 @@ Interceptor.attach(Module.findExportByName("libexample.so", "example_func"), {
 功能：打印定位，中间截取数据篡改等。
 实现：重写方法、重载方法，RPC。
 
-如：hook安卓常见请求库
+前提：知道源代码中函数，或常见库函数，利用报错反推。
+如：hook安卓常见请求库。
 hook `okhttp3` `java.net.HttpURLConnection` `java.net.URL` 三个常见请求库，
 如：发现捕获到的所有请求均来自`java.net.URL`。
 
