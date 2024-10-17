@@ -1,4 +1,4 @@
-## **HOOK**
+## **Frida和HOOK**
 Frida可以通过将JavaScript 脚本插入到APP的内存中来对APP的逻辑进行跟踪和监视乃至修改原程序的逻辑，实现逆向开发和分析人员想要实现的功能称之为HOOK。
 
 
