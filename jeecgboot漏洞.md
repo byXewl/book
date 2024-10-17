@@ -183,6 +183,10 @@ GET /sys/dict/queryTableData?pageSize=100&table=information_schema.tables&text=t
 <https://github.com/jeecgboot/JeecgBoot/issues/5296>
 <https://github.com/jeecgboot/JeecgBoot/issues/5269>
 
+表
+```
+sys_data_source db_username
+```
 
 ^
 ### **未授权泄露最近的请求路径**
