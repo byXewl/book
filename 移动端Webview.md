@@ -20,8 +20,10 @@
 
 ^
 ## **安卓软件中的网页强开调试**
+<https://blog.csdn.net/Jioho_chen/article/details/109345757>
+
 lsposed上算法助手，强开webview调试，
-chrome浏览器打开`chrome://inspect`，
+chrome浏览器打开`chrome://inspect`，edge://inspect/#devices
 软件里打开网页界面，然后回chrome调试，
 这里有个小技巧，每个页面第一个进入调试是抓不全的，chrome调试窗口里保留日志刷新一下即可。
 
