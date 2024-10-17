@@ -77,8 +77,11 @@ adb forward tcp:27043 tcp:27043
 ### **使用**
 基础
 ```
-列出正在运行的进程
+列出正在运行的进程(USB连接)
 frida-ps -U
+
+列出正在运行的进程(网络连接)
+frida-ps -R
 
 列出正在运行的应用程序
 frida-ps -Ua
