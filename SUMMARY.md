@@ -500,7 +500,7 @@
     * [移动端安全专属OS](移动端安全专属OS.md)
     * [安卓逆向](安卓逆向.md)
         * [adb](adb.md)
-        * [frida](frida.md)
+        * [frida介绍](frida介绍.md)
             * [frida使用](frida使用.md)
     * [移动端Webview](移动端Webview.md)
 * [工具脚本](工具脚本.md)
