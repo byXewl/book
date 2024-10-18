@@ -77,3 +77,15 @@ def getKey(msg):
 ^
 ## **常用工具**
 <https://blog.csdn.net/Not__Cry/article/details/139754358>
+
+
+
+
+
+## **加密架构**
+![](.topwrite/assets/image_1729220337721.png)
+
+
+^
+## **综合实战文章**
+<https://xz.aliyun.com/t/14629?time__1311=GqAhYK0KBKAIP05DKBOxmxmuZ3NgPLh3x>
