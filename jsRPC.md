@@ -403,3 +403,7 @@ addons = [
 
 ![](.topwrite/assets/image_1727580420081.png)
 
+
+^
+# **其他jsRPC框架**
+<https://mp.weixin.qq.com/s/Xp_DqBQaQvR2ySjyAS310A>
