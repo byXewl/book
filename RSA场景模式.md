@@ -1,3 +1,5 @@
+<https://mp.weixin.qq.com/s/DKyplEETXNzZ7Bt_Nm5-6g>
+
 一般用轩禹CTE_RSA工具秒。
 ```
 有dp，dq
