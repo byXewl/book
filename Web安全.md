@@ -14,7 +14,8 @@ F12查看网络请求情况。
 
 ^
 一般flag在/flag或/flag.txt中，也可能在env命令环境变量中，还可能在phpinfo()中。
-
+/read?file=/proc/self/environ
+/read?file=/proc/environ
 ^
 ## **爆破参数**
 一个网站没有任何传参提示，如python ssti注入点，需要用工具爆破出参数。
