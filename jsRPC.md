@@ -406,4 +406,4 @@ addons = [
 
 ^
 # **其他jsRPC框架**
-<https://mp.weixin.qq.com/s/Xp_DqBQaQvR2ySjyAS310A>
+<https://sanshiok.com/archive/2.htm>
