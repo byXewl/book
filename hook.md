@@ -1,6 +1,7 @@
 hook基础：
 <https://mp.weixin.qq.com/s/VaKP7w1Tx3qyGmpPoXjYHg>
 hook就是在执行某个函数前，将这个函数替换修改，实现定位或修改功能。
+如：定位加密函数，定位加密前的函数调用等。
 
 常见hook操作：
 <https://cloud.tencent.com/developer/article/2356843>
