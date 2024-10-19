@@ -40,7 +40,7 @@ crypto
 不要下载官方的1.1版本。
 1.0：<https://gitee.com/qqizai/v_jstools>
 1.0最好：<https://pan.baidu.com/s/1gFYnVyeqCtUeC1QT4chOow?pwd=5e22>
-
+文章：<https://xz.aliyun.com/t/14629?time__1311=GqAhYK0KBKAIP05DKBOxmxmuZ3NgPLh3x&u_atoken=e8ae8bdd45e7694351e51d02c3057774&u_asig=1a0c399f17292202845186355e00c7#toc-2>
 
 ## **运行js**
 1、可以将代码保存到.js文件中在本地nodejs的集成环境中运行。
