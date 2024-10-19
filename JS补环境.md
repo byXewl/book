@@ -8,7 +8,8 @@
 ^
 ## **补环境框架**
 使用补环境框架补环境：分析加密函数放下面，环境用插件一键提取代码放加密函数上面即可。
-v_jstools插件：<https://github.com/cilame/v_jstools>
+v_jstools插件：<https://github.com/cilame/v_jstools> 不要下载官方的1.1版本
+1.0：<https://gitee.com/qqizai/v_jstools>
 1.0最好：<https://pan.baidu.com/s/1gFYnVyeqCtUeC1QT4chOow?pwd=5e22>
 
 
