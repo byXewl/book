@@ -36,7 +36,10 @@ crypto
 1、直接搜值，然后多打几个断点慢慢来也能找到。
 2、利用断点调试，一步一步跟。
 3、利用工具(ast-hook)来直接定位加密算法。
-
+4、利用v_jstools插件，控制台输出hook的位置，再断点分析加密函数。
+不要下载官方的1.1版本。
+1.0：<https://gitee.com/qqizai/v_jstools>
+1.0最好：<https://pan.baidu.com/s/1gFYnVyeqCtUeC1QT4chOow?pwd=5e22>
 
 
 ## **运行js**
