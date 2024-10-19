@@ -405,5 +405,7 @@ addons = [
 
 
 ^
+其他实战
+<https://xz.aliyun.com/t/14629?time__1311=GqAhYK0KBKAIP05DKBOxmxmuZ3NgPLh3x&u_atoken=e8ae8bdd45e7694351e51d02c3057774&u_asig=1a0c399f17292202845186355e00c7#toc-6>
 # **其他jsRPC框架**
 <https://sanshiok.com/archive/2.htm>
