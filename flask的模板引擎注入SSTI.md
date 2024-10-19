@@ -248,7 +248,7 @@ SSTI绕过注入:<https://xz.aliyun.com/t/3679#toc-11>
 ctf详解:<https://www.cnblogs.com/Article-kelp/p/14797393.html#questionOne>
 python解题模板:<https://blog.csdn.net/qq_51096893/article/details/122020518>
 全自动绕过getshell的jinjia2工具：<https://github.com/Marven11/Fenjing>
-
+字符长度限制：<https://blog.csdn.net/weixin_43995419/article/details/126811287>
 ```
 pip install fenjing
 fenjing webui

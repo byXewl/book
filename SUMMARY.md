@@ -42,6 +42,7 @@
             * [php模板注入](php模板注入.md)
             * [flask的模板引擎注入SSTI](flask的模板引擎注入SSTI.md)
                 * [tornado模板注入](tornado模板注入.md)
+                * [mako模板注入](mako模板注入.md)
             * [shtml注入](shtml注入.md)
             * [javaSSTI](javaSSTI.md)
         * [python考点](python考点.md)
