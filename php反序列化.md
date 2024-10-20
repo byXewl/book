@@ -43,8 +43,11 @@ $user = new BUU();
 $user->input = &$user->correct;//赋值以满足条件，这里赋值地址指向。
 echo serialize($user);
 ```
-## **魔术方法调用**
 
+
+
+^
+## **魔术方法调用**
 
 序列化和反序列化时的魔术方法调用
 ```
@@ -68,8 +71,11 @@ __callStatic()           //在静态上下文中调用不可访问的方法时�
 __get()                  //读取不可访问属性的值时触发，
 这里的不可访问包含私有属性或未定义，不可访问的属性中读取数据会触发（访问类中一个不存在的属性时也自动调用）。
 
-public function __get($name){ }  //$name为不可访问的属性名
-public function __call($name, $arguments) { $this->{$name} }  
+public function __get($name){  $this->except[$name]; }  //$name为不可访问的属性名
+如果public $except=array("index"=>"upload_img");，$name为index则还会触发upload_img()方法。
+
+
+public function __call($name, $arguments) { $this->{$name} ;}  
 //$name为不可访问的方法名 ,这里方法里的$this->{$name}，意味着调用一个同名的不可访问方法名字的属性
 
 
