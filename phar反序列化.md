@@ -11,7 +11,7 @@ phar之所以能反序列化，是因为Phar文件会以序列化的形式存储
 ctf题中php.ini中的phar.readonly选项，需要为Off（默认是on）
 
 1、phar文件能够上传至服务器 
-//即要求存在file_get_contents()、fopen()这种函数
+//即要求存在file_get_contents、fopen、highlight_file这种函数
 
 2、要有可利用的魔术方法
 //这个的话用一位大师傅的话说就是利用魔术方法作为"跳板"
