@@ -44,7 +44,7 @@ $phartest->stopBuffering();//停止缓冲对 Phar 归档的写入请求，并将
 ?>
 ```
 将phartest.phar文件上传目标服务器。
-再使用phar://伪协议去触发。
+再使用phar://伪协议去触发，实现反序列化后通过利用类代码执行。
 ```
 <?php
 class test{
