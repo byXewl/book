@@ -1,3 +1,8 @@
+## **CS客户端二开项目**
+<https://github.com/testxxxzzz/geacon_pro>
+<https://xz.aliyun.com/t/11839?time__1311=Cq0xuD07itLxlhzG7KDOFD8YLMRtOroD>
+<https://github.com/mai1zhi2/SharpBeacon>
+
 ## **CS本身自带休眠**
 
 "休眠"通常指的是恶意软件或攻击者控制的代理（如Cobalt Strike的Beacon）在一段时间内不执行任何显著活动或网络通信的状态。这种休眠状态可以用于以下目的：
