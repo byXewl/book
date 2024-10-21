@@ -111,4 +111,9 @@ $phar->setMetadata($a);
 $phar->addFromString("test.txt", "test");
 $phar->stopBuffering();
 ```
+生成phar.phar文件后，可改后缀为phar.jpg上传服务器，再伪协议phar://upload/phar.jpg即可触发。
+
+
+
+
 
