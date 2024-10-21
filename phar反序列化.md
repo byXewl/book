@@ -39,7 +39,7 @@ class test{
 }
 $a = new test();
 $a->name="phpinfo();";
-$phartest=new phar('phartest.phar',0);//后缀名必须为phar
+$phartest=new phar('phartest.phar',0);//生成时后缀名必须为phar，生成后可以改
 $phartest->startBuffering();//开始缓冲 Phar 写操作
 $phartest->setMetadata($a);//自定义的meta-data存入manifest
 $phartest->setStub("<?php __HALT_COMPILER();?>");//设置stub，stub是一个简单的php文件。PHP通过stub识别一个文件为PHAR文件，可以利用这点绕过文件上传检测
@@ -64,7 +64,7 @@ echo $phardemo;
 
 
 ^
-案例2
+## **案例2**
 
 
 ```
