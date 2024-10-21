@@ -106,7 +106,8 @@ echo base64_encode(serialize($a)); //test
 
 $phar = new Phar("phar.phar");
 $phar->startBuffering();
-$phar->setStub("__HALT_COMPILER(); ?>");
+//$phar->setStub("__HALT_COMPILER(); ?>");
+$phar->setStub("GIF89a"."<?php __HALT_COMPILER(); ?>");  //设置stub，增加gif文件头
 $phar->setMetadata($a);
 $phar->addFromString("test.txt", "test");
 $phar->stopBuffering();
