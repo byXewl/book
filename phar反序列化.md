@@ -15,6 +15,8 @@ ctf题中php.ini中的phar.readonly选项，需要为Off（默认是on）
 include、require、include_once、require_once、highlight_file 、
 show_source 、readfile 、file_get_contents 、fopen 、file
 
+phar文件可以改名为任意后缀，只要能被伪协议读取即可。
+
 2、要有可利用的魔术方法
 //这个的话用一位大师傅的话说就是利用魔术方法作为"跳板"
 
