@@ -123,6 +123,8 @@ saber-refresh-token
 ^
 ## **默认密码**
 ```
+固定的，应该可以碰撞
+
 默认有账户admin
 默认密码123456
 10470c3b4b1fed12c3baac014be15fac67c6e815
