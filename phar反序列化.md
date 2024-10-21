@@ -30,7 +30,7 @@ class test{
     public $name="qwq";
     function __destruct()
     {
-        echo $this->name;
+         eval($this->name);
     }
 }
 $a = new test();
