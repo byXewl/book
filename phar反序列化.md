@@ -113,7 +113,7 @@ $phar->addFromString("test.txt", "test");
 $phar->stopBuffering();
 ```
 生成phar.phar文件后，可改后缀为phar.jpg上传服务器，再伪协议phar://upload/phar.jpg即可触发。
-
+如果是触发读文件需要有回显，如echo
 
 
 
