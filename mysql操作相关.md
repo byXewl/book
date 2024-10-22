@@ -76,6 +76,7 @@ my.ini/my.cnf配置读写权限：
 在 MySQL 5.5 之后 secure_file_priv 默认是 NULL，这个情况下不可以读写文件
 查看配置：
 show variables like '%secure%';
+select @@secure_file_priv;
 
 
 读文件：
