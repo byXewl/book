@@ -1,13 +1,14 @@
 场景：
   1、服务端接收前端传递的参数后，没有做充分的过滤限制或编码直接作为文件读取的路径参数。
     场景：导出xls下载，文件读取等。
-  2、关键词：path、System.GetProperty(“user.dir”)、fileInputStream、file.read、filePath。
+  2、关键词：path、System.GetProperty(“user.dir”)、fileInputStream、file.read、filePath、fileName。
 危害：通过目录穿越读取服务器文件、目录遍历等。
 防御：过滤用户可控的参数等。
 
 ^
-new File()写文件，传入路径时，可能目录穿越。
-偶尔会借助commons io库。
+## **产生**
+new File()写文件，传入路径参数fileName/file/file_name/时，可能目录穿越。
+偶尔会借助commons io库，自定义的工具类
 
 
 ^
