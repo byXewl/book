@@ -70,6 +70,20 @@ axios.get('https://example.com/api/some-resource', {
 2. **验证 JWT 是否有效：** 在接收到请求时，首先解析JWT检查 JWT 的UUID是否在 Redis 黑名单中。如果 JWT的UUID 存在于黑名单，说明用户已经退出登录，此时应拒绝该 JWT 的访问。
 3. **JWT 过期处理：** JWT 本身包含了过期时间信息，因此在验证 JWT 有效性时，也需要检查 JWT 是否已经过期。即使 JWT 不在黑名单中，如果已经过期，也应该拒绝其访问。
 
+
+
+
+
+^
+## **双token登录方案**
+access_token 在登陆后会存在redis中`user:token:token 为key`有效时间为12小时
+refresh_token 则不会存在redis中, 会存在cookie中, 有效时间为一周
+
+![](.topwrite/assets/image_1729654109098.png)
+
+
+
+
 ^
 ## **伪造jwt越权**
 jwt的数据载体可能会有表示这个用户是否为管理员，如"admin":"flase"。
