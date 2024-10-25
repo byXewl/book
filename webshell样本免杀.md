@@ -43,6 +43,6 @@ Shielden进行webshell加壳。
 弱鸡webshell免杀工具。
 
 可以参考文章：<https://blog.csdn.net/guanjian_ci/article/details/139295929>
-
+php解密：<https://decode.xiaojieapi.com/decode>
 ^
 在一些工具一键上传文件马的时候可以抓包拦截，替换成免杀马。
