@@ -1,5 +1,3 @@
-
-
 ## **webshell文件特征**
 
 主要是正常匹配一些敏感函数，和特征代码。
@@ -44,5 +42,7 @@ Shielden进行webshell加壳。
 
 可以参考文章：<https://blog.csdn.net/guanjian_ci/article/details/139295929>
 php解密：<https://decode.xiaojieapi.com/decode>
+
 ^
+
 在一些工具一键上传文件马的时候可以抓包拦截，替换成免杀马。
