@@ -18,6 +18,7 @@ java程序，登录时有记住我功能
 黑暗引擎
 shodan搜索：rememberMe=deleteMe
 fofa搜索：header="rememberMe=deleteMe"
+谷歌：inurl:"/login;JSESSIONID="
 
 代码中密钥：
 ```
