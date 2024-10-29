@@ -19,6 +19,16 @@ java程序，登录时有记住我功能
 shodan搜索：rememberMe=deleteMe
 fofa搜索：header="rememberMe=deleteMe"
 
+代码中密钥：
+```
+@Bean
+public CookieRememberMeManager rememberMeManager(SimpleCookie rememberMeCookie) {
+    CookieRememberMeManager manager = new CookieRememberMeManager();
+    manager.setCipherKey(Base64.decode("Z3VucwAAAAAAAAAAAAAAAA=="));
+    manager.setCookie(rememberMeCookie);
+    return manager;
+}
+```
 ^
 ## **Shiro漏洞利用和验证**
 
