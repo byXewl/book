@@ -6,10 +6,14 @@ F12查看网络请求情况。
 
 查看传参，回显情况。sql注入，文件包含，模板注入。
 
-目录测试，如flag.php，robots.txt
+目录测试，如flag.php，robots.txt，www.zip
 探针/tz.php，/backup.sql
+```
+python3 dirsearch.py -u "http://16b5eb0b-ac30-452a-808a-0e9214102abd.node3.buuoj.cn/" -s 1 --exclude-status=429,403 -t 1
+```
 
-临时文件是在vim编辑文本时就会创建的文件，如果程序正常退出，临时文件自动删除，如果意外退出就会保留，当vim异常退出后，因为未处理缓存文件，导致可以通过缓存文件恢复原始文件内容。所以通过在url后面加上/index.php.swp即可看到flag。
+临时文件
+>临时文件是在vim编辑文本时就会创建的文件，如果程序正常退出，临时文件自动删除，如果意外退出就会保留，当vim异常退出后，因为未处理缓存文件，导致可以通过缓存文件恢复原始文件内容。所以通过在url后面加上/index.php.swp即可看到flag。
 以index.php来说，第一次退出后，缓存文件名为index.php.swp，第二次退出后，缓存文件名为index.php.swo,第三次退出后文件名为index.php.swn。
 
 ^
