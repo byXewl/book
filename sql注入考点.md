@@ -19,7 +19,7 @@ substr("abc",1,1)获取第一位置的1个字符
 ord()字符转ascii的数值
 ascii()字符转ascii的数值
 
-先判断是否布尔差异
+先判断是否布尔差异，并判断过滤字符
 1^length(database())>4^1
 1^length(database())<4^1
 
