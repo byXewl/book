@@ -1,6 +1,7 @@
 文章：<https://www.freebuf.com/articles/web/264740.html>
 
 框架中反序列化如果有命名空间，加上namespace app\web\controller;
+
 ## **php执行序列化**
 用php执行序列化，看序列化后什么样子
 ```
