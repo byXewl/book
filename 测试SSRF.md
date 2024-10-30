@@ -12,9 +12,23 @@ webhook的接口参数可控
 ## **测试有回显的SSRF的探测协议：**
 http:
 ```    
-    验证，请求一个查看本地ip的网站，查询出口ip    
-    验证，请求127.0.0.1
+验证，请求一个查看本地ip的网站，查询出口ip    
+验证，请求127.0.0.1
+
+对于云服务器还可以访问元数据服务。
+元数据服务是一种提供实例相关配置信息的服务，它允许在实例内部访问实例的属性信息，如实例ID、VPC信息、网卡信息等
+阿里云
+http://100.100.100.200/latest/meta-data/
+腾讯云
+http://metadata.tencentyun.com/latest/meta-data/
+华为云
+http://169.254.169.254/
+http://169.254.169.254/latest/meta-data/instance-id
 ```
+
+
+
+
 file:
 ```
     访问本地文件，file:///etc/hosts 查看本机内网ip
