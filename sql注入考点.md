@@ -21,8 +21,9 @@ ord()字符转ascii的数值
 ascii()字符转ascii的数值
 
 先判断是否布尔差异，并判断过滤字符
-1^length(database())>4^1
-1^length(database())<4^1
+1^length(database())>4
+1^(length(database())=4)
+1^length(database())<4
 
 
 布尔，再异或的差异，获取表名
