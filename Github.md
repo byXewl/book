@@ -80,3 +80,10 @@ is:public                  #公开的仓库
 is:private                 #匹配有权限的私有仓库
 ```
 
+搜issues
+```
+漏洞
+Reproduction
+Unsafe Code
+危害
+```
