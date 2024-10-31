@@ -80,3 +80,5 @@ $("element[attribute='< img src=x onerror=alert(1)>'")
 
 漏洞模板：<https://web.sqlsec.com/storage/attachments/2023/07/01/wrjhhYU9gzLzfqicJ3vXNP47wzQJvMT51EGH4TPS.pdf>
 
+他人知识库：
+<http://wiki.bainsec.cn/#/docs/86da5e76fb2145f9a4237d0f8ac1c701/1212>
