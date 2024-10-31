@@ -881,6 +881,7 @@
                 * [CC4和CC2链](CC4和CC2链.md)
                 * [CC7和CC5链](CC7和CC5链.md)
             * [JDBC反序列化](JDBC反序列化.md)
+                * [MySQL读客户端任意文件](MySQL读客户端任意文件.md)
             * [非标准反序列化](JSON类反序列化.md)
                 * [SnakeYAML反序列化](SnakeYAML反序列化.md)
                 * [Fastjson反序列化](Fastjson反序列化.md)
