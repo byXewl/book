@@ -43,11 +43,11 @@ addslashes($id);
 $id=str_replace(array("\\0","%00","\\'","'"),"",$id);
 
 那么传入\0 先变成\\0 再变成\
-如果是sql语句\就会转义后面全部为字符串，如果没有字符串闭合就会报错，或直到遇到下一个闭合符。
+如果是sql语句\就会转义后面字符。
 select * from images where id='{$id}' or path='{$path}'
 
 select * from images where id='\' or path='   {$path}'
-这里\' or path = ' 成了一个单独字符串
+这里'\' or path = ' 成了一个单独字符串
 $path就可以随意注入
 or sleep(3)--+
 ```
