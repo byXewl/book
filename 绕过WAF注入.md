@@ -6,6 +6,9 @@ is_numeric($_GET[‘id’]) ，过滤只允许数字，16进制编码sql注入�
 空格过滤可以利用/**/代替空格。
 利用括号，括号住变量。
 ```
+所有库
+select(group_concat(schema_name))from(information_schema.schemata)
+库所有表
 select(group_concat(table_name))from(information_schema.tables)where(table_schema=database())
 ```
 
