@@ -28,3 +28,15 @@ select(group_concat(table_name))from(information_schema.tables)where(table_schem
 ^
 ## **函数等效替换**
 报错函数被过滤，寻找顶替。
+
+
+
+^
+## **存在转义函数**
+```
+addslashes($id);
+将字符串里面的' " \等转义。
+'将变成\'
+
+
+```
