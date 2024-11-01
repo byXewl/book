@@ -130,7 +130,8 @@ update语句中，在update后面有注入，
 1、修改前面字段值
 ```
 可以通过注入修改此时的前面字段的值，如address字段
-'.`address`=database()#
+',`address`=database()#
+
 ```
 2、where报错注入
 ```
