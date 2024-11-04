@@ -57,3 +57,10 @@ select * from images where id='\' or path='   {$path}'
 $path就可以随意注入
 or sleep(3)--+
 ```
+
+
+^
+## **select 被过滤，使用正则模糊匹配值**
+```
+
+```
