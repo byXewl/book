@@ -41,6 +41,7 @@ select 1,2 union select * from user;
 
 select `2` from  (select 1,2 union select * from user) as u
 
+整合
 select group_concat(`2`) from  (select 1,2 union select * from user) as u 
 
 
