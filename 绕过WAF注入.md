@@ -60,7 +60,8 @@ or sleep(3)--+
 
 
 ^
-## **where后=被过滤，使用正则模糊匹配值**
+## **where后=被过滤，使用正则模糊匹配字段的值**
+需要知道字段名
 ```
 select(real_flag_1s_here)from(users)where(real_flag_1s_here)regexp('^f')
 
