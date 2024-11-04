@@ -45,7 +45,9 @@ select `2` from  (select 1,2 union select * from user) as u
 select group_concat(`2`) from  (select 1,2 union select * from user) as u 
 
 
-1. 列名需要用`\`包裹起来
+1. 列名需要用`\`包裹起来，字段名为数字，则`2`
+
+
 2. 使用子查询的时候,即一个查询嵌套在另一个查询中,内层查询的结果可以作为外层查询的条件,内层查询到的结果需要起一个别名(as)
 ```
 
