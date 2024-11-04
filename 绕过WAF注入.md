@@ -54,7 +54,7 @@ select group_concat(`2`) from  (select 1,2 union select * from user) as u
 ```
 表中如果有多个记录值：要条件查询成一条，一般都是一条。where flag like "f%"
 
-
+表的字段数判断：select 1,2 union select * from user  试出字段数。
 
 
 
