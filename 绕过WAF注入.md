@@ -30,7 +30,7 @@ select group_concat(table_name）from mysql.innodb_table_stats where database_na
 ```
 
 ^
-## **知道表名，不知字段名注入**
+## **布尔中知道表名，不知字段名注入，布尔加无列名注入**
 通过无列名注入获取表字段，group_concat(某一字段所有值)。
 <https://www.cnblogs.com/hello-there/p/12918265.html>
 
