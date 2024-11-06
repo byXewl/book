@@ -1,11 +1,19 @@
 JD-GUI：class转java
+
 Fortify：利用fortify进行扫描，生成初步扫描结果，进行误报分析，排除误报
   --开心版安装使用参考：<https://blog.csdn.net/qq_51577576/article/details/128429287>
+
 SonarQube：静态扫描，可以免费使用，而Fortify需要许可证
+
 CodeQL：codeql
+
 PMD
+
 FindBugs
-jar-analyzer对jar包漏洞一键分析等：<https://github.com/jar-analyzer/jar-analyzer>
+
+jar-analyzer：对jar包漏洞一键分析等：<https://github.com/jar-analyzer/jar-analyzer>
+
+ChanziSAST 铲子：静态SAST扫描
 
 框架项目一键搭建工具：<http://goldpankit.com/>
 
