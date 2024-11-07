@@ -160,6 +160,7 @@ class Ion_Fan_Princess{
 
 ^
 private私有属性的反序列化，需要替换字符（注意：在某些终端vscode序列化时会截断显示，用phpsotrm）
+赋值使用new Name('admin',100);
 ```
 O:4:"Name":2:{s:14:"口Name口username";s:6:"admine";s:14:"口Name口password";s:3:"100";}
 会有口，改为%00
