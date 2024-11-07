@@ -17,7 +17,7 @@ $_GET[a]     //array( [0] => 1 [1] => 2 )
 
 传参特性：
 $_POST['a_sec']
-需要传a[sec
+需要传a[sec=
 
 
 
