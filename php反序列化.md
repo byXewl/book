@@ -159,7 +159,7 @@ class Ion_Fan_Princess{
 在线php运行：<https://www.jyshare.com/compile/1/>
 
 ^
-private私有属性的反序列化，需要替换字符（注意：在某些终端序列化时会截断显示）
+private私有属性的反序列化，需要替换字符（注意：在某些终端vscode序列化时会截断显示，用phpsotrm）
 ```
 O:4:"Name":2:{s:14:"口Name口username";s:6:"admine";s:14:"口Name口password";s:3:"100";}
 会有口，改为%00
