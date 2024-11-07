@@ -15,6 +15,12 @@ $_GET[b][1][2]  //3
 $_GET[a]     //array( [0] => 1 [1] => 2 )
 
 
+传参特性：
+$_POST['a_sec']
+需要传a[sec
+
+
+
 关键词：
 $_GET,$_POST,$_REQUEST,$_FILES,$_SERVER
 
