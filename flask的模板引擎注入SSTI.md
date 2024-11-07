@@ -170,7 +170,7 @@ for k, v in enumerate(allList):
 <class 'site._Printer'> 内含os模块（不需要import os） ，可能在第71位，可以借助这些类来执行命令。
 _io.TextIOWrapper 可以文件读取，可能在122位。
 ```
-大多数题目的flag均藏在系统中的某个文件内。
+大多数题目的flag均藏在系统中的某个文件内，或env环境变量中。
 
 1、warnings.catch_warnings类利用：
 ```
