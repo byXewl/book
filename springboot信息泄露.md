@@ -12,6 +12,8 @@ Spring Boot 自带 Actuator，并且在应用程序中添加 spring-boot-starter
 ```
 #配置暴露所有Actuator端点，导致未授权
 management.endpoints.web.exposure.include=*
+
+若依微服务版就是默认全部暴露
 ```
 ^
 Actuator模块包括一组内置的端点，这些端点允许你通过 HTTP 或 JMX访问不同的管理和监控功能。一些常用的端点包括：
