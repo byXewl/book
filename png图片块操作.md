@@ -1,5 +1,6 @@
-png用010 editor打开，运行模板png.bit，发现图片有两个IDAT块。
-使用tweakpng工具：<https://github.com/jsummers/tweakpng> 去除IDAT块，显示新图片。
+png用010 editor打开，运行模板png.bit，发现图片有多个IDAT块。
+使用tweakpng工具：<https://github.com/jsummers/tweakpng> 
+一般就是从第一个开始依次去除IDAT块，ctrl+s保存，同时显示新图片是否存在信息。
 ![](.topwrite/assets/image_1732106649668.png)
 ![](.topwrite/assets/image_1732106424579.png)
 
