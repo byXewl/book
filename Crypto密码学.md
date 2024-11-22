@@ -3,3 +3,6 @@
 
 数学基础：
 <https://www.yuque.com/7hao/juangou/ee3bac>
+
+SageMath在线版：
+<https://sagecell.sagemath.org/>
