@@ -77,7 +77,7 @@ Hex View
 OBPO 自动去除混淆。
 Keypatch Patcher 修改条件才跳转的汇编代码。
 
-
+^
 ## **IDA动态调试**
 汇编页，打断点
 左上角debugger选择本地windows运行，
