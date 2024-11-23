@@ -50,6 +50,15 @@ void *memset(void *s, int c, size_t n);
 `c` 是要设置的值，对于字符串来说，通常是字符的 ASCII 码。
 `n` 是要设置的字节数。
 ```
+注意：
+```
+int类型的数组和变量，可能是连续的
+  int v7[2]; // [esp+8h] [ebp-20030h] BYREF
+  int v8; // [esp+10h] [ebp-20028h]
+  int v9; // [esp+14h] [ebp-20024h]
+  int v10; // [esp+18h] [ebp-20020h]
+fun1(v7, 0, 4);//实际上v7到v10都传进入函数了
+```
 
 ^
 #### **String字符串窗口**
