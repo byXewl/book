@@ -76,6 +76,7 @@ Hex View
 ## **IDA插件操作**
 OBPO 自动去除混淆。
 Keypatch Patcher 修改条件才跳转的汇编代码。
+lazyIDA 在汇编页，右键，有NOP可以快去去除花指令，有Convert类似Export data可以导出python格式数据。
 
 ^
 ## **IDA动态调试**
