@@ -71,6 +71,15 @@ fun1(v7, 0, 4);//实际上v7到v10都传进入函数了
 6. `int v9;` - 占用4字节。
 7. `char v10;` - 占用1字节。
 8. `int i;` - 占用4字节。
+内存地址：
+  _BYTE v4[12]; // [esp+12h] [ebp-2Eh] BYREF
+  _DWORD v5[3]; // [esp+1Eh] [ebp-22h]
+  _BYTE v6[5]; // [esp+2Ah] [ebp-16h] BYREF
+  int v7; // [esp+2Fh] [ebp-11h]
+  int v8; // [esp+33h] [ebp-Dh]
+  int v9; // [esp+37h] [ebp-9h]
+  char v10; // [esp+3Bh] [ebp-5h]
+  int i; // [esp+3Ch] [ebp-4h]
 ```
 
 ^
