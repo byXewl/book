@@ -56,6 +56,10 @@ void *memset(void *s, int c, size_t n);
 
 
 2、memcpy函数用于将内存从一个位置复制到另一个位置
+
+3、strcat函数用于将一个字符串追加到另一个字符串的末尾。具体来说，`strcat`函数会将`Source`字符串（包括终止的空字符`\0`）复制到`Destination`字符串的末尾，并返回`Destination`字符串的指针。
+
+
 ```
 注意：
 ```
