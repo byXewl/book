@@ -53,7 +53,7 @@ void *memset(void *s, int c, size_t n);
 注意：
 ```
 int类型的数组和变量，可能是连续的
-  int v7[2]; // [esp+8h] [ebp-20030h] BYREF
+  int v7[2]; // [esp+8h] [ebp-20030h] BYREF   //8h+4=Ch  //Ch+4=10h
   int v8; // [esp+10h] [ebp-20028h]
   int v9; // [esp+14h] [ebp-20024h]
   int v10; // [esp+18h] [ebp-20020h]
