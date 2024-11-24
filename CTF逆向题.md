@@ -84,6 +84,7 @@ CryptCreateHash(phProv, 0x8003u, 0, 0, \&phHash) )
 
 md5输出32位
 sha1输出40位
+注意输出一般为小写，有的比较为大写
 ```
 
 ^
