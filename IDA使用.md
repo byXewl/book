@@ -78,6 +78,7 @@ fun1(v7, 0, 4);//实际上v7到v10都传进入函数了
 6. `int v9;` - 占用4字节。
 7. `char v10;` - 占用1字节。
 8. `int i;` - 占用4字节。
+9. unsigned __int8  u 占用1字节。
 内存地址：
   _BYTE v4[12]; // [esp+12h] [ebp-2Eh] BYREF
   _DWORD v5[3]; // [esp+1Eh] [ebp-22h]
