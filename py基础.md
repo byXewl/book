@@ -21,8 +21,9 @@ for index,v in enumerate(NBA):
     print(f"{index}是"+v+"\n")
 
 大到小
-for i in range(len(NBA)-1,0,-1):
+for i in range(len(NBA)-1,0,-1): #起始索引，结束索引（不包括），步长
     NBA[i]
+
 
 for i in range(34):
     print(chr(NBA[i]),end='') #end不换行
