@@ -21,6 +21,8 @@ KeygenMee（生成注册码）
 ctrl+alt 将条件跳转的汇编 转成 相反的跳转汇编等，jnz->je 或jne->jz
 修改完后，点击Edit-Patch program-Apply patchs to 应用生效。
 
+3.对于exe、apk文件，解压后里面可能有特殊资源文件。
+
 ## **迷宫maze**
 走迷宫用了特定的步数走出才会显示正确的flag。
 做法：确定迷宫内容和控制符，手动走迷宫or写BFS之类的走迷宫算法
