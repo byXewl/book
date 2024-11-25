@@ -33,8 +33,9 @@ alt + t 搜索字符串
 
 选择后shift+e 可以导出汇编为c代码，16进制数据等。
 一般导出为C unsigned char array(hex)，变成c数组或python列表数组，进行遍历操作。
-数据段的值：需要注意
+数据段的值：需要注意定义
 ![](.topwrite/assets/image_1732431392925.png)
+注意变量指向的地址
 ![](.topwrite/assets/image_1732514362599.png)
 
 ^
