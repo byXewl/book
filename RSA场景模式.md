@@ -36,14 +36,14 @@ rsa.decrypt(f.read(),key).decode()
 
 ^
 ## **4、wiener(维纳)攻击**
-n很大，分不了，e也很大。给出了c。
+n很大分不了，e也很大。给出了c。
 用维纳攻击，获取d，解密m
 ![](.topwrite/assets/image_1732607232966.png)
 
 
 ^
 ## **5、低加密指数小e攻击**
-普通e一般是65537，这里的e很小为3。
+普通e一般是65537，这里的e很小为3。n很大无法分解。
 ![](.topwrite/assets/image_1732610710952.png)
 ![](.topwrite/assets/image_1732610739045.png)
 则无需求d，即可解密m
