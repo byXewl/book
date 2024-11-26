@@ -124,5 +124,5 @@ dq=d%(q-1)
 ## **9、变形题n是p的r次方**
 已知：n是p的r次方，r=4，给出n,e,c。
 ![](.topwrite/assets/image_1732622957160.png)
-![](.topwrite/assets/image_1732623148954.png)
-由n得p，再得d，解密m。
+![](.topwrite/assets/image_1732623371189.png)
+由n分解素数得p，再得d，解密m。
