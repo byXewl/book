@@ -119,6 +119,7 @@
                 * [RSA脚本](RSA脚本.md)
                 * [python实现简单RSA](python实现简单RSA.md)
                 * [RSA场景模式](RSA场景模式.md)
+                * [ SageMath](SageMath.md)
             * [ECC非对称加密](ECC非对称加密.md)
             * [对称加密](对称加密.md)
             * [单向加密](单向加密.md)
