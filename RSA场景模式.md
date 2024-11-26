@@ -36,4 +36,5 @@ rsa.decrypt(f.read(),key).decode()
 
 ^
 ## **4、wiener(维纳)攻击**
-n很大，分不了，e也很大
+n很大，分不了，e也很大。给出了c。
+用维纳攻击，获取d，解密m
