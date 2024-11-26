@@ -104,6 +104,14 @@ x≡ak​(modnk​)
 
 ^
 ## **8、dp泄露**
-已知公钥n，e，密文c。以及dp，其中dp = d mod (p-1)。而n无法分解。
+已知公钥n，e，密文c。以及dp，其中dp = d mod (p-1)  #dq=d%(q-1)。而n无法分解。
 ![](.topwrite/assets/image_1732620872166.png)
 根据dp求出p和q即d，解密m。
+
+## **8、dp dq泄露**
+已知公钥n，e，密文c，而n无法分解。
+还知道dp，dq
+```
+dp=d%(p-1)
+dq=d%(q-1)
+```
