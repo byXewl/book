@@ -29,4 +29,5 @@ rsa.decrypt(f.read(),key).decode()
 共模攻击，也称同模攻击。
 同模攻击利用的大前提就是，RSA体系在生成密钥的过程中使用了相同的模数n。
 在CTF题目中，就是同一明文，同一n，不同e，进行加密。
-即m，n相同，e，c不同，且e1和e2互质
+即m，n相同，e，c不同，且e1和e2互质，如此求出m。
+![](.topwrite/assets/image_1732605794324.png)
