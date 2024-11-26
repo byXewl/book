@@ -100,5 +100,10 @@ x≡ak​(modnk​)
 两个n里使用有相同的素数p或q。如n1和n2有相同的q，则n1和n2不互素，共享素数。
 在CTF中，同样一个e（一般为65537）和m，有两个或多组n和c时，那么n之间可能是共享素数的。
 ![](.topwrite/assets/image_1732620396104.png)
-求出q，再求p，再求d即可解密m。
+最大公约数求出q，再求p，再求d即可解密m。
 
+^
+## **8、dp泄露**
+已知公钥n，e，密文c。以及dp，其中dp = d mod (p-1)
+![](.topwrite/assets/image_1732620872166.png)
+根据dp求出p和q即d，解密m。
