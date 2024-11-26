@@ -17,4 +17,25 @@ SageMath 9.3 Notebook 此时会网页版
 
 1、p高位攻击
 
+2、m高位攻击
+
+3、Franklin-Reiter attack
+
+
+4、d低位攻击
+
+5、广播攻击
+
+6、Boneh Durfee 攻击
+
+
+7、维纳变形（三素数pqr）
+
+
+
+
+
+
+
+
 
