@@ -26,9 +26,13 @@ SageMath 9.3 Notebook 运行这个此时会有网页版
 ^
 ## **sage脚本**
 
-1、p高位攻击
+1、m高位攻击
+已知明文m高位，求明文m低位。
 
-2、m高位攻击
+2、p高位攻击
+已知p高位，求地位
+
+
 
 3、Franklin-Reiter attack
 
