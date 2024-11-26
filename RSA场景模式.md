@@ -1,10 +1,10 @@
 
 <https://mp.weixin.qq.com/s/DKyplEETXNzZ7Bt_Nm5-6g>
 # **RSA题目大全**
-生成须知
+题目须知
 ```
 m='flag{20d6e2da95dcc1fa5f5432a436c4be18}'
-#字符串转数字
+
 m=libnum.s2n(m)
 # libnum.s2n() 函数的作用是将字符串转换为数字。
 # 这个函数特别适用于处理十六进制或十进制的字符串，将其转换为对应的整数值。
