@@ -132,4 +132,7 @@ yafu-x64.exe分解n素数得p，再得d，解密m。
 n由三个素数p,q,r而来。
 ![](.topwrite/assets/image_1732624975970.png)
 ![](.topwrite/assets/image_1732625015423.png)
-yafu-x64.exe分解n的p,q,r，又phi_n=(p-1)*(q-1)*(r-1)，求d解密m。
+yafu-x64.exe分解n的p,q,r，又phi_n=(p-1)*(q-1)*(r-1)，这里phi_n一般就直接和e互素可求d，解密m。
+
+## **12、e和phi_n不互素情况**
+e和phi_n不互素是指它俩的公约数不为1，求d报错d=gmpy2.invert(e,phi_n)
