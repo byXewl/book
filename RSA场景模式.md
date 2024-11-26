@@ -152,7 +152,8 @@ e和phi_n不互素是指它俩的公约数不为1，直接求d报错d=gmpy2.inve
 ^
 ## **14、rabin解密**
 Rabin加密算法是一种基于数论的非对称加密算法，其安全性依赖于大整数分解的难度。
-Rabin算法可以看做为RSA算法的一个特例，即指数e取2。
+Rabin算法可以看做为RSA算法的一个特例，即指数e取2，e=2。
+![](.topwrite/assets/image.png)
 
 
 
