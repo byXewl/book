@@ -117,3 +117,12 @@ dq=d%(q-1)
 ```
 ![](.topwrite/assets/image_1732621477300.png)
 根据剩余定理，费马小定理，脚本直接求m。
+
+
+
+^
+## **9、变形题n是p的r次方**
+已知：n是p的r次方，r=4，给出n,e,c。
+![](.topwrite/assets/image_1732622957160.png)
+![](.topwrite/assets/image_1732623148954.png)
+由n得p，再得d，解密m。
