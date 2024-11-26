@@ -1,12 +1,18 @@
 在线版：<https://sagecell.sagemath.org/>
 离线版安装：<https://mirrors.aliyun.com/sagemath/win/index.html>
 
-
+使用
 ```
-桌面
+主要用于解决：
+数论
+椭圆曲线
+RSA变形等题
+```
+```
+安装后桌面：
 SageMath 9.3
 SageMath 9.3 Shell
-SageMath 9.3 Notebook 此时会网页版
+SageMath 9.3 Notebook 运行这个此时会有网页版
 ```
 网页使用即可
 ![](.topwrite/assets/image_1732633628535.png)
