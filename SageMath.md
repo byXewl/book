@@ -3,7 +3,8 @@ sage的本地环境较大（接近10G）
 离线版安装：<https://mirrors.aliyun.com/sagemath/win/index.html>
 
 
-
+教程
+<https://tanglee.top/2022/03/27/SageMath%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/>
 使用
 <https://kangming-ux.github.io/crypto/Use-of-Sagemath-in-CTF-Cryptography.html>
 ```
