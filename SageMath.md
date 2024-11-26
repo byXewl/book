@@ -1,7 +1,11 @@
 在线版：<https://sagecell.sagemath.org/>
+sage的本地环境较大（接近10G）
 离线版安装：<https://mirrors.aliyun.com/sagemath/win/index.html>
 
+
+
 使用
+<https://kangming-ux.github.io/crypto/Use-of-Sagemath-in-CTF-Cryptography.html>
 ```
 主要用于解决：
 数论
