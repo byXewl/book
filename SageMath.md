@@ -16,7 +16,11 @@ RSA变形等题
 ```
 安装后桌面：
 SageMath 9.3
-SageMath 9.3 Shell 命令窗口安装库，如在里面执行 sage -pip install libnum
+
+SageMath 9.3 Shell 命令窗口
+可以安装库，如在里面执行 sage -pip install libnum
+用离线版可以安装这些库方便数字和字符转换，用在线版会没有这个库，就不能用转换函数，在线版手动转。
+
 SageMath 9.3 Notebook 运行这个此时会有网页版
 ```
 网页使用即可
