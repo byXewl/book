@@ -109,9 +109,11 @@ x≡ak​(modnk​)
 根据dp求出p和q即d，解密m。
 
 ## **8、dp dq泄露**
-已知公钥n，e，密文c，而n无法分解。
+已知p，q，密文c，不知道e。
 还知道dp，dq
 ```
 dp=d%(p-1)
 dq=d%(q-1)
 ```
+![](.topwrite/assets/image_1732621477300.png)
+脚本直接求m。
