@@ -31,3 +31,4 @@ rsa.decrypt(f.read(),key).decode()
 在CTF题目中，就是同一明文，同一n，不同e，进行加密。
 即m，n相同，e，c不同，且e1和e2互质，如此求出m。
 ![](.topwrite/assets/image_1732605794324.png)
+因此，同一m，同一n，不同e，进行加密。在不需要知道d的情况下，可以进行解密。
