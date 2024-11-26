@@ -46,5 +46,5 @@ n很大分不了，e也很大。给出了c。
 普通e一般是65537，这里的e很小为3。n很大无法分解。
 ![](.topwrite/assets/image_1732610710952.png)
 ![](.topwrite/assets/image_1732610739045.png)
-则无需求d，即可解密m
+则无需分解n和求d，即可解密m
 
