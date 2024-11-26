@@ -16,7 +16,7 @@ RSA变形等题
 ```
 安装后桌面：
 SageMath 9.3
-SageMath 9.3 Shell
+SageMath 9.3 Shell 命令窗口安装库，如在里面执行 sage -pip install libnum
 SageMath 9.3 Notebook 运行这个此时会有网页版
 ```
 网页使用即可
