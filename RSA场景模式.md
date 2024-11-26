@@ -143,3 +143,7 @@ e和phi_n不互素是指它俩的公约数不为1，直接求d报错d=gmpy2.inve
 
 ^
 ## **13、N和C不互素情况**
+给出n,c,e，e = 0x10001，n无法分解成p*q。
+通过n和c求出p，q=n//p
+![](.topwrite/assets/image_1732626491942.png)
+
