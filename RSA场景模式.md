@@ -108,7 +108,7 @@ x≡ak​(modnk​)
 ![](.topwrite/assets/image_1732620872166.png)
 根据dp求出p和q即d，解密m。
 
-## **8、dp dq泄露**
+## **9、dp dq泄露**
 已知p，q，密文c，不知道e。
 还知道dp，dq
 ```
@@ -121,8 +121,15 @@ dq=d%(q-1)
 
 
 ^
-## **9、变形题n是p的r次方**
+## **10、变形题n是p的r次方**
 已知：n是p的r次方，r=4，给出n,e,c。
 ![](.topwrite/assets/image_1732622957160.png)
 ![](.topwrite/assets/image_1732623371189.png)
-由n分解素数得p，再得d，解密m。
+yafu-x64.exe分解n素数得p，再得d，解密m。
+
+^
+## **11、N分解三个素数**
+n由三个素数p,q,r而来。
+![](.topwrite/assets/image_1732624975970.png)
+![](.topwrite/assets/image_1732625015423.png)
+yafu-x64.exe分解n的p,q,r，又phi_n=(p-1)*(q-1)*(r-1)，求d解密m。
