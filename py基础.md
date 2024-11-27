@@ -2,6 +2,15 @@
 python 2 的print无() 包管理工具pip2
 python 3 的print() 包管理工具pip3
 
+
+在 Python 3.x 中，`print` 是一个函数，而在 Python 2.x 中，`print` 是一个语句。使用 `from __future__ import print_function` 可以让你在 Python 2.x 中以函数的形式使用 `print`，这样你的代码在 Python 2.x 和 3.x 之间迁移时会更加容易。
+由于这是一个语言特性，你不需要安装任何东西。你只需要在你的 Python 2.x 脚本的顶部添加这行代码即可：
+```
+from __future__ import print_function
+```
+
+
+
 ## **一些特殊用法**
 ```
 睡眠
