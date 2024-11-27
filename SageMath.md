@@ -192,11 +192,10 @@ print(libnum.n2s(int(m)))
 ^
 ## **7、Boneh Durfee 攻击（类似维纳，e很大）**
 d 较小时，满足dN^0.292d<N0.292B  时，Boneh and Durfee attack 比维娜 Wiener's Attack要强一些
-知道e很大，另外d≤n^0.27。n很大分不了，也给出了c。
+知道e很大，另外d≤n^0.27。n很大分不了。
 
 用类似维纳攻击，获取d。再手动解密获取m。
-下面的Sage脚本可以获取d：
-
+下面的Sage脚本可以获取d，代码中只需要n和e即可求d。
 
 
 
