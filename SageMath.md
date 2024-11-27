@@ -149,12 +149,16 @@ phase5(n1, c1, n2, c2, n3, c3)
 
 
 ^
-3、Franklin-Reiter attack
+## **6、Franklin-Reiter attack**
+FrankLin-Reiter 攻击RSA。
+如果两条消息的区别仅在于两条消息之间的已知固定差异
+并且是在相同的RSA模数N下进行RSA加密的
+那么就可以恢复它们。
 
-6、Boneh Durfee 攻击
+^
+## **7、Boneh Durfee 攻击（类似维纳，e很大）**
 
 
-7、维纳变形（三素数pqr）
 
 
 
