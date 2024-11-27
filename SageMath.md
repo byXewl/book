@@ -28,10 +28,10 @@ SageMath 9.3 Notebook 运行这个此时会有网页版
 
 
 ^
-## **sage脚本**
+# **sage脚本**
 
-1、m高位攻击
-已知n,c,e,n不能分解。
+## **1、m高位攻击**
+已知n,c,e。n不能分解，e很小为3。
 已知明文m高位，求明文m低位。得m
 ```
 import libnum
@@ -50,9 +50,30 @@ phase2(high_m, n, c)
 ```
 
 
-2、p高位攻击
-已知p高位，求低位
+## **2、p高位攻击**
+已知n,c,e。n不能分解。
+已知p高位，求低位。的p和q。再求m。
+![](.topwrite/assets/image_1732688825513.png)
+```
+import libnum
+def phase3(high_p, n):
+    R.<x> = PolynomialRing(Zmod(n), implementation='NTL')
+    p = high_p + x
+    x0 = p.small_roots(X=2 ^ 60, beta=0.1)[0] #根据题目，注意 2^60  60需要修改相应的位数
 
+    P = int(p(x0))
+    Q = n // P
+    print(P)
+    print(Q) # 这里求出的P、Q
+    assert n == P * Q
+
+n=0x558477ce1d081f831cfa159290ee4fd14888422c216a16ad86e2b2d4335e3cb18ed0120a955f970b17b229a8e7d0ae1b6f0c40213ad0e127eba99ae0d8a82397
+p4=0x8fbcbb7d1e9f393ee21b537d6e0bd2cf8629e315f4e356c1e000000000000000
+e=0xf7278179324b11fd83d08aa6f
+c=0x36e1c09ccad45cd63a0f07e704d3811c39d70cdfdad999d2df90255a76c58cf6fe99ac1ab1d5d99a4ce1a2ebdbfbc49ce72df2a0b90766ff84ab0ef62068d46b
+
+phase3(p4, n)
+```
 
 
 3、Franklin-Reiter attack
