@@ -155,7 +155,7 @@ FrankLin-Reiter 攻击RSA。
 并且是在相同的RSA模数N下进行RSA加密的
 那么就可以恢复它们。
 
-给出n，c1，c2。明文m1和m2的差异a,b。
+给出n，c1，c2。明文m1和m2的差异a,b。e很小如17。
 ![](.topwrite/assets/image_1732693255858.png)
 
 
