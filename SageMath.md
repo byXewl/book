@@ -158,6 +158,36 @@ FrankLin-Reiter 攻击RSA。
 给出n，c1，c2。明文m1和m2的差异a,b。e很小如17。
 ![](.topwrite/assets/image_1732693255858.png)
 
+```
+n=
+a=
+b=
+c1=
+c2=
+e=17
+
+import libnum
+def franklinReiter(n,e,c1,c2,a,b):
+    R.<X> = Zmod(n)[]
+    f1 = X^e - c1
+    f2 = (X*a+ b)^e - c2
+    # coefficient 0 = -m, which is what we wanted!
+    return Integer(n-(compositeModulusGCD(f1,f2)).coefficients()[0])
+
+  # GCD is not implemented for rings over composite modulus in Sage
+  # so we do our own implementation. Its the exact same as standard GCD, but with
+  # the polynomials monic representation
+def compositeModulusGCD(a, b):
+    if(b == 0):
+        return a.monic()
+    else:
+        return compositeModulusGCD(b, a % b)
+
+m=franklinReiter(n,e,c1,c2,a,b)
+print(m)
+print(type(m))
+print(libnum.n2s(int(m)))
+```
 
 ^
 ## **7、Boneh Durfee 攻击（类似维纳，e很大）**
