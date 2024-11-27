@@ -59,8 +59,7 @@ import libnum
 def phase3(high_p, n):
     R.<x> = PolynomialRing(Zmod(n), implementation='NTL')
     p = high_p + x
-    x0 = p.small_roots(X=2 ^ 60, beta=0.1)[0] #根据题目，注意 2^60  60需要修改相应的位数
-
+    x0 = p.small_roots(X=2 ^ 60, beta=0.1)[0] #根据题目，注意 2^60  60需要修改相应的位数，出题是128就是128
     P = int(p(x0))
     Q = n // P
     print(P)
