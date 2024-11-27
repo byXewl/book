@@ -75,12 +75,17 @@ phase3(p4, n)
 ```
 
 
-3、Franklin-Reiter attack
+^
+## **3、d低位攻击**
+已知n,c,e。n不能分解，e很小为3。
+已知d低位，求p。再求d，解m。
+![](.topwrite/assets/image_1732690106212.png)
 
 
-4、d低位攻击
 
 5、广播攻击
+
+3、Franklin-Reiter attack
 
 6、Boneh Durfee 攻击
 
