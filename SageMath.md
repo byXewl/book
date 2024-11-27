@@ -191,6 +191,7 @@ print(libnum.n2s(int(m)))
 
 ^
 ## **7、Boneh Durfee 攻击（类似维纳，e很大）**
+知道e很大，另外d≤n^0.27
 
 
 
