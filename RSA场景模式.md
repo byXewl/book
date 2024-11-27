@@ -154,5 +154,30 @@ Rabin算法可以看做为RSA算法的一个特例，即指数e取2，e=2。
 ![](.topwrite/assets/image.png)
 
 
+^
+## **15、费马定理**
+给出n,c,e，e = 65537常规，n无法分解成p*q。p和q的来源很特殊，不是随机大质数。
+![](.topwrite/assets/image_1732713657484.png)
+费马求p即可，再得d求m。
+```
+from Crypto.Util.number import isPrime, sieve_base as primes, long_to_bytes
+import gmpy2
 
+e = 65537
+n = 
+c = 
 
+num = 1
+
+# sleve_base = primes储存着前10000的质数
+for i in primes:
+    num *= i
+
+p = gmpy2.gcd(gmpy2.powmod(2, num, n) - 1, n) # 最大公约数
+
+q = n // p
+d = gmpy2.invert(e, (p - 1) * (q - 1))
+m = gmpy2.powmod(c, d, n)
+
+print(long_to_bytes(m))
+```
