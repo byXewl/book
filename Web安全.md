@@ -13,7 +13,7 @@ D:\mypython\python311\python.exe  dirsearch.py -u "http://16b5eb0b-ac30-452a-808
 ```
 
 ^
-早期 asp+access 架构的数据库文件为db.mdb，访问/db/db.mdb下载一个文件。打开得到flag。
+早期 asp+access 架构的数据库文件为db.mdb，访问/db/db.mdb下载一个文件。Access打开得到flag。
 
 ^
 临时文件
