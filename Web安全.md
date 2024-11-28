@@ -12,6 +12,10 @@ F12查看网络请求情况。
 D:\mypython\python311\python.exe  dirsearch.py -u "http://16b5eb0b-ac30-452a-808a-0e9214102abd.node3.buuoj.cn/" -s 1 --exclude-status=429,403 -t 1
 ```
 
+^
+早期 asp+access 架构的数据库文件为db.mdb，访问/db/db.mdb下载一个文件。打开得到flag。
+
+^
 临时文件
 >临时文件是在vim编辑文本时就会创建的文件，如果程序正常退出，临时文件自动删除，如果意外退出就会保留，当vim异常退出后，因为未处理缓存文件，导致可以通过缓存文件恢复原始文件内容。所以通过在url后面加上/index.php.swp即可看到flag。
 以index.php来说，第一次退出后，缓存文件名为index.php.swp，第二次退出后，缓存文件名为index.php.swo,第三次退出后文件名为index.php.swn。
