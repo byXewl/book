@@ -17,6 +17,12 @@ from __future__ import print_function
 9/3  为3.0
 9//3  为3
 
+
+ord() 字符转ascii值
+int() 数字字符转int数值，如果是字母字符报错
+
+
+
 睡眠
 time.sleep(3)
 
