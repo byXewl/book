@@ -13,6 +13,10 @@ from __future__ import print_function
 
 ## **一些特殊用法**
 ```
+整除
+9/3  为3.0
+9//3  为3
+
 睡眠
 time.sleep(3)
 
