@@ -15,7 +15,8 @@ echo mt_rand();
 ## **常规爆破**
 知道生成的伪随机数，使用kali中php_mt_seed爆出种子
 ```
-./php_mt_seed -683452613
+ -683452613
+./php_mt_seed 683452613
 ```
 
 ^
