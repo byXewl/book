@@ -95,7 +95,7 @@ basename($var2)	=>	config.php
 
 
 ^
-## **file_put_contents()场景漏洞**
+## **file_put_contents()场景写文件漏洞**
 对于
 ```
 if(preg_match("/'| |_|php|;|~|\\^|\\+|eval|{|}/i",$input)){
