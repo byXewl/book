@@ -3,7 +3,7 @@ u在线php运行：<https://www.jyshare.com/compile/1/>
 
 
 ## **php常见特殊函数和绕过**
-**文件包含函数**
+**文件包含函数 绕过一些禁用函数**
 如果是$_POST，直接蚁剑连
 c=highlight_file("config.php");        //文件内容包含高亮。
 c=show_source('flag.php');
