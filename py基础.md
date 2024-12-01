@@ -44,7 +44,7 @@ for i in range(len(NBA)-1,0,-1): #起始索引，结束索引（不包括），�
     NBA[i]
 
 
-for i in range(34):
+for i in range(3): # 0 1 2
     print(chr(NBA[i]),end='') #end不换行
 
 
