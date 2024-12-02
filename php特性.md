@@ -8,6 +8,9 @@
 
 ^
 传参特性
+```
 $_POST['a_sec']
 需要传a[sec=
 
+h_in.t传参h[in.t
+```
