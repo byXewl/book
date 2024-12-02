@@ -14,3 +14,15 @@ $_POST['a_sec']
 
 h_in.t传参h[in.t
 ```
+
+
+^
+## **时间相关**
+```
+$guess = $_GET['input'];
+$target = random_int(114,114+date('s')*100000);  //114+获取的当前秒数
+if(intval($guess) === intval($target)){
+    good
+}
+```
+114+获取当前秒数，必然有当前秒数是0，则就是114，所以一直?input=114等到秒数为0时即可。
