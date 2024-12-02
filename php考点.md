@@ -125,6 +125,7 @@ basename($var2)	=>	config.php
 
 ^
 ## **file_put_contents()场景写文件漏洞**
+1、写后门过滤绕过
 对于
 ```
 if(preg_match("/'| |_|php|;|~|\\^|\\+|eval|{|}/i",$input)){
@@ -139,6 +140,7 @@ file_put_contents("index.php", $input)
 ```
 
 ^
+2、伪协议写后门绕过
 如果是第一个参数可控，使用伪协议。
 ```
 $file = $_GET['file'];
