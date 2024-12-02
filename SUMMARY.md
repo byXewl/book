@@ -22,7 +22,7 @@
     * [Web安全](Web安全.md)
         * [php考点](php考点.md)
             * [php请求响应](php请求响应.md)
-            * [php字符串解析特性](php字符串解析特性.md)
+            * [php特性](php特性.md)
             * [php反序列化](php反序列化.md)
                 * [pop反序列化链](pop反序列化链.md)
                 * [反序列化逃逸](反序列化逃逸.md)
