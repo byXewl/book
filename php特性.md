@@ -63,6 +63,6 @@ var_dump(get_class_vars('ctfshow'));
 ?v1=1&v2=var_dump(get_class_vars&v3=);
 
 反射获取类信息
-echo new ReflectionClass('ctfshow')；
+echo new ReflectionClass('ctfshow');
 ?v1=1&v2=echo new ReflectionClass&v3=;
 ```
