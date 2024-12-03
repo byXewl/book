@@ -17,6 +17,9 @@ class CDU{
     }
 }
 
+//要读取一个类信息
+var_dump(get_class_vars('CDU'));
+
 $user = new CDU();
 echo serialize($user);//序列化
 
