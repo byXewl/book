@@ -20,7 +20,7 @@ true == 1
 intval(1+2) == 3
 intval("1+2") == 1
 intval(" '1000' ") == 0
-echo intval([0])  // 1
+echo intval([0])  // 1 传一个数组永远为1
 
 intval科学计数返回前面，科学计数后有+好返回字符串拼接后值。
 intval(2019e1) == 2019
