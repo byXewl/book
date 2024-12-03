@@ -44,7 +44,7 @@ and优先级低于=
 ```
 include("ctfshow.php");
 //flag in class ctfshow;
-$ctfshow = new Ctfshow();
+$ctfshow = new ctfshow();
 $v1=$_GET['v1'];
 $v2=$_GET['v2'];
 $v3=$_GET['v3'];
@@ -58,7 +58,9 @@ if($v0){
     }   
 }
 
-要读取一个类信息
-var_dump(get_class_vars('Ctfshow'));
+要读取一个类信息，类名
+var_dump(get_class_vars('ctfshow'));
 ?v1=1&v2=var_dump(get_class_vars&v3=);
+
+要读取一个实例的类信息，反射实例名
 ```
