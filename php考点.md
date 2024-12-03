@@ -91,35 +91,3 @@ echo eval("echo 1;");
 php内的"\"在做代码执行的时候，会识别特殊字符串，绕过黑名单。
 如\system
 
-^
-## **basename()场景漏洞**
-源代码：
-```
-if (preg_match('/config\.php\/*$/i', $_SERVER['PHP_SELF'])) {
-  exit("I don't know what you are thinking, but I won't let you read it :)");
-}
-if (isset($_GET['source'])) {
-    highlight_file(basename($_SERVER['PHP_SELF']));
-}
-```
-我们要包含高亮config.php
-`$_SERVER['PHP_SELF']`会获取我们当前的访问路径，并且PHP在根据URI解析到对应文件后会忽略掉URL中多余的部分，即若访问存在的index.php页面，如下两种UR均会访问到。
-```
-/index.php
-/index.php/dosent_exist.php
-```
-`basename`可以理解为对传入的参数路径截取最后一段作为返回值，但是该函数发现最后一段为不可见字符时会退取上一层的目录，basename只能转换ASCII码内的字符。即：
-```
-$var1="/config.php/test"
-basename($var1)	=> test
-$var2="/config.php/%ff"
-basename($var2)	=>	config.php
-```
-`$_SERVER['PHP_SELF']`提交index.php/config.php时，经过basename过滤后只剩下config.php，需要绕过的只有正则，basename只能转换ASCII码内的字符，通过超过ASCII码范围的字符进行绕过。
-
-接下来就显然了，通过构造URI让其包含`config.php`这个文件名再让`basename`函数截取出来，之后通过请求参数`source`就能显示`config.php`的源码，也就能见到`flag`了。
-```
-/index.php/config.php/%ff?source
-```
-
-
