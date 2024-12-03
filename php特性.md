@@ -63,4 +63,5 @@ var_dump(get_class_vars('ctfshow'));
 ?v1=1&v2=var_dump(get_class_vars&v3=);
 
 要读取一个实例的类信息，反射实例名
+echo new ReflectionClass('ctfshow')；
 ```
