@@ -44,7 +44,7 @@ and优先级低于=
 ```
 include("ctfshow.php");
 //flag in class ctfshow;
-$ctfshow = new ctfshow();
+$ctfshow = new Ctfshow();
 $v1=$_GET['v1'];
 $v2=$_GET['v2'];
 $v3=$_GET['v3'];
@@ -58,7 +58,7 @@ if($v0){
     }   
 }
 
-要读取一个类实例
-var_dump(get_class_vars('ctfshow'));
+要读取一个类信息
+var_dump(get_class_vars('Ctfshow'));
 ?v1=1&v2=var_dump(get_class_vars&v3=);
 ```
