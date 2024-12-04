@@ -84,7 +84,7 @@ echo eval("echo 1;");
 
 ^
 ^
-
+当前目录文件全部看cat *
 命令执行找flag文件：find / -name flag*
 递归搜当前目录下内容：grep -r "flag{" .
 
