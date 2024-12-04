@@ -66,6 +66,8 @@ var_dump(get_class_vars('ctfshow'));
 echo new ReflectionClass('ctfshow');
 ?v1=1&v2=echo new ReflectionClass&v3=;
 ```
+
+^
 ## **is_numeric函数特性**
 ```
 $v1 = $_POST['v1'];
