@@ -194,12 +194,17 @@ if(! is_file($file)){
 
 
 ^
+
+## **$_SERVER['QUERY_STRING'];**
+对于GET传参：?a=b&c=d
+$_SERVER['QUERY_STRING']; //  a=b&c=d
+
 ## **$_SERVER['argv']**
 ```
 对于GET传参：?a=b+fl0g=flag_give_me
 $a=$_SERVER['argv']; //为数组 
 
-$_SERVER['argV'][0]为 a=b
+$_SERVER['argV'][0]为 a=b，同$_SERVER['QUERY_STRING']; 
 $_SERVER['argV'][1]为 fl0g=flag_give_me
 ```
 ```
