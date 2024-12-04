@@ -43,7 +43,7 @@ echo $decoded_string;
 ```
 
 ^
-## **compress.zlib包含文件**
+## **compress.zlib包含文件php源代码**
 ```
 ?file=compress.zlib://flag.php
 ```

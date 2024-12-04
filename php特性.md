@@ -153,3 +153,18 @@ if(intval(strrev($_GET['c']))==0x36d){
 反转877A
 数值877 即16进制36d
 ```
+
+
+
+^
+## **trim()函数绕过**
+```
+$num=$_GET['num'];
+if(is_numeric($num) and $num!=='36' and trim($num)!=='36'){
+    if($num=='36'){
+        echo $flag;}
+
+trim() 去除普通空格、制表符(%09)、换行符(%0a)、回车符(%0d)、空字节符(%00)、垂直制表符（%0b），但不去除换页符%0c
+?num=%0c36
+```
+
