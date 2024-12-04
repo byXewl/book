@@ -22,7 +22,7 @@ D:\mypython\python311\python.exe  dirsearch.py -u "http://16b5eb0b-ac30-452a-808
 场景：发现网页有个错别字？赶紧在生产环境vim改下，不好，死机了
 
 ^
-一般flag在/flag或/flag.txt中，也可能在env命令环境变量中，还可能在phpinfo()中。
+一般flag在/flag或/flag.txt中，也可能在env命令环境变量中，还可能在phpinfo()中，php的$GLOBALS数组中。
 /read?file=/proc/self/environ
 /read?file=/proc/environ
 cat /proc/1/environ

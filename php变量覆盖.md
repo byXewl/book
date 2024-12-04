@@ -19,7 +19,7 @@ $$，extract()函数，parse_str()函数，import_request_variables()使用不�
 
 
 ^
-## **变量覆盖引出$GLOBALS**
+## **变量覆盖引出$GLOBALS数组**
 $GLOBALS数组中有flag值。
 ```
 function getFlag(&$v1,&$v2){
