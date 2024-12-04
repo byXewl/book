@@ -123,6 +123,10 @@ cmd=system("cat 36d.php");
 
 
 
+
+
+^
+^
 ^
 ## **php伪协议写文件**
 ### **file_put_contents()场景写文件漏洞**
