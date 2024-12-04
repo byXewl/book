@@ -196,7 +196,7 @@ if(! is_file($file)){
 ^
 ## **$_SERVER['argv']**
 ```
-对于?a=b+fl0g=flag_give_me
+对于GET传参：?a=b+fl0g=flag_give_me
 $a=$_SERVER['argv']; //为数组
 
 $_SERVER['argV'][0]为 a=b
