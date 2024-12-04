@@ -20,7 +20,8 @@ v1=ReflectionClass&v2=system('tac f*')
 v1=CachingIterator&v2=system(ls)
 v1=Exception&v2=system(ls)
 ```
-如果有过滤不能使用()，使用getcwd()方法，无需传参。
+如果有过滤不能使用()，使用getcwd()方法，无需传参返回当前所在目录。
+而FilesystemIterator构造方法根据目录返回第一个文件名。
 ```
 v1=FilesystemIterator&v2=getcwd
 eval("echo new FilesystemIterator(getcwd());");
