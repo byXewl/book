@@ -9,8 +9,8 @@
 ^
 传参特性
 ```
-$_POST['a_sec']
-需要传a[sec=
+$_POST['a_sec.b']
+需要传a[sec.b=
 
 h_in.t传参h[in.t
 ```
