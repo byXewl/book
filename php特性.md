@@ -49,7 +49,7 @@ $v1=$_GET['v1'];
 $v2=$_GET['v2'];
 $v3=$_GET['v3'];
 $v0=is_numeric($v1) and is_numeric($v2) and is_numeric($v3); //and优先级低于=。
-//所以$v0的值就是$v1的判断，检查变量$v1是否包含一个数字值。
+//所以$v0的值就是$v1的判断，检查变量$v1是否是一个数字值或数字字符串。
 if($v0){
     if(!preg_match("/\;/", $v2)){
         if(preg_match("/\;/", $v3)){
