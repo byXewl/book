@@ -131,3 +131,25 @@ Payload：
 GET：v3=0
 POST: v1=flag=cfcd208495d565ef66e7dff9f98764da
 ```
+
+
+
+
+^
+## **%00截断和ereg()函数**
+ereg()正则匹配函数
+```
+if (ereg ("^[a-zA-Z]+$", $_GET['c'])===FALSE)  {  //原意c传递必须全字母，但是可以%00截断后，后非字母
+    die('error');
+
+}
+
+if(intval(strrev($_GET['c']))==0x36d){
+    echo $flag;
+}
+
+?c=A%00778
+正则匹配A满足
+反转877A
+数值877 即16进制36d
+```
