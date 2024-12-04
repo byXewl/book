@@ -26,6 +26,10 @@ function getFlag(&$v1,&$v2){
     eval("$$v1 = &$$v2;");
     var_dump($$v1);
 }
+
+ $v1 = $_GET['v1'];
+ $v2 = $_GET['v2'];
+
 if(preg_match('/ctfshow/', $v1)){
         getFlag($v1,$v2);
  }
