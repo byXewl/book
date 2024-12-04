@@ -21,7 +21,7 @@ php://filter/read=convert.base64-encode/index/resource=flag
 ```
 其他编码方式
 ```
-quoted-printable-encode编码：
+file=php://filter/resource=flag.php
 file=php://filter/read=convert.quoted-printable-encode/resource=/var/www/html/flag.php
 
 
