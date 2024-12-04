@@ -17,3 +17,17 @@ $$，extract()函数，parse_str()函数，import_request_variables()使用不�
 
 
 
+
+^
+## **变量覆盖引出$GLOBALS**
+$GLOBALS数组中有flag值。
+```
+function getFlag(&$v1,&$v2){
+    eval("$$v1 = &$$v2;");
+    var_dump($$v1);
+}
+if(preg_match('/ctfshow/', $v1)){
+        getFlag($v1,$v2);
+ }
+```
+
