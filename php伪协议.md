@@ -4,6 +4,7 @@ allow_url_fopen=on默认开启，一般不用管
 
 ^
 ## **php伪协议 文件包含读本地php文件源代码**
+php://filter
 ```
 include xx;
 @include(xx);
