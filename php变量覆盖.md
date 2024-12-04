@@ -33,5 +33,12 @@ function getFlag(&$v1,&$v2){
 if(preg_match('/ctfshow/', $v1)){
         getFlag($v1,$v2);
  }
+
+
+
+?v1=ctfshow&v2=GLOBALS
+类似
+$ctfshow=$GLOBALS;
+var_dump($ctfshow);
 ```
 
