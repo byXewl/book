@@ -17,6 +17,8 @@ $_POST['a_sec.b']
 需要传a[sec.b=
 
 h_in.t传参h[in.t
+
+a_b直接传参a_b即可
 ```
 
 
