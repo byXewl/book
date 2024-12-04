@@ -3,13 +3,15 @@
 原理：<https://blog.csdn.net/bin789456/article/details/120305682>
 利用：<https://blog.csdn.net/qq_45521281/article/details/105871192>
 如果一个IDS/IPS或WAF中有一条规则是当num参数的值是一个非数字的值则拦截。
-则禁用?num=a，但用? num=a，?%20num=a效果一样。会被转化为?[num=a。
+则禁用?num=a，但用? num=a，?%20num=a效果一样。以及?[num=a。获取参数时会转成_num
 
 
 ^
 传参特性
 ```
-PHP将查询字符串（在URL或正文中）转换为内部$_GET或的关联数组$_POST。如：/?cTF=ctf变成Array（[CTF]=>"ctf"）。查询字符串在解析的过程中会删除空白符，同时将某些字符删除或用下划线代替。如，/?CTF[SHOW=42 会转换为Array([CTF_SHOW] => 42) 。
+PHP将查询字符串（在URL或正文中）转换为内部$_GET或的关联数组$_POST。如：/?CTF=ctf变成Array（[CTF]=>"ctf"）。
+查询字符串在解析的过程中会删除空白符，同时将某些字符删除或用下划线代替。
+如，/?CTF[SHOW=42 会转换为Array([CTF_SHOW] => 42) 。
 
 在php中变量名只有数字字母下划线，被get域者post传入的变量名，如果含有空格、+、[则会被转化为_，
 所以按理来说我们构造不出CTF_SHOW.COM这个变量(因为含有.）
@@ -198,6 +200,39 @@ if(! is_file($file)){
 ## **$_SERVER['QUERY_STRING'];**
 对于GET传参：?a=b&c=d
 $_SERVER['QUERY_STRING']; //  a=b&c=d 获取的是服务端还没url解码之前的字符串
+```
+$ctf_show = md5($flag);
+$url = $_SERVER['QUERY_STRING'];
+
+
+//特殊字符检测
+function waf($url){
+    if(preg_match('/\`|\~|\!|\@|\#|\^|\*|\(|\)|\\$|\_|\-|\+|\{|\;|\:|\[|\]|\}|\'|\"|\<|\,|\>|\.|\\\|\//', $url)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+if(waf($url)){
+    die("嗯哼？");
+}else{
+    extract($_GET);
+}
+
+
+if($ctf_show==='ilove36d'){
+    echo $flag;
+}
+
+Payload：
+对_进行url编码绕过waf，extract获取参数会自动解码。
+?ctf%5fshow=ilove36d
+
+Payload：
+?ctf show=ilove36d
+空格会获取参数时转成_
+```
 
 ## **$_SERVER['argv']**
 ```
