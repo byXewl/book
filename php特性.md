@@ -102,8 +102,8 @@ POST:v1=hex2bin
 
 ^
 ## **parse_str()函数**
-parse_str() 函数把查询字符串解析到变量中。(以数组的方式)。
-如果未设置第二个参数的array参数，由该函数设置的变量将覆盖已存在的同名变量。
+parse_str() 函数把查询字符串解析到变量中。
+如果未设置第二个参数的array参数，由该函数设置的变量将覆盖其他地方定义已存在的同名变量。
 ```
 // 假设我们有一个 URL 编码的字符串
 $str = "name=Kimi&age=30";
@@ -118,4 +118,16 @@ echo $age;  // 输出 30
 parse_str($str,$arr);
 $arr['name']
 $arr['age']
+```
+```
+$v1 = $_POST['v1'];
+$v3 = $_GET['v3'];
+   parse_str($v1,$v2);
+   if($v2['flag']==md5($v3)){
+       echo $flag;
+   }
+
+Payload：
+GET：v3=0
+POST: v1=flag=cfcd208495d565ef66e7dff9f98764da
 ```
