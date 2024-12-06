@@ -7,6 +7,9 @@ curl mycurl.2qytvx.ceye.io
 curl -O index.txt    下载文件保存为index.txt
 curl "http://xxx.xx" -O index.dat    下载二进制文件保存为index.dat
 curl -X POST           post请求
+
+curl -d "param1=value1&param2=value2" http://example.com/resource
+
 curl -H "xx=xx"       设置请求头
 ```
 curl文件读取，传递文件
