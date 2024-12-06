@@ -16,7 +16,7 @@ include php://filter/read=convert.base64-encode/resource=flag.php
 如果是根据名称匹配包含php文件
 只需要把名称参数换成php://filter/read=convert.base64-encode/resource=flag即可。
 
-也可中间加个index等字符也可以。
+也可中间加个index等字符也可以，绕过一些包含字符匹配。
 php://filter/read=convert.base64-encode/index/resource=flag
 ```
 其他编码方式
