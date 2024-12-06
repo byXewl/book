@@ -102,3 +102,30 @@ Content-Type: text/plain
 cat flag.php
 ----------------------------974334232652972648027191--
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+^
+## **延时盲注**
+exec没有回显，并且过滤了curl nc 写文件。
+```
+function check($x){
+    if(preg_match('/\\$|\.|\!|\@|\#|\%|\^|\&|\*|\?|\{|\}|\>|\<|nc|wget|exec|bash|sh|netcat|grep|base64|rev|curl|wget|gcc|php|python|pingtouch|mv|mkdir|cp/i', $x)){
+        die('too young too simple sometimes naive!');
+    }
+}
+if(isset($_GET['c'])){
+    $c=$_GET['c'];
+    check($c);
+    exec($c);
+}
+```
