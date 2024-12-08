@@ -87,6 +87,10 @@ include($_GET['file']);
 
 
 
+^
+## **反序列化函数**
+unserialize()
+
 
 
 
@@ -111,3 +115,5 @@ simplexml_load_file()
 simplexml_load_string()
 xpath()
 ```
+
+
