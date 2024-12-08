@@ -42,3 +42,25 @@ $userpwd=$_POST['userpwd'];
 $sql="select sds_password from sds_user where sds_username='".$username."' order by id limit 1;";
 $result=$mysqli->query($sql);
 ```
+
+
+## **文件操作**
+```
+copy
+file_get_contents()
+highlight_file()
+fopen()
+read file()
+fread()
+fgetss()
+fgets()
+parse_ini_file()
+show_source()
+file()
+```
+任意文件读取、写入、删除往往是上面几个函数受到了控制（当然还有其他的函数）。
+不同的函数在不同的场景有不同的作用和不同的利用手法。
+读取：可以读取配置等文件，拿到key
+写入：可以写入shell代码相关的内容
+删除：可以删除.lock文件而可以重新安装覆盖
+更多思路请自行挖掘测试！！
