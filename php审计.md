@@ -28,7 +28,7 @@ mysql_query()向与指定的 link_identifier关联的服务器中的当前活动
 
 
 
-PDO :
+PDO : php7后的数据对象，支持多种数据库。
 $conn = new PDO($dsn, $user, $pass, $options);
 $name = $_GET['name'];
 $query = "SELECT name,age,email,country FROM users_details WHERE name = '{$name}';";
