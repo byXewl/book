@@ -11,3 +11,8 @@
 
 审计结果：
 同一种漏洞发生在后台可能是低危，前台发生就可能为高危。
+
+
+^
+危险函数：
+<https://www.freebuf.com/articles/web/269184.html>
