@@ -42,6 +42,16 @@ $userpwd=$_POST['userpwd'];
 $sql="select sds_password from sds_user where sds_username='".$username."' order by id limit 1;";
 $result=$mysqli->query($sql);
 ```
+预编译：
+```
+$name = $_GET['name'];
+$query = "SELECT name,age,email, country FROM users_details
+WHERE name = ?;";
+$stmt = $conn->prepare($query);
+$stmt->bindValue(1,$name);
+$stmt->execute();
+```
+
 
 ^
 ## **文件操作**
