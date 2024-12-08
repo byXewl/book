@@ -33,4 +33,12 @@ $conn = new PDO($dsn, $user, $pass, $options);
 $name = $_GET['name'];
 $query = "SELECT name,age,email,country FROM users_details WHERE name = '{$name}';";
 $stmt = $conn->prepare($query);
+
+
+mysqli :
+$mysqli=@new mysqli($mysqlhost,$mysqluser,$mysqlpwd,$mysqldb);
+$username=$_POST['userid'];
+$userpwd=$_POST['userpwd'];
+$sql="select sds_password from sds_user where sds_username='".$username."' order by id limit 1;";
+$result=$mysqli->query($sql);
 ```
