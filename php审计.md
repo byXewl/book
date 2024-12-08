@@ -127,7 +127,13 @@ simplexml_load_string()
 xpath()
 ```
 
-
+## **引发信息泄露的危险函数**
+phpinfo — 输出关于 PHP 配置的信息
+getenv — 获取一个环境变量的值
+get_current_user — 获取当前 PHP 脚本所有者名称
+getlastmod — 获取页面最后修改的时间
+ini_get — 获取一个配置选项的值
+glob — 寻找与模式匹配的文件路径
 ^
 ## **逻辑漏洞**
 越权等
