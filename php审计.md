@@ -43,7 +43,7 @@ $sql="select sds_password from sds_user where sds_username='".$username."' order
 $result=$mysqli->query($sql);
 ```
 
-
+^
 ## **文件操作**
 ```
 copy
@@ -64,3 +64,50 @@ file()
 写入：可以写入shell代码相关的内容
 删除：可以删除.lock文件而可以重新安装覆盖
 更多思路请自行挖掘测试！！
+
+## **文件包含**
+```
+require、include、require_once、include_once
+包含函数 一共有四个，主要作用为包含并运行指定文件。
+这里就不多写函数介绍了，大家可以自己去PHP手册查询
+
+include $file;
+在变量 $file 可控的情况下，我们就可以包含任意文件，从而达到 getshell 的目的。
+另外，在不同的配置环境下，可以包含不同的文件。
+因此又分为远程文件包含和本地文件包含。
+包含函数也能够读取任意文件内容，这就需要用到【支持的协议和封装协议】和【过滤器】。
+例如，利用php流filter读取任意文件
+include($_GET['file']);
+?file=php://filter/convert.base64-encode/resource=index.php
+解释：?file=php:// 协议 / 过滤器 / 文件
+```
+
+
+
+
+
+
+
+
+
+
+
+^
+## **XXE函数**
+```
+引发XEE的危险函数
+__construct()
+addAttribute()
+addChild()
+asXML()
+attributes()
+children()
+getDocNamespaces()
+getName()
+getNamespaces()
+registerXPathNamespace()
+simplexml_import_dom()
+simplexml_load_file()
+simplexml_load_string()
+xpath()
+```
