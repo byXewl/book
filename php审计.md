@@ -212,6 +212,40 @@ array_filter($array1,$func);
 ^
 ## **命令执行**
 
+1、system — 执行外部程序，并且显示输出
+```
+system( string $command, int &$return_var= ? ) : string
+同 C 版本的 system()函数一样， 本函数执行 command参数所指定的命令， 并且输出执行结果。
+如果 PHP 运行在服务器模块中， system()函数还会尝试在每行输出完毕之后， 自动刷新 web 服务器的输出缓存。
+
+如果要获取一个命令未经任何处理的 原始输出， 请使用 passthru()函数。
+举个例子
+<?php system("whoami");?>
+```
+
+
+2、exec — 执行一个外部程序
+```
+exec()执行 command参数所指定的命令
+举个例子
+<?php echo exec("whoami");?>
+```
+
+3、shell_exec — 通过 shell 环境执行命令，并且将完整的输出以字符串的方式返回。
+```
+举个例子
+<?php echo shell_exec("whoami");?>
+```
+
+4、passthru — 执行外部程序并且显示原始输出
+```
+举个例子
+<?php passthru("whoami");?>
+效果跟上面的一样
+```
+5、proc_open — 执行一个命令，并且打开用来输入/输出的文件指针
+6、pcntl_exec — 在当前进程空间执行指定程序
+7、popen — 打开进程文件指针
 
 
 
