@@ -48,6 +48,29 @@ IP地址换换成数字地址的方法如下
 * 219\*2563+239\*2562+110\*2561+138\*2560=3689901706
 * 219.239.110.138 => 3689901706
 * 转换后的3689901706即为ip 219.239.110.138的数字地址
+脚本
+```
+#IP转换为长整型
+def ip2long(ip):
+    ip_list=ip.split('.') #⾸先先把ip的组成以'.'切割然后逐次转换成对应的⼆进制
+    result = 0
+    for i in range(4): #0,1,2,3
+        result = result+int(ip_list[i])*256**(3-i)
+    return result
+
+#长整型转换为IP
+def long2ip(long):
+    floor_list = []
+    num = long
+    for i in reversed(range(4)):
+        res = divmod(num,256**i)
+        floor_list.append(str(res[0]))
+        num = res[1]
+    return '.'.join(floor_list)
+
+print(ip2long('127.0.0.1'))
+```
+
 
 
 ^
