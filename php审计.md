@@ -1,4 +1,4 @@
-审计流程：
+u审计流程：
 * 审计前了解服务环境
 * 了解网站功能
 * 制定计划（审核功能点，容易出现得漏洞）
@@ -15,6 +15,35 @@
 危险函数：
 <https://www.freebuf.com/articles/web/269184.html>
 
+## **参数处理函数缺陷**
+urldecode — 解码已编码的 URL 字符串
+```
+语法：urldecode( string $str) : string
+解码给出的已编码字符串中的任何 %##。 加号（'+'）被解码成一个空格字符。
+
+下面列举了一个关于urldecode()引发SQL注入的例子（具体漏洞编号没找到）
+是以前Discuz X1.5的一个漏洞
+foreach($_POST as $k => $v) {
+$value = urldecode($v);
+$this->setParameter($k, $value);
+}
+
+单引号被 urlencode 两次以后是 %2527，然后 POST，PHP 内部在生成全局变量 $_POST 的时候会先 urldecode，得到 %27，然后 PHP 会检查 Magic Quotes 的设置，但是无论是否开启 Magic Quotes，%27 都不会被转义，因为这时根本没有单引号。但是这时如果在PHP中加上 urldecode，%27就变成单引号了
+```
+
+rawurldecode — 对已编码的 URL 字符串进行解码
+```
+语法 rawurldecode( string $str) : string
+返回字符串，此字符串中百分号（%）后跟两位十六进制数的序列都将被替换成原义字符。
+这个就不细讲了，和urldecode差不多。
+```
+
+is_numeric
+```
+bool is_numeric ( mixed $var )
+如果 var 是数字和数字字符串则返回 TRUE，否则返回 FALSE。
+仅用is_numeric判断而不用intval转换就有可能插入16进制的字符串到数据库，进而可能导致sql二次注入。
+```
 
 ^
 ## **SQL注入**
