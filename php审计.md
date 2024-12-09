@@ -70,6 +70,10 @@ $username=$_POST['userid'];
 $userpwd=$_POST['userpwd'];
 $sql="select sds_password from sds_user where sds_username='".$username."' order by id limit 1;";
 $result=$mysqli->query($sql);
+
+
+报错注入
+die(mysqli_error($mysqli));
 ```
 预编译：
 ```
