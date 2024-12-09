@@ -22,7 +22,20 @@ json转换 $j = json_encode($arr);
 数组循环遍历
 foreach($arr as $v){}
 ```
+^
+函数
+```
+$num3 =20;
+function sum($num1,$num2=10){
+    global $num3; //函数内使用全局变量需要声明，实际$GLOBALS['num3']可直接调用。
+    return $num1+$num3;
+}
 
+
+function sum($num1,$num2=10) : void{ //可无返回值
+    global $num3; 
+}
+```
 
 ^
 类和静态方法
