@@ -17,7 +17,10 @@ $arr=[];
 入栈最后一个 array_push($arr,"xx");
 去除重复值 array_unique($arr);
 是否存在该值 in_array("xx",$arr);
-json转换 $j = json_encode($arr)
+json转换 $j = json_encode($arr);
+
+数组循环遍历
+foreach($arr as $v){}
 ```
 
 
