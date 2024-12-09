@@ -63,3 +63,16 @@ $myClassInstance->myStaticMethod(); // 这不是推荐的做法
 call_user_func('MyClass::myStaticMethod');
 call_user_func(['MyClass','myStaticMethod']);//传入数组，值为对应的。也等效。
 ```
+
+session
+```
+session_start() 开启
+$_SESSION['username']=$username 存放
+$_SESSION['username'] 调用
+unset($_SESSION['username']) 销毁
+每次会话的SESSION有个id，
+```
+
+命名空间及引入
+```
+```
