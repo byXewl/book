@@ -70,7 +70,20 @@ session_start() 开启
 $_SESSION['username']=$username 存放
 $_SESSION['username'] 调用
 unset($_SESSION['username']) 销毁
-每次会话的SESSION有个id，
+
+每次会话的SESSION有个id叫PHPSESSID
+
+php的session常见存储位置，里面为键值对 字符
+/var/lib/php5/sess_PHPSESSID
+/var/lib/php7/sess_PHPSESSID
+/var/lib/php/sess_PHPSESSID
+/tmp/sess_PHPSESSID
+/tmp/sessions/sess_PHPSESSED
+/var/lib/php/sessions/sess_PHPSESSID
+
+PHPSESSID会在cookie会存储
+如
+/tmp/sess_99se2w33sddcs
 ```
 
 命名空间及引入
