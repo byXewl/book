@@ -71,7 +71,11 @@ $_SESSION['username']=$username 存放
 $_SESSION['username'] 调用
 unset($_SESSION['username']) 销毁
 
-每次会话的SESSION有个id叫PHPSESSID
+
+
+当用户访问一个 PHP 页面时，如果他们还没有会话，
+PHP 会自动创建一个新的会话，并生成一个唯一的 PHPSESSID。
+每次会话的SESSION有个id叫PHPSESSID，此时的$_SESSION['username']存放的内容对于这个PHPSESSID的。
 
 php的session常见存储位置，里面为键值对 字符
 /var/lib/php5/sess_PHPSESSID
