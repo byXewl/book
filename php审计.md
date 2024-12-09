@@ -55,6 +55,25 @@ $stmt->execute();
 ^
 ## **文件上传**
 ```
+1. php.ini中 `file_uploads` 为 `on`。
+
+   * `upload_tmp_dir`：文件上传存放的临时目录，文件上传成功之前存放。
+   * `upload_max_filesize`：服务器允许上传文件的最大值。
+   * `max_execution_time`：允许最大的执行时间。
+   * `memory_limit`：允许的最大占用内存。
+
+2. `<form method="post" enctype="multipart/form-data">`
+
+3. 文件处理：
+
+   * `$_FILES['name名']['name']`：文件名
+   * `$_FILES['name名']['tmp_name']`：临时文件地址
+
+4. `move_uploaded_file(临时文件，目的文件)`：处理文件移动。
+
+   * 处理：重命名：用户ID+时间
+   * 限制类型：①后缀 ②MIME类型
+
 ```
 
 
