@@ -64,7 +64,7 @@ $query = "SELECT name,age,email,country FROM users_details WHERE name = '{$name}
 $stmt = $conn->prepare($query);
 
 
-mysqli :
+mysqli : php7后的数据对象
 $mysqli=@new mysqli($mysqlhost,$mysqluser,$mysqlpwd,$mysqldb);
 $username=$_POST['userid'];
 $userpwd=$_POST['userpwd'];
