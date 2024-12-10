@@ -20,7 +20,8 @@ dpt_name=aa&dpt_address=aa&dpt_build_year=2021-04-02&dpt_has_cert=on&dpt_cert_nu
 ```
 
 ^
-2、**插入记录回显注入**
+2、**插入记录回显
+注入**
 插入记录后，或修改记录后，有回显，如列表。
 使用select语句或union联合注入。
 ```
