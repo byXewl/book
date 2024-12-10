@@ -376,7 +376,7 @@ glob — 寻找与模式匹配的文件路径
 常见的引发SSRF的函数
 ```
 curl():用于执行指定的CURL会话，支持的协议比较多，常用于SSRF的协议经过测试都支持，如dict,ghoper,file
-curl_setopt()
+curl_exec()
 
 
 file_get_contengt():把文件写入字符串，当把url是内网文件的时候，会先去把这个文件的内容读出来再写入，导致了文件读取
