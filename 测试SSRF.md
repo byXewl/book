@@ -89,6 +89,9 @@ BP中使用入口需进行双编码
 利用ssrf操作内网：
 <https://www.sqlsec.com/2021/05/ssrf.html>
 
+使用gopherus.py对无密码mysql执行语句：
+![](.topwrite/assets/image_1733842266820.png)
+
 有ssrf但是有防御绕过：
 **dns 重绑定**
 https\://xz.aliyun.com/t/7495?time\_\_1311=n4%2BxnD0Dy7GQ3AKeD5DsA3rcC%3D%2FjO4boTD
