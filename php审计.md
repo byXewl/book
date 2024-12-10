@@ -376,7 +376,33 @@ glob — 寻找与模式匹配的文件路径
 常见的引发SSRF的函数
 ```
 curl():用于执行指定的CURL会话，支持的协议比较多，常用于SSRF的协议经过测试都支持，如dict,ghoper,file
-curl_exec()
+    // 初始化 cURL 会话
+    $ch = curl_init();
+    
+    // 设置请求的 URL
+    curl_setopt($ch, CURLOPT_URL, $url);
+    
+    // 设置不返回 HTTP 头，只返回响应体
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    
+    // 设置 cURL 执行后返回响应内容，而不是直接输出
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+    // 设置允许 cURL 跟随服务器的重定向
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    
+    // 关闭对 SSL 证书的验证（不安全，仅用于测试）
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
+    
+    // 关闭对 SSL 证书主机名的验证（不安全，仅用于测试）
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+    
+    // 执行 cURL 请求
+    $res = curl_exec($ch);
+   
+    // 关闭 cURL 资源，释放系统资源
+    curl_close($ch);
+
 
 
 file_get_contengt():把文件写入字符串，当把url是内网文件的时候，会先去把这个文件的内容读出来再写入，导致了文件读取
