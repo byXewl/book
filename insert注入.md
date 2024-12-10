@@ -18,3 +18,7 @@ $sql="insert into sds_dpt set sds_name='".$dpt_name."',sds_address ='".$dpt_addr
 ## **插入记录回显注入**
 插入记录后，或修改记录后，有回显，如列表。
 使用select语句或union联合注入。
+```
+$dpt_name="(select database())";
+$sql="insert into user set name='".$dpt_name."';";
+```
