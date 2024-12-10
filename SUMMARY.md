@@ -714,6 +714,7 @@
             * [宽字节注入](宽字节注入.md)
             * [二阶注入](二阶注入.md)
             * [达梦数据库](达梦数据库.md)
+            * [insert注入](insert注入.md)
         * [其他数据库注入](其他数据库注入.md)
             * [oracle注入](oracle注入.md)
             * [sqlserver注入](sqlserver注入.md)
