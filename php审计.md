@@ -74,6 +74,7 @@ $result=$mysqli->query($sql);
 
 报错注入
 die(mysqli_error($mysqli));
+PDO::errorInfo();
 ```
 预编译：
 ```
