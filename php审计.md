@@ -75,6 +75,11 @@ $result=$mysqli->query($sql);
 报错注入
 die(mysqli_error($mysqli));
 PDO::errorInfo();
+
+$sql = mysql_query('select * from users where id=1 and updatexml(0,concat(0x7e,(select version())),1)');
+if(!$sql) {
+	echo mysql_error();
+}
 ```
 预编译：
 ```
