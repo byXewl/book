@@ -415,3 +415,9 @@ readine():打开一个文件，并按行读取内容
 ## **逻辑漏洞**
 越权等，最好黑盒。
 未授权，路由和一些隐藏文件。
+```
+if(!isset($_SESSION\['login'])){
+header("location:login.php");
+}
+//如果没有exit();或者die(); 后面的代码还是会执行。
+```
