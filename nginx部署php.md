@@ -1,4 +1,4 @@
-Nginx作为一个Web服务器，不能直接执行PHP代码。当Nginx接收到一个PHP请求时，它会通过FastCGI协议将请求转发给PHP-FPM处理。PHP-FPM监听在9000端口，接收来自Nginx的请求，并处理这些请求，然后将结果返回给Nginx，最终由Nginx返回给客户端
+Nginx作为一个Web服务器，不能直接执行PHP代码。当Nginx接收到一个PHP请求时，它会通过FastCGI协议将请求转发给PHP-FPM(FastCGI默认9000端口)处理。PHP-FPM监听在9000端口，接收来自Nginx的请求，并处理这些请求，然后将结果返回给Nginx，最终由Nginx返回给客户端
 
 Apache可以配置为一个模块来执行PHP代码，这种情况下，PHP是作为Apache的一部分运行的。这意味着PHP代码可以直接在Apache内部执行，而不需要通过FastCGI协议进行通信。然而，Apache也可以配置为使用FastCGI来处理PHP请求，类似于Nginx与PHP-FPM的交互方式。
 
