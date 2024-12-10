@@ -1,9 +1,9 @@
 这里代表一定的非select注入。
 <https://www.cnblogs.com/babers/articles/7252401.html>
-## **报错回显注入**
-如果存在报错回显，使用报错。
-如：
+## **insert注入**
+**1、如果存在报错回显，使用报错**
 ```
+如：
 $sql="insert into sds_dpt set sds_name='".$dpt_name."',sds_address ='".$dpt_address."',sds_build_date='".$dpt_build_year."',sds_have_safe_card='".$dpt_has_cert."',sds_safe_card_num='".$dpt_cert_number."',sds_telephone='".$dpt_telephone_number."';";
 	$result=$mysqli->query($sql);
 	echo $sql;
@@ -19,7 +19,7 @@ dpt_name=aa&dpt_address=aa&dpt_build_year=2021-04-02&dpt_has_cert=on&dpt_cert_nu
 ```
 
 ^
-## **插入记录回显注入**
+2、**插入记录回显注入**
 插入记录后，或修改记录后，有回显，如列表。
 使用select语句或union联合注入。
 ```
