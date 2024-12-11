@@ -100,10 +100,16 @@ BP中使用入口需进行双编码
 ```
 ![](.topwrite/assets/image_1733892617872.png)
 
+对10050的zabbix，命令执行。
+```
+gopherus --exploit zabbix
+```
+
+
+
 有ssrf但是有防御绕过：
 **dns 重绑定**
 https\://xz.aliyun.com/t/7495?time\_\_1311=n4%2BxnD0Dy7GQ3AKeD5DsA3rcC%3D%2FjO4boTD
-
 
 ^
 ## **SSRF绕过**
