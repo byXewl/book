@@ -89,8 +89,16 @@ BP中使用入口需进行双编码
 利用ssrf操作内网：
 <https://www.sqlsec.com/2021/05/ssrf.html>
 
-使用gopherus.py对无密码mysql执行语句：
+使用gopherus.py对无密码mysql执行sql语句：
 ![](.topwrite/assets/image_1733842266820.png)
+使用gopherus.py对9000端口的FastCGI执行命令：
+```
+1、PHP版本要高于5.3.3，才能动态修改PHP.INI配置文件
+2、知道题目环境中的一个PHP文件的绝对路径
+3、PHP-FPM监听在本机9000端口
+4、libcurl版本>=7.45.0
+```
+![](.topwrite/assets/image_1733892617872.png)
 
 有ssrf但是有防御绕过：
 **dns 重绑定**
