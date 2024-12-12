@@ -2,6 +2,9 @@
 实体类的主键id类型，有自增，雪花，uuid
 ![](.topwrite/assets/image_1733986925638.png)
 
+^
+## **mapper层**
+有个父类BaseMapper，里面实现了基础增删改查。
 
 ^
 ## **分页方法**
