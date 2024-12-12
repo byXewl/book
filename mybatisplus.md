@@ -1,1 +1,1 @@
-使用mybatisplus，安装mybatisplus插件后，可以链接数据库后，自动创建表的模型类。
+使用mybatisplus，安装mybatisplus插件后，通过右上角[其他]，可以链接数据库后，选择表自动创建的模型类。
