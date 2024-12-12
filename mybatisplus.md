@@ -9,3 +9,5 @@
 PageHelper插件来分页。(自己拼接的联合sql时推荐)
 也可以
 MyBatisPlus带有的baseMapper.selectPage
+
+通过低层拦截器，修改查询sql语句，如加limit。
