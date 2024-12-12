@@ -6,6 +6,10 @@
 ## **mapper层**
 有个父类BaseMapper，里面实现了基础增删改查。
 
+
+XxMapper继承 `BaseMapper`时。
+当你的XxServiceImpl类继承 `ServiceImpl` 类并提供这两个泛型参数时<XxMapper, Xx>，MyBatis-Plus 会自动为你提供一些标准的 CRUD 操作实现，这些操作可以直接通过 `XxServiceImpl` 类来调用。
+
 ^
 ## **分页方法**
 在服务层可以用
