@@ -6,6 +6,6 @@
 ^
 ## **分页方法**
 在服务层可以用
-PageHelper插件来分页。
+PageHelper插件来分页。(自己拼接的联合sql时推荐)
 也可以
 MyBatisPlus带有的baseMapper.selectPage
