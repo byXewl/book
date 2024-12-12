@@ -361,6 +361,8 @@
         * [微服务](微服务.md)
             * [maven多模块打包](maven多模块打包.md)
             * [nacos](nacos.md)
+            * [家务帮项目](家务帮项目.md)
+                * [mybatisplus](mybatisplus.md)
         * [javafx开发](javafx开发.md)
     * [python](python.md)
         * [py基础](py基础.md)

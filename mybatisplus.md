@@ -1,0 +1,1 @@
+使用mybatisplus，安装mybatisplus插件后，可以链接数据库后，自动创建表的模型类。
