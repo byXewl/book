@@ -45,6 +45,8 @@ php类常见每个请求体都存在以密码=@ini_set("display_errors","0");@se
 %40ini_set(%22display_errors%22%2C%20%220%22)%3B%40set_time_limit(0)
 ```
 默认编码器为url编码加密，也可能16进制。
+base64请求参数解密：去除前两个字符后base64。
+![](.topwrite/assets/image_1734229016280.png)
 
 并且响应体的返回结果是base64编码发混淆字符，格式为：随机数 结果 随机数。
 .asp类常见execute，但是会被打断拼接，混淆加密后常见0x....这种形式。
