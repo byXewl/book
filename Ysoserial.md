@@ -2,6 +2,10 @@ Ysoserial
 <https://github.com/frohoff/ysoserial>
 一款用于生成利用不安全的Java对象反序列化的有效负载的概念验证工具。
 图形化优化版可以直接导出：<https://github.com/0ofo/Deswing> 
+
+ctfshow入门题：<https://evo1ution.cn/2023/08/26/ctfshow-web4>
+
+
 ## **使用**
 使用生成命令：
 ```
