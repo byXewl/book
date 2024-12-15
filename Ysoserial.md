@@ -52,7 +52,7 @@ public static void main(String[] args) throws IOException, ClassNotFoundExceptio
 
 ## **常规入口场景**
 下方的特征可以作为序列化的标志参考：
-一段数据以RO0AB开头，你基本可以确定这串就是Java序列化base64加密的数据。
+一段数据以rO0AB开头，你基本可以确定这串就是Java序列化base64加密的数据。
 或者如果以aced开头，那么他就是这一段Java序列化的16进制。
 所以这串数据可能会被服务端拿去反序列化。
 
