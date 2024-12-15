@@ -884,6 +884,7 @@
         * [java反序列化场景](java反序列化场景.md)
             * [URLDNS链](URLDNS链.md)
             * [CC链](CC链.md)
+                * [CC链结构](CC链结构.md)
                 * [CC1链](CC1链.md)
                 * [CC6链](CC6链.md)
                 * [CC3链](CC3链.md)
