@@ -45,8 +45,8 @@ CC7链：java<=JDK8u71(1.8.0_71)、commons-collections:<=3.2.1
 CC5链：java<=JDK8u71(1.8.0_71)、commons-collections:<=3.2.1  借助LazyMap
 
 
-
 ^
+## **链改造绕过**
 CC7链改成适用CommonsCollections=4。借助类LazyMap
 ```
 package show.ctf.java;
