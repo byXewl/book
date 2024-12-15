@@ -24,7 +24,7 @@ java老版本下载：<https://blog.lupf.cn/articles/2022/02/19/1645283454543.ht
 
 ## **要求**
 CC1链：java<=JDK8u71(1.8.0_71)、CommonsCollections<=3.2.1
->常见jdk=8u65进行复现。
+>常见jdk=8u65进行复现。借助类Transformer
 
 CC6链：java<=JDK8u71(1.8.0_71)、CommonsCollections<=3.2.1
 >这条链是基于CC1，只是入口类改了，入口类为hashMap。CC6=CC1+URLDNS。
