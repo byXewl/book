@@ -164,6 +164,8 @@ class Ion_Fan_Princess{
 
 在线php运行：<https://www.jyshare.com/compile/1/>
 
+
+## **特性**
 ^
 private私有属性的反序列化，需要替换字符（注意：在某些终端vscode序列化时会截断显示，用phpsotrm）
 赋值使用new Name('admin',100);
@@ -183,3 +185,5 @@ O:4:"Name":3:{s:14:"%00Name%00username";s:5:"admin";s:14:"%00Name%00password";s:
 protected类型的属性，反序列化也存在不可打印字符。
 但对于PHP版本7.1+，对属性的类型不敏感，我们可以将protected类型改为public，以消除不可打印字符。
 如果低于7.1版本，在反序列化的时候进行url编码，防止有不可打印字符，正好也get参数。
+
+
