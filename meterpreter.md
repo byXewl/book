@@ -15,7 +15,7 @@ Windows 10
 Windows Server 2016
 内网IDS不做防护，还可以利用这个漏洞。
 ^
-## **复现过程**
+## **445打永恒之蓝**
 ```
 msfconsole  //启动msf
 
