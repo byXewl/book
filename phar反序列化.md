@@ -13,7 +13,10 @@ ctf题中php.ini中的phar.readonly选项，需要为Off（默认是on）
 1、phar文件可被上传至服务器，上传后可被phar://协议读取
 //即要求存在file_get_contents、fopen、highlight_file这种函数
 include、require、include_once、require_once、highlight_file 、
-show_source 、readfile 、file_get_contents 、fopen 、file
+show_source 、readfile 、file_get_contents 、fopen 、file、
+file_exists
+
+
 
 phar文件可以改名为任意后缀，只要能被伪协议读取即可。
 
@@ -114,6 +117,7 @@ $phar->stopBuffering();
 ```
 生成phar.phar文件后，可改后缀为phar.jpg上传服务器，再伪协议phar://upload/phar.jpg即可触发。
 如果是触发读文件需要有回显，如echo
+
 
 
 
