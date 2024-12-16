@@ -19,10 +19,12 @@ $_GET[a]     //array( [0] => 1 [1] => 2 )
 $_POST['a_sec']
 需要传a[sec=
 
-
+$email = filter_input(INPUT_POST, 'email',FILTER_VALIDATE_EMAIL);
+可能被绕过sql注入:'union/**/select/**/username/**/from/**/user#@qq.com
 
 关键词：
 $_GET,$_POST,$_REQUEST,$_FILES,$_SERVER
+
 
 文件上传
 $file = $_FILES['fileInput'];//<input>的name=fileInput
