@@ -67,6 +67,8 @@ dict协议的需要一条一条的执行，而gopher协议可以整合执行一�
 
 工具gopherus，可以直接计划任务反弹和phpshell。
 
+curl可以走gopher协议
+curl gopher://172.2.239.5:9000/_%01%01
 ```
 
 ^
