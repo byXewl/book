@@ -7,7 +7,9 @@ notepad 加密文件名:寄生文件名
 即可看到寄生加密的内容
 
 ^
-看到一个txt可能加了寄生文件，如果知道寄生文件名就可以直接用上面命令，
+有NTFS的文件要压缩必须用WinRAR压缩和解压压缩包，否则可能会探测不到。
+
+看到一个txt或rar可能加了寄生文件，如果知道寄生文件名就可以直接用上面命令，
 如果不知道，则需要用NtfsStreamsEditor工具exe进行探测。
 工具：<https://files.cnblogs.com/files/rainbow7/ntfsstreamseditor.zip>
-特别：用WinRAR解压压缩包，否则可能会探测不到。
+![](.topwrite/assets/image_1734414558648.png)
