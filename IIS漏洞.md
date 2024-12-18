@@ -3,6 +3,15 @@
 常部署c#的asp程序。
 
 
+开启：
+控制面板-程序-打开功能-勾选Internet Information Services （里面有asp ，.net，cgi等）第一个即可
+使用：
+控制面板-系统和安全-管理工具-IIS管理器，一般第一个
+或者直接搜IIS管理器
+监听端口：
+找到default web site默认网页，配置网页位置，启动，即可。
+<https://blog.csdn.net/zy010101/article/details/86580506>
+
 ## **常见版本**
 1. **IIS 6.0:**
    * 运行在 Windows Server 2003 上。
