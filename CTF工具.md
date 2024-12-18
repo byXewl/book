@@ -1,4 +1,4 @@
-最新ctf操作系统：hello-ctf（不好安装）
+
 
 综合：
 <http://1o1o.xyz/ctfsoft.html>
