@@ -229,7 +229,6 @@
         * [url编码](url编码.md)
         * [浏览器默认https](浏览器默认https.md)
         * [https抓包原理](https抓包原理.md)
-        * [证书](证书.md)
 * [编程基础](编程基础.md)
     * [c+c++](c.md)
         * [make](make.md)
