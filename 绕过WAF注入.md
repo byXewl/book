@@ -95,7 +95,7 @@ or sleep(3)--+
 ```
 
 ^
-如果是数值传参，直接不传入"和\即可绕过：
+如果是数值传参，如果是)闭合，直接不传入"和\即可绕过：
 ```
 addslashes($id);
 $res = $conn->query("SELECT `username` FROM ctfshow_users WHERE id = ($id)");
