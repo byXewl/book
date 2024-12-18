@@ -3,7 +3,6 @@
     "plugins": [
         "highlight",
         "image-zoom",
-        "copy-code",
-        "lunrjs"
+        "copy-code"
     ]
 }
