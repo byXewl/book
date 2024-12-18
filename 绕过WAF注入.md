@@ -74,7 +74,7 @@ select((select 1,"fla")>(select * from f1ag_1s_h3r3_hhhhh))
 
 
 ^
-## **存在转义函数**
+## **存在转义函数addslashes绕过**
 ```
 addslashes($id);
 将字符串里面的' " \等转义。
