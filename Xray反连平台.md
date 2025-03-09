@@ -13,7 +13,7 @@
 
 然后访问:端口/cland
 ><http://47.109.58.205:8087/cland/>
-   密码3312902243
+   密码3312
 
 电脑安装windows端的xray，配置公网服务端ip，即可开始有反连的扫描漏洞。
 更多：<https://blog.csdn.net/xiaofengdada/article/details/122375019>
