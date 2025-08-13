@@ -8,5 +8,10 @@
         "lunrjs",
         "ai",
         "assistant"
-    ]
+    ],
+    "pluginsConfig": {
+        "assistant": {
+            "siteId": "M7e5MYe2"
+        }
+    }
 }
