@@ -3,6 +3,10 @@
     "plugins": [
         "highlight",
         "image-zoom",
-        "copy-code"
+        "copy-code",
+        "weaccount",
+        "lunrjs",
+        "ai",
+        "assistant"
     ]
 }
