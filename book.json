@@ -4,10 +4,10 @@
         "highlight",
         "image-zoom",
         "copy-code",
-        "weaccount",
         "lunrjs",
         "ai",
-        "assistant"
+        "assistant",
+        "ad"
     ],
     "pluginsConfig": {
         "assistant": {
