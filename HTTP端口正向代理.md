@@ -44,7 +44,7 @@ python2 reGeorgSocksProxy.py -p 9999 -u http://192.168.29.130/tunnel.nosocket.ph
 
 ^
 ## **suo5正向代理**
-suo5是一个高性能 HTTP 隧道代理工具（socks5），它基于双向的 Chunked-Encoding`构建, 相比 [Neo-reGeorg](https://github.com/L-codes/Neo-reGeorg) 等传统隧道工具, `suo5` 的性能可以达到其数十倍。
+suo5是一个高性能 HTTP 隧道代理工具（socks5），它基于双向的 Chunked-Encoding构建, 相比 [Neo-reGeorg](https://github.com/L-codes/Neo-reGeorg) 等传统隧道工具, suo5的性能可以达到其数十倍。
 官方：
 <https://github.com/zema1/suo5/>
 服务端脚本下载：
