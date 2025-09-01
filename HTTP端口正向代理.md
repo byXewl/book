@@ -53,3 +53,18 @@ suo5是一个高性能 HTTP 隧道代理工具（socks5），它基于双向的�
 
 本地端也有GUI：
 ![](.topwrite/assets/image_1756723840312.png)
+
+
+
+^
+## **MUDT的HTTP隧道功能**
+数据库连接提权时
+```
+就是用脚本语言作为中转代替执行语句，类似于 Navicat Premium 中的 HTTP 隧道功能，
+传输过程中采用 Base64 + XOR 异或[算法]。
+
+
+当我们环境中只有一个 Webshell 处境下且不想使用 Neo-reGeorg 等类似隧道工具的时候，
+我们可以利用 MDUT 的专用脚本进行和[数据库]的桥接。
+```
+<https://mp.weixin.qq.com/s?__biz=MzIxMDYyNTk3Nw==&mid=2247489784&idx=1&sn=e8433727c0b06c0231032f946a1bff93&chksm=9760ec2ea0176538ad639808d86e2e90276a54059e485d45d2993661bdcb9115db76b5dafdf0&scene=126&sessionid=1655371666&key=2ef3f3b1a43fbd054ac032f0dc8403460aa252df979bb81ac3c723bac69f031b982b1eab296dcc37a011fd07d9cfd001b865196a6a1d79dc9e9f6606ddd082774ed09a26730b41b166c5710e06690610f6df93aeca5a09e969a9aa7170fa14bef361c50c65ac6382089d3c6f9a8b1b25966e6b108e81fa62038fb3826eb2f3ab&ascene=15&uin=NTY2NTA4NjQ%3D&devicetype=Windows+Server+2016+x64&version=63060012&lang=zh_CN&session_us=gh_44a32cd9d125&exportkey=Ay%2B7miP4Pfk6WfZLL9p1Obo%3D&acctmode=0&pass_ticket=nZrz
