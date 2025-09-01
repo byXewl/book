@@ -1111,7 +1111,7 @@
                 * [redis未授权](redis未授权.md)
             * [docker挂载目录访问root](docker挂载目录访问root.md)
             * [SudoAwk提权](SudoAwk提权.md)
-        * [数据库提取](数据库提取.md)
+        * [数据库提权](数据库提权.md)
             * [MySQL提权](MySQL提权.md)
                 * [UDF提权](UDF提权.md)
                 * [启动项提权](启动项提权.md)
