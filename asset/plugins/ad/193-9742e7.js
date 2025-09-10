@@ -1,0 +1,11 @@
+(self.webpackChunkTopWritePlugins_ad=self.webpackChunkTopWritePlugins_ad||[]).push([[193],{3176:(e,r,n)=>{"use strict";n.d(r,{Z:()=>i});var t=n(4099);function i(){return function(e){var r=n(1181);return e.getPluginConfig("ad",r)}((0,t.useBook)().config)}},3294:(e,r,n)=>{"use strict";n.d(r,{Z:()=>u});var t,i=n(266),s=n.n(i),a=n(2780),o=n(4099);function u(e){var r=e.url,n=e.image;return(0,a.jsx)(l,{children:(0,a.jsx)("a",{target:"_blank",href:r,children:(0,a.jsx)("img",{src:n})})})}var l=o.styled.p(t||(t=s()(["\n  margin: 1em 0;\n\n  a {\n    width: 100%;  \n    display: flex;\n  }\n\n  img {\n    max-width: 100%;\n    width: 100%;\n  }\n\n  &:first-child {\n    margin-top: 0;\n  }\n\n  &:last-child {\n    margin-bottom: 0;\n  }\n"])))},5193:(e,r,n)=>{"use strict";n.r(r),n.d(r,{default:()=>a});var t=n(2780),i=n(3176),s=n(3294);function a(){var e=(0,i.Z)().getValue("beforeArticleAside");return e&&e.image?(0,t.jsx)(s.Z,{url:e.url,image:e.image}):null}},9092:(e,r,n)=>{"use strict";
+/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */var t=n(9196),i=Symbol.for("react.element"),s=Symbol.for("react.fragment"),a=Object.prototype.hasOwnProperty,o=t.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,u={key:!0,ref:!0,__self:!0,__source:!0};function l(e,r,n){var t,s={},l=null,f=null;for(t in void 0!==n&&(l=""+n),void 0!==r.key&&(l=""+r.key),void 0!==r.ref&&(f=r.ref),r)a.call(r,t)&&!u.hasOwnProperty(t)&&(s[t]=r[t]);if(e&&e.defaultProps)for(t in r=e.defaultProps)void 0===s[t]&&(s[t]=r[t]);return{$$typeof:i,type:e,key:l,ref:f,props:s,_owner:o.current}}r.Fragment=s,r.jsx=l,r.jsxs=l},2780:(e,r,n)=>{"use strict";e.exports=n(9092)},266:e=>{e.exports=function(e,r){return r||(r=e.slice(0)),Object.freeze(Object.defineProperties(e,{raw:{value:Object.freeze(r)}}))},e.exports.__esModule=!0,e.exports.default=e.exports}}]);
+//# sourceMappingURL=193-9742e7.js.map

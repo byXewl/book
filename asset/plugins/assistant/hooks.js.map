@@ -1,0 +1,1 @@
+{"version":3,"file":"hooks.js","mappings":"kCAIA,UAFqB,CAAC,E","sources":["webpack://topwrite-plugin-assistant/./src/hooks.ts"],"sourcesContent":["import { Hooks } from 'topwrite';\r\n\r\nconst hooks: Hooks = {};\r\n\r\nexport default hooks;\r\n"],"names":[],"sourceRoot":""}
