@@ -1,0 +1,11 @@
+(self.webpackChunkTopWritePlugins_ad=self.webpackChunkTopWritePlugins_ad||[]).push([[808],{3176:(e,r,t)=>{"use strict";t.d(r,{Z:()=>o});var n=t(4099);function o(){return function(e){var r=t(1181);return e.getPluginConfig("ad",r)}((0,n.useBook)().config)}},3294:(e,r,t)=>{"use strict";t.d(r,{Z:()=>u});var n,o=t(266),i=t.n(o),s=t(2780),a=t(4099);function u(e){var r=e.url,t=e.image;return(0,s.jsx)(l,{children:(0,s.jsx)("a",{target:"_blank",href:r,children:(0,s.jsx)("img",{src:t})})})}var l=a.styled.p(n||(n=i()(["\n  margin: 1em 0;\n\n  a {\n    width: 100%;  \n    display: flex;\n  }\n\n  img {\n    max-width: 100%;\n    width: 100%;\n  }\n\n  &:first-child {\n    margin-top: 0;\n  }\n\n  &:last-child {\n    margin-bottom: 0;\n  }\n"])))},4808:(e,r,t)=>{"use strict";t.r(r),t.d(r,{default:()=>u});var n=t(8787),o=t.n(n),i=t(2780),s=t(3176),a=t(3294);function u(e){o()(e);var r=(0,s.Z)().getValue("afterArticleAside");return r&&r.image?(0,i.jsx)(a.Z,{url:r.url,image:r.image}):null}},9092:(e,r,t)=>{"use strict";
+/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */var n=t(9196),o=Symbol.for("react.element"),i=Symbol.for("react.fragment"),s=Object.prototype.hasOwnProperty,a=n.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,u={key:!0,ref:!0,__self:!0,__source:!0};function l(e,r,t){var n,i={},l=null,f=null;for(n in void 0!==t&&(l=""+t),void 0!==r.key&&(l=""+r.key),void 0!==r.ref&&(f=r.ref),r)s.call(r,n)&&!u.hasOwnProperty(n)&&(i[n]=r[n]);if(e&&e.defaultProps)for(n in r=e.defaultProps)void 0===i[n]&&(i[n]=r[n]);return{$$typeof:o,type:e,key:l,ref:f,props:i,_owner:a.current}}r.Fragment=i,r.jsx=l,r.jsxs=l},2780:(e,r,t)=>{"use strict";e.exports=t(9092)},8787:e=>{e.exports=function(e){if(null==e)throw new TypeError("Cannot destructure "+e)},e.exports.__esModule=!0,e.exports.default=e.exports},266:e=>{e.exports=function(e,r){return r||(r=e.slice(0)),Object.freeze(Object.defineProperties(e,{raw:{value:Object.freeze(r)}}))},e.exports.__esModule=!0,e.exports.default=e.exports}}]);
+//# sourceMappingURL=808-8b53f7.js.map
