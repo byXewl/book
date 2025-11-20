@@ -1,7 +1,11 @@
 hook基础：
 <https://mp.weixin.qq.com/s/VaKP7w1Tx3qyGmpPoXjYHg>
 hook就是在执行某个函数前，将这个函数替换修改，实现定位或修改功能。
-如：定位加密函数，定位加密前的函数调用等。
+如：定位加密函数，定位加密前的函数调用，定位cookie生成位置、修改原函数等。
+
+注入hook代码：
+1、借助油猴的hook：你可以将hook的脚本放到油猴里面执行。
+2、直接用控制台console界面进行hook：hook时机最好选择你看见的第一个js文件的第一行的时候下断点，然后在控制台console界面就注入。
 
 常见hook操作：
 <https://cloud.tencent.com/developer/article/2356843>

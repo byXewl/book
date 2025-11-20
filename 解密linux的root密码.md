@@ -96,3 +96,5 @@ john 11.txt
 $6$KHysqjWMnoaHJ4QW$p1cMTekiYb/6xA2u7j4jAD3m5shTPlPAtM6jyoex73MxxHXlms4X0874ml/gw6.LETsMs5oXLWyGeSAddx2N..
 ```
 ![](.topwrite/assets/image_1729091141844.png)
+
+<https://www.chamd5.org/>

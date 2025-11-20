@@ -1,1 +1,6 @@
 本质是原生，不过序列化后的数据有AES加解密和Base64，有AES密钥和存在利用链依赖即可利用。
+
+
+CookieRememberMeManagr类中
+
+AbstractRememberMeManager类中的decrypt方法，AES密钥默认也在这里

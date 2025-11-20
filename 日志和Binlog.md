@@ -1,6 +1,6 @@
 
 
-Binlog（二进制日志）在MySQL中不是一个单一的文件，而是由一系列日志文件组成，这些文件记录了数据库的所有更改操作，如INSERT、UPDATE、DELETE以及数据定义语言（DDL）操作，不含select。每个Binlog文件在达到一定大小时会被滚动替换，生成新的日志文件。
+Binlog（二进制日志）在MySQL中不是一个单一的文件，而是由一系列日志文件组成，这些文件记录了数据库的所有更改操作，如INSERT、UPDATE、DELETE以及数据定义语言（DDL）操作，不含select。每个Binlog文件在达到一定大小时会被滚动替换，生成新的日志文件。可以配置binlog日志最大保存100m，mysql会定时清理binlog
 （重启，flush logs命令）。
 Binlog文件通常位于MySQL的数据目录下，文件名以`binlog.000001`、`binlog.000002`等格式命名。
 http://blog.51cto.com/u_16099328/8476198
@@ -29,10 +29,14 @@ mysqlbinlog --start-position=11123 --stop-p0sition=122224  --database=kaoshi库�
 2. **通过MySQL命令行**： 可以登录到MySQL服务器，然后使用`SHOW BINLOG EVENTS`语句来查看Binlog事件。例如：
 
  ```
+是否开启
+SHOW VARIABLES LIKE 'log_bin';
+
+SHOW BINARY LOGS;
 查看所有binlog的记录:
 
-SHOW MASTERR STATUS;
-SHOW MASTERR logs;
+SHOW MASTER STATUS;
+SHOW MASTER logs;
 show binary logs;
 
 查看历史操作：

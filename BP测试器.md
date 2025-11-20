@@ -63,3 +63,13 @@ print(byte_sequence)
 有两个参数：
 音叉攻击：一一对应
 集束炸弹：集合组合
+
+
+^
+### **3.有验证码的爆破**
+上插件
+^
+### **4.有csrf_token的爆破**
+token参数用递归提取(Recursive grep)
+![](.topwrite/assets/image_1758089704165.png)
+![](.topwrite/assets/image_1758089825616.png)

@@ -3,6 +3,7 @@
 如果system()是高权限执行shell命令，直接加用户提权。
 如果system()是低权限，利用mysql漏洞的UDF提取，启动项提权等。
 
+工具MDUT。
 
 ^
 Windows加用户进行提权：

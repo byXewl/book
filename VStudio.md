@@ -23,8 +23,9 @@ Visual Studio 使用的编译器是 Microsoft Visual C++ (MSVC) 编译器，它�
 >第三方库和头文件，放%ProgramFiles(x86)%\Microsoft Visual Studio\2022\Community\VC\Auxiliary\
 
 
+^
 ## **Visual Studio一些使用**
-提示fopen不安全用fopen_s：
+#### 类似提示fopen不安全用fopen_s：
 项目-属性-c/c++预处理器-预处理定义-编辑-加一行
 ```
 _CRT_SECURE_NO_WARNINGS
@@ -35,6 +36,20 @@ _CRT_SECURE_NO_WARNINGS
 
 
 ^
-提示v143 不是v142：原因是vs2019项目，但是你在vs2022打开的。
+#### 提示v143 不是v142：
+原因是vs2019项目，但是你在vs2022打开的。
 方式一：按提示转成v143项目。
 方式二：属性-常规-平台工具集-选择v142，修改.vcxproj文件中143为142等。
+
+
+^
+#### 目录显示格式和创建文件夹：
+项目-显示所有文件
+![](.topwrite/assets/image_1740194273248.png)
+
+
+
+^
+## **Visual Studio 更多使用**
+如果从事这方面，可以专门学一下。否则，应付考试就完了。
+<https://www.kancloud.cn/digest/visualstudio/110067>

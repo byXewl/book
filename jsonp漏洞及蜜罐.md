@@ -32,3 +32,7 @@ BP插件：
 JSONP-Hunter-master
 自动记录有回调的接口url
 <https://github.com/p1g3/JSONP-Hunter>
+
+^
+json返回敏感信息，如果不能跨域，可以尝试url加个参数 callback=xxx，返回jsonp则存在漏洞。并且可以测试反射XSS。
+![](.topwrite/assets/image_1742367483337.png)

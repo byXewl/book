@@ -22,7 +22,16 @@ Set-Cookie: mycookie=myvalue; HttpOnly
 ```
 
 **3.使用HTML实体化编码**
-vue中使用v-html，所有标签不解析到页面
+vue中不使用v-html，所有标签不解析到页面
+```
+<div>{{ userContent }}</div>
+<img :src="img.url">
+```
+vue这里的`userContent`会被自动转义，防止XSS。
+vue使用`v-bind`绑定属性时，同样会自动对内容进行转义。
+
+
+^
 htmlspecialchars()；实体化编码函数
 stripslashes();去掉\字符
 

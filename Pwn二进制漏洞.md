@@ -3,6 +3,8 @@ Pwn胖：PWN在黑客俚语中代表着攻破、取得权限，多为溢出类�
 1. **栈溢出（Stack-based buffer overflow）**：这是最常见的缓冲区溢出类型，发生在程序的栈上。攻击者可以通过向局部数组或变量写入过多的数据来覆盖相邻的内存区域，如返回地址或函数调用的参数。
 2. **堆溢出（Heap-based buffer overflow）**：堆溢出涉及程序在动态分配内存时，分配的内存超出了堆的大小。堆用于存储程序运行时长期需要的数据，攻击者可能会利用堆缓冲区溢出来执行任意代码或获取敏感信息。
 
+入门：
+<https://www.yuque.com/cyberangel/rg9gdm/gcz7x2>
 ## **危害**
 二进制漏洞利用，劫持程序流，权限提升。
 劫持程序流：连接远程服务器的服务软件，劫持这个服务软件，拿到服务器shell，读flag。
@@ -39,6 +41,18 @@ get()函数的栈溢出，修改某个变量值，调用某个函数
 ROP链
 ```
 <https://www.bilibili.com/video/BV1ub4y1F71R/?spm_id_from=333.337.search-card.all.click&vd_source=972491eeb83c0ed4c0015aef1be6c537>
+
+ROP返回导向编程
+```
+ROP的原理是利用程序内存中已存在的以返回指令结尾的指令序列（gadgets）来控制程序执行流程。
+攻击者通过缓冲区溢出或其他方式在栈上布置数据，覆盖返回地址为gadgets的地址，
+从而我们可以实现代码注入。
+
+ROP不需要在栈上执行任何新的代码，只需要利用现有的代码，所以可以绕过NX保护。
+
+ROP需要精心选择和拼接gadgets，以实现所需的功能。
+```
+
 ## **CTF题**
 利用系统漏洞，编写脚本获取服务器shell，再获取flag。
 出题人给出服务器的ip和端口，端口上运行一个进程，
@@ -59,7 +73,7 @@ pip3 install pwntools -i https://pypi.tuna.tsinghua.edu.cn/simple
 >>> pwn.asm("xor eax, eax")
 ```
 
-checksec ：查看程序相关的保护措施。
+checksec ：查看程序相关的保护机制措施。
 ```
 一般安装pwntools库后默认安好。在~/.local/bin 目录下
 ~/.local/bin/checksec

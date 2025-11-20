@@ -1,9 +1,11 @@
 NTFS又叫ADS
-.![](.topwrite/assets/image_1709796685085.png)
+>Windows在文件上传漏洞中使用::$DATA进行绕过文件名检验
 
 cmd使用命令
 notepad 加密文件名:寄生文件名
+```
 如：notepad 1.txt:flag.txt
+```
 即可看到寄生加密的内容
 
 ^

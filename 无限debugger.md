@@ -1,6 +1,16 @@
+
+debugger 语句 ≠ 按 F2 下断点，它们属于两套完全不同的断点机制。
+   * 是 JavaScript 语言级关键字。
+   * 解释器执行到这一行时，**如果当前 DevTools 处于打开状态**，就会像抛异常一样把控制权交给调试器，程序暂停。
+   * 代码一旦上线，只要用户开了 DevTools 也会触发，所以生产环境通常会被打包工具（Terser、UglifyJS 等）自动剔除。
+   * 优点：写一次，所有人调试时都能直接命中，不依赖 IDE；缺点：必须改源码，而且容易误留在生产包里。
+
+
+
+
 有些网站抓包，打开F12开发者模式抓包分析的时候，立即会出现无限debugger无限停顿 或 代码中存在很多debugger影响F12操作。
 
-注意： 本文探究的所有情况都是无限debugger在加密逻辑之前。因为无限debugger在加密逻辑之后不用管
+注意： 本文探究的所有情况都是无限debugger在加密逻辑之前。因为无限debugger在加密逻辑之后不用管。
 
 ## **Debugger介绍**
 无限debugger，还有一个非常靓丽的名字。叫debugger地狱
@@ -57,6 +67,9 @@ setInterval(a,5000)
 
 ^
 ## **解决无限Debugger**
+注入hook代码：
+1、借助油猴的hook：你可以将hook的脚本放到油猴里面执行。
+2、直接用控制台console界面进行hook：hook时机最好选择你看见的第一个js文件的第一行的时候下断点，然后在控制台console界面就注入。
 
 1. **重写setInterval方法 (业务代码和 setInterval 有关时)**
 
@@ -79,8 +92,9 @@ setInterval(a,5000)
    ```
 
 3. **注入hook脚本**
+  从Function层面解决Debugger
 
-   `从**Function层面解决Debugger**`
+案例网站：<https://h.ihcking.com/34/>
 
    代码1：
 

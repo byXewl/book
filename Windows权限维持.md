@@ -4,3 +4,12 @@
 
 这次关于Windows权限维持基本上都是在单机环境下测试，其实和在域内测试的效果是一样的，只是域内相对来说需要考虑有没有网络，如何出网等。
 
+^
+```
+开启rdp远程登录
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG\_DWORD /d 0 /f
+
+
+放行
+netsh advfirewall firewall add rule name="Remote Desktop" protocol=TCP dir=in localport=3389 action=allow
+```

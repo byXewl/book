@@ -1,6 +1,6 @@
 网络封包分析软件
 Wireshark只能查看封包，不能修改封包内容或者发送封包。
-可以监听查看网卡的包，或者手动导入数据包.cap/.pcap/.pcapng(由网络数据包捕获工具Wireshark、tcpdump 等生成)。
+可以监听查看网卡的包，或者手动导入数据包.cap/.pcap/.pcapng(由网络数据包捕获工具Wireshark、tcpdump等生成)。
 流量包可能是http,tcp,dns,mysql等。
 
 linux的Tshark
@@ -8,6 +8,9 @@ sudo apt-get install tshark
 
 在线pcap包分析：<https://as.zorelworld.com/list-pcap.html>
 在线wireshark：https://www.cloudshark.org/captures
+
+搜索注意选择分组字节流，字符串
+![](.topwrite/assets/image_1745661501973.png)
 
 ^
 ## **筛选过滤表达式**
@@ -23,6 +26,13 @@ ip.addr==xxx && http
 http contains "whoami"
 http contains ".php"
 http.request.full_uri contains "SELECT"
+```
+密码key，解压密码
+```
+http contains "key"
+http contains "key="
+http contains "pass"
+http contains "zipkey="
 ```
 命令执行，webshell
 ```
@@ -68,7 +78,9 @@ http contains "data:image/"
 
 
 ^
+^
 ## **常见操作**
+^
 #### **1、统计操作**
 **统计-协议分级**
 在面对某些特定类型的恶意攻击（例如ARP攻击）时，需要从协议的角度进行分析。
@@ -79,6 +91,7 @@ http contains "data:image/"
 IP转域名
 ![](.topwrite/assets/image_1729044053724.png)
 
+^
 #### **2、常用导出方式**
 分层页右键-复制
 ![](.topwrite/assets/image_1729043720157.png)
@@ -89,6 +102,7 @@ IP转域名
 左上角导出特定分组
 <https://blog.csdn.net/hou09tian/article/details/118875666>
 ![](.topwrite/assets/image_1729044316506.png)
+
 ^
 #### **3、其他操作**
 流量包大，打开慢可以拆包
@@ -128,15 +142,20 @@ ftp流量包中有文件传输用kali中foremost分离出文件。
 
 
 
-
-
-
-
+^
+#### **4、数据字符过滤提取**
+![](.topwrite/assets/image_1758072153456.png)
+name中的值很明显是zip字节流数据（504b），将这些长度 426的URL中的name值提取出来。
+将1234修改为5，成504b。
+kali中用tshark命令提取
+```
+tshark -r NotOnlyWireshark.pcapng -e http.request.uri -T fields -Y 'http.request.uri' | grep -P 'name=[A-F0-9]{3}' | awk -F '=' '{printf $2}'
+```
 
 
 ^
 ## **分析web攻击场景**
-#### **分析布尔sql注入流量包**
+#### **1、分析布尔sql注入流量包**
 过滤http
 左上导出分组结果为1.csv文件
 看最后获取字段值的注入sql的请求url参数
@@ -146,11 +165,15 @@ ftp流量包中有文件传输用kali中foremost分离出文件。
 
 或者布尔盲注获取字符正确值，判断每一位字符的最后一条查询记录是否为True 即可，如果为True，则需要数值+1，反之则就是该值。
 ```
+用工具一键转换。
+
+
 ^
-#### **分析head协议的扫描器**
+#### **2、分析head协议的扫描器**
 目录爆破
 
-#### **分析特征流量**
+#### **3、分析特征流量**
+
 icmp
 ping分析，查看ping包的大小奇怪，是人为指定的，大小转成ascii即为flag
 ![](.topwrite/assets/image_1729044694438.png)
@@ -163,3 +186,8 @@ mysql
 sql注入
 http.request.uri contains "select"
 ![](.topwrite/assets/image_1729044627557.png)
+
+
+^
+dnslog
+域名中的可控部分 可能出现敏感编码信息

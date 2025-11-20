@@ -18,7 +18,10 @@ nc端口转发
 ```
 nc -l -p 8080 | nc example.com 80
 ```
-
+指定网卡
+```
+nc.exe -lvvp 8901 -s 192.168.16.22
+```
 ^
 ## **nc下载安装**
 windows一个nc.exe即可。https://eternallybored.org/misc/netcat/ 注意!!! Windows系统会报病毒,如果有杀毒软件要全部关掉,自带的defender关掉。

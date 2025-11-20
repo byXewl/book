@@ -77,4 +77,10 @@ msf>sessions
 
 进入会话
 msf>sessions 1
+
+meterpreter>
+搜索文件
+下载文件
+search -f 文件名或通配符
+download 远程路径 [本地保存路径]
 ```

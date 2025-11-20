@@ -1,0 +1,1 @@
+vite工具的esbuild最小化压缩（比 Terser 快），效果同 Terser。

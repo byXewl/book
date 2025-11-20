@@ -52,3 +52,11 @@ php解决防范XSS跨站注入的首先是按照上方的SQL注入做好请求�
 <input type="text" name="username" value="{$_GET['username']}" />
 ```
 
+^
+往往结合一些用户cookie凭据打出高危，如（百度bduss）。
+
+^
+对抗
+https\://blog.csdn.net/weixin\_42340783/article/details/146070714\
+
+

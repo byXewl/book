@@ -5,7 +5,24 @@ echo %PATH% (windows的PATH环境变量)
 cd %WINDIR%
 echo Windows directory is %WINDIR%
 等等
+
+localhost 是127.0.0.1
+在curl 、ping中用。
 ```
+
+Windows 中类似的概念是 **环境变量**，使用 `%变量名%` 语法：
+
+| 变量名                | 含义说明                           |
+| :----------------- | :----------------------------- |
+| `%CD%`             | 当前目录（类似 `$PWD`）                |
+| `%USERPROFILE%`    | 当前用户的主目录（类似 `$HOME`）           |
+| `%USERNAME%`       | 当前用户名                          |
+| `%COMPUTERNAME%`   | 当前计算机名（类似 `$HOSTNAME`）         |
+| `%PATH%`           | 可执行程序的搜索路径                     |
+| `%TEMP%` 或 `%TMP%` | 临时文件夹路径                        |
+| `%SYSTEMROOT%`     | Windows 系统目录（通常是 `C:\Windows`） |
+
+
 ```
 //变量                     类型       描述
 //%ALLUSERSPROFILE%        本地       返回“所有用户”配置文件的位置。

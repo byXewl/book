@@ -81,3 +81,14 @@ msf6 > update
 msfvenom取代了msf中payloads和encoders模块
 
 
+## **MSF Windows版**
+<https://windows.metasploit.com/>
+记得用powershell
+```
+@echo off
+rem 打开新 PowerShell 窗口并运行 ./msfconsole.bat
+start powershell.exe -NoExit -Command ^
+    "Set-Location '%~dp0';" ^
+    "Write-Host ' ./msfconsole.bat ...' -ForegroundColor Green;" ^
+    "& '.\\msfconsole.bat'"
+```

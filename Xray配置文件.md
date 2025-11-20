@@ -121,7 +121,7 @@ plugins:
 # 注意: 默认配置为禁用反连平台，这是无法扫描出依赖反连平台的漏洞，这些漏洞包括 fastjson，ssrf 以及 poc 中依赖反连的情况等
 reverse:
   db_file_path: "byxeclient.db"                      # 反连平台数据库文件位置, 这是一个 KV 数据库
-  token: "3312"                             # 反连平台认证的 Token, 独立部署时不能为空
+  token: "12902243"                             # 反连平台认证的 Token, 独立部署时不能为空
   http:
     enabled: false
     listen_ip: 0.0.0.0 

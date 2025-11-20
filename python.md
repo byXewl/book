@@ -12,7 +12,7 @@ python他人知识库：
 ```
 路径下执行，创建一个名为Demo的虚拟环境目录：
 python -m venv Demo 或 virtualenv --no-site-packages Demo
-
+    
 Demo目录里有Include/ Lib/ Scripts/ .cfg目录，是独立的python初始环境，
 其中 Scripts/目录里有python.exe和pip.exe
 Scripts/目录里有个active，命令执行正式打开一个虚拟环境的终端。
@@ -35,6 +35,10 @@ pip install -r requirements.txt
 pip2 install --upgrade pip 
 安装pip2扩展工具，不然后面安装还是报错 
 sudo pip2 install --upgrade setuptools
+
+^
+离线安装包
+<https://pypi.org/> 下载对应的egg文件，使用easy_install命令安装即可
 
 ^
 .pyc文件

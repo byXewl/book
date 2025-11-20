@@ -7,7 +7,3 @@ php函数
 file_get_contens(); //可使用file http 不支持dict gopher
 curl_exec(); //支持众多协议如dict,gopher
 ```
-```
-java函数
-
-```

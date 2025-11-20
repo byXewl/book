@@ -1,4 +1,13 @@
 
+
+## **Frida与Xposed的对比**
+| 工具     | 优点                                  | 缺点                       |
+| :----- | :---------------------------------- | :----------------------- |
+| Xposed | 直接编写Java代码，Java层hook方便，可打包模块持久化hook | 环境配置繁琐，兼容性较差，难以Hook底层代码。 |
+| Frida  | 配置简单，免重启hook。支持Java层和Native层的hook操作 | 持久化hook相对麻烦              |
+
+
+^
 ## **frida+r0capture通杀安卓反证书抓包**
 r0capluie仅限安卓平台，一般需要root，测试安卓7、8、9、10、11、12、13，
 可用无视所有证书校验或绑定，不用考虑任何证书的事情。
@@ -12,7 +21,7 @@ Frida：https://github.com/frida/frida/releases
 
 ^
 ### **安装**
-电脑本地安装frida本地版：frida 15.2.2
+电脑本地安装frida本地版：frida 
 电脑模拟器安装frida-server服务版x86版本（真机arm版本）
 本地版连接服务版
 再用r0capture免证书抓包。
@@ -20,11 +29,14 @@ Frida：https://github.com/frida/frida/releases
 python3环境
 
 pip list
-pip install frida
-pip install frida-tools
+pip3 list
+pip311 list 这里看到frida版本16.1.3
+
+pip install frida ==  16.1.3
+pip install frida-tools == 12.0.0
 ```
 然后去https://github.com/frida/frida/releases
-下载对应型号且与电脑安装Frida版本一致的Frida-server版本frida 15.2.2。
+下载对应型号且与电脑安装Frida版本一致的Frida-server版本frida。
 ```
 例如我的机器为arm32为架构，就选择frida-server-12.8.14-android-arm.xz下载
 可以在adb使用命令 adb shell getprop ro.product.cpu.abi 查询手机架构
@@ -51,7 +63,7 @@ server端需要安装在要hook的主机上，server端的安装版本必须与�
 则下载frida-server-16.1.3-android-x86_64.xz，解压。
 
 adb root 获取root权限，模拟器中点确认授权给shell。
-adb push D:/xxx/frida-server-xx-xx    /data/loacl/frida-server
+adb push D:/xxx/frida-server-xx-xx    /data/local/tmp/frida-server
 adb shell
 cd /data/local/
 chmod 777 ./frida-server
@@ -76,6 +88,11 @@ adb forward tcp:27043 tcp:27043
 
 ^
 ### **使用**
+使用了虚拟
+```
+workon frida16
+```
+
 基础
 ```
 列出正在运行的进程(USB连接)

@@ -149,6 +149,18 @@ nohup 命令 2>&1 &
 /usr/bin/script -qc /bin/bash /dev/null
 
 假设一个情况：如果当前拿到shell之后，我们想要使用vim、su或者想要tab补全代码、ctrl+c结束当前行代码、或者使用快捷键使用上一条命令，这个时候这个shell并不会对我们的操作进行响应，那么这个时候就需要升级shell成为交互式完美shell，使其跟我们常规命令行操作一样。
+PS：
+哥斯拉的超级终端是交互式shell。
+或者，传参执行。
+```
+已知/home/xxSuidElf是suid有root权限的执行命令，但是交互式命令
+
+echo "cat /root/哈哈.txt > /tmp/哈哈.txt " > tmp.sh
+chmod +x tmp.sh
+echo "tmp.sh"  |  /home/xxSuidElf
+
+此时查看/tmp/哈哈.txt
+```
 
 ### 使用python pty
 ```

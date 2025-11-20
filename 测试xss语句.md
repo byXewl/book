@@ -4,6 +4,8 @@ alert('xss') // 直接执行
 confirm('xss') // 需要点击
 prompt('xss') // 需要输入
 
+top['con'+'firm']`1`;//
+
 xss几种执行
 <script>+弹窗方式</script>
 document.write('console.log(alert("xss"))')

@@ -40,6 +40,8 @@
 
 主流版本利用：https\://www\.freebuf.com/vuls/361576.html\
 
+fastjson打jdbc：<https://blog.csdn.net/qq_42077227/article/details/130236560>
+<https://mp.weixin.qq.com/s/b44dwzmc7LVj2BUtsyfewA>
 
 
 

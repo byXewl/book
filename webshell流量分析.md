@@ -43,6 +43,9 @@ User-Agent: antSword/1.1
 php类常见每个请求体都存在以密码=@ini_set("display_errors","0");@set_time_limit(0)开头。
 ```
 %40ini_set(%22display_errors%22%2C%20%220%22)%3B%40set_time_limit(0)
+
+base就是
+QGluaV9zZXQ开头
 ```
 默认编码器为url编码加密，也可能16进制。
 base64请求参数解密：去除前两个字符后base64。

@@ -10,6 +10,8 @@
 ```
 show databases;  
 #查看所有数据库名
+
+show tables;
 ```
 2.select查看
 ```

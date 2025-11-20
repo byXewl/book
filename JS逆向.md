@@ -1,4 +1,5 @@
 
+
 ## **浏览器F12操作**
 常见操作：
 基础：<https://mp.weixin.qq.com/s/OhgSdEMOLaIkrq6POiwDRA>
@@ -19,7 +20,10 @@ sign也有可能有个+固定值再哈希MD5
 var str="password=123456&timestamp=1691141967479&username=admin&secret=123456"
 console.log(SHA1_Encrypt(str)) //sign
 ```
+sc：同sign，往往不在请求头，在url中
 
+
+^
 搜索关键词
 ```
 encrypt(
@@ -32,6 +36,9 @@ SignMD5
 encrypt
 hash
 crypto
+
+passwd
+uri
 ```
 1、直接搜值，然后多打几个断点慢慢来也能找到。
 2、利用断点调试，一步一步跟。
@@ -78,15 +85,14 @@ def getKey(msg):
 ```
 
 ^
-## **常用工具**
-<https://blog.csdn.net/Not__Cry/article/details/139754358>
-
 
 
 
 
 ## **加密架构**
 ![](.topwrite/assets/image_1729220337721.png)
+url-->加载html-->加载js-->运行js初始化-->用户触发某个事件--调用了某段js-->明文数据-->加密函数-->加密后的 数据-->send（给服务器发信息{XHR--SEND}） -->接收到服务器数据-->解密函数-->刷新函数-->刷新网页渲染 
+
 
 
 ^

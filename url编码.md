@@ -1,3 +1,22 @@
+## **场景**
+
+1. 放在 **URL 部分**（Path / Query String）
+   → 必须按 URL 规则编码（空格变 %20、& 变 %26 …）。
+
+2. 放在 **消息体**（Body）
+   → 看 Content-Type 是什么：
+
+   * `application/x-www-form-urlencoded`
+     键和值都要做 URL 编码，和 Query String 的格式/规则完全一样。
+   * `multipart/form-data`（上传文件或富表单）
+     参数本身**不**再做 URL 编码，边界符之外的原始字节直接传。
+   * `application/json` / `text/xml` …
+     整个 payload 按对应格式序列化即可，**不**需要做 URL 编码。
+
+3. 放在 **HTTP 头**（如自定义 Header）
+   → 头值里出现特殊字符时，需按 HTTP 头规则编码（通常也是 URL 编码或百分号编码）。
+
+
 ## **url编码解码过程**
 URL 编码并不是绝对必须的，有特殊字符会干扰 URL 结构时才需要URL编码。浏览器和一些请求发起工具会自动URL编码，有的则不会需要手动编码。
 ```

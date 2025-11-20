@@ -20,6 +20,7 @@ adb devices：列出当前连接到计算机的所有 Android 设备。
 adb connect 127.0.0.1:端口  连接设备。
 
 adb shell：启动与设备的命令行交互会话。
+adb -s emulator-5554 shell  多个-s指定
 
 adb root 获取root权限，模拟器中点确认授权给shell。
 
@@ -71,4 +72,9 @@ adb pull /data/app/test.apk
 # 把电脑里里的test.apk文件上传到手机系统的 /data/local/tmp 下
 adb push ./test.apk /data/local/tmp
 ```
+as也可以过滤查看日志，等同adb logcat | findstr com.app.test
+![](.topwrite/assets/image_1742132712629.png)
 
+打开页面
+使用adb shell dumpsys activity top命令获取当前界面信息。
+使用adb shell am start -D -n com.yaotong.crackme/.MainActivity 命令加了-D就以Debug模式启动app指定界面

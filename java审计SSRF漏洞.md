@@ -35,6 +35,7 @@ file ftp mailto http https jar netdoc
 | DefaultHttpClient    | DefaultHttpClient引起的SSRF apache的http库的HttpClient使用new HttpGet()   | 参照代码 |
 | url.openStream()     | url.openStream()引起的SSRF     | 参照代码 |
 | ImageIO.read(url) | 图片才回显，盲SSRF |
+| HttpUtil | hutool库createGet |
 ```
 1、
 (URLConnection) url.openConnection()支持http、file等。

@@ -15,7 +15,18 @@ Polkit(CVE-2021-4034)
 Ubantu内核提权
 权限不当
 
+PS：提权程序一般是交互式shell，所以一般得先上线或者
+用哥斯拉的超级终端是交互式shell。
+或者，传参执行。
+```
+已知/tmp/xxSuidElf是suid有root权限的执行命令，但是交互式命令
 
+echo "cat /root/哈哈.txt > /tmp/哈哈.txt " > tmp.sh
+chmod +x tmp.sh
+echo "tmp.sh"  |  /tmp/xxSuidElf
+
+此时查看/tmp/哈哈.txt
+```
 ## **Linux提权利用**
 基础信息收集：
 <https://blog.csdn.net/weixin_44268918/article/details/129907425?spm=1001.2014.3001.5501>

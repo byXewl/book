@@ -1,6 +1,7 @@
 命令执行
 ```
 java.lang.Runtime.getRuntime().exec("calc");
+java.lang.Runtime.getRuntime().exec("cmd /c " + cmd);
 
 Runtime runtime = Runtime.getRuntime();
 runtime.exec("calc");

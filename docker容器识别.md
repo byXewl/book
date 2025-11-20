@@ -2,8 +2,9 @@
 ## 1.Docker内
 * MAC地址为 `02:42:ac:11:00:00` - `02:42:ac:11:ff:ff`
 * `ps aux` 大部分运行的程序 pid 都很小
-* `cat /proc/1/cgroup` docker的进程
-* docker 环境下存在 `.dockerenv`
+* `cat /proc/1/cgroup` docker的进程 cat /proc/self/cgroup
+* mount -v
+* docker 环境下存在 `/.dockerenv`
 * 部分容器中缺少许多常用的命令如 `ping` 等
 
 ## 2.Docker外

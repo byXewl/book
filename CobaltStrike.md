@@ -35,12 +35,12 @@ chmod 777 teamserver
 chmod +x teamserver cobaltstrike
 chmod +x TeamServerImage
 ./teamserver 当前服务器ip 密码
-如：./teamserver 47.109.58.20 3312
-./teamserver 192.168.16.128 3312
+如：./teamserver 47.109.58.20 331
+./teamserver 192.168.16.128 331
 ./teamserver 192.168.20.128 byxe
 
 nohup ./teamserver ip 密码  //后台运行，关闭终端依旧运行
-nohup ./teamserver 47.109.58.20 chenjie
+nohup ./teamserver 47.109.58.20 jie
 
 nohup关闭：
 ps aux | grep your_program_name  

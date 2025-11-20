@@ -115,3 +115,9 @@ Windows默认同时只能登录一个账号,另一个下线。
 Windows Server版，支持远程桌面多用户登陆。
 linux支持远程多用户登录。
 ```
+
+
+```
+开启rdp远程登录
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG\_DWORD /d 0 /f
+```

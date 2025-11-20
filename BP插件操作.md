@@ -16,7 +16,7 @@ BurpSuite的扩展存在一个问题，插件安装过多会导致卡顿、内�
 <https://mp.weixin.qq.com/s/2uTxakCAfApDNMQyx0y8dg>
 
 ## **更多**
-OneScan框架指纹识别，TsojanScan框架识别、HaE框架识别(关键字正则颜色匹配，3.0后规则自带，更改规则要重新加载)
+OneScan框架指纹识别(子目录扫描)，TsojanScan框架识别、HaE框架识别(关键字正则颜色匹配，3.0后规则自带，更改规则要重新加载)
 
 ^
 ## **前端加解密插件**
@@ -54,6 +54,19 @@ xia越
 xiaSQL
 
 ^
+## **SSRF、请求、重定向**
+AutoRepeater
+<https://github.com/Lotus6/AutoRepeater/>
+
+^
+## **CaA**
+参数频率统计，右键复制参数可以fuzz参数。生成fuzz爆破字典。
+<https://github.com/gh0stkey/CaA>
+![](.topwrite/assets/image_1743175635653.png)
+
+fuzz爆破：Collectlnfo右键生成fuzz。发送到intruder，全选数据包标记，playload选择来自插件，去除url编码勾选。
+![](.topwrite/assets/image_1743176139794.png)
+^
 ## **lazyCSRF**
 CSRF POC
 lazyCSRF<https://www.freebuf.com/articles/web/305569.html>
@@ -69,7 +82,31 @@ E:\myHVV\java\ysoserial.jar
 有一个坑，POST请求体没有内容的话要把所有换行去除，手动删除，否则发包失败。
 ![](.topwrite/assets/image_1728616255488.png)
 
+^
+## **BP插件captcha-killer**
+离线也可以用！6位也随便识别
+适配新版Burpsuite。下载两个
+<https://github.com/f0ng/captcha-killer-modified>
+![](.topwrite/assets/image_1757658812242.png)
 
+^
+教程：<https://www.cnblogs.com/4geek/p/17145385.html#!comments>
+发送到插件，选择识别模块。
+再配合测试器即可。
+
+安装识别模块
+```
+pip311 install ddddocr aiohttp -i https\://pypi.tuna.tsinghua.edu.cn/simple/
+python311 .\codereg.py  上面github下载的
+```
+![](.topwrite/assets/image_1757658390008.png)
+![](.topwrite/assets/image_1757658997260.png)
+![](.topwrite/assets/image_1757659046610.png)
+识别成功，使用测试器即可。
+![](.topwrite/assets/image_1757659261754.png)
+可以慢一点
+![](.topwrite/assets/image_1757659539996.png)
+^
 ## **其他介绍和使用教程**
 <https://www.cnblogs.com/mr-ryan/p/17774683.html>
 
@@ -80,3 +117,5 @@ E:\myHVV\java\ysoserial.jar
 log4jscan：
 <https://github.com/whwlsfb/Log4j2Scan>
 <https://github.com/j5s/Log4j2Scan-1>
+
+

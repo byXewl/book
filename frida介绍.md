@@ -33,6 +33,7 @@ Interceptor.attach(Module.findExportByName("libexample.so", "example_func"), {
 ## **Frida操作**
 快速入门操作：<https://www.freebuf.com/articles/system/190565.html>
 功能：打印定位，中间截取数据篡改等。
+配合算法助手的hook日志，继续hook。
 实现：重写方法、重载方法，RPC，实例找到类中所有方法并调用。
 
 
@@ -40,3 +41,8 @@ Interceptor.attach(Module.findExportByName("libexample.so", "example_func"), {
 hook `okhttp3` `java.net.HttpURLConnection` `java.net.URL` 三个常见请求库，
 如：发现捕获到的所有请求均来自`java.net.URL`。
 
+jadx也可以快速右键复制hook函数代码。
+
+adb进入任意暴露的activity页面。
+![](.topwrite/assets/image_1740222448645.png)
+![](.topwrite/assets/image_1740222329220.png)

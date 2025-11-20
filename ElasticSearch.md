@@ -58,4 +58,3 @@ Elasticsearch 是一个开源的分布式搜索引擎，它使用 JSON 文档来
 7. **可视化和分析：**
    - 使用 Kibana 等工具可视化和分析 Elasticsearch 中的数据。
 
-请注意，以上只是一个简单的入门教程。Elasticsearch 还有许多高级功能和配置选项，你可以根据实际需求深入学习。此外，使用 Elasticsearch 时，安全性也是一个需要注意的方面。阅读 [Elasticsearch 官方文档](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) 可以获取更详细的信息和教程。
