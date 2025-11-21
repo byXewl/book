@@ -6,6 +6,11 @@
         "copy-code",
         "lunrjs",
         "igenflow",
-        "ad"
-    ]
+        "assistant"
+    ],
+    "pluginsConfig": {
+        "assistant": {
+            "siteId": "M7e5MYe2"
+        }
+    }
 }
