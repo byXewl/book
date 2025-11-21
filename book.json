@@ -4,6 +4,8 @@
         "highlight",
         "image-zoom",
         "copy-code",
-        "lunrjs"
+        "lunrjs",
+        "igenflow",
+        "ad"
     ]
 }
