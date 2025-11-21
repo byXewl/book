@@ -5,5 +5,8 @@
         "image-zoom",
         "copy-code",
         "lunrjs"
-    ]
+    ],
+    "themeConfig": {
+        "expandLevel": 3
+    }
 }
