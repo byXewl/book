@@ -1,0 +1,14 @@
+{
+    "title": "Xe的库",
+    "plugins": [
+        "highlight",
+        "image-zoom",
+        "copy-code",
+        "assistant"
+    ],
+    "pluginsConfig": {
+        "assistant": {
+            "siteId": "M7e5MYe2"
+        }
+    }
+}
