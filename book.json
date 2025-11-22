@@ -4,8 +4,6 @@
         "highlight",
         "image-zoom",
         "copy-code",
-        "lunrjs",
-        "igenflow",
         "assistant"
     ],
     "pluginsConfig": {
