@@ -903,6 +903,7 @@
     * [API接口漏洞](API接口漏洞.md)
     * [cgi漏洞](cgi漏洞.md)
     * [著名组件漏洞](著名组件漏洞.md)
+    * [VPN漏洞](VPN漏洞.md)
 * [java安全](java安全.md)
     * [java命令执行](java命令执行.md)
         * [javaSSTI](javaSSTI.md)
