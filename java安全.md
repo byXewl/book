@@ -6,3 +6,7 @@ java反序列化链：<https://blog.csdn.net/qq_46081990/article/details/1357249
 java安全靶场：<https://github.com/whgojp/JavaSecLab?tab=readme-ov-file>
 
 B站的：<https://vxxly2ajy0y.feishu.cn/wiki/Na5Uw4BgCi7VEMkOAlDclBYznPb>
+
+梭哈payload工具：
+<https://github.com/vulhub/java-chains/wiki>
+手册：<https://java-chains.vulhub.org/zh/docs/module/generate>

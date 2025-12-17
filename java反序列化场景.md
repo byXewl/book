@@ -19,3 +19,7 @@ Authorization Bearer rO0ABXNyABhjbi5hYmMuY29yZS5tb2RlbC5Vc2VyVm92RkMxewT0OgIAAkw
 ```
 可以使用burpsuite的java DeserializationScanner插件扫描可利用链，或者代码审计依赖利用链。
 常规可以直接使用ysoserial.jar打。
+
+梭哈payload工具：
+<https://github.com/vulhub/java-chains/wiki>
+手册：<https://java-chains.vulhub.org/zh/docs/module/generate>

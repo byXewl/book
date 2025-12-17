@@ -65,3 +65,6 @@ Java原生的标准反序列化要利用一定要满足两个条件，入口类�
 又如Fastjson反序列化自动调用之一是，类中setXxx(一个参数) 类似的方法，即使类中没有xxx属性。
 ```
 寻找对应的利用类。
+梭哈payload工具：
+<https://github.com/vulhub/java-chains/wiki>
+手册：<https://java-chains.vulhub.org/zh/docs/module/generate>
