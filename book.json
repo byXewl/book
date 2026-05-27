@@ -7,11 +7,15 @@
     "assistant",
     "lunrjs",
     "giscus",
-    "custom-js"
+    "custom-js",
+    "baidu-tongji"
   ],
   "pluginsConfig": {
     "assistant": {
       "siteId": "M7e5MYe2"
+    },
+    "baidu-tongji": {
+      "siteid": "54b6d2212b56a21a251bdee4f9137241"
     },
     "copy-code": {},
     "custom-js": {
