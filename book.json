@@ -20,7 +20,7 @@
     "copy-code": {},
     "custom-js": {
       "code": "",
-      "tag": "\u003cscript type=\"text/javascript\" id=\"myhk\" src=\"https://myhkw.cn/api/player/158382436416\" key=\"158382436416\" m=\"1\"\u003e\u003c/script\u003e"
+      "tag": "\u003cscript\u003e var _hmt = _hmt || []; (function() {   var hm = document.createElement(\"script\");   hm.src = \"https://hm.baidu.com/hm.js?54b6d2212b56a21a251bdee4f9137241\";   var s = document.getElementsByTagName(\"script\")[0];    s.parentNode.insertBefore(hm, s); })(); \u003c/script\u003e\u003cscript type=\"text/javascript\" id=\"myhk\" src=\"https://myhkw.cn/api/player/158382436416\" key=\"158382436416\" m=\"1\"\u003e\u003c/script\u003e"
     },
     "giscus": {
       "category": "Announcements",
