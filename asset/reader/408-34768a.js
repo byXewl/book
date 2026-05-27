@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk_topwrite_reader=self.webpackChunk_topwrite_reader||[]).push([[408],{37408:(r,e,a)=>{a.r(e),a.d(e,{default:()=>d});var o=a(35250),t=a(19331),i=a.n(t),n=a(20501);function d(r){var e=r.loading,a=void 0!==e&&e,t=(0,n.v9)("page").loading,d=(0,n.LU)().primaryColor;return(0,o.jsx)(i(),{show:t||a,color:d})}}}]);
+//# sourceMappingURL=408-34768a.js.map

@@ -1,0 +1,50 @@
+{
+  "title": "Xe的库",
+  "plugins": [
+    "highlight",
+    "image-zoom",
+    "copy-code",
+    "assistant",
+    "lunrjs",
+    "giscus",
+    "custom-js"
+  ],
+  "pluginsConfig": {
+    "assistant": {
+      "siteId": "M7e5MYe2"
+    },
+    "copy-code": {},
+    "custom-js": {
+      "code": "",
+      "tag": "\u003cscript type=\"text/javascript\" id=\"myhk\" src=\"https://myhkw.cn/api/player/158382436416\" key=\"158382436416\" m=\"1\"\u003e\u003c/script\u003e"
+    },
+    "giscus": {
+      "category": "Announcements",
+      "categoryId": "DIC_kwDOSoWHA84C94KP",
+      "emitMetadata": "0",
+      "inputPosition": "top",
+      "lang": "zh-CN",
+      "loading": "eager",
+      "mapping": "title",
+      "maxWidth": 827,
+      "reactionsEnabled": "1",
+      "repo": "byxewl/giscus_book",
+      "repoId": "R_kgDOSoWHAw",
+      "strict": "0",
+      "term": "",
+      "theme": "preferred_color_scheme"
+    },
+    "highlight": {},
+    "image-zoom": {},
+    "lunrjs": {}
+  },
+  "branch": "master",
+  "summaryFile": "SUMMARY.md",
+  "assetsDir": ".topwrite/assets",
+  "theme": "default",
+  "themeConfig": {
+    "defaultMode": "light",
+    "primaryColor": "#3c60ff",
+    "expandLevel": 0
+  }
+}
